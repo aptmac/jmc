@@ -82,7 +82,6 @@
 		<module>org.openjdk.jmc.feature.rcp</module>
 		<module>org.openjdk.jmc.feature.rcp.update</module>
 		<module>org.openjdk.jmc.feature.twitter</module>
-		<module>org.openjdk.jmc.flightrecorder.configuration</module>
 		<module>org.openjdk.jmc.flightrecorder.controlpanel.ui</module>
 		<module>org.openjdk.jmc.flightrecorder.controlpanel.ui.configuration</module>
 		<module>org.openjdk.jmc.flightrecorder.flameview</module>
@@ -154,6 +153,11 @@
 		<dependency>
 			<groupId>org.openjdk.jmc</groupId>
 			<artifactId>flightrecorder</artifactId>
+			<version>${revision}${changelist}</version>
+		</dependency>
+        <dependency>
+			<groupId>org.openjdk.jmc</groupId>
+			<artifactId>flightrecorder.configuration</artifactId>
 			<version>${revision}${changelist}</version>
 		</dependency>
 		<dependency>
