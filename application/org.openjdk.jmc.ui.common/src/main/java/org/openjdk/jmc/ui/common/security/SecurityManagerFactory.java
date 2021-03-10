@@ -32,6 +32,8 @@
  */
 package org.openjdk.jmc.ui.common.security;
 
+import org.openjdk.jmc.common.security.ISecurityManager;
+
 /**
  * This is the global security manager factory for Mission Control. You can only have one
  * SecurityManager, and it is initialized at start. It can not be changed once initialized. The only
