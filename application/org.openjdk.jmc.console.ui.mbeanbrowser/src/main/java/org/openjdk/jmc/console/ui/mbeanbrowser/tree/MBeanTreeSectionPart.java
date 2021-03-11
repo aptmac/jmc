@@ -58,7 +58,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-
 import org.openjdk.jmc.console.ui.actions.MBeanAutomaticRefreshAction;
 import org.openjdk.jmc.console.ui.mbeanbrowser.MBeanBrowserPlugin;
 import org.openjdk.jmc.console.ui.mbeanbrowser.messages.internal.Messages;
