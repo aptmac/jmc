@@ -30,46 +30,13 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.ui.common.security;
-
-import org.openjdk.jmc.common.security.ISecurityManager;
+package org.openjdk.jmc.common.security;
 
 /**
- * This is the global security manager factory for Mission Control. You can only have one
- * SecurityManager, and it is initialized at start. It can not be changed once initialized. The only
- * way to change security manager is to set the system property
- * org.openjdk.jmc.rjmx.security.manager=&lt;class&gt; before this factory class is instantiated.
- * The class must implement ISecurityManager, and it must have a default constructor.
+ * Exception thrown when credentials cannot be loaded
  */
-public final class SecurityManagerFactory {
+public class CredentialsNotAvailableException extends SecurityException {
 
-	private static ISecurityManager instance;
-
-	static {
-		String className = System.getProperty("org.openjdk.jmc.common.security.manager"); //$NON-NLS-1$
-		try {
-			if (className != null) {
-				Class<? extends Object> c = Class.forName(className);
-				instance = (ISecurityManager) c.newInstance();
-			}
-		} catch (Exception e) {
-			System.out.println("Could not create Security manager for className. Using default! Exception was:"); //$NON-NLS-1$
-			e.printStackTrace();
-		}
-	}
-
-	public synchronized final static void setDefaultSecurityManager(ISecurityManager manager) {
-		if (instance == null) {
-			instance = manager;
-		}
-	}
-
-	public synchronized final static ISecurityManager getSecurityManager() {
-		return instance;
-	}
-
-	private SecurityManagerFactory() {
-		throw new AssertionError("This class is not to be instantiated!"); //$NON-NLS-1$
-	}
+	private static final long serialVersionUID = -8098399684811165719L;
 
 }
