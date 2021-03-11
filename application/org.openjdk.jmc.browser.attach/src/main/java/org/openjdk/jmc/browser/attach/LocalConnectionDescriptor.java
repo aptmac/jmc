@@ -48,9 +48,9 @@ import java.util.logging.Level;
 
 import javax.management.remote.JMXServiceURL;
 
+import org.openjdk.jmc.common.util.Environment;
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.ui.common.util.Environment;
 
 import com.sun.tools.attach.AgentLoadException;
 import com.sun.tools.attach.AttachNotSupportedException;
