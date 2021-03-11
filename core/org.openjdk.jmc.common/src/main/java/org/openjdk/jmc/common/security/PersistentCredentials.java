@@ -30,28 +30,54 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.ui.common.security;
+package org.openjdk.jmc.common.security;
 
-import org.openjdk.jmc.common.security.SecurityException;
+import org.openjdk.jmc.common.security.SecurityManagerFactory;
 
 /**
- * An object holding a username and a password.
+ * {@link ICredentials} stored in the {@link ISecurityManager}. The username and password are lazy
+ * loaded on demand.
  */
-public interface ICredentials {
+public class PersistentCredentials implements ICredentials {
 
-	/**
-	 * @return the username
-	 */
-	public String getUsername() throws SecurityException;
+	private final String id;
+	private String[] wrapped;
 
-	/**
-	 * @return the password
-	 */
-	public String getPassword() throws SecurityException;
+	public PersistentCredentials(String id) {
+		this.id = id;
+	}
 
-	/**
-	 * @return the id of the exported credentials, or null if the object is not exported.
-	 */
-	public String getExportedId();
+	public PersistentCredentials(String username, String password) throws SecurityException {
+		this(username, password, null);
+	}
 
+	public PersistentCredentials(String username, String password, String family) throws SecurityException {
+		wrapped = new String[] {username, password};
+		id = SecurityManagerFactory.getSecurityManager().storeInFamily(family, wrapped);
+	}
+
+	@Override
+	public String getUsername() throws SecurityException {
+		return getCredentials()[0];
+	}
+
+	@Override
+	public String getPassword() throws SecurityException {
+		return getCredentials()[1];
+	}
+
+	private String[] getCredentials() throws SecurityException {
+		if (wrapped == null) {
+			wrapped = (String[]) SecurityManagerFactory.getSecurityManager().get(id);
+		}
+		if (wrapped == null || wrapped.length != 2) {
+			throw new CredentialsNotAvailableException();
+		}
+		return wrapped;
+	}
+
+	@Override
+	public String getExportedId() {
+		return id;
+	}
 }
