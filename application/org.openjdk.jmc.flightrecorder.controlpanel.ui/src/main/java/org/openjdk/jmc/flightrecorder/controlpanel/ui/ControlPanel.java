@@ -37,7 +37,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.osgi.framework.BundleContext;
-
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.ConfigurationRepositoryFactory;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfigurationRepository;

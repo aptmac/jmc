@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.flightrecorder.controlpanel.ui.model;
+package org.openjdk.jmc.flightrecorder.configuration.model;
 
 import static org.openjdk.jmc.common.unit.UnitLookup.PLAIN_TEXT;
 import static org.openjdk.jmc.flightrecorder.configuration.model.xml.JFCGrammar.ATTRIBUTE_CONTENT_TYPE;
@@ -66,6 +66,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
@@ -89,10 +90,9 @@ import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLAttribute;
 import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLModel;
 import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLTag;
 import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLTagInstance;
+import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 import org.openjdk.jmc.flightrecorder.configuration.spi.IConfigurationStorageDelegate;
-import org.openjdk.jmc.flightrecorder.controlpanel.ui.ControlPanel;
-import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
-import org.openjdk.jmc.rjmx.services.jfr.IEventTypeInfo;
+import org.openjdk.jmc.flightrecorder.configuration.internal.Messages;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -101,6 +101,13 @@ import org.xml.sax.SAXException;
  */
 // FIXME: Make two different subclasses of this, V1 and V2?
 public final class EventConfiguration implements IEventConfiguration {
+	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.flightrecorder.configuration"); //$NON-NLS-1$
+
+    public Logger getLogger() {
+        Logger logger = Logger.getGlobal();
+        logger.setLevel(Level.ALL);
+        return logger;
+    }
 
 	private XMLModel xmlModel;
 	private final IConfigurationStorageDelegate storageDelegate;
@@ -129,7 +136,7 @@ public final class EventConfiguration implements IEventConfiguration {
 				version.attributeValue());
 		XMLModel model = XMLModel.createEmpty(JFCXMLValidator.getValidator(), attributes);
 		IEventConfiguration config = new EventConfiguration(model, delegate, null);
-		config.setName(Messages.RECORDING_TEMPLATE_NEW_NAME);
+		config.setName(Messages.EventConfiguration_RECORDING_TEMPLATE_NEW_NAME);
 		return config;
 	}
 
@@ -184,7 +191,7 @@ public final class EventConfiguration implements IEventConfiguration {
 	 *            configuration.
 	 * @return true if the contents was successfully replaced, false otherwise.
 	 */
-	boolean replaceWithContentsFrom(IEventConfiguration workingCopy) {
+	public boolean replaceWithContentsFrom(IEventConfiguration workingCopy) {
 		if ((workingCopy.getOriginal() == this) && (workingCopy instanceof EventConfiguration)) {
 			xmlModel = ((EventConfiguration) workingCopy).getXMLModel().deepClone();
 			return true;
@@ -280,7 +287,7 @@ public final class EventConfiguration implements IEventConfiguration {
 					options.putPersistedString(optionID, option.getContent());
 				}
 			} catch (QuantityConversionException | IllegalArgumentException e) {
-				ControlPanel.getDefault().getLogger().log(Level.FINE, e.getMessage(), e);
+				LOGGER.log(Level.FINE, e.getMessage(), e);
 			}
 		}
 	}
@@ -517,7 +524,7 @@ public final class EventConfiguration implements IEventConfiguration {
 			try {
 				return storageDelegate.save(writer.toString());
 			} catch (IOException e) {
-				ControlPanel.getDefault().getLogger().log(Level.WARNING, "Cannot save configuration.", e); //$NON-NLS-1$
+				LOGGER.log(Level.WARNING, "Cannot save configuration.", e); //$NON-NLS-1$
 			}
 		}
 		return false;
@@ -624,7 +631,7 @@ public final class EventConfiguration implements IEventConfiguration {
 		return option != null ? option.getExplicitValue(ATTRIBUTE_CONTENT_TYPE) : null;
 	}
 
-	void populateOption(
+	public void populateOption(
 		EventOptionID optionKey, IOptionDescriptor<?> serverOptionInfo, String value, boolean override) {
 		XMLTagInstance configOption = findOption(optionKey, true);
 
@@ -644,7 +651,7 @@ public final class EventConfiguration implements IEventConfiguration {
 
 	}
 
-	void populateEventMetadata(IEventTypeID eventTypeID, IEventTypeInfo serverEventTypeInfo, boolean override) {
+	public void populateEventMetadata(IEventTypeID eventTypeID, IEventTypeInfo serverEventTypeInfo, boolean override) {
 		XMLTagInstance event = findEvent(eventTypeID, true);
 		String configEventLabel = getEventLabel(eventTypeID);
 		String configEventDescription = getEventLabel(eventTypeID);
@@ -656,7 +663,7 @@ public final class EventConfiguration implements IEventConfiguration {
 		}
 	}
 
-	void putEventInCategory(IEventTypeID eventTypeID, String[] categories) {
+	public void putEventInCategory(IEventTypeID eventTypeID, String[] categories) {
 		XMLTagInstance categoryParent = getRoot();
 		for (String category : categories) {
 			categoryParent = findCategory(categoryParent, category, true);

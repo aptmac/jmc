@@ -51,6 +51,7 @@ import org.openjdk.jmc.common.util.Environment;
 import org.openjdk.jmc.ui.common.CorePlugin;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportFactory;
 
+
 /**
  * Converts names according to rules specified with the {@value #LABELING_RULES_EXTENSION_POINT}
  * extension point.

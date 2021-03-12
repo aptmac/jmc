@@ -79,7 +79,7 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfigurationMo
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfigurationRepository;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.PrivateStorageDelegate;
 import org.openjdk.jmc.flightrecorder.ui.FlightRecorderUI;
-import org.openjdk.jmc.rjmx.services.jfr.IEventTypeInfo;
+import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 import org.openjdk.jmc.ui.wizards.OnePageWizardDialog;
 

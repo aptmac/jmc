@@ -34,7 +34,6 @@ package org.openjdk.jmc.flightrecorder.controlpanel.ui.recordingconfiguration;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfigurationModel;
 
 /**

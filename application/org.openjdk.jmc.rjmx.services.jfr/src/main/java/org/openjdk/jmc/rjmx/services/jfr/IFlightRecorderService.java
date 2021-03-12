@@ -46,6 +46,7 @@ import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 
 /**
  * This is the interface for the JDK Flight Recorder controller.
