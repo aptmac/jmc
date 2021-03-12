@@ -30,11 +30,12 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.ui.common.labelingrules;
+package org.openjdk.jmc.common.labelingrules;
 
 import java.util.HashMap;
 
-import org.openjdk.jmc.ui.common.labelingrules.NameConverter.ValueArrayInfo;
+import org.openjdk.jmc.common.labelingrules.NameConverterBase.ValueArrayInfo;
+import org.openjdk.jmc.common.messages.internal.Messages;
 
 /**
  * Constant mapping database.
