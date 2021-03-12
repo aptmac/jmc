@@ -30,42 +30,80 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.ui.common.labelingrules;
+package org.openjdk.jmc.common.labelingrules;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-import java.util.logging.Level;
 
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtension;
-import org.eclipse.core.runtime.IExtensionPoint;
-import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.Platform;
 import org.openjdk.jmc.common.jvm.JVMCommandLineToolkit;
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
-import org.openjdk.jmc.common.labelingrules.NameConverterBase;
-import org.openjdk.jmc.common.labelingrules.NamingRule;
+import org.openjdk.jmc.common.messages.internal.Messages;
 import org.openjdk.jmc.common.resource.Resource;
 import org.openjdk.jmc.common.util.Environment;
-import org.openjdk.jmc.ui.common.CorePlugin;
-import org.openjdk.jmc.ui.common.idesupport.IDESupportFactory;
 
-/**
- * Converts names according to rules specified with the {@value #LABELING_RULES_EXTENSION_POINT}
- * extension point.
- */
-public final class NameConverter extends NameConverterBase {
-	private static final String LABELING_RULES_EXTENSION_POINT = "org.openjdk.jmc.ui.common.labelingRules"; //$NON-NLS-1$
-	private static final String ATTRIBUTE_ICON = "icon"; //$NON-NLS-1$
+public class NameConverterBase {
+
+	protected static final Comparator<NamingRule> COMPARATOR = new Comparator<NamingRule>() {
+		@Override
+		public int compare(NamingRule o1, NamingRule o2) {
+			return o2.getPriority() - o1.getPriority();
+		}
+	};
+
+	private static final NameConverterBase INSTANCE = new NameConverterBase();
+
+	static enum ValueArrayInfo {
+		JAVAVERSION(0, "JDK", "{0}"), //$NON-NLS-1$ //$NON-NLS-2$
+		JVMTYPE(1, "JVMType", "{1}"), //$NON-NLS-1$ //$NON-NLS-2$
+		JVMARCH(2, "JVMArch", "{2}"), //$NON-NLS-1$ //$NON-NLS-2$
+		NAME(3, "Name", "{3}"), //$NON-NLS-1$ //$NON-NLS-2$
+		JAVACOMMAND(4, "JavaCmd", "{4}"), //$NON-NLS-1$ //$NON-NLS-2$
+		PID(5, "PID", "{5}"), //$NON-NLS-1$ //$NON-NLS-2$
+		DEBUG(6, "IsDebug", "{6}"), //$NON-NLS-1$ //$NON-NLS-2$
+		JVMARGS(7, "JVMArgs", "{7}"); //$NON-NLS-1$ //$NON-NLS-2$
+
+		private int index;
+		private String valueName;
+		private String matchExpression;
+
+		ValueArrayInfo(int index, String valueName, String matchExpression) {
+			this.index = index;
+			this.valueName = valueName;
+			this.matchExpression = matchExpression;
+		}
+
+		public int getIndex() {
+			return index;
+		}
+
+		public String getValueName() {
+			return valueName;
+		}
+
+		public String getMatchExpression() {
+			return matchExpression;
+		}
+	}
+
+	protected final List<NamingRule> rules = new ArrayList<>();
+
+	/**
+	 * @return a singleton instance
+	 */
+	public static NameConverterBase getInstance() {
+		return INSTANCE;
+	}
 
 	/**
 	 * Create a new name converter instance. This should only be used if you want a new, clean
 	 * instance. Normally the {@link NameConverter#getInstance()} method should be used instead to
 	 * get a singleton instance.
 	 */
-	public NameConverter() {
-		initializeRulesFromExtensions();
+	public NameConverterBase() {
+//		initializeRulesFromExtensions();
 	}
 
 	/**
@@ -124,48 +162,6 @@ public final class NameConverter extends NameConverterBase {
 		return null;
 	}
 
-	private void initializeRulesFromExtensions() {
-		IExtensionRegistry er = Platform.getExtensionRegistry();
-		IExtensionPoint ep = er.getExtensionPoint(LABELING_RULES_EXTENSION_POINT);
-		IExtension[] extensions = ep.getExtensions();
-		for (IExtension extension : extensions) {
-			IConfigurationElement[] configs = extension.getConfigurationElements();
-			for (IConfigurationElement config : configs) {
-				if (config.getName().equals("rule")) { //$NON-NLS-1$
-					try {
-						rules.add(createRule(config));
-					} catch (Exception e) {
-						CorePlugin.getDefault().getLogger().log(Level.SEVERE, e.getMessage(), e);
-					}
-				}
-			}
-		}
-		Collections.sort(rules, COMPARATOR);
-	}
-
-	private NamingRule createRule(IConfigurationElement config) throws Exception {
-		String name = config.getAttribute("name"); //$NON-NLS-1$
-		// Try/Catch here to at least have a chance of providing the user with a hint
-		// should something go wrong.
-		try {
-			int priority = Integer.parseInt(config.getAttribute("priority")); //$NON-NLS-1$
-			String matchingPart = config.getAttribute("match"); //$NON-NLS-1$
-			String formattingPart = config.getAttribute("format"); //$NON-NLS-1$
-			return new NamingRule(name, matchingPart, formattingPart, priority, getIcon(config));
-		} catch (Exception e) {
-			throw new Exception("Problem instantiating naming rule named " + name); //$NON-NLS-1$
-		}
-	}
-
-	private Resource getIcon(IConfigurationElement configElement) {
-		String iconName = configElement.getAttribute(ATTRIBUTE_ICON);
-		if (iconName != null) {
-			String extendingPluginId = configElement.getDeclaringExtension().getContributor().getName();
-			return new Resource(extendingPluginId, iconName);
-		}
-		return null;
-	}
-
 	private Object[] prepareValues(JVMDescriptor descriptor) {
 		return new Object[] {descriptor.getJavaVersion(), descriptor.getJvmType(), descriptor.getJvmArch(),
 				getValidName(descriptor), descriptor.getJavaCommand(),
@@ -176,7 +172,7 @@ public final class NameConverter extends NameConverterBase {
 	private String getValidName(JVMDescriptor descriptor) {
 		Integer pid = descriptor.getPid();
 		if (pid != null && pid.intValue() == Environment.getThisPID() && descriptor.isAttachable()) {
-			return IDESupportFactory.getIDESupport().getIdentity() + ".this"; //$NON-NLS-1$
+			return "FIXME" + ".this"; //$NON-NLS-1$
 		}
 		String name = JVMCommandLineToolkit.getMainClassOrJar(descriptor.getJavaCommand());
 		if (name != null && name.length() > 0) {

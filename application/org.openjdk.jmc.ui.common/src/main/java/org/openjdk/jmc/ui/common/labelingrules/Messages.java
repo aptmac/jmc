@@ -37,15 +37,6 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.openjdk.jmc.ui.common.labelingrules.messages"; //$NON-NLS-1$
 
-	public static String NameConverter_DEBUG;
-	public static String NameConverter_JVM_ARCH_32BIT;
-	public static String NameConverter_JVM_ARCH_64BIT;
-	public static String NameConverter_JVM_ARCH_OTHER;
-	public static String NameConverter_JVM_ARCH_UNKNOWN;
-	public static String NameConverter_JVM_TYPE_HOTSPOT;
-	public static String NameConverter_JVM_TYPE_JROCKIT;
-	public static String NameConverter_JVM_TYPE_OTHER;
-	public static String NameConverter_JVM_TYPE_UNKNOWN;
 	public static String NameConverter_LOCAL_NAME_TEMPLATE;
 	public static String NameConverter_UNKNOWN_LOCAL_JVM;
 
