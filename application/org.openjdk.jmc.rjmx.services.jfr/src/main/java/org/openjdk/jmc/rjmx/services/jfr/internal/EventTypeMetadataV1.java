@@ -38,7 +38,7 @@ import java.util.Map;
 
 import org.openjdk.jmc.common.unit.IOptionDescriptor;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV1;
-import org.openjdk.jmc.rjmx.services.jfr.IEventTypeInfo;
+import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 
 /**
  * Provides information about an event type.

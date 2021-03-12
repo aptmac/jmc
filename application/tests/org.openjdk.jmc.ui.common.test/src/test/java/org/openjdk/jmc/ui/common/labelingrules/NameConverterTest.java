@@ -39,7 +39,7 @@ import static org.junit.Assert.assertTrue;
 import java.text.MessageFormat;
 
 import org.junit.Test;
-import org.openjdk.jmc.common.labelingrules.NameConverter;
+import org.openjdk.jmc.ui.common.labelingrules.NameConverter;
 import org.openjdk.jmc.common.labelingrules.NamingRule;
 import org.openjdk.jmc.common.util.Environment;
 

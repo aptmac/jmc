@@ -39,7 +39,7 @@ import javax.management.remote.JMXServiceURL;
 
 import org.openjdk.jmc.common.action.IActionProvider;
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
-import org.openjdk.jmc.common.labelingrules.NameConverter;
+import org.openjdk.jmc.ui.common.labelingrules.NameConverter;
 import org.openjdk.jmc.common.resource.IImageResource;
 import org.openjdk.jmc.common.resource.Resource;
 import org.openjdk.jmc.common.security.ICredentials;

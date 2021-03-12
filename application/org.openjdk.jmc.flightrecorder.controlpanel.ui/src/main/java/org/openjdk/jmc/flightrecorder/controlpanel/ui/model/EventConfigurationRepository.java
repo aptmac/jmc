@@ -44,6 +44,7 @@ import java.util.stream.Collectors;
 
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventConfiguration;
 import org.openjdk.jmc.flightrecorder.configuration.events.SchemaVersion;
+import org.openjdk.jmc.flightrecorder.configuration.model.EventConfiguration;
 
 /**
  * Class that holds all the available JFR event configurations.
