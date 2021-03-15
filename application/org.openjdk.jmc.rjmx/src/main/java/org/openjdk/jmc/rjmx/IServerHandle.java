@@ -32,6 +32,9 @@
  */
 package org.openjdk.jmc.rjmx;
 
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IServerDescriptor;
 import org.openjdk.jmc.rjmx.internal.ServerHandle;
 
 /**

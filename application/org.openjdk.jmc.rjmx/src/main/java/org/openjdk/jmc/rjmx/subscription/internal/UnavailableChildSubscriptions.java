@@ -38,7 +38,7 @@ import java.util.Set;
 
 import javax.management.openmbean.CompositeData;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
 import org.openjdk.jmc.rjmx.subscription.IUpdatePolicy;

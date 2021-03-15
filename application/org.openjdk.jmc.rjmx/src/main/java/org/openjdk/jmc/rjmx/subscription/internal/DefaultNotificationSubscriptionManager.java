@@ -48,9 +48,9 @@ import javax.management.Notification;
 import javax.management.NotificationFilterSupport;
 import javax.management.NotificationListener;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
 import org.openjdk.jmc.rjmx.subscription.IMRISubscription;
 import org.openjdk.jmc.rjmx.subscription.MRI;

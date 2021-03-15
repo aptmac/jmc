@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.services.jfr;
+package org.openjdk.jmc.rjmx.core.services.jfr;
 
 /**
  * Exception thrown when {@link IFlightRecorderService} operations fail.

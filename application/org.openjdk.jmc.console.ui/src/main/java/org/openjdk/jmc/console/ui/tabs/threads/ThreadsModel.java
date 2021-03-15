@@ -45,7 +45,7 @@ import org.openjdk.jmc.console.ui.ConsolePlugin;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
 import org.openjdk.jmc.console.ui.preferences.ConsoleConstants;
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.ui.polling.PollManager;
 
 public class ThreadsModel implements IThreadsModel {

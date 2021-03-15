@@ -56,6 +56,7 @@ import javax.management.remote.JMXServiceURL;
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.version.JavaVMVersionToolkit;
 import org.openjdk.jmc.common.version.JavaVersion;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.RJMXConnection;
 
 /**

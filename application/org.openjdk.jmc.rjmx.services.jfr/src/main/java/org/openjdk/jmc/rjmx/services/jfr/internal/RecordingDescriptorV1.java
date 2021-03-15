@@ -44,7 +44,7 @@ import javax.management.ObjectName;
 import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 
 /**
  * This class represents a handle to a server side JDK Flight Recorder recording. It is immutable,

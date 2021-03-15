@@ -34,8 +34,8 @@ package org.openjdk.jmc.rjmx.subscription.internal;
 
 import java.util.logging.Level;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProvider;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;

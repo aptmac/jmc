@@ -39,10 +39,10 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.ImageConstants;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.wizards.RecordingWizardModel;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.wizards.StartRecordingWizard;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.JVMSupportToolkit;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
 import org.openjdk.jmc.ui.common.resource.MCFile;
 import org.openjdk.jmc.ui.wizards.AbstractWizardUserAction;
 

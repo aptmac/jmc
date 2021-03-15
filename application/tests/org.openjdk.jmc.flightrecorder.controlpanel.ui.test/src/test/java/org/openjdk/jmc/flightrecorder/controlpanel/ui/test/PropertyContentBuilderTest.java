@@ -65,8 +65,8 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.recordingconfiguration.Pro
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.recordingconfiguration.PropertyContainer.EventNode;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.recordingconfiguration.PropertyContainer.FolderNode;
 import org.openjdk.jmc.flightrecorder.jdk.JdkTypeIDs;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.recordingconfiguration.PropertyContentBuilder;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
 
 @SuppressWarnings("nls")
 public class PropertyContentBuilderTest extends JfrControlTestCase {

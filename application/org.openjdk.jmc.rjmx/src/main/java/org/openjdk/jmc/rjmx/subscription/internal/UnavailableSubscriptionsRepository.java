@@ -42,9 +42,9 @@ import java.util.Set;
 
 import javax.management.ObjectName;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.subscription.IMBeanServerChangeListener;
 import org.openjdk.jmc.rjmx.subscription.MRI;

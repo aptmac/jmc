@@ -39,11 +39,10 @@ import java.util.Observer;
 import javax.management.ObjectName;
 
 import org.osgi.framework.ServiceException;
-
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.internal.IDisposableService;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.subscription.IMBeanServerChangeListener;

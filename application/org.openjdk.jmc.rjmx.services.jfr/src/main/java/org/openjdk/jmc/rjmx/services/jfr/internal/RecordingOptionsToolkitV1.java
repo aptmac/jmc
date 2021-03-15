@@ -60,7 +60,7 @@ import org.openjdk.jmc.common.unit.QuantityConversionException;
 import org.openjdk.jmc.common.version.JavaVersionSupport;
 import org.openjdk.jmc.flightrecorder.configuration.ConfigurationToolkit;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
 
 /**
  * Toolkit for handling marshalling of RecordingOptions for JFR 1.0 (JDK 7/8).

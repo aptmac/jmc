@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.ui.common.labelingrules;
 
-import java.text.MessageFormat;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
@@ -70,59 +70,10 @@ public final class NameConverter extends NameConverterBase {
 	}
 
 	/**
-	 * @param descriptor
-	 * @return the properly formatted values. If no matching formatter could be found, the default
-	 *         format String as defined in NameConverter_LOCAL_NAME_TEMPLATE will be used.
-	 */
-	public String format(JVMDescriptor descriptor) {
-		// FIXME: Somehow rewrite this to avoid things like [Unknown][Unknown] and empty () when the pid is unknown.
-		// JDP being the typical use case.
-		Object[] values = prepareValues(descriptor);
-		NamingRule rule = getMatchingRule(values);
-		if (rule != null) {
-			return rule.format(values);
-		}
-		// Should always be a catch all rule, but if someone messes up, we will use the LOCAL_NAME_TEMPLATE.
-		return MessageFormat.format(Messages.NameConverter_LOCAL_NAME_TEMPLATE, descriptor);
-	}
-
-	public Resource getImageResource(JVMDescriptor descriptor) {
-		NamingRule rule = getMatchingRule(prepareValues(descriptor));
-		return rule == null ? null : rule.getImageResource();
-	}
-
-	/**
-	 * Adds a rule to the name converter.
-	 * <p>
-	 * Adding rules should normally not be done using this method, but rather through the
-	 * {@value #LABELING_RULES_EXTENSION_POINT} extension point.
-	 *
-	 * @param rule
-	 *            the rule to add.
-	 */
-	public void addNamingRule(NamingRule rule) {
-		rules.add(rule);
-		Collections.sort(rules, COMPARATOR);
-	}
-
-	/**
 	 * @return an immutable list of the available rules.
 	 */
 	public List<NamingRule> getRules() {
 		return Collections.unmodifiableList(rules);
-	}
-
-	private NamingRule getMatchingRule(Object[] values) {
-		for (NamingRule rule : rules) {
-			try {
-				if (rule.matches(values)) {
-					return rule;
-				}
-			} catch (RuntimeException e) {
-				// Silently ignore broken rules for now.
-			}
-		}
-		return null;
 	}
 
 	private void initializeRulesFromExtensions() {
@@ -165,13 +116,6 @@ public final class NameConverter extends NameConverterBase {
 			return new Resource(extendingPluginId, iconName);
 		}
 		return null;
-	}
-
-	private Object[] prepareValues(JVMDescriptor descriptor) {
-		return new Object[] {descriptor.getJavaVersion(), descriptor.getJvmType(), descriptor.getJvmArch(),
-				getValidName(descriptor), descriptor.getJavaCommand(),
-				descriptor.getPid() != null ? String.valueOf(descriptor.getPid()) : "", descriptor.isDebug(), //$NON-NLS-1$
-				descriptor.getJVMArguments()};
 	}
 
 	private String getValidName(JVMDescriptor descriptor) {

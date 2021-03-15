@@ -42,8 +42,8 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.ConfigurationReposit
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfigurationRepository;
 import org.openjdk.jmc.flightrecorder.ui.FlightRecorderUI;
 import org.openjdk.jmc.rjmx.IServerHandle;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
 import org.openjdk.jmc.ui.MCAbstractUIPlugin;
 import org.openjdk.jmc.ui.common.CorePlugin;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportToolkit;

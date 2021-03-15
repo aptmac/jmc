@@ -40,10 +40,10 @@ import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 
 /**
  * Helper class for facilitating communication with the FlightRecorderMBean. This class works with

@@ -40,8 +40,7 @@ import java.util.Collection;
 
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
 import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
 import org.openjdk.jmc.rjmx.subscription.internal.EmptySubscriptionDebugService;

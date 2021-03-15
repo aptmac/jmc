@@ -41,8 +41,8 @@ import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 
 import org.openjdk.jmc.common.util.Filename;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.triggers.TriggerAction;
 import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
 

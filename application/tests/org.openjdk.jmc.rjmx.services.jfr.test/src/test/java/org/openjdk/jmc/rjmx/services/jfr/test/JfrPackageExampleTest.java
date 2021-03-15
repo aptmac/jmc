@@ -44,10 +44,10 @@ import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
 import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.IServerHandle;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 
 /**

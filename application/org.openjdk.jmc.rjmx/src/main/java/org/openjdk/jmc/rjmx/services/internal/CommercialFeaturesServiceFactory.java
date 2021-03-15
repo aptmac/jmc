@@ -35,10 +35,10 @@ package org.openjdk.jmc.rjmx.services.internal;
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.version.JavaVersion;
 import org.openjdk.jmc.common.version.JavaVersionSupport;
-import org.openjdk.jmc.rjmx.ConnectionException;
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.ICommercialFeaturesService;
 import org.openjdk.jmc.rjmx.services.IServiceFactory;
 

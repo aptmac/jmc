@@ -62,14 +62,14 @@ import org.openjdk.jmc.flightrecorder.configuration.events.SchemaVersion;
 import org.openjdk.jmc.flightrecorder.configuration.model.EventConfiguration;
 import org.openjdk.jmc.flightrecorder.configuration.model.VolatileStorageDelegate;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.ControlPanel;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.ConfigurationRepositoryFactory;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfigurationRepository;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IEventTypeInfo;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportToolkit;
 import org.openjdk.jmc.ui.common.resource.MCFile;
 

@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
 import org.openjdk.jmc.console.ui.notification.widget.ActionChooser;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
 import org.openjdk.jmc.rjmx.services.IOperation;
 import org.openjdk.jmc.rjmx.triggers.ITriggerAction;

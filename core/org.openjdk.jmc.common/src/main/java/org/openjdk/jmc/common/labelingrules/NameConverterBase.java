@@ -103,7 +103,6 @@ public class NameConverterBase {
 	 * get a singleton instance.
 	 */
 	public NameConverterBase() {
-//		initializeRulesFromExtensions();
 	}
 
 	/**

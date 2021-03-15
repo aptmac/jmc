@@ -34,7 +34,7 @@ package org.openjdk.jmc.rjmx.subscription.internal;
 
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.common.unit.UnitLookup;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProvider;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
 import org.openjdk.jmc.rjmx.subscription.MRI;

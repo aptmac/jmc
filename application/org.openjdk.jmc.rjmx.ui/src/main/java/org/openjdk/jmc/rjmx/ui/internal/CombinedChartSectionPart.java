@@ -81,7 +81,7 @@ import org.openjdk.jmc.common.xydata.DataSeries;
 import org.openjdk.jmc.common.xydata.ITimestampedData;
 import org.openjdk.jmc.greychart.ui.views.ChartComposite;
 import org.openjdk.jmc.greychart.ui.views.ChartSampleTooltipProvider;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.services.IAttributeStorage;
 import org.openjdk.jmc.rjmx.services.IAttributeStorageService;
 import org.openjdk.jmc.rjmx.services.MRIDataSeries;

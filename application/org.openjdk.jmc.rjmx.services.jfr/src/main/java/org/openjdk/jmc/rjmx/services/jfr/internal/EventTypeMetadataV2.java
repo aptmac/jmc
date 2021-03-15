@@ -45,8 +45,8 @@ import org.openjdk.jmc.common.unit.QuantityConversionException;
 import org.openjdk.jmc.flightrecorder.configuration.OptionInfo;
 import org.openjdk.jmc.flightrecorder.configuration.internal.CommonConstraints;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV2;
-import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.services.jfr.IEventTypeInfo;
 
 /**
  * Provides information about an event type for JFR 2.0.

@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.rjmx.subscription;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 
 /**
  * Interface for all MRI subscriptions.

@@ -38,6 +38,7 @@ import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.jvm.JVMType;
 import org.openjdk.jmc.common.version.JavaVersion;
 import org.openjdk.jmc.common.version.JavaVersionSupport;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.ServerToolkit;
 import org.openjdk.jmc.rjmx.messages.internal.Messages;
 import org.openjdk.jmc.rjmx.services.internal.HotspotManagementToolkit;

@@ -47,7 +47,7 @@ import org.eclipse.ui.forms.widgets.FormText;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import org.openjdk.jmc.console.ui.notification.widget.ConditionChooser;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
 import org.openjdk.jmc.rjmx.triggers.TriggerRule;
 import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;

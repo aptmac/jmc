@@ -50,8 +50,8 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;

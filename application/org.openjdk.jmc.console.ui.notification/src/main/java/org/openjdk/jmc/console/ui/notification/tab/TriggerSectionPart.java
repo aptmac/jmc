@@ -75,7 +75,7 @@ import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
 import org.openjdk.jmc.console.ui.notification.wizard.RuleExportWizard;
 import org.openjdk.jmc.console.ui.notification.wizard.RuleImportWizard;
 import org.openjdk.jmc.console.ui.notification.wizard.RuleWizardDialog;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.subscription.IMRIService;
 import org.openjdk.jmc.rjmx.triggers.TriggerRule;

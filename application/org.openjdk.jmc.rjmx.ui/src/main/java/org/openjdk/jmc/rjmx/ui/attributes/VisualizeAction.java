@@ -40,8 +40,7 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.actions.SelectionProviderAction;
-
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
 import org.openjdk.jmc.rjmx.subscription.IMRITransformationFactory;
 import org.openjdk.jmc.rjmx.subscription.MRI;

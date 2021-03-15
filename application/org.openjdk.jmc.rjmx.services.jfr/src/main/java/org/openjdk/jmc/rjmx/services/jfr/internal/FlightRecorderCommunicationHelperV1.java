@@ -40,9 +40,9 @@ import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.rjmx.services.internal.HotspotManagementToolkit;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
 
 /**
  * Helper class for facilitating communication with the FlightRecorderMBean. This class works with

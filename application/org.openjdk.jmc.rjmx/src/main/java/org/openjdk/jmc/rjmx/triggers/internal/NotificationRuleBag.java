@@ -40,7 +40,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
 import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;

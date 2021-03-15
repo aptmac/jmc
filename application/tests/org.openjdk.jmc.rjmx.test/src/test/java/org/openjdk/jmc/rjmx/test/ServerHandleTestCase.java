@@ -37,8 +37,8 @@ import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
 import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
 import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.core.IServerDescriptor;
 import org.openjdk.jmc.rjmx.internal.ServerHandle;
 
 public abstract class ServerHandleTestCase extends RjmxTestCase {

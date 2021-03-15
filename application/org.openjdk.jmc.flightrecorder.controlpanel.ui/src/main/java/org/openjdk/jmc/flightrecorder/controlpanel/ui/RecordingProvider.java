@@ -35,10 +35,10 @@ package org.openjdk.jmc.flightrecorder.controlpanel.ui;
 import static org.openjdk.jmc.common.IDisplayable.AUTO;
 import static org.openjdk.jmc.common.IDisplayable.EXACT;
 import static org.openjdk.jmc.common.unit.UnitLookup.EPOCH_MS;
-import static org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor.RecordingState.CREATED;
-import static org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor.RecordingState.RUNNING;
-import static org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor.RecordingState.STOPPED;
-import static org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor.RecordingState.STOPPING;
+import static org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor.RecordingState.CREATED;
+import static org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor.RecordingState.RUNNING;
+import static org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor.RecordingState.STOPPED;
+import static org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor.RecordingState.STOPPING;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -65,10 +65,10 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.actions.PrintRecordingDesc
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.actions.StopRecordingAction;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.ui.FlightRecorderUI;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.IServerHandle;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor.RecordingState;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor.RecordingState;
 import org.openjdk.jmc.ui.common.resource.MCFile;
 import org.openjdk.jmc.ui.misc.IGraphical;
 

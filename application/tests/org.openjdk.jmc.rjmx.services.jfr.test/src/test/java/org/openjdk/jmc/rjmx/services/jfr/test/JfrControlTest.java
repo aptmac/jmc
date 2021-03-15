@@ -45,8 +45,8 @@ import org.openjdk.jmc.common.unit.IConstrainedMap;
 import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 
 public class JfrControlTest extends JfrTestCase {
 	@Test

@@ -42,7 +42,7 @@ import java.util.Map;
 import javax.management.ObjectName;
 import javax.management.openmbean.CompositeData;
 
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 
 /**
  * Toolkit for managing recording descriptors.

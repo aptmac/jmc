@@ -32,6 +32,8 @@
  */
 package org.openjdk.jmc.rjmx;
 
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+
 /**
  * A listener that can be notified when the status of a connection changes
  */

@@ -43,7 +43,7 @@ import javax.management.ObjectName;
 import javax.management.openmbean.CompositeData;
 
 import org.openjdk.jmc.common.unit.UnitLookup;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;

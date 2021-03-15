@@ -51,9 +51,9 @@ import org.openjdk.jmc.common.security.SecurityManagerFactory;
 import org.openjdk.jmc.common.util.XmlToolkit;
 import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
+import org.openjdk.jmc.rjmx.core.IServerDescriptor;
+import org.openjdk.jmc.rjmx.core.internal.ServerDescriptor;
 
 class ModelPersistence {
 

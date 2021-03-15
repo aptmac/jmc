@@ -36,7 +36,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRISubscription;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.subscription.IUpdatePolicy;

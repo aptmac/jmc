@@ -39,7 +39,7 @@ import javax.management.openmbean.CompositeData;
 
 import org.openjdk.jmc.common.util.ColorToolkit;
 import org.openjdk.jmc.common.util.TypeHandling;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 
 /**
  * Helper class for extracting some commonly used metadata from the {@link IMRIMetadataService}.

@@ -54,10 +54,10 @@ import org.openjdk.jmc.flightrecorder.configuration.events.IEventConfiguration;
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
 import org.openjdk.jmc.flightrecorder.configuration.events.SchemaVersion;
 import org.openjdk.jmc.flightrecorder.configuration.model.EventConfiguration;
-import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.recordingconfiguration.EventConfigurationPart;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.recordingconfiguration.PathElement.PathElementKind;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.wizards.RecordingWizardModel;
+import org.openjdk.jmc.rjmx.core.services.jfr.IEventTypeInfo;
 
 /**
  * Groups a recording event configuration with settings found on a server. Used as input for a

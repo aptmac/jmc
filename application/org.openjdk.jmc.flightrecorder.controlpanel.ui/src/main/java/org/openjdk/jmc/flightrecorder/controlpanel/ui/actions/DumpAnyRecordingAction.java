@@ -41,8 +41,8 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.RecordingProvider;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.wizards.DumpRecordingWizardModel;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.wizards.DumpRecordingWizardPage;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
 import org.openjdk.jmc.ui.wizards.AbstractWizardUserAction;
 import org.openjdk.jmc.ui.wizards.OnePageWizard;
 

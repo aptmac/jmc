@@ -60,7 +60,7 @@ import org.openjdk.jmc.console.ui.mbeanbrowser.metadata.MetadataModel;
 import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.MBeanNotificationLogInspector;
 import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.NotificationInfoSectionPart;
 import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.NotificationsModel;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.RJMXConnection;
 import org.openjdk.jmc.rjmx.services.IOperation;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;

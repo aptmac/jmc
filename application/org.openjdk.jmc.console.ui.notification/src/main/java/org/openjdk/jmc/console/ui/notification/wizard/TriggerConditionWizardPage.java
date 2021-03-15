@@ -39,7 +39,7 @@ import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
 import org.openjdk.jmc.console.ui.notification.widget.ConditionChooser;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.MRI;
 import org.openjdk.jmc.rjmx.triggers.TriggerRule;
 import org.openjdk.jmc.rjmx.triggers.condition.internal.TriggerCondition;

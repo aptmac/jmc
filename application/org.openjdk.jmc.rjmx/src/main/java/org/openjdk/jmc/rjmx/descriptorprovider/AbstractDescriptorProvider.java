@@ -39,7 +39,7 @@ import java.util.List;
 import javax.management.remote.JMXServiceURL;
 
 import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
+import org.openjdk.jmc.rjmx.core.IServerDescriptor;
 
 /**
  * Abstract superclass that can be used for implementations of the {@link IDescriptorProvider}

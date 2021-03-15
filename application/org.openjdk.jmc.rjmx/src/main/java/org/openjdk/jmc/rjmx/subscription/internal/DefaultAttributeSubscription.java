@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.rjmx.subscription.internal;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
 
 /**

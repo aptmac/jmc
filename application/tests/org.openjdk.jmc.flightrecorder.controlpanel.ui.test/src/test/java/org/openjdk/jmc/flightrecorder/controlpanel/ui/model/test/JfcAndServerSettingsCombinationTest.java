@@ -43,9 +43,9 @@ import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
 import org.openjdk.jmc.flightrecorder.configuration.events.SchemaVersion;
 import org.openjdk.jmc.flightrecorder.configuration.model.EventConfiguration;
 import org.openjdk.jmc.flightrecorder.jdk.JdkTypeIDs;
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
 
 /**
  * Test that checks how JFC event settings combine with event settings from the server.

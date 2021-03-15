@@ -41,7 +41,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
 
 @SuppressWarnings("nls")
 public class EventTemplateTest extends JfrTestCase {

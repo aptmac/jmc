@@ -44,11 +44,11 @@ import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV1;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV2;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 
 @SuppressWarnings("nls")

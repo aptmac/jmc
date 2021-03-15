@@ -52,7 +52,7 @@ import org.junit.Test;
 
 import org.openjdk.jmc.console.ui.diagnostic.preferences.DiagnosticPage;
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.RJMXConnection;
 import org.openjdk.jmc.rjmx.services.IOperation;
 import org.openjdk.jmc.rjmx.services.IOperation.OperationImpact;

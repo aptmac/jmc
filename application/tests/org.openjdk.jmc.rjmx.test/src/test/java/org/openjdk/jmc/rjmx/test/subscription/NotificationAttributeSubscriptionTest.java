@@ -40,7 +40,7 @@ import javax.management.MBeanServerConnection;
 import org.junit.Test;
 
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.subscription.MRI;
 import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;

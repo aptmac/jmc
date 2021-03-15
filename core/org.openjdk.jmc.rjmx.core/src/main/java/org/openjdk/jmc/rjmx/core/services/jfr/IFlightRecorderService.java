@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.services.jfr;
+package org.openjdk.jmc.rjmx.core.services.jfr;
 
 import java.io.InputStream;
 import java.util.Collection;
@@ -44,9 +44,9 @@ import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.flightrecorder.configuration.IRecorderConfigurationService;
 import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
+import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeInfo;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 
 /**
  * This is the interface for the JDK Flight Recorder controller.

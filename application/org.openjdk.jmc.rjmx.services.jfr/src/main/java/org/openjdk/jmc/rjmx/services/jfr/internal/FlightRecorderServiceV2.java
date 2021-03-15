@@ -72,15 +72,15 @@ import org.openjdk.jmc.flightrecorder.configuration.internal.KnownEventOptions;
 import org.openjdk.jmc.flightrecorder.configuration.internal.KnownRecordingOptions;
 import org.openjdk.jmc.flightrecorder.configuration.internal.ValidationToolkit;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.ConnectionException;
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.JVMSupportToolkit;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.rjmx.services.ICommercialFeaturesService;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
 
 public class FlightRecorderServiceV2 implements IFlightRecorderService {

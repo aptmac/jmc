@@ -46,7 +46,7 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import org.openjdk.jmc.common.util.MemberAccessorToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
 import org.openjdk.jmc.rjmx.subscription.internal.EmptySubscriptionDebugService;
 import org.openjdk.jmc.rjmx.subscription.internal.ISubscriptionDebugService;

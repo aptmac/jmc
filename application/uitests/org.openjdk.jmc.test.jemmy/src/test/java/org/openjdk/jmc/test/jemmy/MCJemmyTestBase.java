@@ -43,9 +43,9 @@ import org.junit.Rule;
 
 import org.openjdk.jmc.common.io.IOToolkit;
 import org.openjdk.jmc.common.test.TestToolkit;
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.servermodel.IServer;
 import org.openjdk.jmc.rjmx.servermodel.IServerModel;
 import org.openjdk.jmc.test.jemmy.misc.base.wrappers.MCJemmyBase;

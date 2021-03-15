@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.rjmx.triggers;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 
 /**
  * Interface for actions that needs to check if they are activatable. For instance a JFR action that

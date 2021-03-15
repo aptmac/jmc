@@ -34,10 +34,10 @@ package org.openjdk.jmc.rjmx.test.subscription.internal;
 
 import java.util.Observer;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IServerDescriptor;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.internal.ServerDescriptor;
 import org.openjdk.jmc.rjmx.services.internal.ServiceFactoryManager;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;

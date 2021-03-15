@@ -38,7 +38,9 @@ import static org.openjdk.jmc.common.unit.UnitLookup.MILLISECOND;
 import java.util.List;
 
 import org.openjdk.jmc.common.unit.IQuantity;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor.RecordingState;
+import org.openjdk.jmc.rjmx.core.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor.RecordingState;
 
 /**
  * Helper methods to facilitate the use of the {@link IFlightRecorderService}.

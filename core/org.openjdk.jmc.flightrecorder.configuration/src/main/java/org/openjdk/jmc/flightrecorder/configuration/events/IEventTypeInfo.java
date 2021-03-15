@@ -30,43 +30,52 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx;
+package org.openjdk.jmc.flightrecorder.configuration.events;
 
-import org.openjdk.jmc.common.jvm.JVMDescriptor;
-import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
+import java.util.Map;
+
+import org.openjdk.jmc.common.IDescribable;
+import org.openjdk.jmc.common.unit.IOptionDescriptor;
 
 /**
- * An object describing a server
+ * Interface to expose additional information of an event type, like a human readable name. This
+ * should not include implementation details.
  */
-public interface IServerDescriptor {
-
+public interface IEventTypeInfo extends IDescribable {
 	/**
-	 * @return the globally unique ID of the server
+	 * The persistable identifier for the event type that this instance contains information about.
 	 */
-	String getGUID();
+	IEventTypeID getEventTypeID();
 
 	/**
-	 * @return the display name of the server
+	 * A human readable categorization for this event type. (This does not include the event type
+	 * itself.) It may be an empty array, but never {@code null}.
 	 */
-	String getDisplayName();
+	String[] getHierarchicalCategory();
 
 	/**
-	 * @return an object describing the JVM on which the server is running
+	 * A human readable label for this event type.
 	 */
-	JVMDescriptor getJvmInfo();
+	@Override
+	String getName();
 
 	/**
-	 * Creates a new server descriptor with the supplied properties
+	 * A human readable description for this event type. May be {@code null}.
+	 */
+	@Override
+	String getDescription();
+
+	/**
+	 * Get the names and constraints of the parameters accepted by this event type.
+	 */
+	Map<String, ? extends IOptionDescriptor<?>> getOptionDescriptors();
+
+	/**
+	 * Get info about any option with the given key.
 	 *
-	 * @param guid
-	 *            the globally unique ID of the server
-	 * @param displayName
-	 *            the display name of the server
-	 * @param jvmInfo
-	 *            an object describing the JVM on which the server is running
-	 * @return the new server descriptor
+	 * @param optionKey
+	 *            an unqualified option key, such as from {@link EventOptionID#getOptionKey()}
+	 * @return option info or {@code null}
 	 */
-	static IServerDescriptor create(String guid, String displayName, JVMDescriptor jvmInfo) {
-		return new ServerDescriptor(guid, displayName, jvmInfo);
-	}
+	IOptionDescriptor<?> getOptionInfo(String optionKey);
 }

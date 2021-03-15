@@ -41,8 +41,8 @@ import org.w3c.dom.Element;
 
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.common.util.XmlToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.MRI;
 import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
 import org.openjdk.jmc.rjmx.subscription.internal.ExtendedMRIMetadataToolkit;

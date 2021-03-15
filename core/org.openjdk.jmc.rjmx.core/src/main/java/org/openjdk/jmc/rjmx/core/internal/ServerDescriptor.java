@@ -30,54 +30,50 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.flightrecorder.configuration.services;
+package org.openjdk.jmc.rjmx.core.internal;
 
-import java.util.Map;
+import java.util.UUID;
 
-import org.openjdk.jmc.common.IDescribable;
-import org.openjdk.jmc.common.unit.IOptionDescriptor;
-import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
-import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
+import org.openjdk.jmc.common.jvm.JVMDescriptor;
+import org.openjdk.jmc.rjmx.core.IServerDescriptor;
+import org.openjdk.jmc.common.labelingrules.NameConverterBase;
 
-/**
- * Interface to expose additional information of an event type, like a human readable name. This
- * should not include implementation details.
- */
-public interface IEventTypeInfo extends IDescribable {
-	/**
-	 * The persistable identifier for the event type that this instance contains information about.
-	 */
-	IEventTypeID getEventTypeID();
+public class ServerDescriptor implements IServerDescriptor {
+	private final String guid;
+	private final String name;
+	private final JVMDescriptor jvmInfo;
 
-	/**
-	 * A human readable categorization for this event type. (This does not include the event type
-	 * itself.) It may be an empty array, but never {@code null}.
-	 */
-	String[] getHierarchicalCategory();
+	public ServerDescriptor() {
+		this(null, null, null);
+	}
 
-	/**
-	 * A human readable label for this event type.
-	 */
+	public ServerDescriptor(String guid, String name, JVMDescriptor jvmInfo) {
+		this.guid = guid == null ? UUID.randomUUID().toString() : guid;
+		if (name == null) {
+			this.name = jvmInfo != null ? NameConverterBase.getInstance().format(jvmInfo) : this.guid;
+		} else {
+			this.name = name;
+		}
+		this.jvmInfo = jvmInfo;
+	}
+
+	public ServerDescriptor(IServerDescriptor sd, String name) {
+		this(sd.getGUID(), name, sd.getJvmInfo());
+	}
+
 	@Override
-	String getName();
+	public String getGUID() {
+		return guid;
+	}
 
-	/**
-	 * A human readable description for this event type. May be {@code null}.
-	 */
 	@Override
-	String getDescription();
+	public String getDisplayName() {
+		return name;
+	}
 
-	/**
-	 * Get the names and constraints of the parameters accepted by this event type.
-	 */
-	Map<String, ? extends IOptionDescriptor<?>> getOptionDescriptors();
+	@Override
+	public JVMDescriptor getJvmInfo() {
+		return jvmInfo;
+	}
 
-	/**
-	 * Get info about any option with the given key.
-	 *
-	 * @param optionKey
-	 *            an unqualified option key, such as from {@link EventOptionID#getOptionKey()}
-	 * @return option info or {@code null}
-	 */
-	IOptionDescriptor<?> getOptionInfo(String optionKey);
 }

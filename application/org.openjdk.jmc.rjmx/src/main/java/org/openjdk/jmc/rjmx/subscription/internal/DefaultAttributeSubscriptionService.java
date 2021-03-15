@@ -39,9 +39,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.internal.IDisposableService;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;

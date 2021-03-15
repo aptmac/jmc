@@ -34,8 +34,8 @@ package org.openjdk.jmc.rjmx.services.jfr.internal;
 
 import java.io.IOException;
 
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 
 interface IFlightRecorderCommunicationHelper {
 

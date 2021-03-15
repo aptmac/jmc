@@ -34,10 +34,10 @@ package org.openjdk.jmc.rjmx.services.internal;
 
 import javax.management.MBeanServerConnection;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
 import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.ICommercialFeaturesService;
 import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
 import javax.management.ObjectName;

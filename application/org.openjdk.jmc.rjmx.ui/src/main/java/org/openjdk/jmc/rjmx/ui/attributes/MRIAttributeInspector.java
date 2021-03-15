@@ -77,7 +77,7 @@ import org.openjdk.jmc.common.IDisplayable;
 import org.openjdk.jmc.common.item.IMemberAccessor;
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.common.util.TypeHandling;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.services.IAttribute;
 import org.openjdk.jmc.rjmx.services.IAttributeChild;
 import org.openjdk.jmc.rjmx.services.IReadOnlyAttribute;

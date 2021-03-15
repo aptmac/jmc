@@ -42,9 +42,8 @@ import java.util.Map;
 
 import org.junit.Assume;
 import org.junit.Test;
-
-import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProvider;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;

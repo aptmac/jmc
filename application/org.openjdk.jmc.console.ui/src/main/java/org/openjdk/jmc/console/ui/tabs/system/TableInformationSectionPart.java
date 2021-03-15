@@ -44,7 +44,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import org.openjdk.jmc.common.util.MemberAccessorToolkit;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.ui.column.ColumnBuilder;
 import org.openjdk.jmc.ui.column.ColumnManager;
 import org.openjdk.jmc.ui.column.ColumnMenusFactory;

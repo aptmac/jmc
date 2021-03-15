@@ -30,50 +30,43 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.internal;
-
-import java.util.UUID;
+package org.openjdk.jmc.rjmx.core;
 
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
-import org.openjdk.jmc.ui.common.labelingrules.NameConverter;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
+import org.openjdk.jmc.rjmx.core.internal.ServerDescriptor;
 
-public class ServerDescriptor implements IServerDescriptor {
-	private final String guid;
-	private final String name;
-	private final JVMDescriptor jvmInfo;
+/**
+ * An object describing a server
+ */
+public interface IServerDescriptor {
 
-	public ServerDescriptor() {
-		this(null, null, null);
+	/**
+	 * @return the globally unique ID of the server
+	 */
+	String getGUID();
+
+	/**
+	 * @return the display name of the server
+	 */
+	String getDisplayName();
+
+	/**
+	 * @return an object describing the JVM on which the server is running
+	 */
+	JVMDescriptor getJvmInfo();
+
+	/**
+	 * Creates a new server descriptor with the supplied properties
+	 *
+	 * @param guid
+	 *            the globally unique ID of the server
+	 * @param displayName
+	 *            the display name of the server
+	 * @param jvmInfo
+	 *            an object describing the JVM on which the server is running
+	 * @return the new server descriptor
+	 */
+	static IServerDescriptor create(String guid, String displayName, JVMDescriptor jvmInfo) {
+		return new ServerDescriptor(guid, displayName, jvmInfo);
 	}
-
-	public ServerDescriptor(String guid, String name, JVMDescriptor jvmInfo) {
-		this.guid = guid == null ? UUID.randomUUID().toString() : guid;
-		if (name == null) {
-			this.name = jvmInfo != null ? NameConverter.getInstance().format(jvmInfo) : this.guid;
-		} else {
-			this.name = name;
-		}
-		this.jvmInfo = jvmInfo;
-	}
-
-	public ServerDescriptor(IServerDescriptor sd, String name) {
-		this(sd.getGUID(), name, sd.getJvmInfo());
-	}
-
-	@Override
-	public String getGUID() {
-		return guid;
-	}
-
-	@Override
-	public String getDisplayName() {
-		return name;
-	}
-
-	@Override
-	public JVMDescriptor getJvmInfo() {
-		return jvmInfo;
-	}
-
 }

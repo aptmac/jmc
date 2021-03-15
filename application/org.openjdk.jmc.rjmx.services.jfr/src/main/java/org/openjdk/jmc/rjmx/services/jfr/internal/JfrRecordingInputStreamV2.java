@@ -41,8 +41,8 @@ import java.util.logging.Level;
 
 import javax.management.openmbean.OpenDataException;
 
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.core.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 
 /**
  * Class representing an {@link InputStream} from an IRecordingDescriptor between two dates.
