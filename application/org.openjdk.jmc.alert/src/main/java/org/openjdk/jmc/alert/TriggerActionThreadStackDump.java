@@ -38,7 +38,7 @@ import java.nio.charset.StandardCharsets;
 
 import org.eclipse.osgi.util.NLS;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
+import org.openjdk.jmc.rjmx.core.services.IDiagnosticCommandService;
 import org.openjdk.jmc.rjmx.triggers.TriggerAction;
 import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
 import org.openjdk.jmc.rjmx.triggers.internal.NotificationToolkit;

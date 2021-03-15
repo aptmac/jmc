@@ -36,23 +36,23 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.openjdk.jmc.common.util.Environment;
-import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IServerHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.core.IServerDescriptor;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
-import org.openjdk.jmc.rjmx.servermodel.IServerModel;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
-import org.openjdk.jmc.rjmx.subscription.IMRISubscription;
-import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
-import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
-import org.openjdk.jmc.rjmx.subscription.PolicyFactory;
+import org.openjdk.jmc.rjmx.core.IServerHandle;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.servermodel.IServerModel;
+import org.openjdk.jmc.rjmx.core.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.core.subscription.IMRISubscription;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIValueListener;
+import org.openjdk.jmc.rjmx.core.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIValueEvent;
+import org.openjdk.jmc.rjmx.core.subscription.PolicyFactory;
+import org.openjdk.jmc.rjmx.core.subscription.MRI.Type;
 
 /**
  * This test suite is supposed to test the example code that we ship with the documentation for the

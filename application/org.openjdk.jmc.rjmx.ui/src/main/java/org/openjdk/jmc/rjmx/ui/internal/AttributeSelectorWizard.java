@@ -36,10 +36,10 @@ import org.eclipse.jface.wizard.Wizard;
 
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.common.unit.UnitLookup;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRIMetadataToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadata;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIMetadataToolkit;
 import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 
 public class AttributeSelectorWizard extends Wizard {

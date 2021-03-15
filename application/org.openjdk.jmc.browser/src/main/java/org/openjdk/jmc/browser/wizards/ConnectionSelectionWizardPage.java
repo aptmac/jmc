@@ -53,7 +53,7 @@ import org.openjdk.jmc.browser.views.BrowserLabelProvider;
 import org.openjdk.jmc.browser.views.Folder;
 import org.openjdk.jmc.browser.views.FolderStructure;
 import org.openjdk.jmc.browser.views.JVMBrowserView;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
 import org.openjdk.jmc.ui.misc.TreeStructureContentProvider;
 import org.openjdk.jmc.ui.wizards.RelinkableWizardPage;
 

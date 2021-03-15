@@ -37,11 +37,10 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.RGB;
-
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.IMRIService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRIMetadataToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIMetadataToolkit;
 import org.openjdk.jmc.ui.misc.SWTColorToolkit;
 import org.openjdk.jmc.ui.misc.TypedLabelProvider;
 

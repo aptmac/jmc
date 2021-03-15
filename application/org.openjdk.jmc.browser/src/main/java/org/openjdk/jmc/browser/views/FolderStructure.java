@@ -45,7 +45,7 @@ import org.eclipse.ui.IPersistable;
 
 import org.openjdk.jmc.common.IDescribable;
 import org.openjdk.jmc.common.tree.IArray;
-import org.openjdk.jmc.rjmx.servermodel.IDiscoveryInfo;
+import org.openjdk.jmc.rjmx.core.servermodel.IDiscoveryInfo;
 import org.openjdk.jmc.rjmx.servermodel.internal.Server;
 import org.openjdk.jmc.rjmx.servermodel.internal.ServerModel;
 

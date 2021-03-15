@@ -39,6 +39,7 @@ import org.eclipse.core.runtime.preferences.DefaultScope;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.preferences.PreferencesKeys;
 
 public class Initializer extends AbstractPreferenceInitializer {
 

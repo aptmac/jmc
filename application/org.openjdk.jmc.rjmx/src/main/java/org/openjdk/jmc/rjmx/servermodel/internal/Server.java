@@ -44,15 +44,15 @@ import org.openjdk.jmc.common.resource.IImageResource;
 import org.openjdk.jmc.common.resource.Resource;
 import org.openjdk.jmc.common.security.ICredentials;
 import org.openjdk.jmc.common.util.ICopyable;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.actionprovider.internal.ActionProviderRepository;
+import org.openjdk.jmc.rjmx.core.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.core.IServerDescriptor;
 import org.openjdk.jmc.rjmx.core.internal.ServerDescriptor;
-import org.openjdk.jmc.rjmx.internal.ServerHandle;
-import org.openjdk.jmc.rjmx.servermodel.IDiscoveryInfo;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.internal.ServerHandle;
+import org.openjdk.jmc.rjmx.core.servermodel.IDiscoveryInfo;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
 
 public class Server implements IServer, ICopyable, IImageResource {
 	private final ICredentials credentials;

@@ -39,8 +39,8 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.openjdk.jmc.common.action.Executable;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
-import org.openjdk.jmc.rjmx.IServerHandle;
 import org.openjdk.jmc.rjmx.actionprovider.IActionFactory;
+import org.openjdk.jmc.rjmx.core.IServerHandle;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 import org.openjdk.jmc.ui.misc.DisplayToolkit;
 

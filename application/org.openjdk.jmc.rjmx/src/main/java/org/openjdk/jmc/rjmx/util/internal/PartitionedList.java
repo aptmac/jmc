@@ -37,7 +37,7 @@ import java.util.List;
 
 import org.openjdk.jmc.common.tree.IParent;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
+import org.openjdk.jmc.rjmx.core.preferences.PreferencesKeys;
 
 public class PartitionedList<T> implements IParent<T>, Comparable<PartitionedList<T>> {
 	private final int firstObjectIndex;

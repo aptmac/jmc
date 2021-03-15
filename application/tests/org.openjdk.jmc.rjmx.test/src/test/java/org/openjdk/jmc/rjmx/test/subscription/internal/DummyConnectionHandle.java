@@ -38,11 +38,11 @@ import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.rjmx.core.IServerDescriptor;
 import org.openjdk.jmc.rjmx.core.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.core.internal.ServerDescriptor;
-import org.openjdk.jmc.rjmx.services.internal.ServiceFactoryManager;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.internal.MRIMetadataWrapper;
+import org.openjdk.jmc.rjmx.core.services.internal.ServiceFactoryManager;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadata;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.internal.MRIMetadataWrapper;
 
 @SuppressWarnings("nls")
 public class DummyConnectionHandle implements IConnectionHandle {

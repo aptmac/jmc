@@ -40,11 +40,10 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
-
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProvider;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRIMetadataToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataProvider;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIMetadataToolkit;
 import org.openjdk.jmc.ui.common.util.AdapterUtil;
 
 public class EditDisplayNameAction extends Action {

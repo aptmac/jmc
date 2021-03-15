@@ -36,8 +36,8 @@ import java.util.Map;
 
 import javax.management.MBeanServerConnection;
 
-import org.openjdk.jmc.rjmx.IPropertySyntheticAttribute;
-import org.openjdk.jmc.rjmx.subscription.internal.AbstractSyntheticAttribute;
+import org.openjdk.jmc.rjmx.core.IPropertySyntheticAttribute;
+import org.openjdk.jmc.rjmx.core.subscription.internal.AbstractSyntheticAttribute;
 
 public class PropertyTestAttribute extends AbstractSyntheticAttribute implements IPropertySyntheticAttribute {
 	private Map<String, Object> values;

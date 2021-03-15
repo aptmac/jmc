@@ -34,11 +34,11 @@ package org.openjdk.jmc.console.persistence.editors;
 
 import java.util.Observer;
 
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProvider;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.internal.MRIMetadataWrapper;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadata;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataProvider;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.internal.MRIMetadataWrapper;
 
 class PersistenceMetadataService implements IMRIMetadataService {
 

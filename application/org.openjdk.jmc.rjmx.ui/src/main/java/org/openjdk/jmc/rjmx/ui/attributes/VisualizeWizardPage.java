@@ -58,7 +58,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.SectionPart;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
 import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.internal.CombinedChartSectionPart;
 import org.openjdk.jmc.rjmx.ui.internal.IconConstants;

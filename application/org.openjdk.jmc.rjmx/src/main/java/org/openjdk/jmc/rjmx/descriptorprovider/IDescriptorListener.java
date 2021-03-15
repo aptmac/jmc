@@ -35,7 +35,7 @@ package org.openjdk.jmc.rjmx.descriptorprovider;
 import javax.management.remote.JMXServiceURL;
 
 import org.openjdk.jmc.common.IDescribable;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
+import org.openjdk.jmc.rjmx.core.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.core.IServerDescriptor;
 
 /**

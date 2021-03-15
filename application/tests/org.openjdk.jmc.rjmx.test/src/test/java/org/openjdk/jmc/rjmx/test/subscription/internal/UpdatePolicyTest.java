@@ -37,16 +37,16 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.IMRISubscription;
-import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
-import org.openjdk.jmc.rjmx.subscription.IUpdatePolicy;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
-import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
-import org.openjdk.jmc.rjmx.subscription.PolicyFactory;
-import org.openjdk.jmc.rjmx.subscription.internal.IIntervalUpdatePolicy;
-import org.openjdk.jmc.rjmx.subscription.internal.SimpleUpdatePolicy;
-import org.openjdk.jmc.rjmx.subscription.internal.UpdatePolicyToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.IMRISubscription;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIValueListener;
+import org.openjdk.jmc.rjmx.core.subscription.IUpdatePolicy;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIValueEvent;
+import org.openjdk.jmc.rjmx.core.subscription.PolicyFactory;
+import org.openjdk.jmc.rjmx.core.subscription.MRI.Type;
+import org.openjdk.jmc.rjmx.core.subscription.internal.IIntervalUpdatePolicy;
+import org.openjdk.jmc.rjmx.core.subscription.internal.SimpleUpdatePolicy;
+import org.openjdk.jmc.rjmx.core.subscription.internal.UpdatePolicyToolkit;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 import org.openjdk.jmc.rjmx.test.testutil.TestToolkit;
 

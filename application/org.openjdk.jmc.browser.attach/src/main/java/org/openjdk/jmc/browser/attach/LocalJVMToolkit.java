@@ -67,7 +67,7 @@ import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.jvm.JVMType;
 import org.openjdk.jmc.common.util.Environment;
 import org.openjdk.jmc.common.version.JavaVMVersionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
+import org.openjdk.jmc.rjmx.core.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.core.IServerDescriptor;
 
 import com.sun.tools.attach.AgentLoadException;

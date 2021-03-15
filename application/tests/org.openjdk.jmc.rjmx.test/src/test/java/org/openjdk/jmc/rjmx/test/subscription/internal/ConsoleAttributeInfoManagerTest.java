@@ -39,15 +39,14 @@ import static org.junit.Assert.assertTrue;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
-import org.openjdk.jmc.rjmx.subscription.internal.IIntervalUpdatePolicy;
-import org.openjdk.jmc.rjmx.subscription.internal.UpdatePolicyToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadata;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIMetadataToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.MRI.Type;
+import org.openjdk.jmc.rjmx.core.subscription.internal.IIntervalUpdatePolicy;
+import org.openjdk.jmc.rjmx.core.subscription.internal.UpdatePolicyToolkit;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
-import org.openjdk.jmc.rjmx.subscription.MRIMetadataToolkit;
 
 /**
  * Tests the attribute manager.

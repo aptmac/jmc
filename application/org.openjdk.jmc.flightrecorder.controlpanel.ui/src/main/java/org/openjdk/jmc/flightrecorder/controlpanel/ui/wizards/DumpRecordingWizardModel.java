@@ -42,7 +42,7 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.RecordingProvider;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.rjmx.core.ConnectionException;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.core.subscription.IMBeanHelperService;
 import org.openjdk.jmc.ui.common.resource.MCFile;
 
 /**

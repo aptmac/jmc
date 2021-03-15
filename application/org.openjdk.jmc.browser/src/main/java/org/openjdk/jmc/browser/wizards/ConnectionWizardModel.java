@@ -34,7 +34,7 @@ package org.openjdk.jmc.browser.wizards;
 
 import org.openjdk.jmc.common.action.IUserAction;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
 import org.openjdk.jmc.rjmx.servermodel.internal.Server;
 import org.openjdk.jmc.rjmx.servermodel.internal.ServerModel;
 

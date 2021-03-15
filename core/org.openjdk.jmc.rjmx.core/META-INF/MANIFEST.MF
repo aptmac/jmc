@@ -7,5 +7,12 @@ Bundle-Vendor: Oracle Corporation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.openjdk.jmc.common,
  org.openjdk.jmc.flightrecorder.configuration
-Export-Package: org.openjdk.jmc.rjmx.core
+Export-Package: org.openjdk.jmc.rjmx.core,
+ org.openjdk.jmc.rjmx.core.preferences,
+ org.openjdk.jmc.rjmx.core.servermodel,
+ org.openjdk.jmc.rjmx.core.services,
+ org.openjdk.jmc.rjmx.core.services.jfr,
+ org.openjdk.jmc.rjmx.core.subscription,
+ org.openjdk.jmc.rjmx.core.subscription.internal
 Automatic-Module-Name: org.openjdk.jmc.rjmx.core
+Import-Package: org.openjdk.jmc.rjmx.subscription.internal

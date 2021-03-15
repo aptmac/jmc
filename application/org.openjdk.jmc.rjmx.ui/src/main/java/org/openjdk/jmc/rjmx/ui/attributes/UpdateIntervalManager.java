@@ -40,9 +40,8 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.window.Window;
-
+import org.openjdk.jmc.rjmx.core.subscription.internal.UpdatePolicyToolkit;
 import org.openjdk.jmc.rjmx.services.IUpdateInterval;
-import org.openjdk.jmc.rjmx.subscription.internal.UpdatePolicyToolkit;
 
 /**
  * Context menu update interval menu holder.

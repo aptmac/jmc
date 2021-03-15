@@ -37,8 +37,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
-
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.core.IServerHandle;
 
 public class ConsoleEditorInput implements IEditorInput {
 	public static final String EDITOR_ID = "org.openjdk.jmc.console.ui.editor"; //$NON-NLS-1$

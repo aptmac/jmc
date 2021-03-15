@@ -48,7 +48,7 @@ import org.openjdk.jmc.console.ui.editor.IConsolePageStateHandler;
 import org.openjdk.jmc.console.ui.editor.internal.ConsoleEditor;
 import org.openjdk.jmc.console.ui.mbeanbrowser.tree.MBeanTreeSectionPart;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.core.subscription.IMBeanHelperService;
 import org.openjdk.jmc.ui.OrientationAction;
 import org.openjdk.jmc.ui.misc.MCLayoutFactory;
 

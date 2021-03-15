@@ -42,7 +42,7 @@ import org.openjdk.jmc.common.unit.LinearUnit;
 import org.openjdk.jmc.common.unit.UnitLookup;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
 import org.openjdk.jmc.console.ui.preferences.CommunicationPage;
-import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
+import org.openjdk.jmc.rjmx.core.preferences.PreferencesKeys;
 import org.openjdk.jmc.test.jemmy.MCJemmyTestBase;
 import org.openjdk.jmc.test.jemmy.MCUITestRule;
 import org.openjdk.jmc.test.jemmy.misc.wrappers.MCButton.Labels;

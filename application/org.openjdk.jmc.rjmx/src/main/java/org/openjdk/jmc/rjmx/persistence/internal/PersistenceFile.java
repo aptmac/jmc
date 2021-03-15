@@ -43,7 +43,7 @@ import java.util.Locale;
 
 import org.openjdk.jmc.common.xydata.DefaultTimestampedData;
 import org.openjdk.jmc.common.xydata.ITimestampedData;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
 
 class PersistenceFile {
 

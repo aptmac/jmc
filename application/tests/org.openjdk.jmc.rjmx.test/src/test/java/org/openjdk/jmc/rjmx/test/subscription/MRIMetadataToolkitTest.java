@@ -36,8 +36,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-
-import org.openjdk.jmc.rjmx.subscription.MRIMetadataToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.MRIMetadataToolkit;
 
 public class MRIMetadataToolkitTest {
 

@@ -46,8 +46,8 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.openjdk.jmc.console.ui.editor.IConsolePageContainer;
 import org.openjdk.jmc.console.ui.editor.IConsolePageStateHandler;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
-import org.openjdk.jmc.rjmx.services.IOperation;
+import org.openjdk.jmc.rjmx.core.services.IDiagnosticCommandService;
+import org.openjdk.jmc.rjmx.core.services.IOperation;
 import org.openjdk.jmc.rjmx.ui.operations.ExecuteOperationForm;
 import org.openjdk.jmc.ui.misc.MCLayoutFactory;
 

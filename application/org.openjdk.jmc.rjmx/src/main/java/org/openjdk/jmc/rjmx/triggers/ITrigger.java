@@ -33,8 +33,8 @@
 package org.openjdk.jmc.rjmx.triggers;
 
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIValueEvent;
 
 /**
  * Interface for triggers.

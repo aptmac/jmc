@@ -33,7 +33,7 @@
 package org.openjdk.jmc.rjmx.actionprovider;
 
 import org.openjdk.jmc.common.action.Executable;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.core.IServerHandle;
 
 /**
  * Factory interface that is implemented by contributors to the

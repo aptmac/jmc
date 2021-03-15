@@ -44,7 +44,7 @@ import javax.management.openmbean.CompositeData;
 import org.openjdk.jmc.console.ui.ConsolePlugin;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
 import org.openjdk.jmc.console.ui.preferences.ConsoleConstants;
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.core.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
 import org.openjdk.jmc.ui.polling.PollManager;
 

@@ -51,12 +51,12 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import org.openjdk.jmc.console.ui.diagnostic.preferences.DiagnosticPage;
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.core.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.internal.RJMXConnection;
-import org.openjdk.jmc.rjmx.services.IOperation;
-import org.openjdk.jmc.rjmx.services.IOperation.OperationImpact;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.core.internal.RJMXConnection;
+import org.openjdk.jmc.rjmx.core.services.IOperation;
+import org.openjdk.jmc.rjmx.core.services.IOperation.OperationImpact;
+import org.openjdk.jmc.rjmx.core.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.ui.operations.OperationsLabelProvider;
 import org.openjdk.jmc.test.jemmy.MCJemmyTestBase;
 import org.openjdk.jmc.test.jemmy.MCUITestRule;

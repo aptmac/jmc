@@ -46,8 +46,8 @@ import org.openjdk.jmc.common.util.Environment;
 import org.openjdk.jmc.console.ui.editor.internal.ConsoleEditorInput;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.core.IServerDescriptor;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
-import org.openjdk.jmc.rjmx.servermodel.IServerModel;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.servermodel.IServerModel;
 
 public class ConsoleExampleAction implements IIntroAction {
 

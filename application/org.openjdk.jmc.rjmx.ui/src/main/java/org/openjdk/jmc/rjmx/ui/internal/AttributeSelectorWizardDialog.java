@@ -33,10 +33,9 @@
 package org.openjdk.jmc.rjmx.ui.internal;
 
 import org.eclipse.swt.widgets.Shell;
-
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.IMRIService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
 import org.openjdk.jmc.ui.wizards.SizeConstrainedWizardDialog;
 
 public class AttributeSelectorWizardDialog extends SizeConstrainedWizardDialog {

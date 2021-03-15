@@ -77,18 +77,18 @@ for (IServer server : model.elements()) {
  *
  * Certain services provided by RJMX are available through dependency injection. These include
  * {@link org.openjdk.jmc.rjmx.core.IConnectionHandle},
- * {@link org.openjdk.jmc.rjmx.subscription.ISubscriptionService} and
+ * {@link org.openjdk.jmc.rjmx.core.subscription.ISubscriptionService} and
  * {@link javax.management.MBeanServerConnection}. See the classes for examples.
  * <p>
  * Notable interfaces and starting points:
  * <ul>
- * <li>{@link org.openjdk.jmc.rjmx.IConnectionDescriptor} represents a way to reach a server.</li>
+ * <li>{@link org.openjdk.jmc.rjmx.core.IConnectionDescriptor} represents a way to reach a server.</li>
  * <li>{@link org.openjdk.jmc.rjmx.core.IConnectionHandle} is an active connection to a server. Must
  * always be closed when not used anymore.</li>
- * <li>{@link org.openjdk.jmc.rjmx.IServerHandle} is a handle used to connect to a server, share the
+ * <li>{@link org.openjdk.jmc.rjmx.core.IServerHandle} is a handle used to connect to a server, share the
  * connection between users ( {@link org.openjdk.jmc.rjmx.core.IConnectionHandle}s), keep track of all
  * open connection handles and close the connection when all connection handles are closed.</li>
- * <li>{@link org.openjdk.jmc.rjmx.servermodel.IServer} represents the entry point to a single
+ * <li>{@link org.openjdk.jmc.rjmx.core.servermodel.IServer} represents the entry point to a single
  * server in the model.</li>
  * </ul>
  * Notice that the subscription thread is a daemon thread - if trying the example above in a main,

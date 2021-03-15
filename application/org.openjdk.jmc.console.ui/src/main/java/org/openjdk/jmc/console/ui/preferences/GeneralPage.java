@@ -45,7 +45,7 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.openjdk.jmc.console.ui.ConsolePlugin;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
+import org.openjdk.jmc.rjmx.core.preferences.PreferencesKeys;
 import org.openjdk.jmc.ui.misc.IntFieldEditor;
 
 public class GeneralPage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {

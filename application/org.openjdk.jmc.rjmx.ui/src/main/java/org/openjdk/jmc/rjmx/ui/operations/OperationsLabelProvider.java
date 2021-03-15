@@ -42,9 +42,9 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.graphics.Image;
 
 import org.openjdk.jmc.common.util.TypeHandling;
-import org.openjdk.jmc.rjmx.services.IAttributeInfo;
-import org.openjdk.jmc.rjmx.services.IOperation;
-import org.openjdk.jmc.rjmx.services.IOperation.OperationImpact;
+import org.openjdk.jmc.rjmx.core.services.IAttributeInfo;
+import org.openjdk.jmc.rjmx.core.services.IOperation;
+import org.openjdk.jmc.rjmx.core.services.IOperation.OperationImpact;
 import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.internal.IconConstants;
 import org.openjdk.jmc.ui.UIPlugin;

@@ -44,12 +44,12 @@ import javax.management.openmbean.CompositeData;
 
 import org.openjdk.jmc.common.unit.UnitLookup;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
-import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
-import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
+import org.openjdk.jmc.rjmx.core.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIValueListener;
+import org.openjdk.jmc.rjmx.core.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIValueEvent;
+import org.openjdk.jmc.rjmx.core.subscription.MRI.Type;
 
 public class MemoryPoolModel extends Observable {
 

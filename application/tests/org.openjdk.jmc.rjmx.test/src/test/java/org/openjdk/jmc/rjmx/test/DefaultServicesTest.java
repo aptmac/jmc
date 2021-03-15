@@ -41,7 +41,7 @@ import javax.management.ObjectName;
 
 import org.junit.Test;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.core.subscription.IMBeanHelperService;
 
 /**
  * Sanity test for the default services available from the default implementation of

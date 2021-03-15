@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.Shell;
 
 import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.common.unit.QuantityConversionException;
-import org.openjdk.jmc.rjmx.subscription.internal.UpdatePolicyToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.internal.UpdatePolicyToolkit;
 import org.openjdk.jmc.ui.misc.QuantityKindProposal;
 
 /**

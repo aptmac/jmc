@@ -65,8 +65,8 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.actions.PrintRecordingDesc
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.actions.StopRecordingAction;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.ui.FlightRecorderUI;
-import org.openjdk.jmc.rjmx.IServerHandle;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.IServerHandle;
 import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.rjmx.core.services.jfr.IRecordingDescriptor.RecordingState;
 import org.openjdk.jmc.ui.common.resource.MCFile;

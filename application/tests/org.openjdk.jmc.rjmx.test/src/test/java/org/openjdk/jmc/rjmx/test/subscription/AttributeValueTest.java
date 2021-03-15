@@ -44,9 +44,9 @@ import java.util.Map;
 
 import org.junit.Test;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
-import org.openjdk.jmc.rjmx.subscription.internal.AttributeValueToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRI.Type;
+import org.openjdk.jmc.rjmx.core.subscription.internal.AttributeValueToolkit;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 import org.openjdk.jmc.rjmx.test.internal.RJMXConnectionTest;
 

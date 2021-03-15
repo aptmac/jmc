@@ -61,11 +61,11 @@ import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.MBeanNotificationLo
 import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.NotificationInfoSectionPart;
 import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.NotificationsModel;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.internal.RJMXConnection;
-import org.openjdk.jmc.rjmx.services.IOperation;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
+import org.openjdk.jmc.rjmx.core.internal.RJMXConnection;
+import org.openjdk.jmc.rjmx.core.services.IOperation;
+import org.openjdk.jmc.rjmx.core.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRI.Type;
 import org.openjdk.jmc.rjmx.ui.attributes.MRIAttribute;
 import org.openjdk.jmc.rjmx.ui.attributes.MRIAttributeInspector;
 import org.openjdk.jmc.rjmx.ui.attributes.MRIAttributeInspector.ErroneousAttribute;

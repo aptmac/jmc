@@ -39,12 +39,12 @@ import org.junit.Assert;
 import org.openjdk.jmc.common.io.IOToolkit;
 import org.openjdk.jmc.common.version.JavaVersion;
 import org.openjdk.jmc.common.version.JavaVersionSupport;
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.core.ConnectionException;
+import org.openjdk.jmc.rjmx.core.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
-import org.openjdk.jmc.rjmx.servermodel.IServerModel;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.servermodel.IServerModel;
 
 /**
  * A utility class used for determining the JDK version of a connection

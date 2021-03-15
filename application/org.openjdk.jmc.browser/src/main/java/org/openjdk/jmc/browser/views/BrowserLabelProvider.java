@@ -43,10 +43,10 @@ import org.eclipse.ui.PlatformUI;
 
 import org.openjdk.jmc.browser.JVMBrowserPlugin;
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
-import org.openjdk.jmc.rjmx.IServerHandle;
-import org.openjdk.jmc.rjmx.internal.ServerToolkit;
-import org.openjdk.jmc.rjmx.servermodel.IDiscoveryInfo;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.IServerHandle;
+import org.openjdk.jmc.rjmx.core.internal.ServerToolkit;
+import org.openjdk.jmc.rjmx.core.servermodel.IDiscoveryInfo;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
 import org.openjdk.jmc.ui.common.util.AdapterUtil;
 import org.openjdk.jmc.ui.misc.AdaptingLabelProvider;
 import org.openjdk.jmc.ui.misc.OverlayImageDescriptor;

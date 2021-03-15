@@ -36,8 +36,8 @@ import static org.openjdk.jmc.common.unit.UnitLookup.MILLISECOND;
 
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.openjdk.jmc.rjmx.core.subscription.internal.UpdatePolicyToolkit;
 import org.openjdk.jmc.rjmx.services.IUpdateInterval;
-import org.openjdk.jmc.rjmx.subscription.internal.UpdatePolicyToolkit;
 
 class UpdateIntervalCellEditor extends UnitCellEditor {
 

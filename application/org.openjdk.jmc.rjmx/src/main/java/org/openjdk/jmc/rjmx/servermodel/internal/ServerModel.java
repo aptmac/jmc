@@ -49,14 +49,14 @@ import org.eclipse.core.runtime.Platform;
 import org.w3c.dom.Document;
 
 import org.openjdk.jmc.common.IDescribable;
-import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.core.ConnectionDescriptorBuilder;
+import org.openjdk.jmc.rjmx.core.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.core.IServerDescriptor;
+import org.openjdk.jmc.rjmx.core.servermodel.IServer;
+import org.openjdk.jmc.rjmx.core.servermodel.IServerModel;
 import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorListener;
 import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorProvider;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
-import org.openjdk.jmc.rjmx.servermodel.IServerModel;
 
 public final class ServerModel extends Observable implements IServerModel {
 	private static final String EXTENSIONPOINT_DESCRIPTORPROVIDER = "descriptorProvider"; //$NON-NLS-1$

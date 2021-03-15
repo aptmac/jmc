@@ -37,11 +37,11 @@ import javax.management.MBeanServerConnection;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 import org.openjdk.jmc.rjmx.core.IConnectionHandle;
+import org.openjdk.jmc.rjmx.core.subscription.IMRIMetadata;
+import org.openjdk.jmc.rjmx.core.subscription.MRI;
+import org.openjdk.jmc.rjmx.core.subscription.MRIMetadataToolkit;
+import org.openjdk.jmc.rjmx.core.subscription.internal.AttributeValueToolkit;
 import org.openjdk.jmc.rjmx.services.IAttribute;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRIMetadataToolkit;
-import org.openjdk.jmc.rjmx.subscription.internal.AttributeValueToolkit;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 
 public class MRIAttribute extends ReadOnlyMRIAttribute implements IAttribute {
