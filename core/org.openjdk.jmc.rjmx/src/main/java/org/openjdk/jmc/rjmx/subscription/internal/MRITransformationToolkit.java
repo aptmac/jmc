@@ -32,6 +32,7 @@
  */
 package org.openjdk.jmc.rjmx.subscription.internal;
 
+import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +45,6 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.osgi.util.NLS;
 
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
@@ -171,9 +171,9 @@ public class MRITransformationToolkit {
 	public static void forwardMetadata(
 		IMRIMetadataService metadataService, MRI mri, IMRIMetadata attributeMetadata, String textPattern) {
 		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_DISPLAY_NAME,
-				NLS.bind(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DISPLAY_NAME)));
+				MessageFormat.format(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DISPLAY_NAME)));
 		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_DESCRIPTION,
-				NLS.bind(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DESCRIPTION)));
+				MessageFormat.format(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DESCRIPTION)));
 		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_UPDATE_TIME,
 				(String) attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_UPDATE_TIME));
 		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_UNIT_STRING,

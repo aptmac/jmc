@@ -32,9 +32,8 @@
  */
 package org.openjdk.jmc.rjmx.subscription.internal;
 
+import java.text.MessageFormat;
 import java.util.Properties;
-
-import org.eclipse.osgi.util.NLS;
 
 import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
 
@@ -74,6 +73,6 @@ public class AverageTransformation extends AbstractSingleMRITransformation {
 
 	@Override
 	protected String getDisplayNamePattern() {
-		return NLS.bind(super.getDisplayNamePattern(), m_maxTerms);
+		return MessageFormat.format(super.getDisplayNamePattern(), m_maxTerms);
 	}
 }

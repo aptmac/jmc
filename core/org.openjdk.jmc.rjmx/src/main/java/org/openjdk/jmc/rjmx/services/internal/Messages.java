@@ -32,17 +32,24 @@
  */
 package org.openjdk.jmc.rjmx.services.internal;
 
-import org.eclipse.osgi.util.NLS;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
-public class Messages extends NLS {
+public class Messages {
 	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.services.internal.messages"; //$NON-NLS-1$
 
-	public static String MBeanOperationsWrapper_DESCRIPTOR;
+    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
-	static {
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
+	public static final String MBeanOperationsWrapper_DESCRIPTOR = "MBeanOperationsWrapper_DESCRIPTOR"; //$NON-NLS-1$
 
 	private Messages() {
+	}
+
+    public static String getString(String key) {
+		try {
+			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return '!' + key + '!';
+		}
 	}
 }

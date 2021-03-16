@@ -32,9 +32,9 @@
  */
 package org.openjdk.jmc.rjmx.triggers.internal;
 
+import java.text.MessageFormat;
 import java.util.logging.Logger;
 
-import org.eclipse.osgi.util.NLS;
 import org.openjdk.jmc.common.IDisplayable;
 import org.openjdk.jmc.common.unit.ContentType;
 import org.openjdk.jmc.common.unit.IQuantity;
@@ -81,7 +81,7 @@ public final class ValueEvaluatorNumberMin implements IValueEvaluator {
 			String logMessage = "ValueEvaluatorNumberMin: " + val + " does not have a content type set"; //$NON-NLS-1$ //$NON-NLS-2$
 			LOGGER.info(logMessage);
 			throw new ValueEvaluationException(logMessage,
-					NLS.bind(Messages.ValueEvaluatorNumber_VALUE_NOT_A_QUANTITY, val));
+					MessageFormat.format(Messages.ValueEvaluatorNumber_VALUE_NOT_A_QUANTITY, val));
 		} else {
 			return triggerOn((IQuantity) val);
 		}
@@ -93,7 +93,7 @@ public final class ValueEvaluatorNumberMin implements IValueEvaluator {
 					+ " is not of the same content type as limit " + m_min.persistableString(); //$NON-NLS-1$
 			LOGGER.info(logMessage);
 			throw new ValueEvaluationException(logMessage,
-					NLS.bind(Messages.ValueEvaluatorNumber_VALUE_NOT_OF_THE_SAME_TYPE,
+					MessageFormat.format(Messages.ValueEvaluatorNumber_VALUE_NOT_OF_THE_SAME_TYPE,
 							val.displayUsing(IDisplayable.EXACT), m_min.displayUsing(IDisplayable.EXACT)));
 		}
 		boolean result = val.compareTo(m_min) < 0;

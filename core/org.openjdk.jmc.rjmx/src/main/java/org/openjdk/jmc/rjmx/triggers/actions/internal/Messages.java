@@ -32,25 +32,32 @@
  */
 package org.openjdk.jmc.rjmx.triggers.actions.internal;
 
-import org.eclipse.osgi.util.NLS;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
-public class Messages extends NLS {
+public class Messages {
 	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.triggers.actions.internal.messages"; //$NON-NLS-1$
 
-	public static String TriggerActionDiagnosticCommand_APPEND_ACTION_TEXT;
-	public static String TriggerActionDiagnosticCommand_WRITE_ACTION_TEXT;
-	public static String TriggerActionLogToFile_JOBNAME;
-	public static String TriggerActionMail_MAIL_HEADER_MAILER;
-	public static String TriggerActionMail_SUBJECT_INVOKED;
-	public static String TriggerActionMail_SUBJECT_RECOVERED;
-	public static String TriggerActionMail_SUBJECT_TRIGGERED;
-	public static String TriggerActionSystemOut_FOOTER;
-	public static String TriggerActionSystemOut_HEADER;
+    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
-	static {
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
+	public static final String TriggerActionDiagnosticCommand_APPEND_ACTION_TEXT = "TriggerActionDiagnosticCommand_APPEND_ACTION_TEXT"; //$NON-NLS-1$
+	public static final String TriggerActionDiagnosticCommand_WRITE_ACTION_TEXT = "TriggerActionDiagnosticCommand_WRITE_ACTION_TEXT"; //$NON-NLS-1$
+	public static final String TriggerActionLogToFile_JOBNAME = "TriggerActionLogToFile_JOBNAME"; //$NON-NLS-1$
+	public static final String TriggerActionMail_MAIL_HEADER_MAILER = "TriggerActionMail_MAIL_HEADER_MAILER"; //$NON-NLS-1$
+	public static final String TriggerActionMail_SUBJECT_INVOKED = "TriggerActionMail_SUBJECT_INVOKED"; //$NON-NLS-1$
+	public static final String TriggerActionMail_SUBJECT_RECOVERED = "TriggerActionMail_SUBJECT_RECOVERED"; //$NON-NLS-1$
+	public static final String TriggerActionMail_SUBJECT_TRIGGERED = "TriggerActionMail_SUBJECT_TRIGGERED"; //$NON-NLS-1$
+	public static final String TriggerActionSystemOut_FOOTER = "TriggerActionSystemOut_FOOTER"; //$NON-NLS-1$
+	public static final String TriggerActionSystemOut_HEADER = "TriggerActionSystemOut_HEADER"; //$NON-NLS-1$
 
 	private Messages() {
+	}
+
+    public static String getString(String key) {
+		try {
+			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return '!' + key + '!';
+		}
 	}
 }

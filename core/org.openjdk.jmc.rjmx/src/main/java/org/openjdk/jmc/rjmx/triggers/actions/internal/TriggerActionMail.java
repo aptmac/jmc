@@ -32,6 +32,7 @@
  */
 package org.openjdk.jmc.rjmx.triggers.actions.internal;
 
+import java.text.MessageFormat;
 import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -45,7 +46,6 @@ import javax.mail.URLName;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import org.eclipse.osgi.util.NLS;
 import org.openjdk.jmc.common.security.PersistentCredentials;
 import org.openjdk.jmc.common.security.SecurityException;
 import org.openjdk.jmc.common.util.Environment;
@@ -218,11 +218,11 @@ public class TriggerActionMail extends TriggerAction {
 	 */
 	private String getSubject(TriggerEvent e) {
 		if (e.wasTriggered()) {
-			return NLS.bind(Messages.TriggerActionMail_SUBJECT_TRIGGERED, e.getRule().getName());
+			return MessageFormat.format(Messages.TriggerActionMail_SUBJECT_TRIGGERED, e.getRule().getName());
 		} else if (e.wasRecovered()) {
-			return NLS.bind(Messages.TriggerActionMail_SUBJECT_RECOVERED, e.getRule().getName());
+			return MessageFormat.format(Messages.TriggerActionMail_SUBJECT_RECOVERED, e.getRule().getName());
 		} else {
-			return NLS.bind(Messages.TriggerActionMail_SUBJECT_INVOKED, e.getRule().getName());
+			return MessageFormat.format(Messages.TriggerActionMail_SUBJECT_INVOKED, e.getRule().getName());
 		}
 	}
 

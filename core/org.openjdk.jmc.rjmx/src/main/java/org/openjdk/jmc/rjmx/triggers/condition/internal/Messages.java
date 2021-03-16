@@ -32,30 +32,37 @@
  */
 package org.openjdk.jmc.rjmx.triggers.condition.internal;
 
-import org.eclipse.osgi.util.NLS;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
-public class Messages extends NLS {
+public class Messages {
 	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.triggers.condition.internal.messages"; //$NON-NLS-1$
 
-	public static String TriggerCondition_ASCENDING_FLANK_CAPTION;
-	public static String TriggerCondition_ASCENDING_FLANK_TOOLTIP;
-	public static String TriggerCondition_DESCENDING_FLANK_CAPTION;
-	public static String TriggerCondition_DESCENDING_FLANK_TOOLTIP;
-	public static String TriggerCondition_LIMIT_PERIOD_CAPTION;
-	public static String TriggerCondition_LIMIT_PERIOD_TOOLTIP;
-	public static String TriggerCondition_MATCH_STRING_CAPTION;
-	public static String TriggerCondition_MATCH_STRING_TOOLTIP;
-	public static String TriggerCondition_MAX_TRIGGER_CAPTION;
-	public static String TriggerCondition_MAX_TRIGGER_TOOLTIP;
-	public static String TriggerCondition_MIN_TRIGGER_CAPTION;
-	public static String TriggerCondition_MIN_TRIGGER_TOOLTIP;
-	public static String TriggerCondition_SUSTAINED_CAPTION;
-	public static String TriggerCondition_SUSTAINED_TOOLTIP;
+    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
-	static {
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
+	public static final String TriggerCondition_ASCENDING_FLANK_CAPTION = "TriggerCondition_ASCENDING_FLANK_CAPTION"; //$NON-NLS-1$
+	public static final String TriggerCondition_ASCENDING_FLANK_TOOLTIP = "TriggerCondition_ASCENDING_FLANK_TOOLTIP"; //$NON-NLS-1$
+	public static final String TriggerCondition_DESCENDING_FLANK_CAPTION = "TriggerCondition_DESCENDING_FLANK_CAPTION"; //$NON-NLS-1$
+	public static final String TriggerCondition_DESCENDING_FLANK_TOOLTIP = "TriggerCondition_DESCENDING_FLANK_TOOLTIP"; //$NON-NLS-1$
+	public static final String TriggerCondition_LIMIT_PERIOD_CAPTION = "TriggerCondition_LIMIT_PERIOD_CAPTION"; //$NON-NLS-1$
+	public static final String TriggerCondition_LIMIT_PERIOD_TOOLTIP = "TriggerCondition_LIMIT_PERIOD_TOOLTIP"; //$NON-NLS-1$
+	public static final String TriggerCondition_MATCH_STRING_CAPTION = "TriggerCondition_MATCH_STRING_CAPTION"; //$NON-NLS-1$
+	public static final String TriggerCondition_MATCH_STRING_TOOLTIP = "TriggerCondition_MATCH_STRING_TOOLTIP"; //$NON-NLS-1$
+	public static final String TriggerCondition_MAX_TRIGGER_CAPTION = "TriggerCondition_MAX_TRIGGER_CAPTION"; //$NON-NLS-1$
+	public static final String TriggerCondition_MAX_TRIGGER_TOOLTIP = "TriggerCondition_MAX_TRIGGER_TOOLTIP"; //$NON-NLS-1$
+	public static final String TriggerCondition_MIN_TRIGGER_CAPTION = "TriggerCondition_MIN_TRIGGER_CAPTION"; //$NON-NLS-1$
+	public static final String TriggerCondition_MIN_TRIGGER_TOOLTIP = "TriggerCondition_MIN_TRIGGER_TOOLTIP"; //$NON-NLS-1$
+	public static final String TriggerCondition_SUSTAINED_CAPTION = "TriggerCondition_SUSTAINED_CAPTION"; //$NON-NLS-1$
+	public static final String TriggerCondition_SUSTAINED_TOOLTIP = "TriggerCondition_SUSTAINED_TOOLTIP"; //$NON-NLS-1$
 
 	private Messages() {
+	}
+
+    public static String getString(String key) {
+		try {
+			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return '!' + key + '!';
+		}
 	}
 }

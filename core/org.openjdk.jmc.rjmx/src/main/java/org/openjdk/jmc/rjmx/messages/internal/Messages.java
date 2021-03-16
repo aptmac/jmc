@@ -32,44 +32,51 @@
  */
 package org.openjdk.jmc.rjmx.messages.internal;
 
-import org.eclipse.osgi.util.NLS;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
-public class Messages extends NLS {
+public class Messages {
 	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.messages.internal.messages"; //$NON-NLS-1$
 
-	public static String ConnectionException_ATTACH_NOT_SUPPORTED;
-	public static String ConnectionException_COULD_NOT_CONNECT_MSG;
-	public static String ConnectionException_COULD_NOT_DETERMINE_IP_MSG;
-	public static String ConnectionException_MALFORMED_URL_MSG;
-	public static String ConnectionException_MSARMI_CHECK_PASSWORD;
-	public static String ConnectionException_NAME_NOT_FOUND_MSG;
-	public static String ConnectionException_UNABLE_TO_CREATE_INITIAL_CONTEXT;
-	public static String ConnectionException_UNABLE_TO_RESOLVE_CREDENTIALS;
-	public static String ConnectionException_UNRESOLVED;
-	public static String JVMSupport_FLIGHT_RECORDER_DISABLED;
-	public static String JVMSupport_FLIGHT_RECORDER_DISABLED_SHORT;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_ENABLED;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_ENABLED_SHORT;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_FULLY_SUPPORTED_OLD_HOTSPOT;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_FULLY_SUPPORTED_OLD_HOTSPOT_SHORT;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_NOT_HOTSPOT;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_NOT_HOTSPOT_SHORT;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_OLD_HOTSPOT;
-	public static String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_OLD_HOTSPOT_SHORT;
-	public static String JVMSupport_JROCKIT_NO_LONGER_SUPPORTED;
-	public static String JVMSupport_JROCKIT_NO_LONGER_SUPPORTED_SHORT;
-	public static String JVMSupport_MESSAGE_JROCKIT_NOT_SUPPORTED;
-	public static String JVMSupport_MESSAGE_UNKNOWN_JVM;
-	public static String JVMSupport_MESSAGE_LEGACY_JVM_CONSOLE;
-	public static String JVMSupport_TITLE_JROCKIT_NOT_SUPPORTED;
-	public static String JVMSupport_TITLE_UNKNOWN_JVM;
-	public static String JVMSupport_TITLE_LEGACY_JVM_CONSOLE;
-	public static String LABEL_NOT_AVAILABLE;
+    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
-	static {
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
+	public static final String ConnectionException_ATTACH_NOT_SUPPORTED = "ConnectionException_ATTACH_NOT_SUPPORTED"; //$NON-NLS-1$
+	public static final String ConnectionException_COULD_NOT_CONNECT_MSG = "ConnectionException_COULD_NOT_CONNECT_MSG"; //$NON-NLS-1$
+	public static final String ConnectionException_COULD_NOT_DETERMINE_IP_MSG = "ConnectionException_COULD_NOT_DETERMINE_IP_MSG"; //$NON-NLS-1$
+	public static final String ConnectionException_MALFORMED_URL_MSG = "ConnectionException_MALFORMED_URL_MSG"; //$NON-NLS-1$
+	public static final String ConnectionException_MSARMI_CHECK_PASSWORD = "ConnectionException_MSARMI_CHECK_PASSWORD"; //$NON-NLS-1$
+	public static final String ConnectionException_NAME_NOT_FOUND_MSG = "ConnectionException_NAME_NOT_FOUND_MSG"; //$NON-NLS-1$
+	public static final String ConnectionException_UNABLE_TO_CREATE_INITIAL_CONTEXT = ""; //$NON-NLS-1$
+	public static final String ConnectionException_UNABLE_TO_RESOLVE_CREDENTIALS = "ConnectionException_UNABLE_TO_RESOLVE_CREDENTIALS"; //$NON-NLS-1$
+	public static final String ConnectionException_UNRESOLVED = "ConnectionException_UNRESOLVED"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_DISABLED = "JVMSupport_FLIGHT_RECORDER_DISABLED"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_DISABLED_SHORT = "JVMSupport_FLIGHT_RECORDER_DISABLED_SHORT"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_ENABLED = "JVMSupport_FLIGHT_RECORDER_NOT_ENABLED"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_ENABLED_SHORT = "JVMSupport_FLIGHT_RECORDER_NOT_ENABLED_SHORT"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_FULLY_SUPPORTED_OLD_HOTSPOT = "JVMSupport_FLIGHT_RECORDER_NOT_FULLY_SUPPORTED_OLD_HOTSPOT"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_FULLY_SUPPORTED_OLD_HOTSPOT_SHORT = "JVMSupport_FLIGHT_RECORDER_NOT_FULLY_SUPPORTED_OLD_HOTSPOT_SHORT"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_NOT_HOTSPOT = "JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_NOT_HOTSPOT"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_NOT_HOTSPOT_SHORT = "JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_NOT_HOTSPOT_SHORT"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_OLD_HOTSPOT = "JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_OLD_HOTSPOT"; //$NON-NLS-1$
+	public static final String JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_OLD_HOTSPOT_SHORT = "JVMSupport_FLIGHT_RECORDER_NOT_SUPPORTED_OLD_HOTSPOT_SHORT"; //$NON-NLS-1$
+	public static final String JVMSupport_JROCKIT_NO_LONGER_SUPPORTED = "JVMSupport_JROCKIT_NO_LONGER_SUPPORTED"; //$NON-NLS-1$
+	public static final String JVMSupport_JROCKIT_NO_LONGER_SUPPORTED_SHORT = "JVMSupport_JROCKIT_NO_LONGER_SUPPORTED_SHORT"; //$NON-NLS-1$
+	public static final String JVMSupport_MESSAGE_JROCKIT_NOT_SUPPORTED = "JVMSupport_MESSAGE_JROCKIT_NOT_SUPPORTED"; //$NON-NLS-1$
+	public static final String JVMSupport_MESSAGE_UNKNOWN_JVM = "JVMSupport_MESSAGE_UNKNOWN_JVM"; //$NON-NLS-1$
+	public static final String JVMSupport_MESSAGE_LEGACY_JVM_CONSOLE = "JVMSupport_MESSAGE_LEGACY_JVM_CONSOLE"; //$NON-NLS-1$
+	public static final String JVMSupport_TITLE_JROCKIT_NOT_SUPPORTED = "JVMSupport_TITLE_JROCKIT_NOT_SUPPORTED"; //$NON-NLS-1$
+	public static final String JVMSupport_TITLE_UNKNOWN_JVM = "JVMSupport_TITLE_UNKNOWN_JVM"; //$NON-NLS-1$
+	public static final String JVMSupport_TITLE_LEGACY_JVM_CONSOLE = "JVMSupport_TITLE_LEGACY_JVM_CONSOLE"; //$NON-NLS-1$
+	public static final String LABEL_NOT_AVAILABLE = "LABEL_NOT_AVAILABLE"; //$NON-NLS-1$
 
 	private Messages() {
+	}
+
+	public static String getString(String key) {
+		try {
+			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return '!' + key + '!';
+		}
 	}
 }

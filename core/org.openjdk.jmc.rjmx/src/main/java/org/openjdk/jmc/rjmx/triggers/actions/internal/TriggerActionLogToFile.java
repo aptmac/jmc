@@ -36,8 +36,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
-
-import org.eclipse.osgi.util.NLS;
+import java.text.MessageFormat;
 
 import org.openjdk.jmc.rjmx.triggers.ITriggerAction;
 import org.openjdk.jmc.rjmx.triggers.TriggerAction;
@@ -59,7 +58,7 @@ public class TriggerActionLogToFile extends TriggerAction {
 		String fileName = getSetting("filename").getFileName(); //$NON-NLS-1$
 		MCFile file = IDESupportToolkit.createFileResource(fileName);
 		InputStream stream = new ByteArrayInputStream(getString(e).getBytes(StandardCharsets.UTF_8));
-		String jobName = NLS.bind(Messages.TriggerActionLogToFile_JOBNAME, file.getPath());
+		String jobName = MessageFormat.format(Messages.TriggerActionLogToFile_JOBNAME, file.getPath());
 		IDESupportToolkit.writeAsJob(jobName, file, stream, true);
 	}
 
