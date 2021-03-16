@@ -35,12 +35,25 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openjdk.jmc</groupId>
-		<artifactId>missioncontrol.application</artifactId>
+		<artifactId>missioncontrol.core</artifactId>
 		<version>${revision}${changelist}</version>
 	</parent>
-	<artifactId>org.openjdk.jmc.rjmx</artifactId>
-	<packaging>eclipse-plugin</packaging>
-	
+	<artifactId>rjmx</artifactId>
+	<!-- <packaging>eclipse-plugin</packaging> -->
+
+	<dependencies>
+		<dependency>
+			<groupId>org.openjdk.jmc</groupId>
+			<artifactId>common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmc</groupId>
+			<artifactId>flightrecorder.configuration</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
 	<properties>
 		<spotless.config.path>${basedir}/../../configuration/ide/eclipse/formatting/formatting.xml</spotless.config.path>
 	</properties>

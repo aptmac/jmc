@@ -32,18 +32,33 @@
  */
 package org.openjdk.jmc.rjmx.services.jfr.internal;
 
-import org.eclipse.osgi.util.NLS;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
-public class Messages extends NLS {
+public class Messages {
 	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.services.jfr.internal.messages"; //$NON-NLS-1$
 
-	public static String EventTypeMetadataV2_BAD_DEFAULT_VALUE;
-	public static String FlightRecorderServiceV2_CLONE_OF_RECORDING_NAME;
+	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
-	static {
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
+	public static final String EventTypeMetadataV2_BAD_DEFAULT_VALUE = "EventTypeMetadataV2_BAD_DEFAULT_VALUE"; //$NON-NLS-1$
+	public static final String FlightRecorderServiceV2_CLONE_OF_RECORDING_NAME = "FlightRecorderServiceV2_CLONE_OF_RECORDING_NAME"; //$NON-NLS-1$
 
 	private Messages() {
+	}
+
+	public static String getString(String key) {
+		try {
+			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return '!' + key + '!';
+		}
+	}
+
+	public static String getString(String key, String def) {
+		try {
+			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return def;
+		}
 	}
 }

@@ -106,9 +106,7 @@
 		<module>org.openjdk.jmc.rcp.intro</module>
 		<module>org.openjdk.jmc.rcp.product</module>
 		<module>org.openjdk.jmc.rcp.product.feature</module>
-		<module>org.openjdk.jmc.rjmx</module>
 		<module>org.openjdk.jmc.rjmx.ext</module>
-		<module>org.openjdk.jmc.rjmx.services.jfr</module>
 		<module>org.openjdk.jmc.rjmx.ui</module>
 		<module>org.openjdk.jmc.ui</module>
 		<module>org.openjdk.jmc.ui.common</module>

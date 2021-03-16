@@ -11,8 +11,7 @@ Require-Bundle: org.openjdk.jmc.flightrecorder.configuration,
 Import-Package: org.openjdk.jmc.rjmx,
  org.openjdk.jmc.rjmx.services,
  org.openjdk.jmc.rjmx.services.internal,
- org.openjdk.jmc.rjmx.subscription,
- org.eclipse.osgi.util
+ org.openjdk.jmc.rjmx.subscription
 Export-Package: org.openjdk.jmc.rjmx.services.jfr,
  org.openjdk.jmc.rjmx.services.jfr.internal;x-friends:="org.openjdk.jmc.rjmx.services.jfr.test"
 Automatic-Module-Name: org.openjdk.jmc.rjmx.services.jfr
