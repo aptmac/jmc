@@ -52,7 +52,7 @@ import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
 import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderToolkit;
 import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
 import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
 import org.openjdk.jmc.ui.MCPathEditorInput;
 import org.openjdk.jmc.ui.WorkbenchToolkit;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportToolkit;

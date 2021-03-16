@@ -34,7 +34,7 @@ package org.openjdk.jmc.rjmx.services.internal;
 
 import org.openjdk.jmc.rjmx.services.IServiceFactory;
 
-class ServiceEntry<T> {
+public class ServiceEntry<T> {
 	private final IServiceFactory<T> serviceFactory;
 	private final String name;
 	private final String description;

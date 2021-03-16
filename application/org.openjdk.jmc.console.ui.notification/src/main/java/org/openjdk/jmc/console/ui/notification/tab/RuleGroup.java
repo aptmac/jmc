@@ -35,7 +35,7 @@ package org.openjdk.jmc.console.ui.notification.tab;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
 
 /**
  * Class for representing group of rules

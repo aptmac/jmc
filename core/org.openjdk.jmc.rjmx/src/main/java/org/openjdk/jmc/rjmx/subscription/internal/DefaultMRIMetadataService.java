@@ -38,8 +38,6 @@ import java.util.Observer;
 
 import javax.management.ObjectName;
 
-import org.osgi.framework.ServiceException;
-
 import org.openjdk.jmc.rjmx.ConnectionException;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;

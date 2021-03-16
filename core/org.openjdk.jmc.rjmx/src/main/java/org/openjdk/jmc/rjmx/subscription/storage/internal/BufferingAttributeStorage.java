@@ -61,9 +61,12 @@ public class BufferingAttributeStorage extends Observable implements IAttributeS
 	private static int currentRetainedEventValues;
 
 	private static int lookupRetainedEventValues() {
+//		if (preferenceLookupCounter++ % 1000 == 0) {
+//			currentRetainedEventValues = RJMXPlugin.getDefault().getRJMXPreferences().getInt(
+//					PreferencesKeys.PROPERTY_RETAINED_EVENT_VALUES, PreferencesKeys.DEFAULT_RETAINED_EVENT_VALUES);
+//		}
 		if (preferenceLookupCounter++ % 1000 == 0) {
-			currentRetainedEventValues = RJMXPlugin.getDefault().getRJMXPreferences().getInt(
-					PreferencesKeys.PROPERTY_RETAINED_EVENT_VALUES, PreferencesKeys.DEFAULT_RETAINED_EVENT_VALUES);
+			currentRetainedEventValues = PreferencesKeys.DEFAULT_RETAINED_EVENT_VALUES;
 		}
 		return currentRetainedEventValues;
 	}

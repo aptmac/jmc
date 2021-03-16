@@ -37,8 +37,8 @@ import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.ICheckStateProvider;
 
 import org.openjdk.jmc.rjmx.subscription.IMRIService;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 
 /**
  * Class for providing checked state information for a {@link TriggerRule}s.

@@ -58,11 +58,11 @@ import org.openjdk.jmc.flightrecorder.configuration.IRecorderConfigurationServic
 import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventConfiguration;
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
+import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeInfo;
 import org.openjdk.jmc.flightrecorder.configuration.events.SchemaVersion;
 import org.openjdk.jmc.flightrecorder.configuration.model.EventConfiguration;
 import org.openjdk.jmc.flightrecorder.configuration.model.VolatileStorageDelegate;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.ControlPanel;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.ConfigurationRepositoryFactory;

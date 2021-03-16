@@ -77,7 +77,7 @@ import org.openjdk.jmc.rjmx.services.IOperation;
 import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.attributes.AttributeTreeBuilder;
 import org.openjdk.jmc.rjmx.ui.internal.IconConstants;
-import org.openjdk.jmc.rjmx.util.internal.DefaultAttribute;
+import org.openjdk.jmc.rjmx.ui.util.internal.DefaultAttribute;
 import org.openjdk.jmc.ui.column.ColumnManager;
 import org.openjdk.jmc.ui.column.TableSettings;
 import org.openjdk.jmc.ui.column.TableSettings.ColumnSettings;

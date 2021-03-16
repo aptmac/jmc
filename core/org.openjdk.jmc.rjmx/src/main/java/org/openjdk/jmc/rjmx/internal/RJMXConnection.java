@@ -43,6 +43,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 
@@ -67,7 +68,6 @@ import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 
-import org.eclipse.core.runtime.ListenerList;
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.version.JavaVersion;
 import org.openjdk.jmc.common.version.JavaVersionSupport;
@@ -131,7 +131,7 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 	private final HashMap<ObjectName, MBeanInfo> m_cachedInfos = new HashMap<>();
 	private volatile Set<ObjectName> m_cachedMBeanNames = new HashSet<>();
 	private final Runnable m_onFailCallback;
-	private final ListenerList<IMBeanServerChangeListener> m_mbeanListeners = new ListenerList<>();
+	private final CopyOnWriteArrayList<IMBeanServerChangeListener> m_mbeanListeners = new CopyOnWriteArrayList<>();
 	private final NotificationListener m_registrationListener = new NotificationListener() {
 		@Override
 		public void handleNotification(Notification notification, Object handback) {

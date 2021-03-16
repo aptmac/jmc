@@ -41,15 +41,15 @@ import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
 import org.openjdk.jmc.console.ui.notification.widget.ConditionChooser;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.condition.internal.TriggerCondition;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.QuantityField;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
-import org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax;
-import org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorStringMatch;
 import org.openjdk.jmc.rjmx.ui.internal.AttributeSelectionContentModel;
 import org.openjdk.jmc.rjmx.ui.internal.IAttributeSelectionContentListener;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.condition.internal.TriggerCondition;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.QuantityField;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorStringMatch;
 import org.openjdk.jmc.ui.uibuilder.StandardUIBuilder;
 
 /**

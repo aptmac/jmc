@@ -40,7 +40,7 @@ import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.BundleContext;
 
 import org.openjdk.jmc.console.ui.notification.tab.TriggerToolkit;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.MCAbstractUIPlugin;
 import org.openjdk.jmc.ui.common.util.AdapterUtil;
 import org.openjdk.jmc.ui.misc.OverlayImageDescriptor;

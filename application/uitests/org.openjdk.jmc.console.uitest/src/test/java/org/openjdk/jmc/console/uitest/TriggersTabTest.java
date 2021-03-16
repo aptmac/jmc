@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.console.uitest;
 
-import static org.openjdk.jmc.rjmx.triggers.condition.internal.Messages.TriggerCondition_MAX_TRIGGER_TOOLTIP;
+import static org.openjdk.jmc.rjmx.ui.triggers.condition.internal.Messages.TriggerCondition_MAX_TRIGGER_TOOLTIP;
 
 import java.io.File;
 import java.io.IOException;

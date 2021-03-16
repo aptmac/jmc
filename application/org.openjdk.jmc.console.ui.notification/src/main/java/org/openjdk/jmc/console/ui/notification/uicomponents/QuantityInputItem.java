@@ -36,9 +36,8 @@ import org.eclipse.jface.fieldassist.ContentProposalAdapter;
 import org.eclipse.jface.fieldassist.IContentProposalListener2;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.widgets.Text;
-
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.QuantityField;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.QuantityField;
 import org.openjdk.jmc.ui.misc.QuantityKindProposal;
 import org.openjdk.jmc.ui.uibuilder.IUIBuilder;
 

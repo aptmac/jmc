@@ -36,9 +36,8 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
-
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.misc.AbstractStructuredContentProvider;
 
 /**

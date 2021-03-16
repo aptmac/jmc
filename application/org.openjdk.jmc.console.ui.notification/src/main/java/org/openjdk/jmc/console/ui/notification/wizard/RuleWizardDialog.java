@@ -38,8 +38,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 
 public class RuleWizardDialog extends WizardDialog {
 	private final TriggerRule m_notificatrionRule;

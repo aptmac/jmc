@@ -32,9 +32,9 @@
  */
 package org.openjdk.jmc.alert;
 
-import org.openjdk.jmc.rjmx.triggers.ITriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.ITriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
 
 /**
  * Action that displays a notification alert in the application.

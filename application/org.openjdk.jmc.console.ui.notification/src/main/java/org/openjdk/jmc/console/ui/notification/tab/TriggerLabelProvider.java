@@ -40,7 +40,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 
 import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
 import org.openjdk.jmc.ui.UIPlugin;
 
 /**

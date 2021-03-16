@@ -81,7 +81,7 @@ import org.openjdk.jmc.rjmx.ui.attributes.ValueColumnLabelProvider;
 import org.openjdk.jmc.rjmx.ui.celleditors.AttributeEditingSupport;
 import org.openjdk.jmc.rjmx.ui.internal.InsertArrayElementMenuAction;
 import org.openjdk.jmc.rjmx.ui.internal.RemoveArrayElementMenuAction;
-import org.openjdk.jmc.rjmx.util.internal.DefaultAttribute;
+import org.openjdk.jmc.rjmx.ui.util.internal.DefaultAttribute;
 import org.openjdk.jmc.ui.column.ColumnBuilder;
 import org.openjdk.jmc.ui.column.ColumnManager;
 import org.openjdk.jmc.ui.column.ColumnMenusFactory;

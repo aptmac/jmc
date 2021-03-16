@@ -42,8 +42,7 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Button;
-
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
 import org.openjdk.jmc.ui.common.CorePlugin;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportToolkit;
 import org.openjdk.jmc.ui.common.resource.MCFile;

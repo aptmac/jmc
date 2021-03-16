@@ -35,12 +35,12 @@ package org.openjdk.jmc.rjmx.servermodel.internal;
 import org.openjdk.jmc.common.IDescribable;
 import org.openjdk.jmc.rjmx.servermodel.IDiscoveryInfo;
 
-class DiscoveryInfo implements IDiscoveryInfo {
+public class DiscoveryInfo implements IDiscoveryInfo {
 
 	IDescribable provider;
 	long discoveryTime = System.currentTimeMillis();
 
-	DiscoveryInfo(IDescribable provider) {
+	public DiscoveryInfo(IDescribable provider) {
 		this.provider = provider;
 	}
 

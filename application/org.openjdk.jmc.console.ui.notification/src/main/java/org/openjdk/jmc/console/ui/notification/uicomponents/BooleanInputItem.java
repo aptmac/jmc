@@ -37,9 +37,8 @@ import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Button;
-
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field.FieldValueChangeListener;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field.FieldValueChangeListener;
 import org.openjdk.jmc.ui.uibuilder.IUIBuilder;
 
 /**

@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.console.ui.notification.uicomponents;
 
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
 import org.openjdk.jmc.ui.uibuilder.IUIBuilder;
 
 /**

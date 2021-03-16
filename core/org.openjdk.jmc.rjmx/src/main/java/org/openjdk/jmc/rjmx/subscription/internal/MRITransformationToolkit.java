@@ -32,151 +32,70 @@
  */
 package org.openjdk.jmc.rjmx.subscription.internal;
 
-import java.text.MessageFormat;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
-import java.util.logging.Level;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtension;
-import org.eclipse.core.runtime.IExtensionPoint;
-import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.Platform;
-
-import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadata;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProvider;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.IMRITransformation;
 import org.openjdk.jmc.rjmx.subscription.IMRITransformationFactory;
-import org.openjdk.jmc.rjmx.subscription.MRI;
 
 /**
  * An MRI transformation toolkit responsible for creating transformations from MRI, finding
  * attributes they depend on, etc. Will read available transformation factories from the extension
  * "org.openjdk.jmc.rjmx.attributeTransformation".
  */
-public class MRITransformationToolkit {
-
-	static final String TRANSFORMATION_EXTENSION_NAME = "org.openjdk.jmc.rjmx.attributeTransformation"; //$NON-NLS-1$
-	static final String TRANSFORMATION_ELEMENT = "attributeTransformation"; //$NON-NLS-1$
-	public static final String TRANSFORMATION_NAME_ATTRIBUTE = "transformationName"; //$NON-NLS-1$
-	static final String TRANSFORMATION_PROPERTY_ELEMENT = "property"; //$NON-NLS-1$
-	static final String TRANSFORMATION_PROPERTY_NAME = "name"; //$NON-NLS-1$
-	static final String TRANSFORMATION_PROPERTY_VALUE = "value"; //$NON-NLS-1$
-	static final String TRANSFORMATION_PROPERTIES_ELEMENT = "transformationProperties"; //$NON-NLS-1$
-
-	private static final Map<String, IMRITransformationFactory> TRANSFORMATION_FACTORIES = new HashMap<>();
+public class MRITransformationToolkit extends MRITransformationToolkitBase {
 
 	private MRITransformationToolkit() {
-		throw new AssertionError("Not to be instantiated!"); //$NON-NLS-1$
+		super();
 	}
 
 	static {
 		initializeFromExtensions();
 	}
 
-	private static void initializeFromExtensions() {
-		IExtensionRegistry er = Platform.getExtensionRegistry();
-		IExtensionPoint ep = er.getExtensionPoint(TRANSFORMATION_EXTENSION_NAME);
-		IExtension[] extensions = ep.getExtensions();
-		for (IExtension extension : extensions) {
-			IConfigurationElement[] configs = extension.getConfigurationElements();
-			for (IConfigurationElement config : configs) {
-				if (config.getName().equals(TRANSFORMATION_ELEMENT)) {
-					try {
-						IMRITransformationFactory transformationFactory = (IMRITransformationFactory) config
-								.createExecutableExtension("class"); //$NON-NLS-1$
-						String transformationName = config.getAttribute(TRANSFORMATION_NAME_ATTRIBUTE);
-						Properties props = new Properties();
-						Properties transProps = new Properties();
-						props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
-						for (IConfigurationElement prop : config.getChildren()) {
-							if (prop.getName().equals(TRANSFORMATION_PROPERTY_ELEMENT)) {
-								props.put(prop.getAttribute(TRANSFORMATION_PROPERTY_NAME),
-										prop.getAttribute(TRANSFORMATION_PROPERTY_VALUE));
-							} else if (prop.getName().equals(TRANSFORMATION_PROPERTIES_ELEMENT)) {
-								for (IConfigurationElement transProp : prop.getChildren()) {
-									if (transProp.getName().equals(TRANSFORMATION_PROPERTY_ELEMENT)) {
-										transProps.put(transProp.getAttribute(TRANSFORMATION_PROPERTY_NAME),
-												transProp.getAttribute(TRANSFORMATION_PROPERTY_VALUE));
-									}
-								}
-							}
-						}
-						transformationFactory.setFactoryProperties(props, transProps);
-						TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
-					} catch (CoreException e) {
-						RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
-								"Could not instantiate attribute transformation factory!", e); //$NON-NLS-1$
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * Creates a new transformation with given transformation MRI for given connection.
-	 *
-	 * @param mri
-	 *            the transformation MRI
-	 * @return the corresponding transformation object
-	 */
-	public static IMRITransformation createTransformation(MRI mri) {
-		String transformationName = getTransformationName(mri);
-		if (TRANSFORMATION_FACTORIES.containsKey(transformationName)) {
-			Properties properties = createProperties(mri);
-			return TRANSFORMATION_FACTORIES.get(transformationName).createTransformation(properties);
-		}
-		RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
-				"Could not instantiate unknown transformation type " + transformationName + "!"); //$NON-NLS-1$ //$NON-NLS-2$
-		return null;
-	}
-
-	/**
-	 * Returns the different available transformation factories.
-	 *
-	 * @return the set of transformation factories
-	 */
-	public static Iterable<IMRITransformationFactory> getFactories() {
-		return Collections.unmodifiableCollection(TRANSFORMATION_FACTORIES.values());
-	}
-
-	private static String getTransformationName(MRI mri) {
-		String path = mri.getDataPath();
-		int partitionIndex = path.indexOf('?');
-		if (partitionIndex >= 0) {
-			return path.substring(0, partitionIndex);
-		}
-		return path;
-	}
-
-	private static Properties createProperties(MRI mri) {
-		Properties properties = new Properties();
-		String path = mri.getDataPath();
-		int partitionIndex = path.indexOf('?');
-		if (partitionIndex >= 0) {
-			path = path.substring(partitionIndex + 1);
-			for (String property : path.split("&")) { //$NON-NLS-1$
-				int equalIndex = property.indexOf('=');
-				properties.put(property.substring(0, equalIndex), property.substring(equalIndex + 1));
-			}
-		}
-		return properties;
-	}
-
-	public static void forwardMetadata(
-		IMRIMetadataService metadataService, MRI mri, IMRIMetadata attributeMetadata, String textPattern) {
-		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_DISPLAY_NAME,
-				MessageFormat.format(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DISPLAY_NAME)));
-		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_DESCRIPTION,
-				MessageFormat.format(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DESCRIPTION)));
-		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_UPDATE_TIME,
-				(String) attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_UPDATE_TIME));
-		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_UNIT_STRING,
-				(String) attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_UNIT_STRING));
+	private static void initializeFromExtensions() {		
+		IMRITransformationFactory transformationFactory = new SingleMRITransformationFactory();
+        String transformationName = "difference";
+        Properties props = new Properties();
+        props.put("visualizeLabel", "Visualize difference...");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
+        Properties transProps = new Properties();
+        transProps.put("displayName", "%s (difference)");
+        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+        transformationFactory.setFactoryProperties(props, transProps);
+        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
+        
+        transformationFactory = new SingleMRITransformationFactory();
+        transformationName = "rate";
+        props = new Properties();
+        props.put("visualizeLabel", "Visualize rate per second...");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
+        transProps = new Properties();
+        transProps.put("displayName", "%s (rate per second)");
+        transProps.put("rate", "1000");
+        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+        transformationFactory.setFactoryProperties(props, transProps);
+        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
+        
+        transformationFactory = new SingleMRITransformationFactory();
+        transformationName = "average";
+        props = new Properties();
+        props.put("visualizeLabel", "Visualize average...");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.AverageTransformation");
+        transProps = new Properties();
+        transProps.put("terms", "30");
+        transProps.put("displayName", "%%s (average over %s samples)");
+        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+        transformationFactory.setFactoryProperties(props, transProps);
+        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
+        
+        transformationFactory = new SingleMRITransformationFactory();
+        transformationName = "delta";
+        props = new Properties();
+        props.put("visualizeLabel", "Visualize delta...");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DeltaTransformation");
+        transProps = new Properties();
+        transProps.put("displayName", "%s (delta)");
+        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+        transformationFactory.setFactoryProperties(props, transProps);
+        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
 	}
 }

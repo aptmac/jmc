@@ -44,7 +44,7 @@ import org.openjdk.jmc.common.messages.internal.Messages;
 import org.openjdk.jmc.common.resource.Resource;
 import org.openjdk.jmc.common.util.Environment;
 
-public class NameConverterBase {
+public abstract class NameConverterBase {
 
 	protected static final Comparator<NamingRule> COMPARATOR = new Comparator<NamingRule>() {
 		@Override
@@ -52,8 +52,6 @@ public class NameConverterBase {
 			return o2.getPriority() - o1.getPriority();
 		}
 	};
-
-	private static final NameConverterBase INSTANCE = new NameConverterBase();
 
 	static enum ValueArrayInfo {
 		JAVAVERSION(0, "JDK", "{0}"), //$NON-NLS-1$ //$NON-NLS-2$
@@ -90,12 +88,7 @@ public class NameConverterBase {
 
 	protected final List<NamingRule> rules = new ArrayList<>();
 
-	/**
-	 * @return a singleton instance
-	 */
-	public static NameConverterBase getInstance() {
-		return INSTANCE;
-	}
+
 
 	/**
 	 * Create a new name converter instance. This should only be used if you want a new, clean
@@ -148,7 +141,7 @@ public class NameConverterBase {
 		return Collections.unmodifiableList(rules);
 	}
 
-	private NamingRule getMatchingRule(Object[] values) {
+	protected NamingRule getMatchingRule(Object[] values) {
 		for (NamingRule rule : rules) {
 			try {
 				if (rule.matches(values)) {

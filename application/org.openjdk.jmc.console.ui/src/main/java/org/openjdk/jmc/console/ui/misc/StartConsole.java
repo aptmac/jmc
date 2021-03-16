@@ -40,7 +40,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.openjdk.jmc.commands.Statement;
 import org.openjdk.jmc.console.ui.editor.internal.ConsoleEditorInput;
-import org.openjdk.jmc.rjmx.util.internal.RJMXStartCommand;
+import org.openjdk.jmc.rjmx.ui.util.internal.RJMXStartCommand;
 
 /**
  * Command for starting up the JMX Console on a RJMX-descriptor.

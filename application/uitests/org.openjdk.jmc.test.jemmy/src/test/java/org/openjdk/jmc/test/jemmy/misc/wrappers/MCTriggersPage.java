@@ -46,9 +46,9 @@ public class MCTriggersPage extends MCJemmyBase {
 	private static final String SHOW_DIALOG_ON_ALERTS = org.openjdk.jmc.alert.Messages.AlertDialog_POP_UP_ON_ALERTS_TEXT;
 	private static final String TRIGGER_ALERTS_DIALOG_TITLE = org.openjdk.jmc.alert.Messages.AlertDialog_DIALOG_TITLE;
 	private static final String RULES_TREE_NAME = "triggers.RulesTree";
-	private static final String LIMIT_PERIOD_TOOLTIP = org.openjdk.jmc.rjmx.triggers.condition.internal.Messages.TriggerCondition_LIMIT_PERIOD_TOOLTIP;
-	private static final String MAX_TRIGGER_TOOLTIP = org.openjdk.jmc.rjmx.triggers.condition.internal.Messages.TriggerCondition_MAX_TRIGGER_TOOLTIP;
-	private static final String SUSTAINED_TOOLTIP = org.openjdk.jmc.rjmx.triggers.condition.internal.Messages.TriggerCondition_SUSTAINED_TOOLTIP;
+	private static final String LIMIT_PERIOD_TOOLTIP = org.openjdk.jmc.rjmx.ui.triggers.condition.internal.Messages.TriggerCondition_LIMIT_PERIOD_TOOLTIP;
+	private static final String MAX_TRIGGER_TOOLTIP = org.openjdk.jmc.rjmx.ui.triggers.condition.internal.Messages.TriggerCondition_MAX_TRIGGER_TOOLTIP;
+	private static final String SUSTAINED_TOOLTIP = org.openjdk.jmc.rjmx.ui.triggers.condition.internal.Messages.TriggerCondition_SUSTAINED_TOOLTIP;
 	private static final String WARN_IF_OVERWRITE_TEXT = org.openjdk.jmc.ui.wizards.Messages.ExportToFileWizardPage_WARN_IF_OVERWRITE_TEXT;
 	private static MCTree rulesTree;
 

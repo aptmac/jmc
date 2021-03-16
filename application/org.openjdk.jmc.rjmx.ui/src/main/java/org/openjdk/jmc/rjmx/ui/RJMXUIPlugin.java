@@ -32,9 +32,15 @@
  */
 package org.openjdk.jmc.rjmx.ui;
 
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.openjdk.jmc.rjmx.ui.internal.IconConstants;
+import org.openjdk.jmc.rjmx.ui.internal.RJMXSingleton;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.MCAbstractUIPlugin;
+import org.osgi.framework.BundleContext;
+import org.osgi.service.prefs.Preferences;
 
 /**
  * <p>
@@ -47,8 +53,16 @@ import org.openjdk.jmc.ui.MCAbstractUIPlugin;
 public final class RJMXUIPlugin extends MCAbstractUIPlugin {
 	/** Plug-in ID for the ServicesUI plug-in. */
 	public static final String PLUGIN_ID = "org.openjdk.jmc.rjmx.ui"; //$NON-NLS-1$
+
+	/**
+	 * The identifier for the server configuration.
+	 */
+	public static final String SERVER_CONFIG_ID = "serverConfig"; //$NON-NLS-1$
+
 	// The shared instance.
 	private static RJMXUIPlugin plugin;
+
+	private IEclipsePreferences rjmxPreferences;
 
 	/**
 	 * The constructor.
@@ -65,6 +79,62 @@ public final class RJMXUIPlugin extends MCAbstractUIPlugin {
 	 */
 	public static RJMXUIPlugin getDefault() {
 		return plugin;
+	}
+
+
+	@Override
+	public void start(BundleContext context) throws Exception {
+		super.start(context);
+		plugin = this;
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		// Avoid getPreferenceStore() so as not to create a store just for
+		// saving it.
+		synchronized (this) {
+			if (rjmxPreferences != null) {
+				RJMXSingleton.getDefault().storeAllSettings();
+				rjmxPreferences.flush();
+			}
+		}
+		plugin = null;
+		super.stop(context);
+	}
+
+	/**
+	 * Returns the plugin preferences for this plugin.
+	 * <p>
+	 * This {@link IEclipsePreferences} is used to hold persistent settings for this plugin in the
+	 * context of a workbench. Some of these settings will be user controlled, whereas others may be
+	 * internal setting that are never exposed to the user.
+	 * <p>
+	 * If an error occurs reading these settings, an empty settings container is quietly created,
+	 * initialized with defaults, and returned.
+	 *
+	 * @return the preference store
+	 */
+	public synchronized IEclipsePreferences getRJMXPreferences() {
+		// Create the preference store lazily.
+		if (rjmxPreferences == null) {
+			rjmxPreferences = InstanceScope.INSTANCE.getNode(PLUGIN_ID);
+		}
+		return rjmxPreferences;
+	}
+
+	/**
+	 * Looks up the server preferences for given server.
+	 *
+	 * @param serverUid
+	 *            the identifier of the server
+	 * @return the preferences available for given server.
+	 */
+	public synchronized Preferences getServerPreferences(String serverUid) {
+		return getRJMXPreferences().node(SERVER_CONFIG_ID).node(serverUid);
+	}
+
+	public NotificationRegistry getNotificationRegistry() {
+		return RJMXSingleton.getDefault().getNotificationRegistry();
 	}
 
 	@Override

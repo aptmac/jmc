@@ -40,9 +40,9 @@ import org.eclipse.osgi.util.NLS;
 
 import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
-import org.openjdk.jmc.rjmx.triggers.TriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationToolkit;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationToolkit;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportToolkit;
 import org.openjdk.jmc.ui.common.resource.MCFile;
 
@@ -60,7 +60,7 @@ public class TriggerActionThreadStackDump extends TriggerAction {
 
 	/**
 	 * @throws Exception
-	 * @see org.openjdk.jmc.rjmx.triggers.ITriggerAction#handleNotificationEvent(org.openjdk.jmc.rjmx.triggers.TriggerEvent)
+	 * @see org.openjdk.jmc.rjmx.ui.triggers.ITriggerAction#handleNotificationEvent(org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent)
 	 */
 	@Override
 	public void handleNotificationEvent(TriggerEvent e) throws Exception {

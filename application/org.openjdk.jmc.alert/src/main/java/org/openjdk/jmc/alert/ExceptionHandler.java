@@ -33,8 +33,8 @@
 package org.openjdk.jmc.alert;
 
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.triggers.IExceptionHandler;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.IExceptionHandler;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
 
 public class ExceptionHandler implements IExceptionHandler {
 	@Override

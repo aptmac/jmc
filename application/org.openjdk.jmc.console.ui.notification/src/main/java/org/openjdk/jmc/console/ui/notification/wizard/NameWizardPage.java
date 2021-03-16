@@ -45,9 +45,8 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.uibuilder.StandardUIBuilder;
 
 /**

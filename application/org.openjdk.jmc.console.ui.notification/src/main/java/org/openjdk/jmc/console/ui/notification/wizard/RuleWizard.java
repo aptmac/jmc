@@ -46,18 +46,18 @@ import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
 import org.openjdk.jmc.rjmx.subscription.IMRIService;
 import org.openjdk.jmc.rjmx.subscription.MRI;
 import org.openjdk.jmc.rjmx.subscription.MRIMetadataToolkit;
-import org.openjdk.jmc.rjmx.triggers.ITriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.condition.internal.TriggerCondition;
-import org.openjdk.jmc.rjmx.triggers.extension.internal.TriggerFactory;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationTrigger;
-import org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorStringMatch;
 import org.openjdk.jmc.rjmx.ui.internal.AttributeConfiguratorWizardPage;
 import org.openjdk.jmc.rjmx.ui.internal.AttributeSelectionContentModel;
 import org.openjdk.jmc.rjmx.ui.internal.AttributeSelectionViewModel;
 import org.openjdk.jmc.rjmx.ui.internal.AttributeSelectorWizardPage;
 import org.openjdk.jmc.rjmx.ui.internal.IAttributeSelectionContentListener;
+import org.openjdk.jmc.rjmx.ui.triggers.ITriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.condition.internal.TriggerCondition;
+import org.openjdk.jmc.rjmx.ui.triggers.extension.internal.TriggerFactory;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationTrigger;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorStringMatch;
 
 /**
  * Wizard for creating and editing a notification rule

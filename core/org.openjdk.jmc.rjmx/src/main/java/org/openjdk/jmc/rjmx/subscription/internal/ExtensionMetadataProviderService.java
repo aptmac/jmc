@@ -34,16 +34,7 @@ package org.openjdk.jmc.rjmx.subscription.internal;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtension;
-import org.eclipse.core.runtime.IExtensionPoint;
-import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.Platform;
-
-import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProviderService;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
 import org.openjdk.jmc.rjmx.subscription.MRI;
@@ -54,40 +45,10 @@ import org.openjdk.jmc.rjmx.subscription.MRI;
  */
 public class ExtensionMetadataProviderService implements IMRIMetadataProviderService {
 
-	private boolean m_hasInitializedExtensions = false;
 	private final List<IMRIMetadataProviderService> m_providers = new ArrayList<>();
-
-	private synchronized void checkExtenstionsInitialized() {
-		if (!m_hasInitializedExtensions) {
-			initializeFromExtensions();
-			m_hasInitializedExtensions = true;
-		}
-	}
-
-	private void initializeFromExtensions() {
-		IExtensionRegistry er = Platform.getExtensionRegistry();
-		IExtensionPoint ep = er.getExtensionPoint("org.openjdk.jmc.rjmx.metadataprovider"); //$NON-NLS-1$
-		IExtension[] extensions = ep.getExtensions();
-		for (IExtension extension : extensions) {
-			IConfigurationElement[] configs = extension.getConfigurationElements();
-			for (IConfigurationElement config : configs) {
-				if (config.getName().equals("metadataProvider")) { //$NON-NLS-1$
-					try {
-						IMRIMetadataProviderService provider = (IMRIMetadataProviderService) config
-								.createExecutableExtension("class"); //$NON-NLS-1$
-						m_providers.add(provider);
-					} catch (CoreException e) {
-						RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
-								"Could not instantiate metadata provider '" + config.getAttribute("class") + "'!", e); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-					}
-				}
-			}
-		}
-	}
 
 	@Override
 	public Object getMetadata(IMRIMetadataService metadataService, MRI mri, String dataKey) {
-		checkExtenstionsInitialized();
 		for (IMRIMetadataProviderService providerService : m_providers) {
 			Object value = providerService.getMetadata(metadataService, mri, dataKey);
 			if (value != null) {

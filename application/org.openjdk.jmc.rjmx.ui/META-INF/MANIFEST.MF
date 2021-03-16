@@ -9,7 +9,11 @@ Require-Bundle: org.eclipse.ui.forms,
  org.openjdk.jmc.ui;visibility:=reexport,
  org.openjdk.jmc.rjmx;visibility:=reexport,
  org.openjdk.jmc.greychart.ui;visibility:=reexport
+Import-Package: javax.mail,
+ javax.mail.internet,
+ org.openjdk.jmc.commands
 Export-Package: org.openjdk.jmc.rjmx.ui,
+ org.openjdk.jmc.rjmx.ui.actionprovider.internal;x-internal:=true,
  org.openjdk.jmc.rjmx.ui.attributes;
   x-friends:="org.openjdk.jmc.console.ui.mbeanbrowser,
    org.openjdk.jmc.console.ui,
@@ -33,7 +37,19 @@ Export-Package: org.openjdk.jmc.rjmx.ui,
   x-friends:="org.openjdk.jmc.console.ui.mbeanbrowser,
    org.openjdk.jmc.console.ui.diagnostic,
    org.openjdk.jmc.console.ui.notification,
-   org.openjdk.jmc.test.jemmy"
+   org.openjdk.jmc.test.jemmy",
+ org.openjdk.jmc.rjmx.ui.persistence.internal;x-friends:="org.openjdk.jmc.console.persistence",
+ org.openjdk.jmc.rjmx.ui.triggers;
+  x-friends:="org.openjdk.jmc.console.ui.notification,
+   org.openjdk.jmc.alert,
+   org.openjdk.jmc.console.twitter,
+   org.openjdk.jmc.rjmx.test",
+ org.openjdk.jmc.rjmx.ui.triggers.actions.internal;x-friends:="org.openjdk.jmc.console.ui.notification",
+ org.openjdk.jmc.rjmx.ui.triggers.condition.internal;x-friends:="org.openjdk.jmc.console.ui.notification,org.openjdk.jmc.test.jemmy",
+ org.openjdk.jmc.rjmx.ui.triggers.constraints.internal;x-internal:=true,
+ org.openjdk.jmc.rjmx.ui.triggers.extension.internal;x-friends:="org.openjdk.jmc.console.ui.notification,org.openjdk.jmc.alert",
+ org.openjdk.jmc.rjmx.ui.triggers.fields.internal;x-friends:="org.openjdk.jmc.console.ui.notification",
+ org.openjdk.jmc.rjmx.ui.triggers.internal;x-friends:="org.openjdk.jmc.alert,org.openjdk.jmc.console.ui.notification,org.openjdk.jmc.rjmx.test"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.openjdk.jmc.rjmx.ui.RJMXUIPlugin
 Bundle-Localization: plugin

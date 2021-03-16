@@ -39,7 +39,7 @@ import javax.management.remote.JMXServiceURL;
 
 import org.openjdk.jmc.common.action.IActionProvider;
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
-import org.openjdk.jmc.ui.common.labelingrules.NameConverter;
+import org.openjdk.jmc.common.labelingrules.NameConverter;
 import org.openjdk.jmc.common.resource.IImageResource;
 import org.openjdk.jmc.common.resource.Resource;
 import org.openjdk.jmc.common.security.ICredentials;
@@ -48,7 +48,7 @@ import org.openjdk.jmc.rjmx.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.actionprovider.internal.ActionProviderRepository;
+import org.openjdk.jmc.rjmx.actionprovider.internal.ActionProvider;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
 import org.openjdk.jmc.rjmx.internal.ServerHandle;
 import org.openjdk.jmc.rjmx.servermodel.IDiscoveryInfo;
@@ -88,7 +88,8 @@ public class Server implements IServer, ICopyable, IImageResource {
 		JVMDescriptor jvmInfo = serverDesc.getJvmInfo();
 		imageResource = jvmInfo != null ? NameConverter.getInstance().getImageResource(jvmInfo) : null;
 		serverHandle = new ServerHandle(serverDesc, connector, listener);
-		actionProvider = ActionProviderRepository.buildActionProvider(serverHandle);
+		actionProvider = new ActionProvider();
+//		actionProvider = ActionProviderRepository.buildActionProvider(serverHandle);
 	}
 
 	synchronized void setObserver(Consumer<? super Server> observer) {
@@ -154,7 +155,8 @@ public class Server implements IServer, ICopyable, IImageResource {
 			oldHandle = serverHandle;
 			serverHandle = new ServerHandle(oldHandle.getServerDescriptor(), oldHandle.getConnectionDescriptor(),
 					listener);
-			actionProvider = ActionProviderRepository.buildActionProvider(serverHandle);
+			actionProvider = new ActionProvider();
+//			actionProvider = ActionProviderRepository.buildActionProvider(serverHandle);
 		}
 		oldHandle.dispose(true);
 	}

@@ -46,10 +46,10 @@ import org.openjdk.jmc.console.ui.notification.widget.ActionChooser;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
 import org.openjdk.jmc.rjmx.services.IOperation;
-import org.openjdk.jmc.rjmx.triggers.ITriggerAction;
-import org.openjdk.jmc.rjmx.triggers.actions.internal.TriggerActionDiagnosticCommand;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field;
 import org.openjdk.jmc.rjmx.ui.operations.InvocatorBuilderForm;
+import org.openjdk.jmc.rjmx.ui.triggers.ITriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.actions.internal.TriggerActionDiagnosticCommand;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
 import org.openjdk.jmc.ui.column.TableSettings;
 import org.openjdk.jmc.ui.column.TableSettings.ColumnSettings;
 

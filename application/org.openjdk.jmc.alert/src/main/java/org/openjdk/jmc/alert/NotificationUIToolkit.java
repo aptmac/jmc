@@ -35,8 +35,7 @@ package org.openjdk.jmc.alert;
 import java.io.StringWriter;
 
 import org.eclipse.osgi.util.NLS;
-
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
 
 /**
  * Utility methods for the notification framework.

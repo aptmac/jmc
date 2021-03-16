@@ -34,7 +34,7 @@ package org.openjdk.jmc.alert;
 
 import java.util.Date;
 
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
 
 public class AlertObject {
 	private final Date date;

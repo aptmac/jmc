@@ -52,8 +52,8 @@ import org.openjdk.jmc.common.util.XmlToolkit;
 import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
 import org.openjdk.jmc.console.ui.notification.tab.TriggerContentProvider;
 import org.openjdk.jmc.console.ui.notification.tab.TriggerLabelProvider;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.common.util.StatusFactory;
 import org.openjdk.jmc.ui.wizards.ExportTreeToFileWizardPage;
 

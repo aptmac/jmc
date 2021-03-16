@@ -49,7 +49,7 @@ import org.xml.sax.SAXException;
 
 import org.openjdk.jmc.common.util.XmlToolkit;
 import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
 import org.openjdk.jmc.ui.common.util.StatusFactory;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 import org.openjdk.jmc.ui.wizards.SimpleImportFromFileWizardPage;

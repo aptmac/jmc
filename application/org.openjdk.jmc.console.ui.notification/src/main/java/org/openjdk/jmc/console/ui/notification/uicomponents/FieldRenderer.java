@@ -32,10 +32,10 @@
  */
 package org.openjdk.jmc.console.ui.notification.uicomponents;
 
-import org.openjdk.jmc.rjmx.triggers.ISetting;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.Field;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.FieldHolder;
-import org.openjdk.jmc.rjmx.triggers.fields.internal.PasswordField;
+import org.openjdk.jmc.rjmx.ui.triggers.ISetting;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.FieldHolder;
+import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.PasswordField;
 import org.openjdk.jmc.ui.uibuilder.IUIBuilder;
 
 /**

@@ -34,7 +34,6 @@ package org.openjdk.jmc.ui.common.labelingrules;
 
 import java.text.MessageFormat;
 import java.util.Collections;
-import java.util.List;
 import java.util.logging.Level;
 
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -66,9 +65,27 @@ public final class NameConverter extends NameConverterBase {
 	 * get a singleton instance.
 	 */
 	public NameConverter() {
+		super();
 		initializeRulesFromExtensions();
 	}
 
+	/**
+	 * @param descriptor
+	 * @return the properly formatted values. If no matching formatter could be found, the default
+	 *         format String as defined in NameConverter_LOCAL_NAME_TEMPLATE will be used.
+	 */
+	public String format(JVMDescriptor descriptor) {
+		// FIXME: Somehow rewrite this to avoid things like [Unknown][Unknown] and empty () when the pid is unknown.
+		// JDP being the typical use case.
+		Object[] values = prepareValues(descriptor);
+		NamingRule rule = getMatchingRule(values);
+		if (rule != null) {
+			return rule.format(values);
+		}
+		// Should always be a catch all rule, but if someone messes up, we will use the LOCAL_NAME_TEMPLATE.
+		return MessageFormat.format(Messages.NameConverter_LOCAL_NAME_TEMPLATE, descriptor);
+	}
+	
 	private void initializeRulesFromExtensions() {
 		IExtensionRegistry er = Platform.getExtensionRegistry();
 		IExtensionPoint ep = er.getExtensionPoint(LABELING_RULES_EXTENSION_POINT);
@@ -109,6 +126,13 @@ public final class NameConverter extends NameConverterBase {
 			return new Resource(extendingPluginId, iconName);
 		}
 		return null;
+	}
+
+	private Object[] prepareValues(JVMDescriptor descriptor) {
+		return new Object[] {descriptor.getJavaVersion(), descriptor.getJvmType(), descriptor.getJvmArch(),
+				getValidName(descriptor), descriptor.getJavaCommand(),
+				descriptor.getPid() != null ? String.valueOf(descriptor.getPid()) : "", descriptor.isDebug(), //$NON-NLS-1$
+				descriptor.getJVMArguments()};
 	}
 
 	private String getValidName(JVMDescriptor descriptor) {

@@ -43,9 +43,9 @@ import org.openjdk.jmc.common.unit.IConstraint;
 import org.openjdk.jmc.common.unit.IOptionDescriptor;
 import org.openjdk.jmc.common.unit.QuantityConversionException;
 import org.openjdk.jmc.flightrecorder.configuration.OptionInfo;
+import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeInfo;
 import org.openjdk.jmc.flightrecorder.configuration.internal.CommonConstraints;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV2;
-import org.openjdk.jmc.flightrecorder.configuration.services.IEventTypeInfo;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 
 /**

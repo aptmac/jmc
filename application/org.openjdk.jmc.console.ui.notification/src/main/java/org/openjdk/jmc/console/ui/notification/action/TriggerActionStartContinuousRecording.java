@@ -38,10 +38,10 @@ import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBu
 import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
 import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.triggers.IActivatableTriggerAction;
-import org.openjdk.jmc.rjmx.triggers.ITriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.IActivatableTriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.ITriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
 
 /**
  * NotificationAction that starts a continuous recording.
