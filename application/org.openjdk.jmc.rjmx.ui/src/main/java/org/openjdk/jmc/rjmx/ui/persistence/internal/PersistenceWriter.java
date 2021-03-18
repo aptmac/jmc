@@ -141,8 +141,9 @@ public class PersistenceWriter implements IPersistenceService, IDisposableServic
 	private AttributeWriter getWriter(MRI mri) {
 		AttributeWriter writer = attributes.get(mri);
 		if (writer == null) {
-			File persistenceDirectory = calculatePersistenceDirectory(RJMXUIPlugin.getDefault().getRJMXPreferences().get(
-					PersistenceKeys.PROPERTY_PERSISTENCE_DIRECTORY, PersistenceKeys.DEFAULT_PERSISTENCE_DIRECTORY));
+			File persistenceDirectory = calculatePersistenceDirectory(
+					RJMXUIPlugin.getDefault().getRJMXPreferences().get(PersistenceKeys.PROPERTY_PERSISTENCE_DIRECTORY,
+							PersistenceKeys.DEFAULT_PERSISTENCE_DIRECTORY));
 			long maxFileSize = calculateMaxFileSize(RJMXUIPlugin.getDefault().getRJMXPreferences().getLong(
 					PersistenceKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB,
 					PersistenceKeys.DEFAULT_PERSISTENCE_LOG_ROTATION_LIMIT_KB));

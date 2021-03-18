@@ -54,7 +54,7 @@ public class Messages {
 	public static final String VolatileStorageDelegate_VOLATILE_CONFIGURATION_ON_SERVER = "VolatileStorageDelegate_VOLATILE_CONFIGURATION_ON_SERVER"; //$NON-NLS-1$
 	public static final String VolatileStorageDelegate_VOLATILE_CONFIGURATION_RUNNING_RECORDING = "VolatileStorageDelegate_VOLATILE_CONFIGURATION_RUNNING_RECORDING"; //$NON-NLS-1$
 	public static final String VolatileStorageDelegate_VOLATILE_CONFIGURATION_WORKING_COPY = "VolatileStorageDelegate_VOLATILE_CONFIGURATION_WORKING_COPY"; //$NON-NLS-1$
-	
+
 	// Not the most logical place for this, but at least it has something to do with messages.
 	static final Logger LOGGER = Logger.getLogger("org.openjdk.jmc.flightrecorder.configuration"); //$NON-NLS-1$
 

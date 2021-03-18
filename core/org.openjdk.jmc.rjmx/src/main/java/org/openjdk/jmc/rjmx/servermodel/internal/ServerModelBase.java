@@ -45,7 +45,7 @@ import org.openjdk.jmc.rjmx.servermodel.IServerModel;
 import org.w3c.dom.Document;
 
 public abstract class ServerModelBase extends Observable implements IServerModel {
-	
+
 	private final Map<String, Server> elements = new HashMap<>();
 
 	public ServerModelBase() {

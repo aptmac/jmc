@@ -36,29 +36,24 @@ package org.openjdk.jmc.rjmx.services.internal;
  * Manager for service factories.
  */
 public class ServiceFactoryManager extends ServiceFactoryManagerBase {
-	
+
 	public ServiceFactoryManager() {
 		super();
 		initializeFromExtensions();
 	}
 
 	private void initializeFromExtensions() {
-	    registerService(new ServiceEntry<>(new DiagnosticCommandServiceFactory(),
-	            "Diagnostic Commands",
-	            "Diagnostic Commands"));
-	    registerService(new ServiceEntry<>(new SubscriptionServiceFactory(),
-	            "Subscription Engine",
-	            "Service for controlling the client side attribute subscription engine"));
-	    registerService(new ServiceEntry<>(new MRIMetadataServiceFactory(),
-	            "Attribute Info",
-	            "Service for getting attribute subscription related information and metadata"));
-	    registerService(new ServiceEntry<>(new AttributeStorageServiceFactory(),
-	            "Attribute Storage",
-	            "Service for storing attribute values"));
-	    registerService(new ServiceEntry<>(new CommercialFeaturesServiceFactory(),
-	            "Commercial Features",
-	            "Service for checking and enabling the state of the commercial features in hotspot."));
-	    // Skipping PersistenceServiceFactory
+		registerService(new ServiceEntry<>(new DiagnosticCommandServiceFactory(), "Diagnostic Commands",
+				"Diagnostic Commands"));
+		registerService(new ServiceEntry<>(new SubscriptionServiceFactory(), "Subscription Engine",
+				"Service for controlling the client side attribute subscription engine"));
+		registerService(new ServiceEntry<>(new MRIMetadataServiceFactory(), "Attribute Info",
+				"Service for getting attribute subscription related information and metadata"));
+		registerService(new ServiceEntry<>(new AttributeStorageServiceFactory(), "Attribute Storage",
+				"Service for storing attribute values"));
+		registerService(new ServiceEntry<>(new CommercialFeaturesServiceFactory(), "Commercial Features",
+				"Service for checking and enabling the state of the commercial features in hotspot."));
+		// Skipping PersistenceServiceFactory
 	}
 
 }

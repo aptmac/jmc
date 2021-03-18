@@ -59,7 +59,8 @@ public class ServerModel extends ServerModelBase {
 					provider.addDescriptorListener(descriptorListener);
 				}
 			} catch (CoreException e) {
-				RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to start up a IDescriptorProvider!", e); //$NON-NLS-1$
+				RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to start up a IDescriptorProvider!", //$NON-NLS-1$
+						e);
 			}
 		}
 	}

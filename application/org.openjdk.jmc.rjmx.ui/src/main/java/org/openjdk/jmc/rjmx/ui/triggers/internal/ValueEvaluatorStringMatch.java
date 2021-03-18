@@ -44,7 +44,7 @@ import org.openjdk.jmc.rjmx.ui.triggers.IValueEvaluator;
  */
 public final class ValueEvaluatorStringMatch implements IValueEvaluator {
 	// The logger.
-	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.triggers"); //$NON-NLS-1$
+	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.ui.triggers"); //$NON-NLS-1$
 
 	private static final String XML_ELEMENT_MATCHSTRING = "maxvalue"; //$NON-NLS-1$
 

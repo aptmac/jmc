@@ -49,7 +49,7 @@ import org.w3c.dom.Element;
  * Standard evaluator. Evaluates to true if the value is less than min. The value must be a Number.
  */
 public final class ValueEvaluatorNumberMin implements IValueEvaluator {
-	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.triggers"); //$NON-NLS-1$
+	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.ui.triggers"); //$NON-NLS-1$
 
 	private static final String XML_ELEMENT_MINVALUE = "minvalue"; //$NON-NLS-1$
 	private static final String XML_ELEMENT_CONTENTTYPE = "contenttype"; //$NON-NLS-1$

@@ -82,77 +82,81 @@ public final class SyntheticAttributeRepository {
 		this.compoundServer = compoundServer;
 	}
 
-
 	void initializeFromExtensions() {
-	    
-		List<SyntheticAttributeEntry> attributeCandidates = new ArrayList<>();
-		
-        ISyntheticAttribute attribute = new LongDifferenceAttribute();
-        MRI descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Memory/FreeHeapMemory");
-        Map<String, Object> properties = new HashMap<>();
-        properties.put("minuend", "attribute://java.lang:type=Memory/HeapMemoryUsage/committed");
-        properties.put("subtrahend", "attribute://java.lang:type=Memory/HeapMemoryUsage/used");
-        ((IPropertySyntheticAttribute) attribute).setProperties(properties);
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
 
-        attribute = new LongDifferenceAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Memory/FreeNonHeapMemory");
-        properties = new HashMap<>();
-        properties.put("minuend", "attribute://java.lang:type=Memory/NonHeapMemoryUsage/committed");
-        properties.put("subtrahend", "attribute://java.lang:type=Memory/NonHeapMemoryUsage/used");
-        ((IPropertySyntheticAttribute) attribute).setProperties(properties);
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
-               
-        attribute = new DivisionAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Memory/HeapMemoryUsagePercent");
-        properties = new HashMap<>();
-        properties.put("dividend", "attribute://java.lang:type=Memory/HeapMemoryUsage/used");
-        properties.put("divisor", "attribute://java.lang:type=Memory/HeapMemoryUsage/committed");
-        ((IPropertySyntheticAttribute) attribute).setProperties(properties);
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "double", true, false, false));
-        
-        attribute = new DivisionAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=OperatingSystem/PhysicalMemoryUsagePercent");
-        properties = new HashMap<>();
-        properties.put("dividend", "attribute://java.lang:type=OperatingSystem/UsedPhysicalMemorySize");
-        properties.put("divisor", "attribute://java.lang:type=OperatingSystem/TotalPhysicalMemorySize");
-        ((IPropertySyntheticAttribute) attribute).setProperties(properties);
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "double", true, false, false));
-        
-        attribute = new LongDifferenceAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=OperatingSystem/UsedPhysicalMemorySize");
-        properties = new HashMap<>();
-        properties.put("minuend", "attribute://java.lang:type=OperatingSystem/TotalPhysicalMemorySize");
-        properties.put("subtrahend", "attribute://java.lang:type=OperatingSystem/FreePhysicalMemorySize");
-        ((IPropertySyntheticAttribute) attribute).setProperties(properties);
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
-        
-        attribute = new LongDifferenceAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=OperatingSystem/UsedSwapSpaceSize");
-        properties = new HashMap<>();
-        properties.put("minuend", "attribute://java.lang:type=OperatingSystem/TotalSwapSpaceSize");
-        properties.put("subtrahend", "attribute://java.lang:type=OperatingSystem/FreeSwapSpaceSize");
-        ((IPropertySyntheticAttribute) attribute).setProperties(properties);
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
-        
-        attribute = new DeadlockedThreadCountAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Threading/DeadlockedThreadCount");
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "int", true, false, false));
-        
-        attribute = new MonitoredDeadlockedThreadCountAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Threading/MonitoredDeadlockedThreadCount");
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "int", true, false, false));
-        
-        attribute = new HotSpotLiveSetAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://com.sun.management:type=GarbageCollectionAggregator/HeapLiveSet");
-        String description = "The remaining heap memory after the last major GC, measured in percent of committed heap.";
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, description, "double", true, false, false));
-		
-        attribute = new HotSpotLastGcAttribute();
-        descriptor = MRI.createFromQualifiedName("attribute://com.sun.management:type=GarbageCollectionAggregator/LastGcInfo");
-        description = "Information from the last time a garbage collection took place.";
-        attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, description, "javax.management.openmbean.CompositeData", true, false, false));
-        
+		List<SyntheticAttributeEntry> attributeCandidates = new ArrayList<>();
+
+		ISyntheticAttribute attribute = new LongDifferenceAttribute();
+		MRI descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Memory/FreeHeapMemory");
+		Map<String, Object> properties = new HashMap<>();
+		properties.put("minuend", "attribute://java.lang:type=Memory/HeapMemoryUsage/committed");
+		properties.put("subtrahend", "attribute://java.lang:type=Memory/HeapMemoryUsage/used");
+		((IPropertySyntheticAttribute) attribute).setProperties(properties);
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
+
+		attribute = new LongDifferenceAttribute();
+		descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Memory/FreeNonHeapMemory");
+		properties = new HashMap<>();
+		properties.put("minuend", "attribute://java.lang:type=Memory/NonHeapMemoryUsage/committed");
+		properties.put("subtrahend", "attribute://java.lang:type=Memory/NonHeapMemoryUsage/used");
+		((IPropertySyntheticAttribute) attribute).setProperties(properties);
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
+
+		attribute = new DivisionAttribute();
+		descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Memory/HeapMemoryUsagePercent");
+		properties = new HashMap<>();
+		properties.put("dividend", "attribute://java.lang:type=Memory/HeapMemoryUsage/used");
+		properties.put("divisor", "attribute://java.lang:type=Memory/HeapMemoryUsage/committed");
+		((IPropertySyntheticAttribute) attribute).setProperties(properties);
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "double", true, false, false));
+
+		attribute = new DivisionAttribute();
+		descriptor = MRI
+				.createFromQualifiedName("attribute://java.lang:type=OperatingSystem/PhysicalMemoryUsagePercent");
+		properties = new HashMap<>();
+		properties.put("dividend", "attribute://java.lang:type=OperatingSystem/UsedPhysicalMemorySize");
+		properties.put("divisor", "attribute://java.lang:type=OperatingSystem/TotalPhysicalMemorySize");
+		((IPropertySyntheticAttribute) attribute).setProperties(properties);
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "double", true, false, false));
+
+		attribute = new LongDifferenceAttribute();
+		descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=OperatingSystem/UsedPhysicalMemorySize");
+		properties = new HashMap<>();
+		properties.put("minuend", "attribute://java.lang:type=OperatingSystem/TotalPhysicalMemorySize");
+		properties.put("subtrahend", "attribute://java.lang:type=OperatingSystem/FreePhysicalMemorySize");
+		((IPropertySyntheticAttribute) attribute).setProperties(properties);
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
+
+		attribute = new LongDifferenceAttribute();
+		descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=OperatingSystem/UsedSwapSpaceSize");
+		properties = new HashMap<>();
+		properties.put("minuend", "attribute://java.lang:type=OperatingSystem/TotalSwapSpaceSize");
+		properties.put("subtrahend", "attribute://java.lang:type=OperatingSystem/FreeSwapSpaceSize");
+		((IPropertySyntheticAttribute) attribute).setProperties(properties);
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "long", true, false, false));
+
+		attribute = new DeadlockedThreadCountAttribute();
+		descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Threading/DeadlockedThreadCount");
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "int", true, false, false));
+
+		attribute = new MonitoredDeadlockedThreadCountAttribute();
+		descriptor = MRI.createFromQualifiedName("attribute://java.lang:type=Threading/MonitoredDeadlockedThreadCount");
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, null, "int", true, false, false));
+
+		attribute = new HotSpotLiveSetAttribute();
+		descriptor = MRI
+				.createFromQualifiedName("attribute://com.sun.management:type=GarbageCollectionAggregator/HeapLiveSet");
+		String description = "The remaining heap memory after the last major GC, measured in percent of committed heap.";
+		attributeCandidates
+				.add(new SyntheticAttributeEntry(attribute, descriptor, description, "double", true, false, false));
+
+		attribute = new HotSpotLastGcAttribute();
+		descriptor = MRI
+				.createFromQualifiedName("attribute://com.sun.management:type=GarbageCollectionAggregator/LastGcInfo");
+		description = "Information from the last time a garbage collection took place.";
+		attributeCandidates.add(new SyntheticAttributeEntry(attribute, descriptor, description,
+				"javax.management.openmbean.CompositeData", true, false, false));
+
 		boolean hasResolved = true;
 		while (!attributeCandidates.isEmpty() && hasResolved) {
 			hasResolved = false;
@@ -168,6 +172,7 @@ public final class SyntheticAttributeRepository {
 			}
 		}
 	}
+
 	private void registerEntry(SyntheticAttributeEntry attributeEntry) {
 		ObjectName objectName = attributeEntry.getAttributeDescriptor().getObjectName();
 		SyntheticAttributeMBeanEntry entry = mbeans.get(objectName);

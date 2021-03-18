@@ -88,8 +88,6 @@ public abstract class NameConverterBase {
 
 	protected final List<NamingRule> rules = new ArrayList<>();
 
-
-
 	/**
 	 * Create a new name converter instance. This should only be used if you want a new, clean
 	 * instance. Normally the {@link NameConverter#getInstance()} method should be used instead to

@@ -36,9 +36,9 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class Messages {
-	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.triggers.actions.internal.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.ui.triggers.actions.internal.messages"; //$NON-NLS-1$
 
-    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
 	public static final String TriggerActionDiagnosticCommand_APPEND_ACTION_TEXT = "TriggerActionDiagnosticCommand_APPEND_ACTION_TEXT"; //$NON-NLS-1$
 	public static final String TriggerActionDiagnosticCommand_WRITE_ACTION_TEXT = "TriggerActionDiagnosticCommand_WRITE_ACTION_TEXT"; //$NON-NLS-1$
@@ -53,7 +53,7 @@ public class Messages {
 	private Messages() {
 	}
 
-    public static String getString(String key) {
+	public static String getString(String key) {
 		try {
 			return RESOURCE_BUNDLE.getString(key);
 		} catch (MissingResourceException e) {

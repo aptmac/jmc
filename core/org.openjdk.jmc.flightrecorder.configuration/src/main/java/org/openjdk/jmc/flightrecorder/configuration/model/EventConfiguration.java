@@ -103,11 +103,11 @@ import org.xml.sax.SAXException;
 public final class EventConfiguration implements IEventConfiguration {
 	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.flightrecorder.configuration"); //$NON-NLS-1$
 
-    public Logger getLogger() {
-        Logger logger = Logger.getGlobal();
-        logger.setLevel(Level.ALL);
-        return logger;
-    }
+	public Logger getLogger() {
+		Logger logger = Logger.getGlobal();
+		logger.setLevel(Level.ALL);
+		return logger;
+	}
 
 	private XMLModel xmlModel;
 	private final IConfigurationStorageDelegate storageDelegate;

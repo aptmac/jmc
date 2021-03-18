@@ -50,7 +50,6 @@ import org.openjdk.jmc.common.util.Environment;
 import org.openjdk.jmc.ui.common.CorePlugin;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportFactory;
 
-
 /**
  * Converts names according to rules specified with the {@value #LABELING_RULES_EXTENSION_POINT}
  * extension point.
@@ -85,7 +84,7 @@ public final class NameConverter extends NameConverterBase {
 		// Should always be a catch all rule, but if someone messes up, we will use the LOCAL_NAME_TEMPLATE.
 		return MessageFormat.format(Messages.NameConverter_LOCAL_NAME_TEMPLATE, descriptor);
 	}
-	
+
 	private void initializeRulesFromExtensions() {
 		IExtensionRegistry er = Platform.getExtensionRegistry();
 		IExtensionPoint ep = er.getExtensionPoint(LABELING_RULES_EXTENSION_POINT);

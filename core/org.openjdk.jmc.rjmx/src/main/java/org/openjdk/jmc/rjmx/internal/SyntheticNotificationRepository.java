@@ -141,9 +141,10 @@ public class SyntheticNotificationRepository {
 
 	void initializeFromExtensions() {
 		List<SyntheticNotificationEntry> notificationCandidates = new ArrayList<>();
-		
+
 		ISyntheticNotification notification = new HotSpotGcNotification();
-		MRI descriptor = MRI.createFromQualifiedName("notification://com.sun.management:type=GarbageCollectionAggregator/com.sun.management.gc.notification");
+		MRI descriptor = MRI.createFromQualifiedName(
+				"notification://com.sun.management:type=GarbageCollectionAggregator/com.sun.management.gc.notification");
 		String description = "Sends an event every time a garbage collection has taken place.";
 		String type = "javax.management.openmbean.CompositeData";
 		notificationCandidates.add(new SyntheticNotificationEntry(notification, descriptor, description, type, ""));

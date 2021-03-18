@@ -38,7 +38,7 @@ import java.util.ResourceBundle;
 public class Messages {
 	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.messages.internal.messages"; //$NON-NLS-1$
 
-    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
 	public static final String ConnectionException_ATTACH_NOT_SUPPORTED = "ConnectionException_ATTACH_NOT_SUPPORTED"; //$NON-NLS-1$
 	public static final String ConnectionException_COULD_NOT_CONNECT_MSG = "ConnectionException_COULD_NOT_CONNECT_MSG"; //$NON-NLS-1$

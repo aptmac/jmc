@@ -36,9 +36,9 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class Messages {
-	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.triggers.internal.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.ui.triggers.internal.messages"; //$NON-NLS-1$
 
-    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
 	public static final String ValueEvaluatorNumber_VALUE_NOT_A_QUANTITY = "ValueEvaluatorNumber_VALUE_NOT_A_QUANTITY"; //$NON-NLS-1$
 	public static final String ValueEvaluatorNumber_VALUE_NOT_OF_THE_SAME_TYPE = "ValueEvaluatorNumber_VALUE_NOT_OF_THE_SAME_TYPE"; //$NON-NLS-1$
@@ -46,7 +46,7 @@ public class Messages {
 	private Messages() {
 	}
 
-    public static String getString(String key) {
+	public static String getString(String key) {
 		try {
 			return RESOURCE_BUNDLE.getString(key);
 		} catch (MissingResourceException e) {

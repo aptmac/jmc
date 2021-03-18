@@ -52,11 +52,11 @@ import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 
 /**
- * This class contains the service lookup pieces of {@link RJMXUIPlugin} which likely does not belong
- * in a OSGi Bundle Activator. (Almost nothing does.) It was extracted to circumvent activator
- * problems (maybe even deadlocks) when starting Mission Control on OS X from the command line with
- * an -open argument. Could possibly be replaced with or delegate to OSGi (Declarative) Services. It
- * might provide:
+ * This class contains the service lookup pieces of {@link RJMXUIPlugin} which likely does not
+ * belong in a OSGi Bundle Activator. (Almost nothing does.) It was extracted to circumvent
+ * activator problems (maybe even deadlocks) when starting Mission Control on OS X from the command
+ * line with an -open argument. Could possibly be replaced with or delegate to OSGi (Declarative)
+ * Services. It might provide:
  * <ul>
  * <li>access to the connection manager</li>
  * <li>access to the description repository</li>
@@ -130,7 +130,8 @@ public final class RJMXSingleton extends RJMXSingletonBase {
 				notificationModel.importFromXML(XmlToolkit.loadDocumentFromString(triggersState).getDocumentElement());
 			}
 		} catch (Exception e) {
-			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Could not load notification model from preferences", //$NON-NLS-1$
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
+					"Could not load notification model from preferences", //$NON-NLS-1$
 					e);
 		}
 	}

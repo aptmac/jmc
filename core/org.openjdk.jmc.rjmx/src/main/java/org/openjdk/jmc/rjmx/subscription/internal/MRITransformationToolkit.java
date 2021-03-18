@@ -51,51 +51,51 @@ public class MRITransformationToolkit extends MRITransformationToolkitBase {
 		initializeFromExtensions();
 	}
 
-	private static void initializeFromExtensions() {		
+	private static void initializeFromExtensions() {
 		IMRITransformationFactory transformationFactory = new SingleMRITransformationFactory();
-        String transformationName = "difference";
-        Properties props = new Properties();
-        props.put("visualizeLabel", "Visualize difference...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
-        Properties transProps = new Properties();
-        transProps.put("displayName", "%s (difference)");
-        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
-        transformationFactory.setFactoryProperties(props, transProps);
-        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
-        
-        transformationFactory = new SingleMRITransformationFactory();
-        transformationName = "rate";
-        props = new Properties();
-        props.put("visualizeLabel", "Visualize rate per second...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
-        transProps = new Properties();
-        transProps.put("displayName", "%s (rate per second)");
-        transProps.put("rate", "1000");
-        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
-        transformationFactory.setFactoryProperties(props, transProps);
-        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
-        
-        transformationFactory = new SingleMRITransformationFactory();
-        transformationName = "average";
-        props = new Properties();
-        props.put("visualizeLabel", "Visualize average...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.AverageTransformation");
-        transProps = new Properties();
-        transProps.put("terms", "30");
-        transProps.put("displayName", "%%s (average over %s samples)");
-        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
-        transformationFactory.setFactoryProperties(props, transProps);
-        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
-        
-        transformationFactory = new SingleMRITransformationFactory();
-        transformationName = "delta";
-        props = new Properties();
-        props.put("visualizeLabel", "Visualize delta...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DeltaTransformation");
-        transProps = new Properties();
-        transProps.put("displayName", "%s (delta)");
-        props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
-        transformationFactory.setFactoryProperties(props, transProps);
-        TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
+		String transformationName = "difference";
+		Properties props = new Properties();
+		props.put("visualizeLabel", "Visualize difference...");
+		props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
+		Properties transProps = new Properties();
+		transProps.put("displayName", "%s (difference)");
+		props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+		transformationFactory.setFactoryProperties(props, transProps);
+		TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
+
+		transformationFactory = new SingleMRITransformationFactory();
+		transformationName = "rate";
+		props = new Properties();
+		props.put("visualizeLabel", "Visualize rate per second...");
+		props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
+		transProps = new Properties();
+		transProps.put("displayName", "%s (rate per second)");
+		transProps.put("rate", "1000");
+		props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+		transformationFactory.setFactoryProperties(props, transProps);
+		TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
+
+		transformationFactory = new SingleMRITransformationFactory();
+		transformationName = "average";
+		props = new Properties();
+		props.put("visualizeLabel", "Visualize average...");
+		props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.AverageTransformation");
+		transProps = new Properties();
+		transProps.put("terms", "30");
+		transProps.put("displayName", "%%s (average over %s samples)");
+		props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+		transformationFactory.setFactoryProperties(props, transProps);
+		TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
+
+		transformationFactory = new SingleMRITransformationFactory();
+		transformationName = "delta";
+		props = new Properties();
+		props.put("visualizeLabel", "Visualize delta...");
+		props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DeltaTransformation");
+		transProps = new Properties();
+		transProps.put("displayName", "%s (delta)");
+		props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
+		transformationFactory.setFactoryProperties(props, transProps);
+		TRANSFORMATION_FACTORIES.put(transformationName, transformationFactory);
 	}
 }

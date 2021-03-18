@@ -36,9 +36,9 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class Messages {
-	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.triggers.condition.internal.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.openjdk.jmc.rjmx.ui.triggers.condition.internal.messages"; //$NON-NLS-1$
 
-    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
 	public static final String TriggerCondition_ASCENDING_FLANK_CAPTION = "TriggerCondition_ASCENDING_FLANK_CAPTION"; //$NON-NLS-1$
 	public static final String TriggerCondition_ASCENDING_FLANK_TOOLTIP = "TriggerCondition_ASCENDING_FLANK_TOOLTIP"; //$NON-NLS-1$
@@ -58,7 +58,7 @@ public class Messages {
 	private Messages() {
 	}
 
-    public static String getString(String key) {
+	public static String getString(String key) {
 		try {
 			return RESOURCE_BUNDLE.getString(key);
 		} catch (MissingResourceException e) {

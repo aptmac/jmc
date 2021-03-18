@@ -81,7 +81,6 @@ public final class RJMXUIPlugin extends MCAbstractUIPlugin {
 		return plugin;
 	}
 
-
 	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);

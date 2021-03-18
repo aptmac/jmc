@@ -163,8 +163,8 @@ public class TriggerActionMail extends TriggerAction {
 	 *             If the secure storage could not be opened
 	 */
 	private UserPassword getSecureSmtpCredentials() throws SecurityException {
-		String key = RJMXUIPlugin.getDefault().getRJMXPreferences().get(PreferencesKeys.PROPERTY_MAIL_SERVER_CREDENTIALS,
-				PreferencesKeys.DEFAULT_MAIL_SERVER_CREDENTIALS);
+		String key = RJMXUIPlugin.getDefault().getRJMXPreferences()
+				.get(PreferencesKeys.PROPERTY_MAIL_SERVER_CREDENTIALS, PreferencesKeys.DEFAULT_MAIL_SERVER_CREDENTIALS);
 		if (key != null && !PreferencesKeys.DEFAULT_MAIL_SERVER_CREDENTIALS.equals(key)) {
 			PersistentCredentials credentials = new PersistentCredentials(key);
 			return new UserPassword(credentials.getUsername(), credentials.getPassword());

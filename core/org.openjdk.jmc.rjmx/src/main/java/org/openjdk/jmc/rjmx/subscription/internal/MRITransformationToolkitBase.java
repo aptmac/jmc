@@ -120,8 +120,8 @@ public abstract class MRITransformationToolkitBase {
 
 	public static void forwardMetadata(
 		IMRIMetadataService metadataService, MRI mri, IMRIMetadata attributeMetadata, String textPattern) {
-		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_DISPLAY_NAME,
-				MessageFormat.format(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DISPLAY_NAME)));
+		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_DISPLAY_NAME, MessageFormat.format(textPattern,
+				attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DISPLAY_NAME)));
 		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_DESCRIPTION,
 				MessageFormat.format(textPattern, attributeMetadata.getMetadata(IMRIMetadataProvider.KEY_DESCRIPTION)));
 		metadataService.setMetadata(mri, IMRIMetadataProvider.KEY_UPDATE_TIME,

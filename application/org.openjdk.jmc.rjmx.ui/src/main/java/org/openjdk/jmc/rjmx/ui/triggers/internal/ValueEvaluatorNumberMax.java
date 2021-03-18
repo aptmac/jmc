@@ -50,7 +50,7 @@ import org.w3c.dom.Element;
  * Number.
  */
 public final class ValueEvaluatorNumberMax implements IValueEvaluator {
-	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.triggers"); //$NON-NLS-1$
+	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.ui.triggers"); //$NON-NLS-1$
 
 	private static final String XML_ELEMENT_MAXVALUE = "maxvalue"; //$NON-NLS-1$
 	private static final String XML_ELEMENT_CONTENTTYPE = "contenttype"; //$NON-NLS-1$

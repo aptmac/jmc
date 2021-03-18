@@ -146,7 +146,8 @@ public final class TriggerConstraintHolder {
 //				constraint = (NotificationConstraint) Class.forName(className).newInstance();
 			} catch (Exception e) {
 				// We need to notify the user of this.
-				RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Error instantiating NotificationConstraint.", e); //$NON-NLS-1$
+				RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Error instantiating NotificationConstraint.", //$NON-NLS-1$
+						e);
 				return holder;
 			}
 			holder.addConstraint(constraint);

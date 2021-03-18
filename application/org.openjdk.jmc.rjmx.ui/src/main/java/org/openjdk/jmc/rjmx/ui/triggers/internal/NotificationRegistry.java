@@ -56,7 +56,7 @@ import org.w3c.dom.Element;
  */
 // FIXME: Must be made thread safe!
 public class NotificationRegistry {
-	private static final Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.triggers"); //$NON-NLS-1$
+	private static final Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.ui.triggers"); //$NON-NLS-1$
 	private static final String XML_ROOT_ELEMENT = "triggers"; //$NON-NLS-1$
 	private static final String XML_ELEMENT_NOTIFICATION_RULES = "notification_rules"; //$NON-NLS-1$
 	public static final String XML_RULE_COMPONENT_NAME = "notification_rule"; //$NON-NLS-1$
