@@ -43,9 +43,8 @@ import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChang
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
 
 import org.openjdk.jmc.common.util.StringToolkit;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.internal.IDisposableService;
-import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.services.IPersistenceService;
 import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
 import org.openjdk.jmc.rjmx.subscription.MRI;
@@ -60,19 +59,19 @@ public class PersistenceWriter implements IPersistenceService, IDisposableServic
 	public PersistenceWriter(String uid, ISubscriptionService service) {
 		this.service = service;
 		this.uid = uid;
-		RJMXPlugin.getDefault().getRJMXPreferences().addPreferenceChangeListener(this);
+		RJMXUIPlugin.getDefault().getRJMXPreferences().addPreferenceChangeListener(this);
 		loadState();
 	}
 
 	@Override
 	public void preferenceChange(PreferenceChangeEvent event) {
-		if (event.getKey().equals(PreferencesKeys.PROPERTY_PERSISTENCE_DIRECTORY)
+		if (event.getKey().equals(PersistenceKeys.PROPERTY_PERSISTENCE_DIRECTORY)
 				&& (event.getNewValue() instanceof String)) {
 			File uidPersistenceDirectory = calculatePersistenceDirectory((String) event.getNewValue());
 			for (AttributeWriter writer : attributes.values()) {
 				writer.setPersistenceDir(uidPersistenceDirectory);
 			}
-		} else if (event.getKey().equals(PreferencesKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB)
+		} else if (event.getKey().equals(PersistenceKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB)
 				&& (event.getNewValue() instanceof String)) {
 			try {
 				long maxFileSize = calculateMaxFileSize(Long.parseLong((String) event.getNewValue()));
@@ -142,11 +141,11 @@ public class PersistenceWriter implements IPersistenceService, IDisposableServic
 	private AttributeWriter getWriter(MRI mri) {
 		AttributeWriter writer = attributes.get(mri);
 		if (writer == null) {
-			File persistenceDirectory = calculatePersistenceDirectory(RJMXPlugin.getDefault().getRJMXPreferences().get(
-					PreferencesKeys.PROPERTY_PERSISTENCE_DIRECTORY, PreferencesKeys.DEFAULT_PERSISTENCE_DIRECTORY));
-			long maxFileSize = calculateMaxFileSize(RJMXPlugin.getDefault().getRJMXPreferences().getLong(
-					PreferencesKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB,
-					PreferencesKeys.DEFAULT_PERSISTENCE_LOG_ROTATION_LIMIT_KB));
+			File persistenceDirectory = calculatePersistenceDirectory(RJMXUIPlugin.getDefault().getRJMXPreferences().get(
+					PersistenceKeys.PROPERTY_PERSISTENCE_DIRECTORY, PersistenceKeys.DEFAULT_PERSISTENCE_DIRECTORY));
+			long maxFileSize = calculateMaxFileSize(RJMXUIPlugin.getDefault().getRJMXPreferences().getLong(
+					PersistenceKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB,
+					PersistenceKeys.DEFAULT_PERSISTENCE_LOG_ROTATION_LIMIT_KB));
 			writer = new AttributeWriter(mri, persistenceDirectory, maxFileSize);
 			attributes.put(mri, writer);
 		}
@@ -164,15 +163,15 @@ public class PersistenceWriter implements IPersistenceService, IDisposableServic
 			}
 		}
 		if (allAttributes.length() > 0) {
-			RJMXPlugin.getDefault().getServerPreferences(uid).put(getClass().getName(), allAttributes.toString());
+			RJMXUIPlugin.getDefault().getServerPreferences(uid).put(getClass().getName(), allAttributes.toString());
 		} else {
-			RJMXPlugin.getDefault().getServerPreferences(uid).remove(getClass().getName());
+			RJMXUIPlugin.getDefault().getServerPreferences(uid).remove(getClass().getName());
 		}
 
 	}
 
 	private void loadState() {
-		String state = RJMXPlugin.getDefault().getServerPreferences(uid).get(getClass().getName(), null);
+		String state = RJMXUIPlugin.getDefault().getServerPreferences(uid).get(getClass().getName(), null);
 		if (state != null) {
 			for (String line : state.split("\\|")) { //$NON-NLS-1$
 				add(MRI.createFromQualifiedName(line.trim()));
@@ -191,7 +190,7 @@ public class PersistenceWriter implements IPersistenceService, IDisposableServic
 
 	@Override
 	public synchronized void dispose() {
-		RJMXPlugin.getDefault().getRJMXPreferences().removePreferenceChangeListener(this);
+		RJMXUIPlugin.getDefault().getRJMXPreferences().removePreferenceChangeListener(this);
 		stop();
 		storeState();
 	}

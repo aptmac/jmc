@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import org.openjdk.jmc.common.util.XmlToolkit;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.triggers.internal.INotificationFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -146,7 +146,7 @@ public final class TriggerConstraintHolder {
 //				constraint = (NotificationConstraint) Class.forName(className).newInstance();
 			} catch (Exception e) {
 				// We need to notify the user of this.
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Error instantiating NotificationConstraint.", e); //$NON-NLS-1$
+				RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Error instantiating NotificationConstraint.", e); //$NON-NLS-1$
 				return holder;
 			}
 			holder.addConstraint(constraint);

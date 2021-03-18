@@ -39,17 +39,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Observable;
-import java.util.logging.Level;
 
-import javax.management.remote.JMXServiceURL;
-
-import org.openjdk.jmc.common.IDescribable;
-import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorListener;
-import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorProvider;
 import org.openjdk.jmc.rjmx.servermodel.IServer;
 import org.openjdk.jmc.rjmx.servermodel.IServerModel;
 import org.w3c.dom.Document;

@@ -41,7 +41,7 @@ import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.common.unit.QuantityConversionException;
 import org.openjdk.jmc.common.unit.UnitLookup;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.triggers.IValueEvaluator;
 import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.BooleanField;
 import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
@@ -94,7 +94,7 @@ public class TriggerCondition extends NotificationTrigger {
 				createStringEvaluatorField("*"); //$NON-NLS-1$
 			}
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
 		}
 
 	}
@@ -108,7 +108,7 @@ public class TriggerCondition extends NotificationTrigger {
 			createFlankBegin();
 			createFlankEnd();
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
 		}
 	}
 

@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openjdk.jmc.common.tree.IParent;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 
 public class PartitionedList<T> implements IParent<T>, Comparable<PartitionedList<T>> {
@@ -75,7 +75,7 @@ public class PartitionedList<T> implements IParent<T>, Comparable<PartitionedLis
 	}
 
 	public static <T> List<?> create(List<T> list) {
-		int maxChildCount = RJMXPlugin.getDefault().getRJMXPreferences()
+		int maxChildCount = RJMXUIPlugin.getDefault().getRJMXPreferences()
 				.getInt(PreferencesKeys.PROPERTY_LIST_AGGREGATE_SIZE, PreferencesKeys.DEFAULT_LIST_AGGREGATE_SIZE);
 		return create(list, 1, list.size(), maxChildCount);
 	}

@@ -40,7 +40,7 @@ import org.w3c.dom.Element;
 
 import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.common.util.XmlToolkit;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.triggers.ISetting;
 
 /**
@@ -78,7 +78,7 @@ abstract public class Field implements ISetting {
 
 	public void initDefaultPreferenceValue() {
 		if (m_id != null) {
-			String prefDefault = RJMXPlugin.getDefault().getRJMXPreferences().get(m_id, null);
+			String prefDefault = RJMXUIPlugin.getDefault().getRJMXPreferences().get(m_id, null);
 			if (prefDefault != null && prefDefault.trim().length() != 0) {
 				setValue(prefDefault);
 			}

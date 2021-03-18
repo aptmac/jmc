@@ -42,7 +42,7 @@ import org.w3c.dom.Element;
 import org.openjdk.jmc.common.unit.IUnit;
 import org.openjdk.jmc.common.util.XmlToolkit;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.subscription.MRI;
 import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
 import org.openjdk.jmc.rjmx.subscription.internal.ExtendedMRIMetadataToolkit;
@@ -454,7 +454,7 @@ public class NotificationTrigger implements ITrigger {
 		if ("".equals(evaluatorClass)) { //$NON-NLS-1$
 			evaluatorClass = XmlToolkit.getSetting(node, "value_evaluator_class", null); //$NON-NLS-1$
 			if (evaluatorClass == null) {
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
+				RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE,
 						"No element specifying the value evaluator class!"); //$NON-NLS-1$
 				return;
 			}
@@ -463,7 +463,7 @@ public class NotificationTrigger implements ITrigger {
 		try {
 			evaluator = factory.createEvaluator(evaluatorClass);
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Error instantiating value evaluator", e); //$NON-NLS-1$
+			RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Error instantiating value evaluator", e); //$NON-NLS-1$
 			return;
 		}
 		evaluator.initializeEvaluatorFromXml(evalNode);

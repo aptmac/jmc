@@ -42,7 +42,7 @@ import javax.management.ObjectName;
 
 import org.openjdk.jmc.common.util.Filename;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.triggers.TriggerAction;
 import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
 
@@ -85,9 +85,9 @@ public class TriggerActionHPROF extends TriggerAction {
 			// Then we send it off to the service for invocation.
 			service.invoke(HOTSPOT, HPROF_OPERATION_NAME, new Object[] {fileName, onlyLive},
 					new String[] {String.class.getName(), Boolean.TYPE.getName()});
-			RJMXPlugin.getDefault().getLogger().log(Level.INFO, "HPROF heap dump triggered to file " + fileName); //$NON-NLS-1$
+			RJMXUIPlugin.getDefault().getLogger().log(Level.INFO, "HPROF heap dump triggered to file " + fileName); //$NON-NLS-1$
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Could not invoke the hprof action!", e); //$NON-NLS-1$
+			RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Could not invoke the hprof action!", e); //$NON-NLS-1$
 			throw e;
 		}
 	}

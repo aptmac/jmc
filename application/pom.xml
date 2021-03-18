@@ -185,6 +185,16 @@
 			<artifactId>flightrecorder.test</artifactId>
 			<version>${revision}${changelist}</version>
 		</dependency>
+        <dependency>
+			<groupId>org.openjdk.jmc</groupId>
+			<artifactId>rjmx</artifactId>
+			<version>${revision}${changelist}</version>
+		</dependency>
+        <dependency>
+			<groupId>org.openjdk.jmc</groupId>
+			<artifactId>rjmx.services.jfr</artifactId>
+			<version>${revision}${changelist}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>

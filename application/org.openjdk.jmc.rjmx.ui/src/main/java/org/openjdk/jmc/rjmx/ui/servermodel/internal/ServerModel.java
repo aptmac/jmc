@@ -12,7 +12,7 @@ import org.openjdk.jmc.common.IDescribable;
 import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.IServerDescriptor;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorListener;
 import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorProvider;
 import org.openjdk.jmc.rjmx.servermodel.internal.DiscoveryInfo;
@@ -49,7 +49,7 @@ public class ServerModel extends ServerModelBase {
 	private void setUpDiscoveryListeners() {
 		IExtensionRegistry er = Platform.getExtensionRegistry();
 
-		IConfigurationElement[] configs = er.getConfigurationElementsFor(RJMXPlugin.PLUGIN_ID,
+		IConfigurationElement[] configs = er.getConfigurationElementsFor(RJMXUIPlugin.PLUGIN_ID,
 				EXTENSIONPOINT_DESCRIPTORPROVIDER);
 		for (IConfigurationElement config : configs) {
 			try {
@@ -59,7 +59,7 @@ public class ServerModel extends ServerModelBase {
 					provider.addDescriptorListener(descriptorListener);
 				}
 			} catch (CoreException e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to start up a IDescriptorProvider!", e); //$NON-NLS-1$
+				RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to start up a IDescriptorProvider!", e); //$NON-NLS-1$
 			}
 		}
 	}

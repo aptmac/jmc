@@ -40,7 +40,7 @@ import org.eclipse.core.runtime.IExecutableExtension;
 import org.openjdk.jmc.common.resource.IImageResource;
 import org.openjdk.jmc.common.resource.Resource;
 import org.openjdk.jmc.common.unit.UnitLookup;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.BooleanField;
 import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.DateField;
 import org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field;
@@ -108,7 +108,7 @@ public class TriggerComponent implements IExecutableExtension, IImageResource {
 				}
 				addFields(config);
 			} catch (Exception e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Error initializing " + config, e); //$NON-NLS-1$
+				RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Error initializing " + config, e); //$NON-NLS-1$
 			}
 		}
 	}
@@ -145,10 +145,10 @@ public class TriggerComponent implements IExecutableExtension, IImageResource {
 					if (field != null) {
 						m_fieldHolder.addField(field);
 					} else {
-						RJMXPlugin.getDefault().getLogger().severe("Extension XML-parse error " + element.getName()); //$NON-NLS-1$
+						RJMXUIPlugin.getDefault().getLogger().severe("Extension XML-parse error " + element.getName()); //$NON-NLS-1$
 					}
 				} catch (Exception e) {
-					RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
+					RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE,
 							"Extension XML-parse error " + element.getName(), e); //$NON-NLS-1$
 				}
 			}

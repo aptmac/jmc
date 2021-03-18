@@ -49,7 +49,7 @@ import javax.mail.internet.MimeMessage;
 import org.openjdk.jmc.common.security.PersistentCredentials;
 import org.openjdk.jmc.common.security.SecurityException;
 import org.openjdk.jmc.common.util.Environment;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.ui.triggers.ITriggerAction;
 import org.openjdk.jmc.rjmx.ui.triggers.TriggerAction;
@@ -137,7 +137,7 @@ public class TriggerActionMail extends TriggerAction {
 	 * @return Returns a String
 	 */
 	private String getSmtpServer() {
-		return RJMXPlugin.getDefault().getRJMXPreferences().get(PreferencesKeys.PROPERTY_MAIL_SERVER,
+		return RJMXUIPlugin.getDefault().getRJMXPreferences().get(PreferencesKeys.PROPERTY_MAIL_SERVER,
 				PreferencesKeys.DEFAULT_MAIL_SERVER);
 	}
 
@@ -151,7 +151,7 @@ public class TriggerActionMail extends TriggerAction {
 				return userPassword;
 			}
 		} catch (SecurityException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not load SMTP credentials", e); //$NON-NLS-1$
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Could not load SMTP credentials", e); //$NON-NLS-1$
 		}
 		return new UserPassword(PreferencesKeys.DEFAULT_MAIL_SERVER_USER, PreferencesKeys.DEFAULT_MAIL_SERVER_PASSWORD);
 	}
@@ -163,7 +163,7 @@ public class TriggerActionMail extends TriggerAction {
 	 *             If the secure storage could not be opened
 	 */
 	private UserPassword getSecureSmtpCredentials() throws SecurityException {
-		String key = RJMXPlugin.getDefault().getRJMXPreferences().get(PreferencesKeys.PROPERTY_MAIL_SERVER_CREDENTIALS,
+		String key = RJMXUIPlugin.getDefault().getRJMXPreferences().get(PreferencesKeys.PROPERTY_MAIL_SERVER_CREDENTIALS,
 				PreferencesKeys.DEFAULT_MAIL_SERVER_CREDENTIALS);
 		if (key != null && !PreferencesKeys.DEFAULT_MAIL_SERVER_CREDENTIALS.equals(key)) {
 			PersistentCredentials credentials = new PersistentCredentials(key);
@@ -173,12 +173,12 @@ public class TriggerActionMail extends TriggerAction {
 	}
 
 	private Integer getSmtpPort() {
-		return RJMXPlugin.getDefault().getRJMXPreferences().getInt(PreferencesKeys.PROPERTY_MAIL_SERVER_PORT,
+		return RJMXUIPlugin.getDefault().getRJMXPreferences().getInt(PreferencesKeys.PROPERTY_MAIL_SERVER_PORT,
 				PreferencesKeys.DEFAULT_MAIL_SERVER_PORT);
 	}
 
 	private Boolean getSmtpSSL() {
-		return RJMXPlugin.getDefault().getRJMXPreferences().getBoolean(PreferencesKeys.PROPERTY_MAIL_SERVER_SECURE,
+		return RJMXUIPlugin.getDefault().getRJMXPreferences().getBoolean(PreferencesKeys.PROPERTY_MAIL_SERVER_SECURE,
 				PreferencesKeys.DEFAULT_MAIL_SERVER_SECURE);
 	}
 

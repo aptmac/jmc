@@ -45,7 +45,7 @@ import org.openjdk.jmc.common.IDescribable;
 import org.openjdk.jmc.common.action.IUserAction;
 import org.openjdk.jmc.common.resource.IImageResource;
 import org.openjdk.jmc.common.resource.Resource;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.actionprovider.internal.ActionProvider;
 
 public class ActionProviderDescriptor extends ActionProvider implements IDescribable, IImageResource {
@@ -91,7 +91,7 @@ public class ActionProviderDescriptor extends ActionProvider implements IDescrib
 				Integer doubleClickActionIndex = Integer.parseInt(attribute);
 				return getActions().get(doubleClickActionIndex);
 			} catch (NumberFormatException e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+				RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 						"Could not parse " + DOUBLECLICKACTIONINDEX_ATTRIBUTE, e); //$NON-NLS-1$
 			}
 		}

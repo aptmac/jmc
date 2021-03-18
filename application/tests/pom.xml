@@ -42,14 +42,14 @@
 	<packaging>pom</packaging>
 	<modules>
 		<!-- <module>org.openjdk.jmc.flightrecorder.controlpanel.ui.configuration.test</module> -->
-		<module>org.openjdk.jmc.flightrecorder.controlpanel.ui.test</module>
+		<!-- <module>org.openjdk.jmc.flightrecorder.controlpanel.ui.test</module> -->
 		<module>org.openjdk.jmc.flightrecorder.ext.jfx.test</module>
 		<module>org.openjdk.jmc.flightrecorder.ui.test</module>
 		<module>org.openjdk.jmc.greychart.test</module>
 		<module>org.openjdk.jmc.ide.launch.test</module>
 		<module>org.openjdk.jmc.joverflow.test</module>
-		<!-- <module>org.openjdk.jmc.rjmx.services.jfr.test</module> -->
-		<!-- <module>org.openjdk.jmc.rjmx.test</module> -->
+		<module>org.openjdk.jmc.rjmx.services.jfr.test</module>
+		<module>org.openjdk.jmc.rjmx.test</module>
 		<module>org.openjdk.jmc.ui.common.test</module>
 		<module>org.openjdk.jmc.ui.test</module>
 	</modules>

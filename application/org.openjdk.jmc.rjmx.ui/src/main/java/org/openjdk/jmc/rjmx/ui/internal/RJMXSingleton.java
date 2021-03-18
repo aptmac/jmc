@@ -41,7 +41,6 @@ import org.openjdk.jmc.common.util.StateToolkit;
 import org.openjdk.jmc.common.util.XmlToolkit;
 import org.openjdk.jmc.rjmx.internal.RJMXSingletonBase;
 import org.openjdk.jmc.rjmx.servermodel.IServer;
-import org.openjdk.jmc.rjmx.servermodel.IServerModel;
 import org.openjdk.jmc.rjmx.subscription.IMRIMetadataProviderService;
 import org.openjdk.jmc.rjmx.subscription.internal.ExtensionMetadataProviderService;
 import org.openjdk.jmc.rjmx.subscription.internal.FileMRIMetadataDB;
@@ -53,7 +52,7 @@ import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 
 /**
- * This class contains the service lookup pieces of {@link RJMXPlugin} which likely does not belong
+ * This class contains the service lookup pieces of {@link RJMXUIPlugin} which likely does not belong
  * in a OSGi Bundle Activator. (Almost nothing does.) It was extracted to circumvent activator
  * problems (maybe even deadlocks) when starting Mission Control on OS X from the command line with
  * an -open argument. Could possibly be replaced with or delegate to OSGi (Declarative) Services. It

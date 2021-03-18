@@ -43,7 +43,7 @@ import java.util.logging.Level;
 
 import org.openjdk.jmc.common.io.IOToolkit;
 import org.openjdk.jmc.common.util.StringToolkit;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.subscription.MRI;
 import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
@@ -129,7 +129,7 @@ class AttributeWriter implements IMRIValueListener {
 		if (value instanceof Number) {
 			write(event.getTimestamp() * 1000 * 1000L, ((Number) event.getValue()).doubleValue());
 		} else if (value != null) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 					"Can not write value of type " + value.getClass().getCanonicalName()); //$NON-NLS-1$
 		}
 	}
@@ -141,7 +141,7 @@ class AttributeWriter implements IMRIValueListener {
 					writeSeriesStart(timestamp);
 					isRunning = true;
 				} else {
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+					RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 							"Could not create directory " + dir.getPath()); //$NON-NLS-1$
 					return;
 				}
@@ -157,7 +157,7 @@ class AttributeWriter implements IMRIValueListener {
 					IOToolkit.closeSilently(currentFileStream);
 					currentFileStream = null;
 					currentFile = null;
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to write event", e1); //$NON-NLS-1$
+					RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to write event", e1); //$NON-NLS-1$
 				}
 			}
 		}
@@ -170,7 +170,7 @@ class AttributeWriter implements IMRIValueListener {
 					new BufferedOutputStream(new FileOutputStream(new File(dir, SERIES_FILE_NAME), true)));
 			seriesFile.writeLong(timestamp);
 		} catch (IOException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to write series start", e); //$NON-NLS-1$
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Failed to write series start", e); //$NON-NLS-1$
 		} finally {
 			IOToolkit.closeSilently(seriesFile);
 		}

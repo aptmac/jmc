@@ -36,7 +36,7 @@ import java.util.logging.Level;
 
 import org.openjdk.jmc.common.IDescribable;
 import org.openjdk.jmc.common.util.XmlToolkit;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.ui.triggers.internal.INotificationFactory;
 import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
@@ -272,7 +272,7 @@ public final class TriggerRule implements Comparable<Object>, IDescribable {
 			action = factory.createAction(className);
 			action.initializeFromXml(actionNode);
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Error while initializing the rule " + ruleName, e); //$NON-NLS-1$
+			RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Error while initializing the rule " + ruleName, e); //$NON-NLS-1$
 			return new TriggerRule();
 		}
 		return new TriggerRule(ruleName, description, rulePath, trigger, constraintHolder, action);

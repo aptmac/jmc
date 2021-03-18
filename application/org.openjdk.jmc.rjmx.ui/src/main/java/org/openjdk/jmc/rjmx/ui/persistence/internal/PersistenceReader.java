@@ -52,8 +52,7 @@ import java.util.logging.Level;
 import org.openjdk.jmc.common.io.IOToolkit;
 import org.openjdk.jmc.common.util.StringToolkit;
 import org.openjdk.jmc.common.xydata.ITimestampedData;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.services.IAttributeStorage;
 import org.openjdk.jmc.rjmx.services.IAttributeStorageService;
 import org.openjdk.jmc.rjmx.services.MRIDataSeries;
@@ -138,7 +137,7 @@ public class PersistenceReader implements IMRIService, IAttributeStorageService 
 							return true;
 						}
 					} catch (IOException e) {
-						RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not read events from file", e); //$NON-NLS-1$
+						RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Could not read events from file", e); //$NON-NLS-1$
 					}
 				}
 			}
@@ -257,7 +256,7 @@ public class PersistenceReader implements IMRIService, IAttributeStorageService 
 			throw new RuntimeException(e);
 		} catch (IllegalArgumentException e) {
 			// Log warning and ignore directory
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 					"Could not create MRI from directory name " + attributeDir.getName(), e); //$NON-NLS-1$
 			return;
 		}
@@ -272,7 +271,7 @@ public class PersistenceReader implements IMRIService, IAttributeStorageService 
 					}
 				} catch (Exception e) {
 					// Log warning and ignore file
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add file " + f.getPath(), e); //$NON-NLS-1$
+					RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add file " + f.getPath(), e); //$NON-NLS-1$
 				}
 			}
 		}
@@ -287,7 +286,7 @@ public class PersistenceReader implements IMRIService, IAttributeStorageService 
 			}
 		} catch (IOException e) {
 			// Log warning and ignore file
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 					"Error while reading persisted data from file " + seriesFile.getPath(), e); //$NON-NLS-1$
 			return;
 		} finally {
@@ -306,8 +305,8 @@ public class PersistenceReader implements IMRIService, IAttributeStorageService 
 	}
 
 	private static File getPersistenceDirectoryPreference() {
-		File persistenceDirectory = new File(RJMXPlugin.getDefault().getRJMXPreferences()
-				.get(PreferencesKeys.PROPERTY_PERSISTENCE_DIRECTORY, PreferencesKeys.DEFAULT_PERSISTENCE_DIRECTORY));
+		File persistenceDirectory = new File(RJMXUIPlugin.getDefault().getRJMXPreferences()
+				.get(PersistenceKeys.PROPERTY_PERSISTENCE_DIRECTORY, PersistenceKeys.DEFAULT_PERSISTENCE_DIRECTORY));
 		return persistenceDirectory;
 	}
 

@@ -38,7 +38,7 @@ import org.w3c.dom.Element;
 import org.openjdk.jmc.common.security.SecurityException;
 import org.openjdk.jmc.common.security.SecurityManagerFactory;
 import org.openjdk.jmc.common.util.XmlToolkit;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 
 /**
  * A field holding a password. Actually what is stored in the field is a key to the password stored
@@ -75,7 +75,7 @@ final public class PasswordField extends Field {
 			try {
 				key = SecurityManagerFactory.getSecurityManager().store(password);
 			} catch (SecurityException e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+				RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 						"Could not store password for field " + getId() + '!', e); //$NON-NLS-1$
 				throw new RuntimeException(e);
 			}
@@ -99,7 +99,7 @@ final public class PasswordField extends Field {
 				password = ((String[]) SecurityManagerFactory.getSecurityManager().get(key))[0];
 			}
 		} catch (SecurityException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 					"Could not retrieve password for key " + key + " and field " + getId() + '!', e); //$NON-NLS-1$ //$NON-NLS-2$
 			throw new RuntimeException(e);
 		}
@@ -137,7 +137,7 @@ final public class PasswordField extends Field {
 	@Override
 	public void initDefaultPreferenceValue() {
 		if (getId() != null) {
-			String prefDefaultKey = RJMXPlugin.getDefault().getRJMXPreferences().get(getId(), null);
+			String prefDefaultKey = RJMXUIPlugin.getDefault().getRJMXPreferences().get(getId(), null);
 			if (prefDefaultKey != null && prefDefaultKey.trim().length() != 0) {
 				putValueAndUpdateListener(prefDefaultKey);
 			}
@@ -166,14 +166,14 @@ final public class PasswordField extends Field {
 			try {
 				String prefDefaultKey = null;
 				if (getId() != null) {
-					prefDefaultKey = RJMXPlugin.getDefault().getRJMXPreferences().get(getId(), null);
+					prefDefaultKey = RJMXUIPlugin.getDefault().getRJMXPreferences().get(getId(), null);
 				}
 				if (prefDefaultKey == null || !prefDefaultKey.equals(key)) {
 					SecurityManagerFactory.getSecurityManager().withdraw(key);
 				}
 				super.putValue(""); //$NON-NLS-1$
 			} catch (SecurityException e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+				RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 						"Could not release password for field " + getId() + " on dispose!", e); //$NON-NLS-1$ //$NON-NLS-2$
 				// Do not get too upset if we leak one. Will not notify end-user. If all else works, this _should_ work
 				// as well.

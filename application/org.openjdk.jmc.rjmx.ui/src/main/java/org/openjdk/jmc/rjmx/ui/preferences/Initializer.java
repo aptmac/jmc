@@ -41,6 +41,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.internal.RJMXUIConstants;
+import org.openjdk.jmc.rjmx.ui.persistence.internal.PersistenceKeys;
 
 public class Initializer extends AbstractPreferenceInitializer {
 
@@ -73,10 +74,10 @@ public class Initializer extends AbstractPreferenceInitializer {
 		preferences.put(PreferencesKeys.PROPERTY_MAIL_SERVER_CREDENTIALS,
 				PreferencesKeys.DEFAULT_MAIL_SERVER_CREDENTIALS);
 
-		preferences.putLong(PreferencesKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB,
-				PreferencesKeys.DEFAULT_PERSISTENCE_LOG_ROTATION_LIMIT_KB);
-		preferences.put(PreferencesKeys.PROPERTY_PERSISTENCE_DIRECTORY,
-				new File(PreferencesKeys.DEFAULT_PERSISTENCE_DIRECTORY).getPath());
+		preferences.putLong(PersistenceKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB,
+				PersistenceKeys.DEFAULT_PERSISTENCE_LOG_ROTATION_LIMIT_KB);
+		preferences.put(PersistenceKeys.PROPERTY_PERSISTENCE_DIRECTORY,
+				new File(PersistenceKeys.DEFAULT_PERSISTENCE_DIRECTORY).getPath());
 		preferences.putInt(PreferencesKeys.PROPERTY_LIST_AGGREGATE_SIZE, PreferencesKeys.DEFAULT_LIST_AGGREGATE_SIZE);
 	}
 

@@ -48,7 +48,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.services.IDummyService;
 import org.openjdk.jmc.rjmx.services.IServiceFactory;
 import org.openjdk.jmc.rjmx.services.internal.ServiceEntry;
@@ -92,7 +92,7 @@ public class ServiceFactoryManager extends ServiceFactoryManagerBase {
 	}
 
 	private Logger getLogger() {
-		return RJMXPlugin.getDefault().getLogger();
+		return RJMXUIPlugin.getDefault().getLogger();
 	}
 
 	@SuppressWarnings("unchecked")

@@ -55,7 +55,7 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.openjdk.jmc.common.action.IActionProvider;
 import org.openjdk.jmc.rjmx.IServerHandle;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.actionprovider.IActionProviderFactory;
 import org.openjdk.jmc.rjmx.actionprovider.internal.ActionProvider;
 
@@ -90,7 +90,7 @@ public class ActionProviderRepository {
 					addOnElements.add(element);
 				}
 			} catch (Exception e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+				RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 						"Could not load extension for " + EXTENSION_POINT, e); //$NON-NLS-1$
 			}
 		}
@@ -105,7 +105,7 @@ public class ActionProviderRepository {
 						loadElement(e, handle, apd, null);
 					}
 				} catch (Exception e) {
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+					RJMXUIPlugin.getDefault().getLogger().log(Level.WARNING,
 							"Could not load extension for " + EXTENSION_POINT, e); //$NON-NLS-1$
 				}
 			}

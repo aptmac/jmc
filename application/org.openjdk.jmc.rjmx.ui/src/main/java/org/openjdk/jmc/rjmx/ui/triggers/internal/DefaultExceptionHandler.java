@@ -35,14 +35,14 @@ package org.openjdk.jmc.rjmx.ui.triggers.internal;
 import java.util.logging.Level;
 
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.triggers.IExceptionHandler;
 import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
 
 public class DefaultExceptionHandler implements IExceptionHandler {
 	@Override
 	public void handleException(IConnectionHandle connectionHandle, TriggerRule rule, Throwable throwable) {
-		RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Could not invoke the action for the rule " //$NON-NLS-1$
+		RJMXUIPlugin.getDefault().getLogger().log(Level.SEVERE, "Could not invoke the action for the rule " //$NON-NLS-1$
 				+ rule.toString(), throwable);
 	}
 }
