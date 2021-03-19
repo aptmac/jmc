@@ -49,11 +49,11 @@ import org.openjdk.jmc.rjmx.subscription.MRI;
 import org.openjdk.jmc.rjmx.subscription.MRI.Type;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 import org.openjdk.jmc.rjmx.test.triggers.NotificationActionCallback.NotificationActionCallbackReceiver;
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
-import org.openjdk.jmc.rjmx.triggers.TriggerRule;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationRegistry;
-import org.openjdk.jmc.rjmx.triggers.internal.NotificationTrigger;
-import org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMin;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationTrigger;
+import org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMin;
 
 /**
  * Tests for the notification framework.

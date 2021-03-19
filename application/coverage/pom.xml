@@ -211,11 +211,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openjdk.jmc</groupId>
-			<artifactId>org.openjdk.jmc.flightrecorder.configuration</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openjdk.jmc</groupId>
 			<artifactId>org.openjdk.jmc.flightrecorder.controlpanel.ui</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -322,17 +317,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openjdk.jmc</groupId>
-			<artifactId>org.openjdk.jmc.rjmx</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openjdk.jmc</groupId>
 			<artifactId>org.openjdk.jmc.rjmx.ext</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openjdk.jmc</groupId>
-			<artifactId>org.openjdk.jmc.rjmx.services.jfr</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -363,12 +348,6 @@
 			<version>${project.version}</version>
 		</dependency>
 		<!-- Second, all the modules in application/tests -->
-		<dependency>
-			<groupId>org.openjdk.jmc</groupId>
-			<artifactId>org.openjdk.jmc.flightrecorder.configuration.test</artifactId>
-			<scope>test</scope>
-			<version>${project.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.openjdk.jmc</groupId>
 			<artifactId>org.openjdk.jmc.flightrecorder.controlpanel.ui.test</artifactId>

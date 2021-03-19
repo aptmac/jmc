@@ -35,8 +35,8 @@ package org.openjdk.jmc.rjmx.test.triggers;
 import org.w3c.dom.Element;
 
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.triggers.ITriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.ITriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
 
 /**
  * Simple action that just calls the NotificationActionCallbackReceiver with the event. This class
