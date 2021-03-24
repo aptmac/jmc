@@ -86,7 +86,7 @@
                   The exception handler to be invoked whenever a problem occurs in an action.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.triggers.IExceptionHandler"/>
+                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.ui.triggers.IExceptionHandler"/>
                </appinfo>
             </annotation>
          </attribute>

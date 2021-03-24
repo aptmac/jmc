@@ -45,7 +45,7 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.osgi.util.NLS;
 import org.openjdk.jmc.common.util.XmlToolkit;
 import org.openjdk.jmc.console.ui.notification.NotificationPlugin;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.ui.triggers.TriggerRule;
 import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.common.util.StatusFactory;
@@ -80,7 +80,7 @@ public class TriggerToolkit {
 	}
 
 	public static NotificationRegistry getDefaultModel() {
-		NotificationRegistry notificationRegistry = RJMXPlugin.getDefault().getNotificationRegistry();
+		NotificationRegistry notificationRegistry = RJMXUIPlugin.getDefault().getNotificationRegistry();
 		if (!hasDefaultTriggersBeenLoaded()) {
 			IStatus status = TriggerToolkit.resetTriggers(notificationRegistry);
 			setDefaultTriggersLoaded();

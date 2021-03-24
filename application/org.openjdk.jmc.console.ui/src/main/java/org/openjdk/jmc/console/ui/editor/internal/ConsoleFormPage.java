@@ -59,7 +59,7 @@ import org.openjdk.jmc.console.ui.ConsolePlugin;
 import org.openjdk.jmc.console.ui.editor.IConsolePageContainer;
 import org.openjdk.jmc.console.ui.editor.IConsolePageStateHandler;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.ui.misc.MementoToolkit;
 import org.osgi.service.prefs.Preferences;
 
@@ -209,7 +209,7 @@ public class ConsoleFormPage extends FormPage implements IConsolePageContainer {
 	}
 
 	private Preferences getServerConfiguration() {
-		return RJMXPlugin.getDefault().getServerPreferences(getConnectionHandle().getServerDescriptor().getGUID());
+		return RJMXUIPlugin.getDefault().getServerPreferences(getConnectionHandle().getServerDescriptor().getGUID());
 	}
 
 	@Override

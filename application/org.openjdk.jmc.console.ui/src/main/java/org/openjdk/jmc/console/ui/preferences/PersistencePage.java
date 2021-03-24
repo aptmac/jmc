@@ -45,8 +45,8 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
+import org.openjdk.jmc.rjmx.ui.persistence.internal.PersistenceKeys;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.ui.misc.IntFieldEditor;
 
 /**
@@ -55,7 +55,7 @@ import org.openjdk.jmc.ui.misc.IntFieldEditor;
 public class PersistencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 	public PersistencePage() {
 		super(GRID);
-		setPreferenceStore(new ScopedPreferenceStore(InstanceScope.INSTANCE, RJMXPlugin.PLUGIN_ID));
+		setPreferenceStore(new ScopedPreferenceStore(InstanceScope.INSTANCE, RJMXUIPlugin.PLUGIN_ID));
 		setDescription(Messages.PersistencePage_DESCRIPTION);
 	}
 
@@ -74,7 +74,7 @@ public class PersistencePage extends FieldEditorPreferencePage implements IWorkb
 	}
 
 	private void createLogRotationLimit() {
-		IntFieldEditor logRotationLimit = new IntFieldEditor(PreferencesKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB,
+		IntFieldEditor logRotationLimit = new IntFieldEditor(PersistenceKeys.PROPERTY_PERSISTENCE_LOG_ROTATION_LIMIT_KB,
 				Messages.PersistencePage_CAPTION_LOG_ROTATION_LIMIT_KB, getFieldEditorParent());
 		addField(logRotationLimit);
 		logRotationLimit.setValidRange(1, Integer.MAX_VALUE);
@@ -82,7 +82,7 @@ public class PersistencePage extends FieldEditorPreferencePage implements IWorkb
 
 	private void createPersistenceDirectory() {
 		DirectoryFieldEditor persistenceDirectory = new DirectoryFieldEditor(
-				PreferencesKeys.PROPERTY_PERSISTENCE_DIRECTORY, Messages.PersistencePage_CAPTION_PERSISTENCE_DIRECTORY,
+				PersistenceKeys.PROPERTY_PERSISTENCE_DIRECTORY, Messages.PersistencePage_CAPTION_PERSISTENCE_DIRECTORY,
 				getFieldEditorParent()) {
 			@Override
 			protected boolean doCheckState() {

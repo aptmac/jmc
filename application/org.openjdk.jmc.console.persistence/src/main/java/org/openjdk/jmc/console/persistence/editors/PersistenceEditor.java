@@ -156,7 +156,7 @@ public class PersistenceEditor extends EditorPart {
 		}
 		try {
 			return XMLMemento.createReadRoot(
-					new StringReader(RJMXPlugin.getDefault().getServerPreferences(serverUid).get(TAB_ID, ""))); //$NON-NLS-1$
+					new StringReader(RJMXUIPlugin.getDefault().getServerPreferences(serverUid).get(TAB_ID, ""))); //$NON-NLS-1$
 		} catch (WorkbenchException e) {
 			return null;
 		}
@@ -177,7 +177,7 @@ public class PersistenceEditor extends EditorPart {
 			} catch (IOException e) {
 				// Will not happen
 			}
-			RJMXPlugin.getDefault().getServerPreferences(serverUid).put(TAB_ID, sw.toString());
+			RJMXUIPlugin.getDefault().getServerPreferences(serverUid).put(TAB_ID, sw.toString());
 		}
 		super.dispose();
 	}

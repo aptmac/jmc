@@ -119,7 +119,7 @@
 		<Bug pattern="NP_BOOLEAN_RETURN_NULL" />
 	</Match>
 	<Match>
-		<Class name="org.openjdk.jmc.rjmx.triggers.fields.internal.Field" />
+		<Class name="org.openjdk.jmc.rjmx.ui.triggers.fields.internal.Field" />
 		<Bug pattern="NP_BOOLEAN_RETURN_NULL" />
 	</Match>
 	<Match>
@@ -297,7 +297,7 @@
 	<!-- We only sort these instances using compareTo(), not to mention they 
 		are mutable - there is no hashCode better than the default. -->
 	<Match>
-		<Class name="org.openjdk.jmc.rjmx.triggers.TriggerRule" />
+		<Class name="org.openjdk.jmc.rjmx.ui.triggers.TriggerRule" />
 		<Bug pattern="EQ_COMPARETO_USE_OBJECT_EQUALS" />
 	</Match>
 	<Match>
@@ -728,7 +728,7 @@
 		<Bug pattern="BIT_SIGNED_CHECK" />
 	</Match>
 	<Match>
-		<Class name="org.openjdk.jmc.rjmx.triggers.internal.NotificationTrigger" />
+		<Class name="org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationTrigger" />
 		<Bug pattern="BIT_SIGNED_CHECK" />
 	</Match>
 	<Match>

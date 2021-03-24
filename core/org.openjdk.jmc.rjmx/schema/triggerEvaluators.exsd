@@ -110,10 +110,10 @@
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
-                  class that implements &lt;code&gt;org.openjdk.jmc.rjmx.triggers.internal.IValueEvaluator&lt;/code&gt;
+                  class that implements &lt;code&gt;org.openjdk.jmc.rjmx.ui.triggers.internal.IValueEvaluator&lt;/code&gt;
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.triggers.internal.IValueEvaluator"/>
+                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.ui.triggers.internal.IValueEvaluator"/>
                </appinfo>
             </annotation>
          </attribute>

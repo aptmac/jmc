@@ -57,7 +57,7 @@ import org.osgi.service.prefs.Preferences;
 
 import org.openjdk.jmc.console.ui.mbeanbrowser.MBeanBrowserPlugin;
 import org.openjdk.jmc.console.ui.mbeanbrowser.messages.internal.Messages;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.ui.wizards.IPerformFinishable;
 
 /**
@@ -185,7 +185,7 @@ public class AddMBeanWizardPage extends WizardPage implements IPerformFinishable
 	}
 
 	private Preferences getServerPreferencesForConnection() {
-		return RJMXPlugin.getDefault().getServerPreferences(connectionGUID);
+		return RJMXUIPlugin.getDefault().getServerPreferences(connectionGUID);
 	}
 
 	private void storeWizardSettings() {

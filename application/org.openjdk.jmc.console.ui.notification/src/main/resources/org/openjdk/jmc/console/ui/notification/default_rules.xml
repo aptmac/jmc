@@ -42,7 +42,7 @@
                 <trigger_sustain_time>1</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://java.lang:type=OperatingSystem/SystemCpuLoad</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>percentage</contenttype>
                     <maxvalue>90 %</maxvalue>
                 </value_evaluator>
@@ -62,7 +62,7 @@
                 <trigger_sustain_time>1</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://java.lang:type=OperatingSystem/SystemCpuLoad</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMin">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMin">
                     <contenttype>percentage</contenttype>
                     <minvalue>10 %</minvalue>
                 </value_evaluator>
@@ -82,7 +82,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>1</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:Name=ThreadPoolRuntime,ServerRuntime=examplesServer,Type=ThreadPoolRuntime/QueueLength</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0.0</maxvalue>
                 </value_evaluator>
@@ -102,7 +102,7 @@
                 <trigger_sustain_time>1</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://java.lang:type=OperatingSystem/ProcessCpuLoad</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>percentage</contenttype>
                     <maxvalue>90 %</maxvalue>
                 </value_evaluator>
@@ -122,7 +122,7 @@
                 <trigger_sustain_time>1</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://java.lang:type=OperatingSystem/ProcessCpuLoad</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMin">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMin">
                     <contenttype>percentage</contenttype>
                     <minvalue>10 %</minvalue>
                 </value_evaluator>
@@ -142,7 +142,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://java.lang:type=Threading/MonitoredDeadlockedThreadCount</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0.0</maxvalue>
                 </value_evaluator>
@@ -162,7 +162,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://java.lang:type=Threading/DeadlockedThreadCount</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0.0</maxvalue>
                 </value_evaluator>
@@ -182,7 +182,7 @@
                 <trigger_sustain_time>5</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://java.lang:type=Threading/ThreadCount</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>100.0</maxvalue>
                 </value_evaluator>
@@ -202,7 +202,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:ApplicationRuntime=ejb30,EJBComponentRuntime=domain.jar,MessageDrivenEJBRuntime=WatchProcessMDB_examples-jms!weblogic.examples.ejb30.ExampleQueue,Name=WatchProcessMDB_examples-jms!weblogic.examples.ejb30.ExampleQueue,ServerRuntime=examplesServer,Type=EJBPoolRuntime/WaiterCurrentCount</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0.0</maxvalue>
                 </value_evaluator>
@@ -222,7 +222,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:ApplicationRuntime=stockEar,Name=examplesServer_/stock,ServerRuntime=examplesServer,Type=WebAppComponentRuntime/OpenSessionsCurrentCount</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0.0</maxvalue>
                 </value_evaluator>
@@ -242,7 +242,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>2</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:Name=examplesServer,Type=ServerRuntime/HealthState</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorStringMatch">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorStringMatch">
                     <maxvalue>HEALTH_OK</maxvalue>
                 </value_evaluator>
             </trigger>
@@ -261,7 +261,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:Name=examplesServer,Type=ServerRuntime/ClusterRuntime</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorStringMatch">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorStringMatch">
                     <maxvalue>*</maxvalue>
                 </value_evaluator>
             </trigger>
@@ -280,7 +280,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>2</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:Name=examplesServer,Type=ServerRuntime/State</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorStringMatch">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorStringMatch">
                     <maxvalue>RUNNING</maxvalue>
                 </value_evaluator>
             </trigger>
@@ -299,7 +299,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://com.sun.management:type=GarbageCollectionAggregator/HeapLiveSet</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>percentage</contenttype>
                     <maxvalue>85 %</maxvalue>
                 </value_evaluator>
@@ -319,7 +319,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:JMSConnectionRuntime=connection79,JMSRuntime=examplesServer.jms,Name=session102,ServerRuntime=examplesServer,Type=JMSSessionRuntime/MessagesPendingCount</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0.0</maxvalue>
                 </value_evaluator>
@@ -339,7 +339,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://com.bea:Name=examples-demo,ServerRuntime=examplesServer,Type=JDBCDataSourceRuntime/WaitingForConnectionCurrentCount</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0.0</maxvalue>
                 </value_evaluator>
@@ -359,7 +359,7 @@
                 <trigger_sustain_time>0</trigger_sustain_time>
                 <trigger_on_what>3</trigger_on_what>
                 <notification_attribute_name>attribute://com.oracle.management:type=ResourcePressureMBean/MemoryPressure</notification_attribute_name>
-                <value_evaluator type="org.openjdk.jmc.rjmx.triggers.internal.ValueEvaluatorNumberMax">
+                <value_evaluator type="org.openjdk.jmc.rjmx.ui.triggers.internal.ValueEvaluatorNumberMax">
                     <contenttype>number</contenttype>
                     <maxvalue>0</maxvalue>
                 </value_evaluator>

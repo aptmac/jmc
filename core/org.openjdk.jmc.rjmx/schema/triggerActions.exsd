@@ -47,7 +47,7 @@
             <meta.element />
          </appinfo>
          <documentation>
-            A trigger action must have an id, name, description and a class that extends &lt;code&gt;org.openjdk.jmc.rjmx.triggers.TriggerAction &lt;/code&gt;. 
+            A trigger action must have an id, name, description and a class that extends &lt;code&gt;org.openjdk.jmc.rjmx.ui.triggers.TriggerAction &lt;/code&gt;. 
 
 It may also define settings of various types(string, file, boolean, integer, date or time) that can be configured in the JMX Console user interface.
          </documentation>
@@ -138,10 +138,10 @@ It may also define settings of various types(string, file, boolean, integer, dat
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
-                  class that extends &lt;code&gt;org.openjdk.jmc.rjmx.triggers.TriggerAction&lt;/code&gt; and that implements the method &lt;code&gt;handleNotificationEvent(NotificationEvent e)&lt;/code&gt; that will execute when a trigger is triggered.
+                  class that extends &lt;code&gt;org.openjdk.jmc.rjmx.ui.triggers.TriggerAction&lt;/code&gt; and that implements the method &lt;code&gt;handleNotificationEvent(NotificationEvent e)&lt;/code&gt; that will execute when a trigger is triggered.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="org.openjdk.jmc.rjmx.triggers.TriggerAction"/>
+                  <meta.attribute kind="java" basedOn="org.openjdk.jmc.rjmx.ui.triggers.TriggerAction"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -667,8 +667,8 @@ It may also define settings of various types(string, file, boolean, integer, dat
 
 package com.example.triggers.actions;
 
-import org.openjdk.jmc.rjmx.triggers.TriggerAction;
-import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerAction;
+import org.openjdk.jmc.rjmx.ui.triggers.TriggerEvent;
 
 public class HelloAction extends TriggerAction 
 {
