@@ -5,8 +5,6 @@ Bundle-Name: RJMX
 Bundle-SymbolicName: org.openjdk.jmc.rjmx;singleton:=true
 Bundle-Version: 8.1.0.qualifier
 Bundle-Activator: org.openjdk.jmc.rjmx.RJMXPlugin
-Import-Package: javax.mail,
- javax.mail.internet
 Export-Package: org.openjdk.jmc.rjmx,
  org.openjdk.jmc.rjmx.actionprovider;
   x-friends:="org.openjdk.jmc.console.ui,
@@ -52,9 +50,7 @@ Export-Package: org.openjdk.jmc.rjmx,
    org.openjdk.jmc.rjmx.ui",
  org.openjdk.jmc.rjmx.subscription.storage.internal;x-internal:=true,
  org.openjdk.jmc.rjmx.util.internal;x-friends:="org.openjdk.jmc.console.ui.mbeanbrowser,org.openjdk.jmc.console.ui,org.openjdk.jmc.rjmx.ui"
-Require-Bundle: org.openjdk.jmc.ui.common;visibility:=reexport,
- org.openjdk.jmc.commands,
- org.openjdk.jmc.common;visibility:=reexport
+Require-Bundle: org.openjdk.jmc.common;visibility:=reexport
 Bundle-Vendor: Oracle Corporation
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
