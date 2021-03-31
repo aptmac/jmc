@@ -39,18 +39,36 @@
 		<version>${revision}${changelist}</version>
 	</parent>
 	<artifactId>org.openjdk.jmc.rjmx.test</artifactId>
-	<packaging>eclipse-test-plugin</packaging>
 
 	<properties>
 		<spotless.config.path>${basedir}/../../../configuration/ide/eclipse/formatting/formatting.xml</spotless.config.path>
 	</properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.openjdk.jmc</groupId>
+            <artifactId>rjmx</artifactId>
+            <version>8.1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmc</groupId>
+            <artifactId>org.openjdk.jmc.rjmx.ui</artifactId>
+            <version>8.1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-surefire-plugin</artifactId>
-				<version>${tycho.version}</version>
+                <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.0</version>
 				<configuration>
 					<argLine>-Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Djmc.test.rjmx.serviceURL=service:jmx:rmi:///jndi/rmi://localhost:9999/jmxrmi</argLine>
 				</configuration>
