@@ -59,12 +59,12 @@
    <feature url="features/org.openjdk.jmc.feature.pde_0.0.0.jar" id="org.openjdk.jmc.feature.pde" version="0.0.0">
       <category name="Other (Experimental)"/>
    </feature>
-   <feature url="features/org.openjdk.jmc.feature.ja_0.0.0.jar" id="org.openjdk.jmc.feature.ja" version="0.0.0">
+   <!-- <feature url="features/org.openjdk.jmc.feature.ja_0.0.0.jar" id="org.openjdk.jmc.feature.ja" version="0.0.0">
       <category name="Mission Control localization"/>
    </feature>
    <feature url="features/org.openjdk.jmc.feature.zh_CN_0.0.0.jar" id="org.openjdk.jmc.feature.zh_CN" version="0.0.0">
       <category name="Mission Control localization"/>
-   </feature>
+   </feature> -->
    <category-def name="Mission Control" label="Mission Control">
       <description>
          Eclipse plug-ins for JDK Mission Control

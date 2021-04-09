@@ -6,10 +6,10 @@ Bundle-Activator: org.openjdk.jmc.browser.JVMBrowserPlugin
 Bundle-Localization: plugin
 Require-Bundle: org.openjdk.jmc.ui,
  org.eclipse.ui.forms,
- org.openjdk.jmc.rjmx,
  org.openjdk.jmc.browser.attach,
  org.openjdk.jmc.attach,
- org.eclipse.help
+ org.eclipse.help,
+ org.openjdk.jmc.rjmx
 Eclipse-BuddyPolicy: app
 Bundle-Vendor: Oracle Corporation
 Bundle-ManifestVersion: 2

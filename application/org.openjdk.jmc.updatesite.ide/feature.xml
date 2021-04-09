@@ -82,12 +82,12 @@ copyright or other irrelevant stuff in here.
          id="org.openjdk.jmc.feature.jconsole"
          version="0.0.0"/>
 
-   <includes
+   <!-- <includes
          id="org.openjdk.jmc.feature.ja"
          version="0.0.0"/>
 
    <includes
          id="org.openjdk.jmc.feature.zh_CN"
-         version="0.0.0"/>
+         version="0.0.0"/> -->
 
 </feature>

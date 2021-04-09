@@ -50,6 +50,7 @@ public class Application implements IApplication {
 		OpenDocumentEventProcessor openDocProcessor = new OpenDocumentEventProcessor();
 
 		Display display = PlatformUI.createDisplay();
+		display.setCursorLocation(1, 1);
 		display.addListener(SWT.OpenDocument, openDocProcessor);
 		/*
 		 * Force loading the AWT native library on the main thread. This is to avoid a common

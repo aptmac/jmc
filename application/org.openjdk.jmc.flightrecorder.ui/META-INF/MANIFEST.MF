@@ -6,8 +6,7 @@ Bundle-SymbolicName: org.openjdk.jmc.flightrecorder.ui;singleton:=true
 Bundle-Version: 8.1.0.qualifier
 Bundle-Vendor: Oracle Corporation
 Bundle-Localization: plugin
-Require-Bundle: org.openjdk.jmc.rjmx,
- org.openjdk.jmc.flightrecorder;visibility:=reexport,
+Require-Bundle: org.openjdk.jmc.flightrecorder;visibility:=reexport,
  org.openjdk.jmc.ui;visibility:=reexport,
  org.openjdk.jmc.flightrecorder.rules,
  org.openjdk.jmc.flightrecorder.rules.jdk,

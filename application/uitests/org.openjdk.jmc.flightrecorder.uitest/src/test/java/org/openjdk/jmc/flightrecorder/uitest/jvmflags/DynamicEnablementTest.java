@@ -50,8 +50,8 @@ import org.openjdk.jmc.test.jemmy.misc.wrappers.MCMenu;
 @SuppressWarnings("restriction")
 public class DynamicEnablementTest extends MCJemmyTestBase {
 	private static final String COMMERCIAL_FEATURES_QUESTION_TITLE = org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages.COMMERCIAL_FEATURES_QUESTION_TITLE;
-	private static final String COMMERCIAL_FEATURES_LINK_FAIL = org.openjdk.jmc.rjmx.messages.internal.Messages.JVMSupport_FLIGHT_RECORDER_DISABLED;
-	private static final String COMMERCIAL_FEATURES_LINK_FAIL2 = org.openjdk.jmc.rjmx.messages.internal.Messages.JVMSupport_FLIGHT_RECORDER_NOT_ENABLED;
+	private static final String COMMERCIAL_FEATURES_LINK_FAIL = "Flight Recorder is explicitly disabled. To enable the Flight Recorder, remove -XX:-FlightRecorder from the command line.";
+	private static final String COMMERCIAL_FEATURES_LINK_FAIL2 = "Flight Recorder is explicitly disabled";
 
 	private static boolean hasDynamicEnablement;
 	private static String connection;

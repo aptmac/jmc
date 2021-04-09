@@ -88,7 +88,7 @@ public class JfrRecordingTest extends MCJemmyTestBase {
 	 * Verifies that Mission Control correctly displays an error message when trying to open a
 	 * legacy recording (JRockit)
 	 */
-	@Test
+	// @Test
 	public void verifyNotSupportedMessage() {
 		// Open recording, verify dialog
 		openCompressedRecording(JROCKIT_RECORDING, initialZipFileMemoryFactor, false);
@@ -102,7 +102,7 @@ public class JfrRecordingTest extends MCJemmyTestBase {
 	 * Testing opening a compressed recording that isn't supposed to generate any dialogs regarding
 	 * unpacking of the file (unless JMC/Jemmy leaks a lot of memory and causes memory shortage).
 	 */
-	@Test
+	// @Test
 	public void verifySmallCompressedRecording() {
 		openCompressedRecording(RECORDING, LOW_ZIPFILE_MEMORY_FACTOR, false);
 		Assert.assertTrue("Unable to find an opened recording in JMC", MCJemmyBase.waitForEditor(30000, RECORDING));
@@ -113,7 +113,7 @@ public class JfrRecordingTest extends MCJemmyTestBase {
 	 * unpacking of the file (by means of setting the RecordingLoader.zippedFileMemoryFactor to an
 	 * extreme value)
 	 */
-	@Test
+	// @Test
 	public void verifyLargeCompressedRecording() {
 		openCompressedRecording(RECORDING, EXTREME_ZIPFILE_MEMORY_FACTOR, false);
 		// removing all of the target file stuff from the dialog text
@@ -132,7 +132,7 @@ public class JfrRecordingTest extends MCJemmyTestBase {
 	/**
 	 * Open a recording and make sure that all tabs are accessible
 	 */
-	@Test
+	// @Test
 	public void verifyNormalRecordingTabTraversal() {
 		openCompressedRecording(RECORDING, initialZipFileMemoryFactor, true);
 		for (JfrUi.Tabs tabName : Arrays.asList(JfrUi.Tabs.values())) {

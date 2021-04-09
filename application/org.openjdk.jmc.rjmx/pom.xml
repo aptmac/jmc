@@ -39,8 +39,24 @@
 		<version>${revision}${changelist}</version>
 	</parent>
 	<artifactId>org.openjdk.jmc.rjmx</artifactId>
-	<packaging>eclipse-plugin</packaging>
-	
+	<packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.openjdk.jmc</groupId>
+            <artifactId>org.openjdk.jmc.ui.common</artifactId>
+            <version>${revision}${changelist}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmc</groupId>
+            <artifactId>org.openjdk.jmc.commands</artifactId>
+            <version>${revision}${changelist}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>jakarta.mail</artifactId>
+            <version>1.6.5</version>
+        </dependency>
+    </dependencies>
 	<properties>
 		<spotless.config.path>${basedir}/../../configuration/ide/eclipse/formatting/formatting.xml</spotless.config.path>
 	</properties>

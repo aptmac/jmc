@@ -51,17 +51,17 @@
          id="org.openjdk.jmc.feature.console"
          version="0.0.0"/>
 
-   <includes
+   <!-- <includes
          id="org.openjdk.jmc.feature.rcp.ja"
-         version="0.0.0"/>
+         version="0.0.0"/> -->
 
    <includes
          id="org.openjdk.jmc.feature.core"
          version="0.0.0"/>
 
-   <includes
+   <!-- <includes
          id="org.openjdk.jmc.feature.rcp.zh_CN"
-         version="0.0.0"/>
+         version="0.0.0"/> -->
 
    <includes
          id="org.openjdk.jmc.feature.flightrecorder"
@@ -106,7 +106,7 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
+   <!-- <plugin
          id="org.openjdk.jmc.rcp.application.ja"
          nl="ja_JP,ja"
          download-size="0"
@@ -122,7 +122,7 @@
          install-size="0"
          version="0.0.0"
          fragment="true"
-         unpack="false"/>
+         unpack="false"/> -->
 
    <plugin
          id="org.openjdk.jmc.rcp.intro"

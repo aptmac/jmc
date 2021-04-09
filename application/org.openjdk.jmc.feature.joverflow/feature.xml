@@ -51,7 +51,7 @@
       <import plugin="org.openjdk.jmc.common" match="equivalent"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.openjdk.jmc.rjmx" match="equivalent"/>
+      <!-- <import plugin="org.openjdk.jmc.rjmx" match="equivalent"/> -->
    </requires>
 
    <plugin

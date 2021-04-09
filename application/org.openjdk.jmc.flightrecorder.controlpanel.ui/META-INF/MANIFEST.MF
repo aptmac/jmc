@@ -11,7 +11,8 @@ Require-Bundle: org.openjdk.jmc.rjmx.ui;visibility:=reexport,
  org.openjdk.jmc.flightrecorder.controlpanel.ui.configuration,
  org.openjdk.jmc.flightrecorder.configuration,
  org.eclipse.help,
- org.openjdk.jmc.ui.common
+ org.openjdk.jmc.ui.common,
+ org.openjdk.jmc.rjmx
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openjdk.jmc.flightrecorder.controlpanel.ui,
