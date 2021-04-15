@@ -39,7 +39,7 @@
 		<version>${revision}${changelist}</version>
 	</parent>
 	<artifactId>rjmx</artifactId>
-	<!-- <packaging>eclipse-plugin</packaging> -->
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>

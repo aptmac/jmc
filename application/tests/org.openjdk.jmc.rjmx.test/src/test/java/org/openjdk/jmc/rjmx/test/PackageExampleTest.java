@@ -42,7 +42,7 @@ import org.openjdk.jmc.rjmx.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
 import org.openjdk.jmc.rjmx.IServerDescriptor;
 import org.openjdk.jmc.rjmx.IServerHandle;
-import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.servermodel.IServer;
 import org.openjdk.jmc.rjmx.servermodel.IServerModel;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
@@ -117,7 +117,7 @@ public class PackageExampleTest {
 
 	@Test
 	public void testUseServerModel() throws Exception {
-		IServerModel model = RJMXPlugin.getDefault().getService(IServerModel.class);
+		IServerModel model = RJMXUIPlugin.getDefault().getService(IServerModel.class);
 		for (IServer server : model.elements()) {
 			IServerDescriptor descriptor = server.getServerHandle().getServerDescriptor();
 			if (descriptor.getJvmInfo() != null

@@ -41,7 +41,7 @@ import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.MCAbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.prefs.Preferences;
-
+p
 /**
  * <p>
  * There is one instance of the RJMX UI plugin available from {@link #getDefault()}.
@@ -134,6 +134,19 @@ public final class RJMXUIPlugin extends MCAbstractUIPlugin {
 
 	public NotificationRegistry getNotificationRegistry() {
 		return RJMXSingleton.getDefault().getNotificationRegistry();
+	}
+
+	/**
+	 * Returns a global RJMX service. Currently there is no way to register new global services.
+	 *
+	 * @param <T>
+	 *            the service type to look up
+	 * @param clazz
+	 *            the {@link Class} of the service
+	 * @return the service object registered for the given class.
+	 */
+	public <T> T getService(Class<T> clazz) {
+		return RJMXSingleton.getDefault().getService(clazz);
 	}
 
 	@Override
