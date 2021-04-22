@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.common.util;
+package org.openjdk.jmc.common.test.util;
 
 import static org.junit.Assert.assertEquals;
 
@@ -39,6 +39,7 @@ import java.util.Comparator;
 import java.util.Random;
 
 import org.junit.Test;
+import org.openjdk.jmc.common.util.SortedHead;
 
 @SuppressWarnings("nls")
 public class SortedHeadTest {

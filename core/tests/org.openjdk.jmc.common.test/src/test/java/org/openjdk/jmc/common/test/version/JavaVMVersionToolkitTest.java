@@ -30,51 +30,27 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.flightrecorder.controlpanel.ui.configuration.model.xml;
+package org.openjdk.jmc.common.test.version;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.HashMap;
-import java.util.Map;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLAttribute;
-import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLNodeType;
-import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLTag;
-import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLTagInstance;
+import org.openjdk.jmc.common.version.JavaVMVersionToolkit;
 
-@SuppressWarnings("nls")
-public class XMLTagInstanceTest {
+public class JavaVMVersionToolkitTest {
 
 	@Test
-	public void testGetTagsInstances() {
-		XMLTagInstance root = new XMLTagInstance(null, new XMLTag("root"));
-		XMLTagInstance first = new XMLTagInstance(root, new XMLTag("first"));
-		XMLTag secondTag = new XMLTag("second");
-		/* XMLTagInstance second = */new XMLTagInstance(first, secondTag);
-		assertTrue(root.getTagsInstances(secondTag).size() == 0);
-		assertTrue(first.getTagsInstances(secondTag).size() >= 0);
+	public void testParseJavaVersion() {
+		assertEquals("1.7", JavaVMVersionToolkit.parseJavaVersion("1.7.0-ea"));
+		assertEquals("1.5", JavaVMVersionToolkit.parseJavaVersion("1.5.0_24-b02"));
+		assertEquals("1.6", JavaVMVersionToolkit.parseJavaVersion("1.6"));
 	}
 
 	@Test
-	public void testFindTagWithAttribute() {
-		XMLTag rootTag = new XMLTag("root");
-		XMLTag firstTag = new XMLTag("first");
-		rootTag.add(firstTag);
-		XMLTag secondTag = new XMLTag("second");
-		firstTag.add(secondTag);
-		XMLAttribute attribute = new XMLAttribute("testAttribute", false, XMLNodeType.TEXT);
-		secondTag.add(attribute);
-
-		XMLTagInstance root = new XMLTagInstance(null, rootTag);
-		XMLTagInstance first = root.create(firstTag);
-		Map<String, String> attributeMap = new HashMap<>();
-		String value = "hejsan";
-		attributeMap.put(attribute.getName(), value);
-		/* XMLTagInstance second = */first.create(secondTag.getName(), attributeMap);
-		assertNull(root.findTagWithAttribute(secondTag, attribute, value));
-		assertNotNull(first.findTagWithAttribute(secondTag, attribute, value));
+	public void testDecodeJavaversion() {
+		assertEquals("1.5",
+				JavaVMVersionToolkit.decodeJavaVersion("R28.0.2-7-134974-1.5.0_24-20100611-1706-windows-x86_64"));
+		assertEquals("1.6", JavaVMVersionToolkit
+				.decodeJavaVersion("DEBUG-R28.2.0-33-142110-1.6.0_22-20110309-2111-windows-x86_64"));
 	}
 }
