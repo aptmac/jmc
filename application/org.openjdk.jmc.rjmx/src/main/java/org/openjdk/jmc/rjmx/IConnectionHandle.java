@@ -34,6 +34,8 @@ package org.openjdk.jmc.rjmx;
 
 import java.io.Closeable;
 
+import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
+
 /**
  * A connection handle is a handle to an active connection. It provides services around the
  * connection. A connection handle can be injected into a Console page:

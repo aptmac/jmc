@@ -56,7 +56,7 @@ import org.openjdk.jmc.common.util.Environment;
 import org.openjdk.jmc.common.util.ExceptionToolkit;
 import org.openjdk.jmc.rjmx.ConnectionException;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.IReadOnlyAttribute;
 import org.openjdk.jmc.rjmx.services.IUpdateInterval;
 import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
