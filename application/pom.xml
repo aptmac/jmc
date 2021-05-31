@@ -175,6 +175,11 @@
 			<artifactId>jdp</artifactId>
 			<version>${revision}${changelist}</version>
 		</dependency>
+        <dependency>
+			<groupId>org.openjdk.jmc</groupId>
+			<artifactId>rjmx.common</artifactId>
+			<version>${revision}${changelist}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.openjdk.jmc</groupId>
 			<artifactId>flightrecorder.test</artifactId>
