@@ -30,13 +30,14 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.ui.common.labelingrules;
+package org.openjdk.jmc.common.labelingrules;
 
 import java.util.HashMap;
 
 import org.openjdk.jmc.common.jvm.JVMArch;
 import org.openjdk.jmc.common.jvm.JVMType;
-import org.openjdk.jmc.ui.common.labelingrules.NameConverter.ValueArrayInfo;
+import org.openjdk.jmc.common.labelingrules.NameConverterBase.ValueArrayInfo;
+import org.openjdk.jmc.common.messages.internal.Messages;
 
 /**
  * Variable mapping database.
@@ -68,15 +69,15 @@ class Variables {
 
 			private String getLocalizedTypeStr(JVMType type) {
 				if (type == JVMType.JROCKIT) {
-					return Messages.NameConverter_JVM_TYPE_JROCKIT;
+					return Messages.getString(Messages.NameConverter_JVM_TYPE_JROCKIT);
 				}
 				if (type == JVMType.HOTSPOT) {
-					return Messages.NameConverter_JVM_TYPE_HOTSPOT;
+					return Messages.getString(Messages.NameConverter_JVM_TYPE_HOTSPOT);
 				}
 				if (type == JVMType.OTHER) {
-					return Messages.NameConverter_JVM_TYPE_OTHER;
+					return Messages.getString(Messages.NameConverter_JVM_TYPE_OTHER);
 				}
-				return Messages.NameConverter_JVM_TYPE_UNKNOWN;
+				return Messages.getString(Messages.NameConverter_JVM_TYPE_UNKNOWN);
 			}
 		});
 		variables.put("UnsupportedStrJVMType", new IVariableEvaluator() { //$NON-NLS-1$
@@ -92,7 +93,7 @@ class Variables {
 
 			private String getLocalizedTypeStr(JVMType type) {
 				if (type == JVMType.JROCKIT) {
-					return Messages.NameConverter_JVM_TYPE_JROCKIT;
+					return Messages.getString(Messages.NameConverter_JVM_TYPE_JROCKIT);
 				}
 				if (type == JVMType.HOTSPOT) {
 					return null;
@@ -100,7 +101,7 @@ class Variables {
 				if (type == JVMType.OTHER) {
 					return null;
 				}
-				return Messages.NameConverter_JVM_TYPE_UNKNOWN;
+				return Messages.getString(Messages.NameConverter_JVM_TYPE_UNKNOWN);
 			}
 		});
 		variables.put("StrJVMArch", new IVariableEvaluator() { //$NON-NLS-1$
@@ -116,15 +117,15 @@ class Variables {
 
 			private String getLocalizedArchStr(JVMArch arch) {
 				if (arch == JVMArch.BIT32) {
-					return Messages.NameConverter_JVM_ARCH_32BIT;
+					return Messages.getString(Messages.NameConverter_JVM_ARCH_32BIT);
 				}
 				if (arch == JVMArch.BIT64) {
-					return Messages.NameConverter_JVM_ARCH_64BIT;
+					return Messages.getString(Messages.NameConverter_JVM_ARCH_64BIT);
 				}
 				if (arch == JVMArch.OTHER) {
-					return Messages.NameConverter_JVM_ARCH_OTHER;
+					return Messages.getString(Messages.NameConverter_JVM_ARCH_OTHER);
 				}
-				return Messages.NameConverter_JVM_ARCH_UNKNOWN;
+				return Messages.getString(Messages.NameConverter_JVM_ARCH_UNKNOWN);
 			}
 		});
 		variables.put("UnsupportedStrJVMArch", new IVariableEvaluator() { //$NON-NLS-1$
@@ -145,16 +146,16 @@ class Variables {
 					return null;
 				}
 				if (arch == JVMArch.BIT32) {
-					return Messages.NameConverter_JVM_ARCH_32BIT;
+					return Messages.getString(Messages.NameConverter_JVM_ARCH_32BIT);
 				}
 				if (arch == JVMArch.BIT64) {
-					return Messages.NameConverter_JVM_ARCH_64BIT;
+					return Messages.getString(Messages.NameConverter_JVM_ARCH_64BIT);
 				}
 				if (arch == JVMArch.OTHER) {
 					return null;
 				}
 				// Avoid showing double [Unknown]
-				return type == JVMType.UNKNOWN ? null : Messages.NameConverter_JVM_ARCH_UNKNOWN;
+				return type == JVMType.UNKNOWN ? null : Messages.getString(Messages.NameConverter_JVM_ARCH_UNKNOWN);
 			}
 		});
 		variables.put("StrDebug", new IVariableEvaluator() { //$NON-NLS-1$
