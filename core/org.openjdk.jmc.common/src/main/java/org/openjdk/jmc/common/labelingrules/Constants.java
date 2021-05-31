@@ -30,11 +30,12 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.ui.common.labelingrules;
+package org.openjdk.jmc.common.labelingrules;
 
 import java.util.HashMap;
 
-import org.openjdk.jmc.ui.common.labelingrules.NameConverter.ValueArrayInfo;
+import org.openjdk.jmc.common.messages.internal.Messages;
+import org.openjdk.jmc.common.labelingrules.NameConverterBase.ValueArrayInfo;
 
 /**
  * Constant mapping database.
@@ -57,9 +58,9 @@ final class Constants {
 		for (ValueArrayInfo info : ValueArrayInfo.values()) {
 			setConstant(info.getValueName(), info.getMatchExpression());
 		}
-		setConstant("StrConstDebug", Messages.NameConverter_DEBUG); //$NON-NLS-1$
-		setConstant("StrConstJVMJRockit", Messages.NameConverter_JVM_TYPE_JROCKIT); //$NON-NLS-1$
-		setConstant("StrConstJVMUnknown", Messages.NameConverter_JVM_TYPE_UNKNOWN); //$NON-NLS-1$
+		setConstant("StrConstDebug", Messages.getString(Messages.NameConverter_DEBUG)); //$NON-NLS-1$
+		setConstant("StrConstJVMJRockit", Messages.getString(Messages.NameConverter_JVM_TYPE_JROCKIT)); //$NON-NLS-1$
+		setConstant("StrConstJVMUnknown", Messages.getString(Messages.NameConverter_JVM_TYPE_UNKNOWN)); //$NON-NLS-1$
 	}
 
 	/**
