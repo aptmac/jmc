@@ -34,7 +34,7 @@ package org.openjdk.jmc.rjmx.services;
 
 import org.openjdk.jmc.rjmx.ConnectionException;
 import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 
 public interface IServiceFactory<T> {
 	/**

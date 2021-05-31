@@ -4,6 +4,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Name: RJMX Common
 Bundle-SymbolicName: org.openjdk.jmc.rjmx.common;singleton:=true
 Bundle-Version: 8.1.0.qualifier
-Export-Package: org.openjdk.rjmx.common
+Export-Package: org.openjdk.jmc.rjmx.common
 Bundle-Vendor: Oracle Corporation
 Automatic-Module-Name: org.openjdk.jmc.rjmx.common
