@@ -4,6 +4,23 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Name: RJMX Common
 Bundle-SymbolicName: org.openjdk.jmc.rjmx.common;singleton:=true
 Bundle-Version: 8.1.0.qualifier
-Export-Package: org.openjdk.jmc.rjmx.common
+Export-Package: org.openjdk.jmc.rjmx.common,
+ org.openjdk.jmc.rjmx.common.actionprovider,
+ org.openjdk.jmc.rjmx.common.actionprovider.internal,
+ org.openjdk.jmc.rjmx.common.descriptorprovider,
+ org.openjdk.jmc.rjmx.common.internal,
+ org.openjdk.jmc.rjmx.common.preferences,
+ org.openjdk.jmc.rjmx.common.servermodel,
+ org.openjdk.jmc.rjmx.common.servermodel.internal,
+ org.openjdk.jmc.rjmx.common.services,
+ org.openjdk.jmc.rjmx.common.services.internal,
+ org.openjdk.jmc.rjmx.common.services.jfr,
+ org.openjdk.jmc.rjmx.common.services.jfr.internal,
+ org.openjdk.jmc.rjmx.common.subscription,
+ org.openjdk.jmc.rjmx.common.subscription.internal,
+ org.openjdk.jmc.rjmx.common.subscription.storage.internal,
+ org.openjdk.jmc.rjmx.common.util.internal
 Bundle-Vendor: Oracle Corporation
 Automatic-Module-Name: org.openjdk.jmc.rjmx.common
+Require-Bundle: org.openjdk.jmc.common,
+ org.openjdk.jmc.flightrecorder.configuration
