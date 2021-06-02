@@ -40,7 +40,7 @@ import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 import javax.management.ReflectionException;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 
 /**
  * Wrapping attribute://java.lang:type=Threading/findDeadlockedThreads invocations as a numeric
@@ -73,12 +73,12 @@ public class DeadlockedThreadCountAttribute extends AbstractSyntheticAttribute {
 		} catch (ReflectionException e) {
 			if (!hasLoggedReflectionError) {
 				hasLoggedReflectionError = true;
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
+				RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE,
 						"Unable to find findDeadlockedThreads(). Are you running a JVM version < 1.6?", e); //$NON-NLS-1$
 			}
 			return METHOD_NOT_PRESENT;
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
+			RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE,
 					"Unable to invoke findDeadlockedThreads(). Are you running a JVM version < 1.6?", e); //$NON-NLS-1$
 			return METHOD_INVOCATION_ERROR;
 		}

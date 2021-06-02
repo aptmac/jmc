@@ -40,7 +40,7 @@ import javax.management.remote.JMXServiceURL;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.actionprovider.internal.ActionProviderRepository;
 import org.openjdk.jmc.rjmx.common.internal.ServerDescriptor;
 import org.openjdk.jmc.rjmx.common.internal.ServerHandle;
@@ -72,7 +72,7 @@ public class Server implements IServer, ICopyable, IImageResource {
 				try {
 					o.accept(Server.this);
 				} catch (Exception e) {
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Notify Server observer " + o + " failed", //$NON-NLS-1$ //$NON-NLS-2$
+					RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Notify Server observer " + o + " failed", //$NON-NLS-1$ //$NON-NLS-2$
 							e);
 				}
 			}

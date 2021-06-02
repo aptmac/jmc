@@ -73,7 +73,7 @@ import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.services.IOperation;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanServerChangeListener;
@@ -146,7 +146,7 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 							l.mbeanRegistered(name);
 						}
 					} catch (Exception e) {
-						RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+						RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 								"Could not retrieve MBean information for " + name + '!', e); //$NON-NLS-1$
 					}
 				} else if (notification.getType().equals(MBeanServerNotification.UNREGISTRATION_NOTIFICATION)) {
@@ -224,7 +224,7 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 					try {
 						m_jmxc.close();
 					} catch (Exception e) {
-						RJMXPlugin.getDefault().getLogger().log(Level.INFO, "Problem when closing connection.", e); //$NON-NLS-1$
+						RJMXPluginCore.getDefault().getLogger().log(Level.INFO, "Problem when closing connection.", e); //$NON-NLS-1$
 					}
 					m_jmxc = null;
 				}
@@ -245,7 +245,7 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 		try {
 			ensureConnected().removeNotificationListener(MBeanServerDelegate.DELEGATE_NAME, m_registrationListener);
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 					"Failed to remove unregistration listener! Lost connection?", e); //$NON-NLS-1$
 		}
 	}
@@ -304,24 +304,24 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 				 * Skip problematic MBeans when connecting. Workaround implemented so that we can
 				 * connect to JBoss 4.2.3.
 				 */
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Skipping " + name.toString() //$NON-NLS-1$
+				RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Skipping " + name.toString() //$NON-NLS-1$
 						+ ". Could not retrieve the MBean info for the MBean. Set log level to fine for stacktrace!"); //$NON-NLS-1$
-				RJMXPlugin.getDefault().getLogger().log(Level.FINE, e.getMessage(), e);
+				RJMXPluginCore.getDefault().getLogger().log(Level.FINE, e.getMessage(), e);
 				skippedMBeanCounter++;
 			} catch (UnmarshalException e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Skipping " //$NON-NLS-1$
+				RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Skipping " //$NON-NLS-1$
 						+ name.toString()
 						+ ". Could not retrieve the MBean info due to marshalling problems. Set log level to fine for stacktrace!"); //$NON-NLS-1$
-				RJMXPlugin.getDefault().getLogger().log(Level.FINE, e.getMessage(), e);
+				RJMXPluginCore.getDefault().getLogger().log(Level.FINE, e.getMessage(), e);
 				skippedMBeanCounter++;
 			} catch (InstanceNotFoundException e) {
 				/*
 				 * We may end up here if the MBean was unregistered between the call to
 				 * getMBeanNames and getMBeanInfo(). Should not be very common though.
 				 */
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Skipping " + name.toString() //$NON-NLS-1$
+				RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Skipping " + name.toString() //$NON-NLS-1$
 						+ ". It could not be found and may have been unregistered very recently. Set log level to fine to fine for stacktrace!"); //$NON-NLS-1$
-				RJMXPlugin.getDefault().getLogger().log(Level.FINE, e.getMessage(), e);
+				RJMXPluginCore.getDefault().getLogger().log(Level.FINE, e.getMessage(), e);
 			} catch (IntrospectionException e) {
 				IOException exception = new IOException("Error accessing the bean."); //$NON-NLS-1$
 				exception.initCause(e);
@@ -333,7 +333,7 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 			}
 		}
 		if (skippedMBeanCounter > 0) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 					"Skipped " + skippedMBeanCounter + " MBeans because of marshalling related issues."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return infos;
@@ -447,7 +447,7 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 		try {
 			return ConnectionToolkit.getRuntimeBean(ensureConnected()).getStartTime();
 		} catch (IllegalArgumentException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 					"Could not find the Runtime MBean. You are probably connecting to a custom MBean server. Functionality will be limited.", //$NON-NLS-1$
 					e);
 			return REMOTE_START_TIME_UNDEFINED;
@@ -504,7 +504,7 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 				m_serverOffset = m_remoteStartTime + uptime - localTimeEstimate;
 				m_lastRecalibration = returnTime;
 			} catch (Exception e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Could not recalibrate server offset", e); //$NON-NLS-1$
+				RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE, "Could not recalibrate server offset", e); //$NON-NLS-1$
 			}
 		}
 		return localTime + m_serverOffset;

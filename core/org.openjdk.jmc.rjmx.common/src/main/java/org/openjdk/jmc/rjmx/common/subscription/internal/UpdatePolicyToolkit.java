@@ -35,7 +35,7 @@ package org.openjdk.jmc.rjmx.common.subscription.internal;
 import java.util.logging.Level;
 
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataProvider;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataService;
@@ -124,7 +124,7 @@ public final class UpdatePolicyToolkit {
 				int interval = Integer.parseInt(update);
 				return interval == 0 ? OneShotUpdatePolicy.newPolicy() : SimpleUpdatePolicy.newPolicy(interval);
 			} catch (NumberFormatException e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+				RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 						"Warning: The update_interval specified for attribute " + info.getMRI() //$NON-NLS-1$
 								+ " is malformed. The default update time (" //$NON-NLS-1$
 								+ Integer.toString(UpdatePolicyToolkit.getDefaultUpdateInterval())

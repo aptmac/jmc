@@ -37,7 +37,7 @@ import java.util.logging.Logger;
 import org.openjdk.jmc.rjmx.common.internal.RJMXSingleton;
 
 /**
- * There is one instance of the RJMX plugin available from {@link RJMXPlugin#getDefault()}. The
+ * There is one instance of the RJMX plugin available from {@link RJMXPluginCore#getDefault()}. The
  * plugin provides:
  * <ul>
  * <li>access to the connection manager</li>
@@ -46,12 +46,12 @@ import org.openjdk.jmc.rjmx.common.internal.RJMXSingleton;
  * </ul>
  * Clients may not instantiate or subclass this class.
  */
-public final class RJMXPlugin {
+public final class RJMXPluginCore {
 
 	/**
 	 * The plugin identifier.
 	 */
-	public static final String PLUGIN_ID = "org.openjdk.jmc.rjmx"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.openjdk.jmc.rjmx.common"; //$NON-NLS-1$
 
 	/**
 	 * The identifier for the server configuration.
@@ -62,12 +62,12 @@ public final class RJMXPlugin {
 	private final static Logger LOGGER = Logger.getLogger(PLUGIN_ID);
 
 	// The shared instance
-	private static final RJMXPlugin plugin = new RJMXPlugin();
+	private static final RJMXPluginCore plugin = new RJMXPluginCore();
 
 	/**
 	 * The default constructor.
 	 */
-	private RJMXPlugin() {
+	private RJMXPluginCore() {
 	}
 
 
@@ -76,7 +76,7 @@ public final class RJMXPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static RJMXPlugin getDefault() {
+	public static RJMXPluginCore getDefault() {
 		return plugin;
 	}
 

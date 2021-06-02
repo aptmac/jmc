@@ -45,7 +45,7 @@ import org.openjdk.jmc.common.unit.QuantityConversionException;
 import org.openjdk.jmc.flightrecorder.configuration.OptionInfo;
 import org.openjdk.jmc.flightrecorder.configuration.internal.CommonConstraints;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV2;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.services.jfr.IEventTypeInfo;
 
 /**
@@ -109,7 +109,7 @@ public final class EventTypeMetadataV2 implements IEventTypeInfo {
 			defaultValue = constraint.parsePersisted(defaultPersistedValue);
 		} catch (QuantityConversionException e) {
 			// Should not happen here. If it does, it has already been detected and then T can only be String.
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
 			@SuppressWarnings("unchecked")
 			T strDef = (T) "<bad default>";
 			defaultValue = strDef;

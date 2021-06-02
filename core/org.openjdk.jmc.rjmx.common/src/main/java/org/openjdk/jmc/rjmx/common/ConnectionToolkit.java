@@ -389,7 +389,7 @@ public final class ConnectionToolkit {
 			return getRuntimeBean(connection).getVmName();
 
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.INFO, "Could not check the JVM name!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.INFO, "Could not check the JVM name!", e); //$NON-NLS-1$
 		}
 		return null;
 	}
@@ -402,11 +402,11 @@ public final class ConnectionToolkit {
 			if (javaVersion != null) {
 				return new JavaVersion(javaVersion);
 			}
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 					"System Properties from " + connectionHandle.getDescription() //$NON-NLS-1$
 							+ " contained no java.version property!"); //$NON-NLS-1$
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 					"Could not check the java.version from System Properties!", e); //$NON-NLS-1$
 		}
 		return null;

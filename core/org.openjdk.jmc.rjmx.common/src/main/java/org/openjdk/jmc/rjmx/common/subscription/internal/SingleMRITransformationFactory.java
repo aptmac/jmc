@@ -35,7 +35,7 @@ package org.openjdk.jmc.rjmx.common.subscription.internal;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.subscription.IMRITransformation;
 import org.openjdk.jmc.rjmx.common.subscription.IMRITransformationFactory;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
@@ -79,7 +79,7 @@ public class SingleMRITransformationFactory implements IMRITransformationFactory
 	}
 
 	private void logException(Exception e) {
-		RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Unable to create transformation!", e); //$NON-NLS-1$
+		RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Unable to create transformation!", e); //$NON-NLS-1$
 	}
 
 	@Override

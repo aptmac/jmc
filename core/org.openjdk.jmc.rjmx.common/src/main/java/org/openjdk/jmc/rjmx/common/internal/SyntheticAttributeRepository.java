@@ -59,7 +59,7 @@ import javax.management.ReflectionException;
 
 import org.openjdk.jmc.rjmx.common.IPropertySyntheticAttribute;
 import org.openjdk.jmc.rjmx.common.ISyntheticAttribute;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 import org.openjdk.jmc.rjmx.common.subscription.internal.AttributeValueToolkit;
 import org.openjdk.jmc.rjmx.common.subscription.internal.DeadlockedThreadCountAttribute;
@@ -177,7 +177,7 @@ public final class SyntheticAttributeRepository {
 				server.registerMBean(entry, objectName);
 				mbeans.put(objectName, entry);
 			} catch (Exception e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
+				RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE,
 						"Could not register MBean for synthetic attribute!", e); //$NON-NLS-1$
 			}
 		}

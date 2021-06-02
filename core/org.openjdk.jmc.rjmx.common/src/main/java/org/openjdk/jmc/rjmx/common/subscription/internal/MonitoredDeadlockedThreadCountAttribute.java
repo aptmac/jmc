@@ -40,7 +40,7 @@ import java.util.logging.Level;
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 
 /**
  * Wrapping attribute://java.lang:type=Threading/findMonitoredDeadlockedThreads invocations as a
@@ -66,7 +66,7 @@ public class MonitoredDeadlockedThreadCountAttribute extends AbstractSyntheticAt
 				m_threadMBean = ManagementFactory.newPlatformMXBeanProxy(connection,
 						ManagementFactory.THREAD_MXBEAN_NAME, ThreadMXBean.class);
 			} catch (IOException e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Unable to look up threading MX bean!", e); //$NON-NLS-1$
+				RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE, "Unable to look up threading MX bean!", e); //$NON-NLS-1$
 			}
 		}
 		return m_threadMBean;
