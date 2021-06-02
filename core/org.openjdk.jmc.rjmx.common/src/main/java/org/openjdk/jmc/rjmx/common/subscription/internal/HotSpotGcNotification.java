@@ -46,7 +46,7 @@ import javax.management.openmbean.OpenDataException;
 import javax.management.openmbean.OpenType;
 import javax.management.openmbean.SimpleType;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 
 /**
  * A unifying GC notification attribute for HotSpot.
@@ -107,7 +107,7 @@ public class HotSpotGcNotification extends AbstractSyntheticNotification {
 						values[2] = gcInfo.get("duration"); //$NON-NLS-1$
 						m_lastValue = new CompositeDataSupport(TYPE, FIELD_NAMES, values);
 					} catch (Exception e) {
-						RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+						RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 								"Failed to update HotSpotGcNotification value", e); //$NON-NLS-1$
 					}
 

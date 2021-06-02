@@ -52,7 +52,7 @@ import javax.management.openmbean.CompositeType;
 import javax.management.openmbean.OpenType;
 
 import org.openjdk.jmc.common.util.TypeHandling;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanServerChangeListener;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataProvider;
@@ -83,7 +83,7 @@ public final class MBeanMRIMetadataDB implements IMRIService, IMBeanServerChange
 				allMRIOnServer.addAll(getMBeanData(mbean).keySet());
 			}
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Unable to retrieve MBean names from server!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE, "Unable to retrieve MBean names from server!", e); //$NON-NLS-1$
 		}
 		return allMRIOnServer;
 	}
@@ -145,11 +145,11 @@ public final class MBeanMRIMetadataDB implements IMRIService, IMBeanServerChange
 			Map<MRI, Map<String, Object>> mbeanMetadata = new HashMap<>();
 			for (MBeanAttributeInfo attribute : info.getAttributes()) {
 				if (attribute.getName() == null) {
-					RJMXPlugin.getDefault().getLogger()
+					RJMXPluginCore.getDefault().getLogger()
 							.warning("Omitting attribute with name==null in MBean + " + mbean.toString()); //$NON-NLS-1$
 				} else {
 					if (attribute.getType() == null) {
-						RJMXPlugin.getDefault().getLogger().warning(
+						RJMXPluginCore.getDefault().getLogger().warning(
 								"Found MBean attribute with invalid type for " + mbean + "/" + attribute.getName()); //$NON-NLS-1$ //$NON-NLS-2$
 					}
 					mbeanMetadata.put(new MRI(Type.ATTRIBUTE, mbean, attribute.getName()), createMetadata(attribute));
@@ -169,9 +169,9 @@ public final class MBeanMRIMetadataDB implements IMRIService, IMBeanServerChange
 		try {
 			return mbeanService.getMBeanInfo(mbean);
 		} catch (InstanceNotFoundException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.INFO, "MBean " + mbean + " does not exist on the server"); //$NON-NLS-1$ //$NON-NLS-2$
+			RJMXPluginCore.getDefault().getLogger().log(Level.INFO, "MBean " + mbean + " does not exist on the server"); //$NON-NLS-1$ //$NON-NLS-2$
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Unable to retrieve MBean information from server!", //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE, "Unable to retrieve MBean information from server!", //$NON-NLS-1$
 					e);
 		}
 		return null;
@@ -279,7 +279,7 @@ public final class MBeanMRIMetadataDB implements IMRIService, IMBeanServerChange
 			}
 			return null;
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Could not retrieve attribute: " + mri, e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE, "Could not retrieve attribute: " + mri, e); //$NON-NLS-1$
 			return null;
 		}
 	}

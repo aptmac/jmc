@@ -77,7 +77,7 @@ import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.JVMSupportToolkit;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.common.services.ICommercialFeaturesService;
 import org.openjdk.jmc.rjmx.common.services.jfr.FlightRecorderException;
@@ -301,7 +301,7 @@ public class FlightRecorderServiceV1 implements IFlightRecorderService {
 			}
 			return new DefaultValueMap<>(optionInfoById, DISALLOW_MAPPER);
 		} catch (FlightRecorderException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Couldn't get default event options", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Couldn't get default event options", e); //$NON-NLS-1$
 			return ConfigurationToolkit.getEventOptions(SchemaVersion.V1);
 		}
 	}
@@ -372,7 +372,7 @@ public class FlightRecorderServiceV1 implements IFlightRecorderService {
 					byInt.put(element.getId(), element);
 					byId.put(element.getEventTypeID(), element);
 				} catch (URISyntaxException e) {
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+					RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 							"Could not create event metadata for composite data!", e); //$NON-NLS-1$
 				}
 			}

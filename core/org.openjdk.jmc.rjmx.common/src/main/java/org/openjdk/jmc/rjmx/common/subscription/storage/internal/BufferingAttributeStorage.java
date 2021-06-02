@@ -39,7 +39,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import org.openjdk.jmc.common.collection.BoundedList;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.common.services.IAttributeStorage;
 import org.openjdk.jmc.rjmx.common.services.MRIDataSeries;

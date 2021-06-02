@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.rjmx.common.internal;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.servermodel.IServerModel;
 import org.openjdk.jmc.rjmx.common.servermodel.internal.ServerModel;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataProviderService;
@@ -41,7 +41,7 @@ import org.openjdk.jmc.rjmx.common.subscription.internal.ExtensionMetadataProvid
 import org.openjdk.jmc.rjmx.common.subscription.internal.FileMRIMetadataDB;
 
 /**
- * This class contains the service lookup pieces of {@link RJMXPlugin} which likely does not belong
+ * This class contains the service lookup pieces of {@link RJMXPluginCore} which likely does not belong
  * in a OSGi Bundle Activator. (Almost nothing does.) It was extracted to circumvent activator
  * problems (maybe even deadlocks) when starting Mission Control on OS X from the command line with
  * an -open argument. Could possibly be replaced with or delegate to OSGi (Declarative) Services. It

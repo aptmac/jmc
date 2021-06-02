@@ -59,7 +59,7 @@ import org.openjdk.jmc.common.unit.IMutableConstrainedMap;
 import org.openjdk.jmc.common.unit.IOptionDescriptor;
 import org.openjdk.jmc.common.unit.QuantityConversionException;
 import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 
 /**
  * Toolkit for marshalling JFR 1.0 (JDK7/8) event options.
@@ -157,7 +157,7 @@ public final class EventOptionsToolkitV1 {
 						try {
 							values[i] = RecordingOptionsToolkitV1.toOpenTypeWithCast(entry.getValue(), value);
 						} catch (QuantityConversionException e) {
-							RJMXPlugin.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
+							RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, e.getMessage(), e);
 						}
 					}
 				}
@@ -191,7 +191,7 @@ public final class EventOptionsToolkitV1 {
 					putWithCast(options, optionID, converter, data.get(serverKey));
 				} catch (QuantityConversionException e) {
 					// This should not happen
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Problem with value for option " + optionID,
+					RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Problem with value for option " + optionID,
 							e);
 				}
 			}

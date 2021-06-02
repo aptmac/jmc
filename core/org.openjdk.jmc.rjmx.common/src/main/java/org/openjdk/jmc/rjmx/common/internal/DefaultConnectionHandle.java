@@ -44,7 +44,7 @@ import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IConnectionListener;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.common.services.internal.ServiceFactoryManager;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
@@ -106,7 +106,7 @@ public class DefaultConnectionHandle implements IConnectionHandle {
 			try {
 				l.onConnectionChange(this);
 			} catch (Exception e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+				RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 						"DefaultConnectionHandle listener " + l + " failed", e); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
@@ -120,7 +120,7 @@ public class DefaultConnectionHandle implements IConnectionHandle {
 				try {
 					((IDisposableService) service).dispose();
 				} catch (RuntimeException e) {
-					RJMXPlugin.getDefault().getLogger().log(Level.WARNING,
+					RJMXPluginCore.getDefault().getLogger().log(Level.WARNING,
 							"Could not shut down the " + service.getClass().getName() //$NON-NLS-1$
 									+ " service.", //$NON-NLS-1$
 							e);

@@ -52,7 +52,7 @@ import javax.management.ObjectName;
 import javax.management.ReflectionException;
 import javax.management.openmbean.CompositeData;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 import org.openjdk.jmc.rjmx.common.subscription.MRI.Type;
 
@@ -162,7 +162,7 @@ public final class AttributeValueToolkit {
 			if (compositeParts.length != 2) {
 				String msg = "Could not resolve the composite data for " + dataPath + ". Number of components " //$NON-NLS-1$ //$NON-NLS-2$
 						+ compositeParts.length + " is not supported yet."; //$NON-NLS-1$
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING, msg);
+				RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, msg);
 				throw new AttributeNotFoundException(msg);
 			}
 			if (compositeData == null) {

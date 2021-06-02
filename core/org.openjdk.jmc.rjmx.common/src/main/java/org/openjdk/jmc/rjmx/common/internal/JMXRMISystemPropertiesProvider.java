@@ -35,7 +35,7 @@ package org.openjdk.jmc.rjmx.common.internal;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.preferences.JMXRMIPreferences;
 
 public final class JMXRMISystemPropertiesProvider {
@@ -52,7 +52,7 @@ public final class JMXRMISystemPropertiesProvider {
 				}
 			}
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.FINE, "Did not load jmxRmiProperties", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.FINE, "Did not load jmxRmiProperties", e); //$NON-NLS-1$
 		}
 	}
 

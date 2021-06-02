@@ -39,7 +39,7 @@ import javax.management.Notification;
 import javax.management.modelmbean.ModelMBeanNotificationBroadcaster;
 
 import org.openjdk.jmc.rjmx.common.ISyntheticNotification;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 
 /**
  * This is the base class to extend from for synthetic notifications.
@@ -78,7 +78,7 @@ public abstract class AbstractSyntheticNotification implements ISyntheticNotific
 		try {
 			broadcaster.sendNotification(notification);
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Unable to trigger notification!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Unable to trigger notification!", e); //$NON-NLS-1$
 			e.printStackTrace();
 		}
 	}

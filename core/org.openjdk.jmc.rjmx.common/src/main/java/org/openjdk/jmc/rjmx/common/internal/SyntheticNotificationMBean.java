@@ -46,7 +46,7 @@ import javax.management.modelmbean.ModelMBeanInfoSupport;
 import javax.management.modelmbean.ModelMBeanNotificationInfo;
 import javax.management.modelmbean.RequiredModelMBean;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 
 /**
  * This MBean is used to forward notifications from the notification MBean repository. It is also
@@ -65,7 +65,7 @@ public class SyntheticNotificationMBean extends RequiredModelMBean {
 			setModelMBeanInfo(new ModelMBeanInfoSupport((this.getClass().getName()), "Synthetic notification.", null, //$NON-NLS-1$
 					null, null, createNotificationInfo(entries)));
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.SEVERE, "Could not setup synthetic notification MBean!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE, "Could not setup synthetic notification MBean!", e); //$NON-NLS-1$
 		}
 	}
 
