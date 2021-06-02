@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadata;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataProvider;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataService;
@@ -132,7 +132,7 @@ public class MRITransformationToolkit {
 			Properties properties = createProperties(mri);
 			return TRANSFORMATION_FACTORIES.get(transformationName).createTransformation(properties);
 		}
-		RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
+		RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE,
 				"Could not instantiate unknown transformation type " + transformationName + "!"); //$NON-NLS-1$ //$NON-NLS-2$
 		return null;
 	}

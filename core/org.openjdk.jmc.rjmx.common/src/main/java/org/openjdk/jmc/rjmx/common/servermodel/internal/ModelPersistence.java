@@ -49,7 +49,7 @@ import org.openjdk.jmc.common.util.XmlToolkit;
 import org.openjdk.jmc.rjmx.common.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.internal.ServerDescriptor;
 import org.openjdk.jmc.common.security.ICredentials;
 import org.openjdk.jmc.common.security.PersistentCredentials;
@@ -120,7 +120,7 @@ class ModelPersistence {
 				throw new IOException();
 			}
 		} catch (Exception e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Problem initializing from browser settings", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Problem initializing from browser settings", e); //$NON-NLS-1$
 		}
 		return EMPTY;
 	}
@@ -143,7 +143,7 @@ class ModelPersistence {
 			try {
 				servers.add(loadServerFromXml(e));
 			} catch (MalformedURLException e1) {
-				RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Problem loading server from element " + e, e1); //$NON-NLS-1$
+				RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Problem loading server from element " + e, e1); //$NON-NLS-1$
 			}
 		}
 		return servers.toArray(new Server[servers.size()]);

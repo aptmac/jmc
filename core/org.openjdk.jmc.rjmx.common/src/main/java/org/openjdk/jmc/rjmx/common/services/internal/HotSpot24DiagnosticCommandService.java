@@ -51,7 +51,7 @@ import javax.management.ObjectName;
 import javax.management.ReflectionException;
 
 import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.common.services.IDiagnosticCommandService;
 import org.openjdk.jmc.rjmx.common.services.IOperation.OperationImpact;
@@ -186,7 +186,7 @@ public class HotSpot24DiagnosticCommandService implements IDiagnosticCommandServ
 			isOption = Boolean.parseBoolean(d.getFieldValue(ARGUMENT_OPTION).toString());
 			isMultiple = Boolean.parseBoolean(d.getFieldValue(ARGUMENT_MULITPLE).toString());
 			isRequired = Boolean.parseBoolean(d.getFieldValue(ARGUMENT_MANDATORY).toString());
-			RJMXPlugin.getDefault().getLogger()
+			RJMXPluginCore.getDefault().getLogger()
 					.finest("DiagnosticCommandArg created: " + getType() + ' ' + getName() + ' ' + getDescription() //$NON-NLS-1$
 							+ (isRequired ? " isRequired" : "") //$NON-NLS-1$ //$NON-NLS-2$
 							+ (isOption ? " isOption" : "") + (isMultiple ? " isMultiple" : "")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
@@ -199,7 +199,7 @@ public class HotSpot24DiagnosticCommandService implements IDiagnosticCommandServ
 		public DiagnosticCommand(Descriptor d, String returnType) {
 			super(d.getFieldValue(NAME).toString(), d.getFieldValue(DESCRIPTION).toString(), returnType,
 					extractSignature((Descriptor) d.getFieldValue(ARGUMENTS)), extractImpact(d));
-			RJMXPlugin.getDefault().getLogger()
+			RJMXPluginCore.getDefault().getLogger()
 					.finest("DiagnosticCommand created: " + getName() + ' ' + getReturnType() + ' ' + getImpact()); //$NON-NLS-1$
 		}
 
@@ -256,7 +256,7 @@ public class HotSpot24DiagnosticCommandService implements IDiagnosticCommandServ
 		private String execute(String[] arguments)
 				throws InstanceNotFoundException, MBeanException, ReflectionException, IOException {
 			String operation = commandNameToOperation.get(getName());
-			RJMXPlugin.getDefault().getLogger()
+			RJMXPluginCore.getDefault().getLogger()
 					.fine("Running " + getName() + " |" + operation + '|' + asString(arguments) + '|'); //$NON-NLS-1$ //$NON-NLS-2$
 			if (operation == null) {
 				throw new RuntimeException("Unavailable diagnostic command " + getName() + '!'); //$NON-NLS-1$
@@ -287,7 +287,7 @@ public class HotSpot24DiagnosticCommandService implements IDiagnosticCommandServ
 	}
 
 	private void refreshOperations() throws Exception {
-		RJMXPlugin.getDefault().getLogger().finer("Refreshing diagnostic operations"); //$NON-NLS-1$
+		RJMXPluginCore.getDefault().getLogger().finer("Refreshing diagnostic operations"); //$NON-NLS-1$
 		MBeanInfo info = m_mbeanServer.getMBeanInfo(DIAGNOSTIC_BEAN);
 		operations = new ArrayList<>(info.getOperations().length);
 		commandNameToOperation.clear();

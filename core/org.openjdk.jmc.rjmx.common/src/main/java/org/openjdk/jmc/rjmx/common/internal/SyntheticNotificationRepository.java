@@ -58,7 +58,7 @@ import javax.management.QueryExp;
 import javax.management.ReflectionException;
 
 import org.openjdk.jmc.rjmx.common.ISyntheticNotification;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 import org.openjdk.jmc.rjmx.common.subscription.internal.HotSpotGcNotification;
 
@@ -176,7 +176,7 @@ public class SyntheticNotificationRepository {
 				}
 
 			} catch (Exception e) {
-				RJMXPlugin.getDefault().getLogger().log(Level.SEVERE,
+				RJMXPluginCore.getDefault().getLogger().log(Level.SEVERE,
 						"Failed to register synthetic notification mbean " + objectName.toString(), e); //$NON-NLS-1$
 			}
 		}

@@ -44,7 +44,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.services.IDummyService;
 
 /**
@@ -84,7 +84,7 @@ public class ServiceFactoryManager {
 	}
 
 	private Logger getLogger() {
-		return RJMXPlugin.getDefault().getLogger();
+		return RJMXPluginCore.getDefault().getLogger();
 	}
 
 	@SuppressWarnings("unchecked")

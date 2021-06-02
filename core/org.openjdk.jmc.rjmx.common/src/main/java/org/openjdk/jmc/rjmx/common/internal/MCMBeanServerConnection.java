@@ -63,7 +63,7 @@ import javax.management.ObjectName;
 import javax.management.QueryExp;
 import javax.management.ReflectionException;
 
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.subscription.internal.AttributeValueToolkit;
 import org.openjdk.jmc.common.util.Environment;
 
@@ -262,10 +262,10 @@ public final class MCMBeanServerConnection implements MBeanServerConnection {
 	private void logInvokeMessage(ObjectName name, String operationName, Object[] params) {
 		if (Environment.isDebug()) {
 			if (params == null) {
-				RJMXPlugin.getDefault().getLogger().log(Level.FINE,
+				RJMXPluginCore.getDefault().getLogger().log(Level.FINE,
 						String.format("Invoking operation %s on %s", operationName, name)); //$NON-NLS-1$
 			} else {
-				RJMXPlugin.getDefault().getLogger().log(Level.FINE,
+				RJMXPluginCore.getDefault().getLogger().log(Level.FINE,
 						String.format("Invoking operation %s on %s, with parameters %s", operationName, name, //$NON-NLS-1$
 								toString(params)));
 			}
@@ -323,9 +323,9 @@ public final class MCMBeanServerConnection implements MBeanServerConnection {
 				}
 			}
 		} catch (IntrospectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		} catch (ReflectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		}
 	}
 
@@ -357,9 +357,9 @@ public final class MCMBeanServerConnection implements MBeanServerConnection {
 				}
 			}
 		} catch (IntrospectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		} catch (ReflectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		}
 	}
 
@@ -388,9 +388,9 @@ public final class MCMBeanServerConnection implements MBeanServerConnection {
 				}
 			}
 		} catch (IntrospectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		} catch (ReflectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		}
 	}
 
@@ -421,9 +421,9 @@ public final class MCMBeanServerConnection implements MBeanServerConnection {
 				}
 			}
 		} catch (IntrospectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		} catch (ReflectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		}
 	}
 
@@ -453,9 +453,9 @@ public final class MCMBeanServerConnection implements MBeanServerConnection {
 				}
 			}
 		} catch (IntrospectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		} catch (ReflectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		}
 	}
 
@@ -487,9 +487,9 @@ public final class MCMBeanServerConnection implements MBeanServerConnection {
 				}
 			}
 		} catch (IntrospectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		} catch (ReflectionException e) {
-			RJMXPlugin.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
+			RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not add listener!", e); //$NON-NLS-1$
 		}
 	}
 

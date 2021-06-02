@@ -40,7 +40,7 @@ import javax.management.ObjectName;
 
 import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
-import org.openjdk.jmc.rjmx.common.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.common.internal.IDisposableService;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
@@ -109,7 +109,7 @@ public final class DefaultMRIMetadataService extends Observable implements IMRIM
 	}
 
 	private static IMRIMetadataService getGlobalService() {
-		return RJMXPlugin.getDefault().getService(IMRIMetadataService.class);
+		return RJMXPluginCore.getDefault().getService(IMRIMetadataService.class);
 	}
 
 	private Observer createMetadataObserver() {
