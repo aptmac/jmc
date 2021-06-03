@@ -34,9 +34,9 @@ package org.openjdk.jmc.rjmx.services.internal;
 
 import javax.management.MBeanServerConnection;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.ICommercialFeaturesService;
 import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;

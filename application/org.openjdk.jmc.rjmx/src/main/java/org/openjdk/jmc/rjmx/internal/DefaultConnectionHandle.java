@@ -40,15 +40,15 @@ import java.util.logging.Level;
 
 import javax.management.MBeanServerConnection;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.IConnectionListener;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IConnectionListener;
+import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.internal.ServiceFactoryManager;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
-import org.openjdk.jmc.rjmx.subscription.IMRIService;
+import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.common.subscription.IMRIService;
 
 /**
  * This class represents a connection to a JVM.

@@ -84,6 +84,27 @@ public final class JVMSupportToolkit {
 	}
 
 	/**
+	 * Checks if Flight Recorder is available for use
+	 * 
+	 * @param connection
+	 * @return If it is an Oracle JVM or there is a FlightRecorder VM option, then return true.
+	 *         Otherwise, return false. This is used for verifying JDK 8 JVMs that are not built
+	 *         with JFR enabled, e.g., OpenJDK 8
+	 */
+	public static boolean hasFlightRecorder(IConnectionHandle connection) {
+		if (ConnectionToolkit.isOracle(connection)) {
+			return true;
+		}
+		MBeanServerConnection server = connection.getServiceOrNull(MBeanServerConnection.class);
+		try {
+			HotspotManagementToolkit.getVMOption(server, "FlightRecorder");
+			return true;
+		} catch (Exception e) { // RuntimeMBeanException thrown if FlightRecorder is not present
+			return false;
+		}
+	}
+
+	/**
 	 * Checks if Flight Recorder is disabled.
 	 *
 	 * @param connection
@@ -202,6 +223,6 @@ public final class JVMSupportToolkit {
 
 	private static String getJfrJRockitNotSupported(boolean shortMessage) {
 		return shortMessage ? "JRockit is no longer supported"
-				: "JRockit is no longer supported";
+				: "JRockit is no longer supported. Use a 4.x version of Mission Control when connecting to a JRockit.";
 	}
 }

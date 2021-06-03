@@ -56,8 +56,8 @@ import org.openjdk.jmc.rjmx.internal.DefaultConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.JMXConnectionDescriptor;
 import org.openjdk.jmc.rjmx.internal.RJMXConnection;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.MRI.Type;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 
 /**

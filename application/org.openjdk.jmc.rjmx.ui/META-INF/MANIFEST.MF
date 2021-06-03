@@ -8,8 +8,8 @@ Bundle-Vendor: Oracle Corporation
 Require-Bundle: org.eclipse.ui.forms,
  org.openjdk.jmc.ui;visibility:=reexport,
  org.openjdk.jmc.rjmx;visibility:=reexport,
+ org.openjdk.jmc.rjmx.common;visibility:=reexport,
  org.openjdk.jmc.greychart.ui;visibility:=reexport
-Import-Package: org.openjdk.jmc.rjmx.common
 Export-Package: org.openjdk.jmc.rjmx.ui,
  org.openjdk.jmc.rjmx.ui.attributes;
   x-friends:="org.openjdk.jmc.console.ui.mbeanbrowser,

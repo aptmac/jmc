@@ -32,8 +32,8 @@
  */
 package org.openjdk.jmc.rjmx.internal;
 
-import org.openjdk.jmc.rjmx.ISyntheticAttribute;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.ISyntheticAttribute;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
 public class SyntheticAttributeEntry {
 	private final ISyntheticAttribute attribute;

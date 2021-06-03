@@ -38,7 +38,7 @@ import java.util.Collections;
 
 import org.openjdk.jmc.common.action.IActionProvider;
 import org.openjdk.jmc.common.action.IUserAction;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.rjmx.actionprovider.IActionProviderFactory;
 import org.openjdk.jmc.rjmx.internal.ServerToolkit;
 

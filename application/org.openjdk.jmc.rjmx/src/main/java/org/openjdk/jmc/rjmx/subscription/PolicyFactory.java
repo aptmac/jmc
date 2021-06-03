@@ -30,11 +30,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription;
+package org.openjdk.jmc.rjmx.common.subscription;
 
-import org.openjdk.jmc.rjmx.subscription.internal.DefaultUpdatePolicy;
-import org.openjdk.jmc.rjmx.subscription.internal.OneShotUpdatePolicy;
-import org.openjdk.jmc.rjmx.subscription.internal.SimpleUpdatePolicy;
+import org.openjdk.jmc.rjmx.common.subscription.internal.DefaultUpdatePolicy;
+import org.openjdk.jmc.rjmx.common.subscription.internal.OneShotUpdatePolicy;
+import org.openjdk.jmc.rjmx.common.subscription.internal.SimpleUpdatePolicy;
 
 /**
  * Factory for commonly used subscription update policies.

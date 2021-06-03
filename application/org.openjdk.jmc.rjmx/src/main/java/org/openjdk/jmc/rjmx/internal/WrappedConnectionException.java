@@ -45,8 +45,8 @@ import javax.naming.NoInitialContextException;
 
 import org.eclipse.osgi.util.NLS;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.messages.internal.Messages;
 
 public class WrappedConnectionException extends ConnectionException {

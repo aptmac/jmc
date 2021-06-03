@@ -44,7 +44,7 @@ import org.openjdk.jmc.common.action.Executable;
 import org.openjdk.jmc.common.action.IUserAction;
 import org.openjdk.jmc.common.resource.IImageResource;
 import org.openjdk.jmc.common.resource.Resource;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.rjmx.actionprovider.IActionFactory;
 import org.openjdk.jmc.ui.common.util.AdapterUtil;
 

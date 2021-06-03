@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription.storage.internal;
+package org.openjdk.jmc.rjmx.common.subscription.storage.internal;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -45,10 +45,10 @@ import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.services.IAttributeStorage;
 import org.openjdk.jmc.rjmx.services.MRIDataSeries;
-import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
+import org.openjdk.jmc.rjmx.common.subscription.IMRIValueListener;
+import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.MRIValueEvent;
 
 /**
  * Simple attribute storage that contains attribute events.

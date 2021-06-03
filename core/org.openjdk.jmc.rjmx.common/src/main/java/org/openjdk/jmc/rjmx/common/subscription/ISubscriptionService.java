@@ -76,12 +76,12 @@ public interface ISubscriptionService {
 	/**
 	 * Adds the listener to the subscription on given descriptor (possible creating it).
 	 *
-	 * @param mri
+	 * @param attribute
 	 *            the MRI stating how and where to listen to value changes.
-	 * @param listener
+	 * @param imriValueListener
 	 *            the listener to add.
 	 */
-	void addMRIValueListener(MRI mri, IMRIValueListener listener);
+	void addMRIValueListener(MRI attribute, IMRIValueListener imriValueListener);
 
 	/**
 	 * Substitutes two listeners. The new listener will subscribe to all subscriptions that the old

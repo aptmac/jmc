@@ -42,7 +42,7 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.window.Window;
 
 import org.openjdk.jmc.rjmx.services.IUpdateInterval;
-import org.openjdk.jmc.rjmx.subscription.internal.UpdatePolicyToolkit;
+import org.openjdk.jmc.rjmx.common.subscription.internal.UpdatePolicyToolkit;
 
 /**
  * Context menu update interval menu holder.

@@ -38,7 +38,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.openjdk.jmc.browser.attach.LocalJVMToolkit;
 import org.openjdk.jmc.browser.attach.Messages;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.rjmx.internal.ServerToolkit;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 

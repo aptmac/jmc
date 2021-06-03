@@ -52,7 +52,7 @@ import org.openjdk.jmc.rjmx.common.subscription.MRIValueEvent;
  * Default implementation for AttributeSubscriptions.
  */
 public abstract class AbstractAttributeSubscription implements IMRISubscription {
-	private static final Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.subscription"); //$NON-NLS-1$
+	private static final Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.common.subscription"); //$NON-NLS-1$
 
 	private final IConnectionHandle m_connectionHandle;
 	private final Set<IMRIValueListener> m_attributeListenerList = Collections

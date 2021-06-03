@@ -57,7 +57,7 @@ public class HotSpotGcNotification extends AbstractSyntheticNotification {
 	private static final CompositeType TYPE;
 	static {
 		try {
-			TYPE = new CompositeType("org.openjdk.jmc.rjmx.subscription.internal.hotspotgcdata", "GC Data", FIELD_NAMES, //$NON-NLS-1$ //$NON-NLS-2$
+			TYPE = new CompositeType("org.openjdk.jmc.rjmx.common.subscription.internal.hotspotgcdata", "GC Data", FIELD_NAMES, //$NON-NLS-1$ //$NON-NLS-2$
 					FIELD_NAMES, new OpenType[] {SimpleType.DOUBLE, SimpleType.LONG, SimpleType.LONG});
 		} catch (OpenDataException e) {
 			throw new RuntimeException(e);

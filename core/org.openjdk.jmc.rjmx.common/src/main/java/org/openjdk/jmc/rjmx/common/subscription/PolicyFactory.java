@@ -30,25 +30,47 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription.internal;
+package org.openjdk.jmc.rjmx.common.subscription;
 
-import javax.management.MBeanServerConnection;
-
-import org.openjdk.jmc.rjmx.ISyntheticAttribute;
+import org.openjdk.jmc.rjmx.common.subscription.internal.DefaultUpdatePolicy;
+import org.openjdk.jmc.rjmx.common.subscription.internal.OneShotUpdatePolicy;
+import org.openjdk.jmc.rjmx.common.subscription.internal.SimpleUpdatePolicy;
 
 /**
- * Abstract base class for synthetic attributes.
+ * Factory for commonly used subscription update policies.
  */
-public abstract class AbstractSyntheticAttribute implements ISyntheticAttribute {
-
-	@Override
-	public void init(MBeanServerConnection connection) {
-		// Ignore
+public final class PolicyFactory {
+	private PolicyFactory() {
+		throw new AssertionError("Not supposed to be instantiated!"); //$NON-NLS-1$
 	}
 
-	@Override
-	public void stop() {
-		// Ignore
+	/**
+	 * This update policy will schedule the first update ASAP, and the next one at the end of time
+	 * (Long.MAX_VALUE).
+	 *
+	 * @return the created update policy.
+	 */
+	public static IUpdatePolicy createOneShotPolicy() {
+		return OneShotUpdatePolicy.newPolicy();
 	}
 
+	/**
+	 * Update policy that updates the {@link IMRISubscription} every updateTime millisecond.
+	 *
+	 * @param updateTime
+	 *            the period between updates in milliseconds.
+	 * @return the created update policy.
+	 */
+	public static IUpdatePolicy createSimpleUpdatePolicy(int updateTime) {
+		return SimpleUpdatePolicy.newPolicy(updateTime);
+	}
+
+	/**
+	 * Policy that updates the {@link IMRISubscription} with the default update interval.
+	 *
+	 * @return the created update policy.
+	 */
+	public static IUpdatePolicy createDefaultUpdatePolicy() {
+		return DefaultUpdatePolicy.newPolicy();
+	}
 }

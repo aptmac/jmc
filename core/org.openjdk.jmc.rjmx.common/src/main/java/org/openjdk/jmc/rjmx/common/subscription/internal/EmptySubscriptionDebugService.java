@@ -30,30 +30,23 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription.internal;
+package org.openjdk.jmc.rjmx.common.subscription.internal;
 
-/**
- * This update policy will schedule the first update ASAP, and the next one at the end of time
- * (Long.MAX_VALUE).
- * <p>
- * This class is unfortunately not stateless, as the first update time will need to be recorded for
- * the initial update, hence the factory method will return new instances each time it is called.
- */
-public final class OneShotUpdatePolicy extends AbstractUpdatePolicy {
-	private OneShotUpdatePolicy() {
+import java.util.Collection;
+import java.util.Collections;
+
+public class EmptySubscriptionDebugService implements ISubscriptionDebugService {
+
+	@Override
+	public void collectDebugInformation(boolean collect) {
 	}
 
 	@Override
-	protected long getFirstUpdate(long now) {
-		return now;
+	public void clearDebugInformation() {
 	}
 
 	@Override
-	protected long getFollowingUpdate(long now) {
-		return Long.MAX_VALUE;
-	}
-
-	public static OneShotUpdatePolicy newPolicy() {
-		return new OneShotUpdatePolicy();
+	public Collection<IMRISubscriptionDebugInformation> getDebugInformation() {
+		return Collections.emptyList();
 	}
 }

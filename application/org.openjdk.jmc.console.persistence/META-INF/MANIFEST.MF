@@ -11,6 +11,7 @@ Require-Bundle: org.openjdk.jmc.console.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui,
  org.openjdk.jmc.rjmx,
+ org.openjdk.jmc.rjmx.common,
  org.openjdk.jmc.rjmx.ui
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openjdk.jmc.console.persistence

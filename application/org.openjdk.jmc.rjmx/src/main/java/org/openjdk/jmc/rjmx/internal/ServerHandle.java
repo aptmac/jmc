@@ -37,12 +37,12 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.openjdk.jmc.common.io.IOToolkit;
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.IConnectionListener;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IConnectionListener;
+import org.openjdk.jmc.rjmx.common.IServerDescriptor;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 
 public final class ServerHandle implements IServerHandle {
 

@@ -86,7 +86,7 @@
                   The class which implements the notification behaviour.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.ISyntheticNotification"/>
+                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.common.ISyntheticNotification"/>
                </appinfo>
             </annotation>
          </attribute>

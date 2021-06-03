@@ -33,8 +33,8 @@
 package org.openjdk.jmc.rjmx.servermodel;
 
 import org.openjdk.jmc.common.action.IActionProvider;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 
 /**
  * Represents a particular (potentially remote) server that can be connected to

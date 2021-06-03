@@ -41,7 +41,7 @@ import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 import javax.management.openmbean.CompositeData;
 
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 
 public final class HotspotManagementToolkit {
 
