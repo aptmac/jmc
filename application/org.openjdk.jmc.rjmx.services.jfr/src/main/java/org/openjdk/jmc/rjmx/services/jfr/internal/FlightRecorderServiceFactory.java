@@ -32,8 +32,8 @@
  */
 package org.openjdk.jmc.rjmx.services.jfr.internal;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.IServiceFactory;
 import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;

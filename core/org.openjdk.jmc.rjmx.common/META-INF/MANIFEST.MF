@@ -18,6 +18,7 @@ Export-Package: org.openjdk.jmc.rjmx.common,
  org.openjdk.jmc.rjmx.common.services.jfr.internal,
  org.openjdk.jmc.rjmx.common.subscription,
  org.openjdk.jmc.rjmx.common.subscription.internal,
+ org.openjdk.jmc.rjmx.common.subscription.MRI,
  org.openjdk.jmc.rjmx.common.subscription.storage.internal,
  org.openjdk.jmc.rjmx.common.util.internal
 Bundle-Vendor: Oracle Corporation

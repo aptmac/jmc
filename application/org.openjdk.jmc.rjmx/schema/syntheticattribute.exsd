@@ -94,7 +94,7 @@
                   The class which implements the attribute behaviour.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.subscription.ISyntheticAttribute"/>
+                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.common.subscription.ISyntheticAttribute"/>
                </appinfo>
             </annotation>
          </attribute>

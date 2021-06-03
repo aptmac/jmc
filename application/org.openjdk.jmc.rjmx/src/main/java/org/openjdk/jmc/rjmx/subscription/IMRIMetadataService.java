@@ -30,10 +30,10 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription;
+package org.openjdk.jmc.rjmx.common.subscription;
 
 import org.openjdk.jmc.common.util.IObservable;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 
 /**
  * Manages {@link IMRIMetadata}s and metadata associated with {@link IMRIMetadata}s. This is one of

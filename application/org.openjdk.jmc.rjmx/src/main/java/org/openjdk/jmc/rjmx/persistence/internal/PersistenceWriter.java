@@ -47,8 +47,8 @@ import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.internal.IDisposableService;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.services.IPersistenceService;
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
 public class PersistenceWriter implements IPersistenceService, IDisposableService, IPreferenceChangeListener {
 

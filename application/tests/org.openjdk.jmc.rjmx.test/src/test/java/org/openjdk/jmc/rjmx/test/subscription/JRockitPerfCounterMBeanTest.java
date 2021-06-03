@@ -36,7 +36,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 
 /**

@@ -57,8 +57,8 @@ import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.services.IAttributeStorage;
 import org.openjdk.jmc.rjmx.services.IAttributeStorageService;
 import org.openjdk.jmc.rjmx.services.MRIDataSeries;
-import org.openjdk.jmc.rjmx.subscription.IMRIService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.IMRIService;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
 public class PersistenceReader implements IMRIService, IAttributeStorageService {
 

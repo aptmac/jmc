@@ -34,4 +34,4 @@
  * This package is internal to the JMC team. Java docs must not be generated for this package! If
  * you see this in generated javadocs, report a bug!
  */
-package org.openjdk.jmc.rjmx.subscription.storage.internal;
+package org.openjdk.jmc.rjmx.common.subscription.storage.internal;

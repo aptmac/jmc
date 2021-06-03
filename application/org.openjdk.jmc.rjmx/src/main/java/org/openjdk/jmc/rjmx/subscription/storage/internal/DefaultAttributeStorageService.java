@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription.storage.internal;
+package org.openjdk.jmc.rjmx.common.subscription.storage.internal;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,8 +38,8 @@ import java.util.Map;
 import org.openjdk.jmc.rjmx.internal.IDisposableService;
 import org.openjdk.jmc.rjmx.services.IAttributeStorage;
 import org.openjdk.jmc.rjmx.services.IAttributeStorageService;
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
 /**
  * Default implementation of {@link IAttributeStorageService}. Keeps a pretty rigid synchronization

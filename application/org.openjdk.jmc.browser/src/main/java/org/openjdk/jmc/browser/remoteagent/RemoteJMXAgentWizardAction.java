@@ -37,7 +37,7 @@ import java.util.Properties;
 import org.eclipse.jface.wizard.IWizard;
 import org.openjdk.jmc.browser.attach.BrowserAttachPlugin;
 import org.openjdk.jmc.browser.attach.Messages;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.ui.wizards.AbstractWizardUserAction;
 
 public class RemoteJMXAgentWizardAction extends AbstractWizardUserAction {

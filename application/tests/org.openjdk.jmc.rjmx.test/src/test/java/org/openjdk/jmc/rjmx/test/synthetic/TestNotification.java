@@ -42,7 +42,7 @@ import javax.management.MBeanServerConnection;
 import javax.management.openmbean.OpenType;
 import javax.management.openmbean.SimpleType;
 
-import org.openjdk.jmc.rjmx.subscription.internal.AbstractSyntheticNotification;
+import org.openjdk.jmc.rjmx.common.subscription.internal.AbstractSyntheticNotification;
 
 public class TestNotification extends AbstractSyntheticNotification {
 	private final static AtomicInteger THREAD_ID_PROVIDER = new AtomicInteger(0);

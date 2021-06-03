@@ -51,20 +51,20 @@ import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.jvm.JVMType;
 import org.openjdk.jmc.common.test.MCTestCase;
 import org.openjdk.jmc.common.version.JavaVersionSupport;
-import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
+import org.openjdk.jmc.rjmx.common.ConnectionDescriptorBuilder;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.internal.DefaultConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.RJMXConnection;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
-import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
-import org.openjdk.jmc.rjmx.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.common.services.IDiagnosticCommandService;
+import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataService;
+import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;
 
 /**
  */

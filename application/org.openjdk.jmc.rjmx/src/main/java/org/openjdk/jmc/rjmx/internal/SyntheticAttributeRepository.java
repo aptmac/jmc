@@ -65,11 +65,11 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 
-import org.openjdk.jmc.rjmx.IPropertySyntheticAttribute;
-import org.openjdk.jmc.rjmx.ISyntheticAttribute;
+import org.openjdk.jmc.rjmx.common.IPropertySyntheticAttribute;
+import org.openjdk.jmc.rjmx.common.ISyntheticAttribute;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.internal.AttributeValueToolkit;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.internal.AttributeValueToolkit;
 
 /**
  * Contains all the synthetic attributes.
