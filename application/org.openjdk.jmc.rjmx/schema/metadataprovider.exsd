@@ -91,7 +91,7 @@
                   The class which implements the MRI metadata provider.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.subscription.IMRIMetadataProviderService"/>
+                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataProviderService"/>
                </appinfo>
             </annotation>
          </attribute>

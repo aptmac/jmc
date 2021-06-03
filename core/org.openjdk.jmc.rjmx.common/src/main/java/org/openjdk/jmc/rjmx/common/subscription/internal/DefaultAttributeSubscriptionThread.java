@@ -68,7 +68,7 @@ import org.openjdk.jmc.rjmx.common.subscription.internal.IMRISubscriptionDebugIn
  */
 public class DefaultAttributeSubscriptionThread extends Thread {
 	// The logger.
-	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.subscription"); //$NON-NLS-1$
+	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.common.subscription"); //$NON-NLS-1$
 
 	private final IConnectionHandle connectionHandle;
 	private IAttributeStorageService attributeStorageService;

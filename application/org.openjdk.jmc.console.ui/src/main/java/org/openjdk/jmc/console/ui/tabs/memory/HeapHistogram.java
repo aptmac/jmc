@@ -64,7 +64,7 @@ import org.openjdk.jmc.common.util.TypeHandling;
 import org.openjdk.jmc.console.ui.ConsolePlugin;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
 import org.openjdk.jmc.console.ui.preferences.ConsoleConstants;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
 import org.openjdk.jmc.ui.UIPlugin;
 import org.openjdk.jmc.ui.column.ColumnBuilder;

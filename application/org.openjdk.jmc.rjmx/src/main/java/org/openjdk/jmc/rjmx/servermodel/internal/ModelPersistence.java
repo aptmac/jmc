@@ -49,9 +49,9 @@ import org.openjdk.jmc.common.security.PersistentCredentials;
 import org.openjdk.jmc.common.security.SecurityException;
 import org.openjdk.jmc.common.security.SecurityManagerFactory;
 import org.openjdk.jmc.common.util.XmlToolkit;
-import org.openjdk.jmc.rjmx.ConnectionDescriptorBuilder;
-import org.openjdk.jmc.rjmx.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
+import org.openjdk.jmc.rjmx.common.ConnectionDescriptorBuilder;
+import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
+import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
 

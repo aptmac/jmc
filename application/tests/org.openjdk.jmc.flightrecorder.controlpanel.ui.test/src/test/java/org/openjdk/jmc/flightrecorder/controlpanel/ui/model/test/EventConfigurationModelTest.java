@@ -53,7 +53,7 @@ import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLModel;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfiguration;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.model.EventConfigurationModel;
 import org.openjdk.jmc.flightrecorder.jdk.JdkTypeIDs;
-import org.openjdk.jmc.rjmx.ConnectionException;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
 import org.openjdk.jmc.rjmx.services.jfr.IEventTypeInfo;

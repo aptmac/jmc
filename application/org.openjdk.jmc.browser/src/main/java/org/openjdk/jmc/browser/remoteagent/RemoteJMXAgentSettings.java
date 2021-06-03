@@ -43,7 +43,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.openjdk.jmc.browser.attach.LocalJVMToolkit;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.rjmx.internal.ServerToolkit;
 
 import com.sun.tools.attach.AgentLoadException;

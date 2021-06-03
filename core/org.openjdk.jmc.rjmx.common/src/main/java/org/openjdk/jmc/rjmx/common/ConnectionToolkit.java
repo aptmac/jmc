@@ -53,6 +53,7 @@ import javax.management.openmbean.CompositeData;
 import javax.management.openmbean.TabularData;
 import javax.management.remote.JMXServiceURL;
 
+import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.version.JavaVMVersionToolkit;
 import org.openjdk.jmc.common.version.JavaVersion;
 import org.openjdk.jmc.rjmx.common.internal.RJMXConnection;
@@ -363,6 +364,38 @@ public final class ConnectionToolkit {
 	public static boolean isHotSpot(IConnectionHandle connectionHandle) {
 		String vmName = getVMName(connectionHandle);
 		return vmName != null && JavaVMVersionToolkit.isHotspotJVMName(vmName);
+	}
+
+	/**
+	 * Returns {@code true} if the connection handle is associated with an Oracle built JVM,
+	 * {@code false} otherwise. If the information is already present in the {@link JVMDescriptor},
+	 * this method will not cause any JMXRMI calls. If the information is lacking, an attempt will
+	 * be made to look it up in the connected JVM. If the attempt fails, false will be returned.
+	 *
+	 * @return {@code true} if the connection handle describes an Oracle JVM, or {@code false}
+	 *         otherwise or if it could not be determined.
+	 */
+	public static boolean isOracle(IConnectionHandle handle) {
+		JVMDescriptor descriptor = handle.getServerDescriptor().getJvmInfo();
+		// This should normally not happen for discovered JVMs, but users can create custom connections
+		String name = null;
+		if (descriptor != null) {
+			name = descriptor.getJvmName();
+		} else {
+			// We try checking if connected
+			if (handle.isConnected()) {
+				MBeanServerConnection connection = handle.getServiceOrNull(MBeanServerConnection.class);
+				if (connection != null) {
+					try {
+						name = getRuntimeBean(connection).getVmName();
+					} catch (IOException e) {
+						// Worst case we classify JVM name wrong
+						RJMXPluginCore.getDefault().getLogger().log(Level.WARNING, "Could not check if Oracle JVM", e);
+					}
+				}
+			}
+		}
+		return name != null && (name.contains("Java HotSpot"));
 	}
 
 	/**

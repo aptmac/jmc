@@ -34,7 +34,7 @@ package org.openjdk.jmc.rjmx.triggers.internal;
 
 import java.util.logging.Level;
 
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.triggers.IExceptionHandler;
 import org.openjdk.jmc.rjmx.triggers.TriggerRule;

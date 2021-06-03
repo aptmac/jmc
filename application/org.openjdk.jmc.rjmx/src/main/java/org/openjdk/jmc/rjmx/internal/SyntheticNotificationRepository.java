@@ -64,9 +64,9 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 
-import org.openjdk.jmc.rjmx.ISyntheticNotification;
+import org.openjdk.jmc.rjmx.common.ISyntheticNotification;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
 public class SyntheticNotificationRepository {
 	private final Map<ObjectName, Set<SyntheticNotificationEntry>> mbeans = new HashMap<>();

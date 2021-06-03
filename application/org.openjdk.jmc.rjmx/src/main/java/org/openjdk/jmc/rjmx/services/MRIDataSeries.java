@@ -34,7 +34,7 @@ package org.openjdk.jmc.rjmx.services;
 
 import org.openjdk.jmc.common.xydata.DataSeries;
 import org.openjdk.jmc.common.xydata.ITimestampedData;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
 public interface MRIDataSeries extends DataSeries<ITimestampedData> {
 

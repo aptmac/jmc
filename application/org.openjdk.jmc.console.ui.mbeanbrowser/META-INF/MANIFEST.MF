@@ -10,6 +10,7 @@ Require-Bundle: org.openjdk.jmc.console.ui,
  org.openjdk.jmc.ui.common,
  org.openjdk.jmc.ui,
  org.openjdk.jmc.rjmx,
+ org.openjdk.jmc.rjmx.common,
  org.openjdk.jmc.rjmx.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.openjdk.jmc.console.ui.mbeanbrowser.MBeanBrowserPlugin

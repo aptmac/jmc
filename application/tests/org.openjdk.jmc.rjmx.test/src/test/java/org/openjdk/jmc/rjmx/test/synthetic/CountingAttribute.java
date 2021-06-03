@@ -34,7 +34,7 @@ package org.openjdk.jmc.rjmx.test.synthetic;
 
 import javax.management.MBeanServerConnection;
 
-import org.openjdk.jmc.rjmx.subscription.internal.AbstractSyntheticAttribute;
+import org.openjdk.jmc.rjmx.common.subscription.internal.AbstractSyntheticAttribute;
 
 /**
  * A synthetic test attribute that can be set and read.

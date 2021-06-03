@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription;
+package org.openjdk.jmc.rjmx.common.subscription;
 
 import java.awt.Color;
 
@@ -39,7 +39,7 @@ import javax.management.openmbean.CompositeData;
 
 import org.openjdk.jmc.common.util.ColorToolkit;
 import org.openjdk.jmc.common.util.TypeHandling;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 
 /**
  * Helper class for extracting some commonly used metadata from the {@link IMRIMetadataService}.

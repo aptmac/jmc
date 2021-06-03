@@ -35,7 +35,7 @@ package org.openjdk.jmc.rjmx.internal;
 import java.util.UUID;
 
 import org.openjdk.jmc.common.jvm.JVMDescriptor;
-import org.openjdk.jmc.rjmx.IServerDescriptor;
+import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.ui.common.labelingrules.NameConverter;
 
 public class ServerDescriptor implements IServerDescriptor {

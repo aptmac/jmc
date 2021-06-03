@@ -65,7 +65,7 @@ import javax.management.ReflectionException;
 
 import org.openjdk.jmc.common.util.Environment;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.subscription.internal.AttributeValueToolkit;
+import org.openjdk.jmc.rjmx.common.subscription.internal.AttributeValueToolkit;
 
 /**
  * Delegating MBean server connection. Provides support for synthetic attributes.

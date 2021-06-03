@@ -65,7 +65,7 @@ import org.openjdk.jmc.rjmx.common.subscription.internal.IMRISubscriptionDebugIn
 // FIXME: The Notification manager will currently not send out any null events on creation/destruction.
 public final class DefaultNotificationSubscriptionManager {
 	// The logger.
-	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.subscription"); //$NON-NLS-1$
+	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.common.subscription"); //$NON-NLS-1$
 
 	// NOTE: Commented out because only used by commented out code in handleNotification
 //	private final IMBeanHelperService service;

@@ -8,6 +8,7 @@ Bundle-Vendor: Oracle Corporation
 Bundle-Localization: plugin
 Require-Bundle: org.openjdk.jmc.ui,
  org.openjdk.jmc.rjmx,
+ org.openjdk.jmc.rjmx.common,
  org.openjdk.jmc.jdp
 Export-Package: org.openjdk.jmc.browser.jdp
 Bundle-ActivationPolicy: lazy

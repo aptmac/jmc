@@ -54,7 +54,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.openjdk.jmc.common.action.IActionProvider;
-import org.openjdk.jmc.rjmx.IServerHandle;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.actionprovider.IActionProviderFactory;
 

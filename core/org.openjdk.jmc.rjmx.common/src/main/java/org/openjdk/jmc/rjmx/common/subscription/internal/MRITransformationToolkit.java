@@ -76,7 +76,7 @@ public class MRITransformationToolkit {
         String transformationName = "difference";
         Properties props = new Properties();
         props.put("visualizeLabel", "Visualize difference...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.common.subscription.internal.DifferenceTransformation");
         Properties transProps = new Properties();
         transProps.put("displayName", "%s (difference)");
         props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);
@@ -87,7 +87,7 @@ public class MRITransformationToolkit {
         transformationName = "rate";
         props = new Properties();
         props.put("visualizeLabel", "Visualize rate per second...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DifferenceTransformation");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.common.subscription.internal.DifferenceTransformation");
         transProps = new Properties();
         transProps.put("displayName", "%s (rate per second)");
         transProps.put("rate", "1000");
@@ -99,7 +99,7 @@ public class MRITransformationToolkit {
         transformationName = "average";
         props = new Properties();
         props.put("visualizeLabel", "Visualize average...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.AverageTransformation");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.common.subscription.internal.AverageTransformation");
         transProps = new Properties();
         transProps.put("terms", "30");
         transProps.put("displayName", "%%s (average over %s samples)");
@@ -111,7 +111,7 @@ public class MRITransformationToolkit {
         transformationName = "delta";
         props = new Properties();
         props.put("visualizeLabel", "Visualize delta...");
-        props.put("transformationClass", "org.openjdk.jmc.rjmx.subscription.internal.DeltaTransformation");
+        props.put("transformationClass", "org.openjdk.jmc.rjmx.common.subscription.internal.DeltaTransformation");
         transProps = new Properties();
         transProps.put("displayName", "%s (delta)");
         props.put(TRANSFORMATION_NAME_ATTRIBUTE, transformationName);

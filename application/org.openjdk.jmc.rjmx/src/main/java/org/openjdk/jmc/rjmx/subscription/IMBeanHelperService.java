@@ -30,7 +30,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.subscription;
+package org.openjdk.jmc.rjmx.common.subscription;
 
 import java.io.IOException;
 import java.util.Map;
@@ -44,7 +44,7 @@ import javax.management.MBeanInfo;
 import javax.management.ObjectName;
 import javax.management.ReflectionException;
 
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
+import org.openjdk.jmc.rjmx.common.subscription.MRI.Type;
 
 /**
  * Little helper service to provide simple access to commonly used functionality when handling

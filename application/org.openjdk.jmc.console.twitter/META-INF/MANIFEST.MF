@@ -6,6 +6,7 @@ Bundle-Version: 1.0.2.qualifier
 Bundle-Activator: org.openjdk.jmc.console.twitter.TwitterPlugin
 Bundle-Vendor: Oracle Corporation
 Require-Bundle: org.openjdk.jmc.rjmx,
+ org.openjdk.jmc.rjmx.common,
  org.openjdk.jmc.ui,
  org.eclipse.core.net
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

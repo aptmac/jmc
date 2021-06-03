@@ -50,7 +50,7 @@ import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 import javax.management.ReflectionException;
 
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;

@@ -32,13 +32,13 @@
  */
 package org.openjdk.jmc.rjmx.services.internal;
 
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.IAttributeStorageService;
 import org.openjdk.jmc.rjmx.services.IServiceFactory;
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
-import org.openjdk.jmc.rjmx.subscription.storage.internal.DefaultAttributeStorageService;
+import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.common.subscription.storage.internal.DefaultAttributeStorageService;
 
 public class AttributeStorageServiceFactory implements IServiceFactory<IAttributeStorageService> {
 

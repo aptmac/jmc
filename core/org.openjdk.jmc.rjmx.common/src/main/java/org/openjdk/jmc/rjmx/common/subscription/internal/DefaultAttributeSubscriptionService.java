@@ -60,7 +60,7 @@ public final class DefaultAttributeSubscriptionService
 		implements ISubscriptionService, IDisposableService, ISubscriptionDebugService {
 
 	// The logger.
-	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.subscription"); //$NON-NLS-1$
+	private final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.common.subscription"); //$NON-NLS-1$
 
 	private final IConnectionHandle handle;
 

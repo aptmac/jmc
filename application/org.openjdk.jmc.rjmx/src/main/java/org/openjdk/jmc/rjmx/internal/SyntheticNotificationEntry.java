@@ -32,8 +32,8 @@
  */
 package org.openjdk.jmc.rjmx.internal;
 
-import org.openjdk.jmc.rjmx.ISyntheticNotification;
-import org.openjdk.jmc.rjmx.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.ISyntheticNotification;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
 public class SyntheticNotificationEntry {
 	private ISyntheticNotification notification;

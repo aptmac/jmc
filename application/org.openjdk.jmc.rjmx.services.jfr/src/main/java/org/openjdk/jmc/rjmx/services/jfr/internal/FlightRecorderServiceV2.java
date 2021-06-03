@@ -72,16 +72,16 @@ import org.openjdk.jmc.flightrecorder.configuration.internal.KnownEventOptions;
 import org.openjdk.jmc.flightrecorder.configuration.internal.KnownRecordingOptions;
 import org.openjdk.jmc.flightrecorder.configuration.internal.ValidationToolkit;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.ConnectionException;
-import org.openjdk.jmc.rjmx.ConnectionToolkit;
-import org.openjdk.jmc.rjmx.IConnectionHandle;
-import org.openjdk.jmc.rjmx.JVMSupportToolkit;
+import org.openjdk.jmc.rjmx.common.ConnectionException;
+import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
+import org.openjdk.jmc.rjmx.common.IConnectionHandle;
+import org.openjdk.jmc.rjmx.common.JVMSupportToolkit;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.ICommercialFeaturesService;
 import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
 import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
 import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
-import org.openjdk.jmc.rjmx.subscription.IMBeanHelperService;
+import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
 
 public class FlightRecorderServiceV2 implements IFlightRecorderService {
 	final static Logger LOGGER = Logger.getLogger("org.openjdk.jmc.rjmx.services.jfr"); //$NON-NLS-1$

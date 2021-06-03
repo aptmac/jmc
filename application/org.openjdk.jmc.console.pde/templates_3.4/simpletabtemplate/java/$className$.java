@@ -39,9 +39,9 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.IManagedForm;
 
-import org.openjdk.jmc.rjmx.subscription.ISubscriptionService;
-import org.openjdk.jmc.rjmx.subscription.MRI;
-import org.openjdk.jmc.rjmx.subscription.MRI.Type;
+import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;
+import org.openjdk.jmc.rjmx.common.subscription.MRI;
+import org.openjdk.jmc.rjmx.common.subscription.MRI.Type;
 
 /**
  * Simple example that shows the CPU Load. This tab will only work with a JDK

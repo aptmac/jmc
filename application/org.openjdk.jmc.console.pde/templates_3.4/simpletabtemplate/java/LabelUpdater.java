@@ -34,8 +34,8 @@ package $packageName$;
 
 import org.eclipse.swt.widgets.Label;
 
-import org.openjdk.jmc.rjmx.subscription.IMRIValueListener;
-import org.openjdk.jmc.rjmx.subscription.MRIValueEvent;
+import org.openjdk.jmc.rjmx.common.subscription.IMRIValueListener;
+import org.openjdk.jmc.rjmx.common.subscription.MRIValueEvent;
 import org.openjdk.jmc.ui.misc.DisplayToolkit;
 
 public class LabelUpdater implements IMRIValueListener {

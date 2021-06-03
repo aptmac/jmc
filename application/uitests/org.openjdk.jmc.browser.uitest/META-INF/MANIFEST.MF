@@ -7,6 +7,7 @@ Bundle-Vendor: Oracle Corporation
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.openjdk.jmc.rjmx,
+ org.openjdk.jmc.rjmx.common,
  org.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
