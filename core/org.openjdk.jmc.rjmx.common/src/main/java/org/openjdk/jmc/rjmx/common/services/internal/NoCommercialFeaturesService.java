@@ -30,54 +30,27 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.test.services;
+package org.openjdk.jmc.rjmx.common.services.internal;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-import org.openjdk.jmc.rjmx.common.ConnectionException;
-import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.services.ICommercialFeaturesService;
-import org.openjdk.jmc.rjmx.test.ServerHandleTestCase;
 
-public class CommercialFeaturesServiceTest extends ServerHandleTestCase {
-	@Test
-	public void testGetService() throws ConnectionException {
+/**
+ * Used by JVMs with no commercial features, e.g. OpenJDK 8 and JDK 11+ JVMs.
+ */
+public class NoCommercialFeaturesService implements ICommercialFeaturesService {
+
+	@Override
+	public boolean isCommercialFeaturesEnabled() {
+		return true;
 	}
 
-	@Test
-	public void testGetCommercialFeaturesService() throws ConnectionException {
-		getCommercialFeaturesService();
+	@Override
+	public void enableCommercialFeatures() throws Exception {
+		// Noop
 	}
 
-	@Test
-	public void testReadCommercialFeaturesState() throws ConnectionException {
-		ICommercialFeaturesService service = getCommercialFeaturesService();
-		// Check state. Any state is okay, but we want to catch exceptions.
-		service.isCommercialFeaturesEnabled();
-	}
-
-	@Test
-	public void testSetCommercialFeaturesState() throws Exception {
-		ICommercialFeaturesService service = getCommercialFeaturesService();
-		// Check state. Any state is okay, but we want to catch exceptions.
-		if (service.hasCommercialFeatures() && !service.isCommercialFeaturesEnabled()) {
-			service.enableCommercialFeatures();
-		}
-		if (service.hasCommercialFeatures()) {
-			assertTrue("Commercial features should now be enabled!", service.isCommercialFeaturesEnabled());
-		}
-	}
-
-	private ICommercialFeaturesService getCommercialFeaturesService() throws ConnectionException {
-		IConnectionHandle handle = getDefaultServer().connect("Connection handle for test");
-		assumeHotSpot7u4OrLater(handle);
-		ICommercialFeaturesService service = handle.getServiceOrNull(ICommercialFeaturesService.class);
-
-		assertNotNull(
-				"Could not retrieve the commercial features service. Please make sure that you are connecting to a Java 7u4 or later JVM.",
-				service);
-		return service;
+	@Override
+	public boolean hasCommercialFeatures() {
+		return false;
 	}
 }
