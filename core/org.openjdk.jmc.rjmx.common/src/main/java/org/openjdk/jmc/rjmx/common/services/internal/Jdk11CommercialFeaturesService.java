@@ -45,4 +45,9 @@ public class Jdk11CommercialFeaturesService implements ICommercialFeaturesServic
 	public void enableCommercialFeatures() throws Exception {
 		// Noop
 	}
+
+	@Override
+	public boolean hasCommercialFeatures() {
+		return false;
+	}
 }
