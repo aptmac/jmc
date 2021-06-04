@@ -53,7 +53,7 @@ import org.openjdk.jmc.rjmx.common.subscription.IMRIService;
 /**
  * This class represents a connection to a JVM.
  *
- * @see org.openjdk.jmc.rjmx.internal.RJMXConnection
+ * @see org.openjdk.jmc.rjmx.common.internal.RJMXConnection
  */
 public class DefaultConnectionHandle implements IConnectionHandle {
 

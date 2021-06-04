@@ -49,7 +49,7 @@ import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.actionprovider.internal.ActionProviderRepository;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
-import org.openjdk.jmc.rjmx.internal.ServerHandle;
+import org.openjdk.jmc.rjmx.common.internal.ServerHandle;
 import org.openjdk.jmc.rjmx.servermodel.IDiscoveryInfo;
 import org.openjdk.jmc.rjmx.servermodel.IServer;
 import org.openjdk.jmc.ui.common.labelingrules.NameConverter;
