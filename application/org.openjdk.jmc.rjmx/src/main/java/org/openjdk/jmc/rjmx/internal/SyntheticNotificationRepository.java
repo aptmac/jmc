@@ -65,6 +65,7 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 
 import org.openjdk.jmc.rjmx.common.ISyntheticNotification;
+import org.openjdk.jmc.rjmx.common.internal.SyntheticNotificationEntry;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 

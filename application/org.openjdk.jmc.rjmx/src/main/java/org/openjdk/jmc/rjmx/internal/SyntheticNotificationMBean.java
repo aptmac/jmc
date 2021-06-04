@@ -47,6 +47,7 @@ import javax.management.modelmbean.ModelMBeanNotificationInfo;
 import javax.management.modelmbean.RequiredModelMBean;
 
 import org.openjdk.jmc.rjmx.RJMXPlugin;
+import org.openjdk.jmc.rjmx.common.internal.SyntheticNotificationEntry;
 
 /**
  * This MBean is used to forward notifications from the notification MBean repository. It is also
