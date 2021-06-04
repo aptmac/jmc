@@ -42,7 +42,7 @@ import org.openjdk.jmc.common.jvm.JVMType;
 import org.openjdk.jmc.rjmx.common.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.common.JVMSupportToolkit;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
-import org.openjdk.jmc.rjmx.internal.ServerHandle;
+import org.openjdk.jmc.rjmx.common.internal.ServerHandle;
 import org.openjdk.jmc.rjmx.messages.internal.Messages;
 
 @SuppressWarnings("nls")

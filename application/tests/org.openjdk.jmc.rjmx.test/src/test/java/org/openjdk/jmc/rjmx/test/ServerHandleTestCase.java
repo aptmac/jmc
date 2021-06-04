@@ -39,7 +39,7 @@ import org.junit.Before;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.common.IServerHandle;
-import org.openjdk.jmc.rjmx.internal.ServerHandle;
+import org.openjdk.jmc.rjmx.common.internal.ServerHandle;
 
 public abstract class ServerHandleTestCase extends RjmxTestCase {
 	private ServerHandle defaultServer;
