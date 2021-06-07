@@ -92,7 +92,7 @@ import org.openjdk.jmc.flightrecorder.configuration.model.xml.XMLTagInstance;
 import org.openjdk.jmc.flightrecorder.configuration.spi.IConfigurationStorageDelegate;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.ControlPanel;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.messages.internal.Messages;
-import org.openjdk.jmc.rjmx.services.jfr.IEventTypeInfo;
+import org.openjdk.jmc.rjmx.common.services.jfr.IEventTypeInfo;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
