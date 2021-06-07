@@ -46,8 +46,8 @@ import org.openjdk.jmc.rjmx.common.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerHandle;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.common.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.common.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.rjmx.test.RjmxTestCase;
 
 /**

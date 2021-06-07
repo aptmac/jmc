@@ -55,10 +55,10 @@ import org.openjdk.jmc.flightrecorder.controlpanel.ui.RecordingProvider;
 import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
-import org.openjdk.jmc.rjmx.services.jfr.IEventTypeInfo;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.common.services.jfr.FlightRecorderException;
+import org.openjdk.jmc.rjmx.common.services.jfr.IEventTypeInfo;
+import org.openjdk.jmc.rjmx.common.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.common.services.jfr.IRecordingDescriptor;
 import org.openjdk.jmc.ui.misc.IGraphical;
 
 /**

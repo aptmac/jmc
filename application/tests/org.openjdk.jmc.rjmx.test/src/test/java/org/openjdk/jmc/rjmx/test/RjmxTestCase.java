@@ -57,7 +57,9 @@ import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
+import org.openjdk.jmc.rjmx.common.internal.ServerHandle;
 import org.openjdk.jmc.rjmx.internal.DefaultConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.RJMXConnection;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
@@ -286,7 +288,8 @@ public class RjmxTestCase extends MCTestCase {
 		m_connection = new RJMXConnection(m_connectionDescriptor, createDefaultServerDesciptor(m_connectionDescriptor),
 				null);
 		m_connection.connect();
-		m_connectionHandle = new DefaultConnectionHandle(m_connection, "Test", null);
+//		m_connectionHandle = new DefaultConnectionHandle(m_connection, "Test", null); // this is the problem, otherwise the subscription tests work.
+		m_connectionHandle = IServerHandle.create(m_connectionDescriptor).connect("Test");
 		Assert.assertTrue(m_connectionHandle.isConnected());
 	}
 
