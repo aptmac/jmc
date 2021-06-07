@@ -36,9 +36,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.management.MBeanServerConnection;
 
@@ -50,6 +48,7 @@ import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.common.services.internal.ServiceFactoryManager;
 import org.openjdk.jmc.rjmx.common.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.common.services.jfr.internal.FlightRecorderServiceFactory;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIService;
 
@@ -66,6 +65,7 @@ public class DefaultConnectionHandle implements IConnectionHandle {
 	private final String description;
 	private final RJMXConnection connection;
 	private final IConnectionListener[] listeners;
+	private final FlightRecorderServiceFactory jfrServiceFactory;
 
 	private static final ServiceFactoryManager FACTORY_MANAGER = new ServiceFactoryManager();
 
@@ -75,6 +75,7 @@ public class DefaultConnectionHandle implements IConnectionHandle {
 		this.connection = connection;
 		this.description = description;
 		this.listeners = listeners;
+		this.jfrServiceFactory = new FlightRecorderServiceFactory();
 		registerDefaultServices();
 	}
 
@@ -152,10 +153,6 @@ public class DefaultConnectionHandle implements IConnectionHandle {
 
 	@Override
 	public <T> T getServiceOrThrow(Class<T> serviceInterface) throws ConnectionException, ServiceNotAvailableException {
-		Logger.getLogger("HI").log(Level.WARNING, "getServiceOrThrow");
-		for (Entry<Class<?>, Object> entry : services.entrySet()) {
-			Logger.getLogger("HI").log(Level.WARNING , entry.getKey().toString());
-		}
 		if (isOpen()) {
 			T service = getService(serviceInterface, false);
 			if (service != null) {
@@ -221,7 +218,11 @@ public class DefaultConnectionHandle implements IConnectionHandle {
 			services.put(MBeanServerConnection.class, connection.getMBeanServer());
 			services.put(IMBeanHelperService.class, connection);
 			services.put(IMRIService.class, connection.getMRIService());
-			services.put(IFlightRecorderService.class, connection.getFlightRecorderService(this));
+			try {
+				services.put(IFlightRecorderService.class, jfrServiceFactory.getServiceInstance(this));
+			} catch (ConnectionException | ServiceNotAvailableException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
