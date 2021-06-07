@@ -72,12 +72,9 @@ import org.openjdk.jmc.common.version.JavaVersionSupport;
 import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
-import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.common.RJMXPluginCore;
-import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.common.services.IOperation;
-import org.openjdk.jmc.rjmx.common.services.jfr.internal.FlightRecorderServiceV2;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanServerChangeListener;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIService;
@@ -522,20 +519,6 @@ public class RJMXConnection implements Closeable, IMBeanHelperService {
 	 */
 	MBeanServerConnection getMBeanServer() {
 		return m_server;
-	}
-
-	FlightRecorderServiceV2 getFlightRecorderService(IConnectionHandle handle) {
-		FlightRecorderServiceV2 m_jfrService = null;
-		try {
-			m_jfrService = new FlightRecorderServiceV2(handle);
-		} catch (ConnectionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ServiceNotAvailableException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return m_jfrService;
 	}
 
 	/**
