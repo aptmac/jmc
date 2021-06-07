@@ -51,11 +51,11 @@ import org.openjdk.jmc.common.unit.IQuantity;
 import org.openjdk.jmc.flightrecorder.configuration.events.EventOptionID;
 import org.openjdk.jmc.flightrecorder.configuration.events.IEventTypeID;
 import org.openjdk.jmc.flightrecorder.configuration.recording.RecordingOptionsBuilder;
-import org.openjdk.jmc.rjmx.services.jfr.IEventTypeInfo;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
-import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;
-import org.openjdk.jmc.rjmx.services.jfr.internal.EventTypeMetadataV1;
-import org.openjdk.jmc.rjmx.services.jfr.internal.EventTypeMetadataV2;
+import org.openjdk.jmc.rjmx.common.services.jfr.IEventTypeInfo;
+import org.openjdk.jmc.rjmx.common.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.common.services.jfr.IRecordingDescriptor;
+import org.openjdk.jmc.rjmx.common.services.jfr.internal.EventTypeMetadataV1;
+import org.openjdk.jmc.rjmx.common.services.jfr.internal.EventTypeMetadataV2;
 
 @SuppressWarnings("nls")
 public class EventMetadataTest extends JfrTestCase {

@@ -60,7 +60,7 @@ import org.openjdk.jmc.flightrecorder.configuration.internal.CommonConstraints;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV1;
 import org.openjdk.jmc.flightrecorder.configuration.internal.EventTypeIDV2;
 import org.openjdk.jmc.flightrecorder.jdk.JdkTypeIDs;
-import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
+import org.openjdk.jmc.rjmx.common.services.jfr.IFlightRecorderService;
 
 /**
  * Tests for low level response to various event options in offline mode.
