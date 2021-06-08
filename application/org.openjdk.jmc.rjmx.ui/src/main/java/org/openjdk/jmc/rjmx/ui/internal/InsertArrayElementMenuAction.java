@@ -36,7 +36,6 @@ import java.lang.reflect.Array;
 
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IMenuManager;
-
 import org.openjdk.jmc.rjmx.services.IAttribute;
 import org.openjdk.jmc.rjmx.services.IIndexedAttributeChild;
 import org.openjdk.jmc.rjmx.ui.messages.internal.Messages;

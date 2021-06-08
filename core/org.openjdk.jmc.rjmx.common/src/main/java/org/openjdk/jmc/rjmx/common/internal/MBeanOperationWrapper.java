@@ -50,7 +50,7 @@ import org.openjdk.jmc.rjmx.common.services.IllegalOperandException;
 import org.openjdk.jmc.rjmx.common.services.internal.AbstractOperation;
 import org.openjdk.jmc.rjmx.common.util.internal.SimpleAttributeInfo;
 
-final class MBeanOperationWrapper extends AbstractOperation<SimpleAttributeInfo> {
+public final class MBeanOperationWrapper extends AbstractOperation<SimpleAttributeInfo> {
 	private static final String IMPACT = ".vmImpact"; //$NON-NLS-1$
 	private static final int MAX_DESCRIPTORS = 8;
 	private static final int MAX_LINE_LENGTH = 100;
@@ -110,7 +110,7 @@ final class MBeanOperationWrapper extends AbstractOperation<SimpleAttributeInfo>
 		};
 	}
 
-	static Collection<IOperation> createOperations(
+	public static Collection<IOperation> createOperations(
 		MBeanServerConnection connection, ObjectName objectName, MBeanOperationInfo[] operations) {
 		List<IOperation> wrappedOperations = new ArrayList<>();
 		for (MBeanOperationInfo info : operations) {

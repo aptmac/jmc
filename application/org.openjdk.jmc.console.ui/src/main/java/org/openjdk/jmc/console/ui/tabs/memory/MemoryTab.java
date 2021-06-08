@@ -55,7 +55,7 @@ import org.openjdk.jmc.console.ui.editor.internal.ConsoleFormPage;
 import org.openjdk.jmc.console.ui.messages.internal.Messages;
 import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
-import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
+import org.openjdk.jmc.rjmx.common.services.IDiagnosticCommandService;
 import org.openjdk.jmc.ui.UIPlugin;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 import org.openjdk.jmc.ui.misc.MCActionContributionItem;

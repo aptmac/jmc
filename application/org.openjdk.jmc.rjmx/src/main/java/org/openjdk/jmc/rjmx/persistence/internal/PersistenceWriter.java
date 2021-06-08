@@ -44,7 +44,7 @@ import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChange
 
 import org.openjdk.jmc.common.util.StringToolkit;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.internal.IDisposableService;
+import org.openjdk.jmc.rjmx.common.internal.IDisposableService;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
 import org.openjdk.jmc.rjmx.services.IPersistenceService;
 import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;

@@ -51,7 +51,7 @@
  *
  * Services are normally added through the <tt>org.openjdk.jmc.rjmx.service</tt> extension point.
  * The extension point requires a factory which will be used to create your service. The factory
- * must implement the {@link org.openjdk.jmc.rjmx.services.IServiceFactory} interface. The following
+ * must implement the {@link org.openjdk.jmc.rjmx.common.services.IServiceFactory} interface. The following
  * example shows how the flight recorder service is added in the <tt>plugin.xml<tt> for the RJMX
  * plug-in itself:
  *

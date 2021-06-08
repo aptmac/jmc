@@ -89,7 +89,7 @@ import org.openjdk.jmc.common.action.IUserAction;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerHandle.State;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.common.servermodel.IServer;
 import org.openjdk.jmc.rjmx.servermodel.internal.Server;
 import org.openjdk.jmc.rjmx.servermodel.internal.ServerModel;
 import org.openjdk.jmc.ui.accessibility.AccessibilityToolkit;

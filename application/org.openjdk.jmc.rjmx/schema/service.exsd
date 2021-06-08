@@ -86,7 +86,7 @@
                   The factory which will be instantiating the services.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.services.IServiceFactory"/>
+                  <meta.attribute kind="java" basedOn=":org.openjdk.jmc.rjmx.common.services.IServiceFactory"/>
                </appinfo>
             </annotation>
          </attribute>

@@ -46,7 +46,7 @@ import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerHandle;
-import org.openjdk.jmc.rjmx.internal.JMXConnectionDescriptor;
+import org.openjdk.jmc.rjmx.common.internal.JMXConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.subscription.IMRISubscription;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIValueListener;
 import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;

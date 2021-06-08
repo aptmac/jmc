@@ -38,11 +38,11 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
-import org.openjdk.jmc.rjmx.services.IAttribute;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadata;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 import org.openjdk.jmc.rjmx.common.subscription.MRIMetadataToolkit;
 import org.openjdk.jmc.rjmx.common.subscription.internal.AttributeValueToolkit;
+import org.openjdk.jmc.rjmx.services.IAttribute;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 
 public class MRIAttribute extends ReadOnlyMRIAttribute implements IAttribute {

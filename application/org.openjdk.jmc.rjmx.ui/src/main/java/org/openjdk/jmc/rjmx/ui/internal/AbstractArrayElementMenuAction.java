@@ -40,7 +40,6 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-
 import org.openjdk.jmc.rjmx.services.IAttribute;
 import org.openjdk.jmc.rjmx.services.IIndexedAttributeChild;
 import org.openjdk.jmc.rjmx.services.IReadOnlyAttribute;

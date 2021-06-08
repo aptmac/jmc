@@ -36,7 +36,7 @@ import org.openjdk.jmc.rjmx.common.ConnectionException;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.services.IPersistenceService;
-import org.openjdk.jmc.rjmx.services.IServiceFactory;
+import org.openjdk.jmc.rjmx.common.services.IServiceFactory;
 import org.openjdk.jmc.rjmx.common.subscription.ISubscriptionService;
 
 public class PersistenceServiceFactory implements IServiceFactory<IPersistenceService> {

@@ -72,7 +72,7 @@ import org.openjdk.jmc.rjmx.common.IServerHandle;
 import org.openjdk.jmc.rjmx.common.IServerHandle.State;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
 import org.openjdk.jmc.rjmx.internal.ServerToolkit;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.common.servermodel.IServer;
 import org.openjdk.jmc.rjmx.servermodel.internal.Server;
 import org.openjdk.jmc.rjmx.servermodel.internal.ServerModelCredentials;
 import org.openjdk.jmc.ui.UIPlugin;

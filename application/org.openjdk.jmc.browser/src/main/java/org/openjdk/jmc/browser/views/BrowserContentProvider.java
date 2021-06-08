@@ -32,7 +32,7 @@
  */
 package org.openjdk.jmc.browser.views;
 
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.common.servermodel.IServer;
 import org.openjdk.jmc.ui.misc.TreeStructureContentProvider;
 
 class BrowserContentProvider extends TreeStructureContentProvider {
