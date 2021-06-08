@@ -88,7 +88,7 @@ for (IServer server : model.elements()) {
  * <li>{@link org.openjdk.jmc.rjmx.common.IServerHandle} is a handle used to connect to a server, share the
  * connection between users ( {@link org.openjdk.jmc.rjmx.common.IConnectionHandle}s), keep track of all
  * open connection handles and close the connection when all connection handles are closed.</li>
- * <li>{@link org.openjdk.jmc.rjmx.servermodel.IServer} represents the entry point to a single
+ * <li>{@link org.openjdk.jmc.rjmx.common.servermodel.IServer} represents the entry point to a single
  * server in the model.</li>
  * </ul>
  * Notice that the subscription thread is a daemon thread - if trying the example above in a main,

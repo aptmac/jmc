@@ -48,7 +48,7 @@ import org.openjdk.jmc.common.jvm.JVMDescriptor;
 import org.openjdk.jmc.common.util.Filename;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerHandle;
-import org.openjdk.jmc.rjmx.actionprovider.IActionFactory;
+import org.openjdk.jmc.rjmx.common.actionprovider.IActionFactory;
 import org.openjdk.jmc.ui.MCPathEditorInput;
 import org.openjdk.jmc.ui.WorkbenchToolkit;
 import org.openjdk.jmc.ui.common.CorePlugin;

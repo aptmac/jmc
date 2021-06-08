@@ -62,7 +62,7 @@ import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.NotificationInfoSec
 import org.openjdk.jmc.console.ui.mbeanbrowser.notifications.NotificationsModel;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.internal.RJMXConnection;
-import org.openjdk.jmc.rjmx.services.IOperation;
+import org.openjdk.jmc.rjmx.common.services.IOperation;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 import org.openjdk.jmc.rjmx.common.subscription.MRI.Type;

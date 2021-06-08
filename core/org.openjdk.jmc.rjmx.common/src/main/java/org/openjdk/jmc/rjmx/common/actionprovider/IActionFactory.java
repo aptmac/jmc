@@ -30,25 +30,24 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.services.internal;
+package org.openjdk.jmc.rjmx.common.actionprovider;
 
-import org.openjdk.jmc.rjmx.common.ConnectionException;
-import org.openjdk.jmc.rjmx.common.IConnectionHandle;
-import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.services.IServiceFactory;
-import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataService;
-import org.openjdk.jmc.rjmx.common.subscription.internal.DefaultMRIMetadataService;
+import org.openjdk.jmc.common.action.Executable;
+import org.openjdk.jmc.rjmx.common.IServerHandle;
 
-public class MRIMetadataServiceFactory implements IServiceFactory<IMRIMetadataService> {
+/**
+ * Factory interface that is implemented by contributors to the
+ * {@code org.openjdk.jmc.rjmx.actionProvider} extension point that only want to contribute a single
+ * action.
+ */
+public interface IActionFactory {
 
-	@Override
-	public IMRIMetadataService getServiceInstance(IConnectionHandle handle)
-			throws ConnectionException, ServiceNotAvailableException {
-		return new DefaultMRIMetadataService(handle);
-	}
-
-	@Override
-	public Class<IMRIMetadataService> getServiceType() {
-		return IMRIMetadataService.class;
-	}
+	/**
+	 * Creates an executable action for given server.
+	 *
+	 * @param serverHandle
+	 *            the server for witch to create the action
+	 * @return the created action.
+	 */
+	Executable createAction(IServerHandle serverHandle);
 }

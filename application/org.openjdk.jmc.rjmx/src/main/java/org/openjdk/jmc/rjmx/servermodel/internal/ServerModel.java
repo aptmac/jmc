@@ -53,10 +53,11 @@ import org.openjdk.jmc.rjmx.common.ConnectionDescriptorBuilder;
 import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorListener;
-import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorProvider;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
-import org.openjdk.jmc.rjmx.servermodel.IServerModel;
+import org.openjdk.jmc.rjmx.common.descriptorprovider.IDescriptorListener;
+import org.openjdk.jmc.rjmx.common.descriptorprovider.IDescriptorProvider;
+import org.openjdk.jmc.rjmx.common.servermodel.internal.DiscoveryInfo;
+import org.openjdk.jmc.rjmx.common.servermodel.IServer;
+import org.openjdk.jmc.rjmx.common.servermodel.IServerModel;
 
 public final class ServerModel extends Observable implements IServerModel {
 	private static final String EXTENSIONPOINT_DESCRIPTORPROVIDER = "descriptorProvider"; //$NON-NLS-1$

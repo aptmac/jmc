@@ -32,8 +32,8 @@
  */
 package org.openjdk.jmc.browser.attach;
 
-import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorListener;
-import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorProvider;
+import org.openjdk.jmc.rjmx.common.descriptorprovider.IDescriptorListener;
+import org.openjdk.jmc.rjmx.common.descriptorprovider.IDescriptorProvider;
 
 public class LocalDescriptorProviderProxy implements IDescriptorProvider {
 

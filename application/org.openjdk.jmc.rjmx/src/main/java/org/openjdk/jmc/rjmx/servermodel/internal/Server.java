@@ -47,11 +47,11 @@ import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
-import org.openjdk.jmc.rjmx.actionprovider.internal.ActionProviderRepository;
-import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
+import org.openjdk.jmc.rjmx.common.actionprovider.internal.ActionProviderRepository;
+import org.openjdk.jmc.rjmx.common.internal.ServerDescriptor;
 import org.openjdk.jmc.rjmx.common.internal.ServerHandle;
-import org.openjdk.jmc.rjmx.servermodel.IDiscoveryInfo;
-import org.openjdk.jmc.rjmx.servermodel.IServer;
+import org.openjdk.jmc.rjmx.common.servermodel.IDiscoveryInfo;
+import org.openjdk.jmc.rjmx.common.servermodel.IServer;
 import org.openjdk.jmc.ui.common.labelingrules.NameConverter;
 
 public class Server implements IServer, ICopyable, IImageResource {

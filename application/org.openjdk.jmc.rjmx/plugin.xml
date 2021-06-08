@@ -89,7 +89,7 @@
             </adapter>
          </factory>
          <factory
-               adaptableType="org.openjdk.jmc.rjmx.servermodel.IServer"
+               adaptableType="org.openjdk.jmc.rjmx.common.servermodel.IServer"
                class="org.openjdk.jmc.rjmx.actionprovider.internal.DefaultActionFactory">
             <adapter
                   type="org.openjdk.jmc.ui.common.action.IUserAction">

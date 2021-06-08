@@ -54,9 +54,9 @@ import org.openjdk.jmc.common.util.StringToolkit;
 import org.openjdk.jmc.common.xydata.ITimestampedData;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.preferences.PreferencesKeys;
-import org.openjdk.jmc.rjmx.services.IAttributeStorage;
-import org.openjdk.jmc.rjmx.services.IAttributeStorageService;
-import org.openjdk.jmc.rjmx.services.MRIDataSeries;
+import org.openjdk.jmc.rjmx.common.services.IAttributeStorage;
+import org.openjdk.jmc.rjmx.common.services.IAttributeStorageService;
+import org.openjdk.jmc.rjmx.common.services.MRIDataSeries;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIService;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 
