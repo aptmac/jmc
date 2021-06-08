@@ -38,7 +38,7 @@ import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
 import org.openjdk.jmc.rjmx.internal.ServerDescriptor;
-import org.openjdk.jmc.rjmx.services.internal.ServiceFactoryManager;
+import org.openjdk.jmc.rjmx.common.services.internal.ServiceFactoryManager;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadata;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIMetadataService;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;

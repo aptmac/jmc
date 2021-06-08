@@ -77,7 +77,7 @@ import org.openjdk.jmc.rjmx.common.ConnectionToolkit;
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
 import org.openjdk.jmc.rjmx.common.JVMSupportToolkit;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.services.ICommercialFeaturesService;
+import org.openjdk.jmc.rjmx.common.services.ICommercialFeaturesService;
 import org.openjdk.jmc.rjmx.services.jfr.FlightRecorderException;
 import org.openjdk.jmc.rjmx.services.jfr.IFlightRecorderService;
 import org.openjdk.jmc.rjmx.services.jfr.IRecordingDescriptor;

@@ -46,7 +46,8 @@ import org.openjdk.jmc.rjmx.common.IConnectionListener;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.common.ServiceNotAvailableException;
-import org.openjdk.jmc.rjmx.services.internal.ServiceFactoryManager;
+import org.openjdk.jmc.rjmx.common.internal.IDisposableService;
+import org.openjdk.jmc.rjmx.common.services.internal.ServiceFactoryManager;
 import org.openjdk.jmc.rjmx.common.subscription.IMBeanHelperService;
 import org.openjdk.jmc.rjmx.common.subscription.IMRIService;
 

@@ -64,7 +64,7 @@ public class SyntheticAttributeMBeanEntry implements DynamicMBean {
 		attributeMap.remove(entry.getAttributeDescriptor().getDataPath());
 	}
 
-	Collection<SyntheticAttributeEntry> getSyntheticAttributes() {
+	public Collection<SyntheticAttributeEntry> getSyntheticAttributes() {
 		return attributeMap.values();
 	}
 

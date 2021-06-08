@@ -50,7 +50,7 @@ public class JMXRMIPreferences extends SecurelyStoredByteArray {
 	private Properties cache;
 
 	private JMXRMIPreferences() {
-		super("org.openjdk.jmc.rjmx.preferences.SslPreferences"); //$NON-NLS-1$
+		super("org.openjdk.jmc.rjmx.common.preferences.SslPreferences"); //$NON-NLS-1$
 	}
 
 	public static JMXRMIPreferences getInstance() {

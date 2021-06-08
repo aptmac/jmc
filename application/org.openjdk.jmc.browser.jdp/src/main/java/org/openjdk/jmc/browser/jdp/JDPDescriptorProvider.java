@@ -55,7 +55,7 @@ import org.openjdk.jmc.jdp.client.JDPClient;
 import org.openjdk.jmc.jdp.jmx.JMXDataKeys;
 import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 import org.openjdk.jmc.rjmx.descriptorprovider.AbstractDescriptorProvider;
-import org.openjdk.jmc.rjmx.descriptorprovider.IDescriptorListener;
+import org.openjdk.jmc.rjmx.common.descriptorprovider.IDescriptorListener;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 
 /**

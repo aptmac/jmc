@@ -67,6 +67,8 @@ import org.eclipse.core.runtime.Platform;
 
 import org.openjdk.jmc.rjmx.common.IPropertySyntheticAttribute;
 import org.openjdk.jmc.rjmx.common.ISyntheticAttribute;
+import org.openjdk.jmc.rjmx.common.internal.SyntheticAttributeEntry;
+import org.openjdk.jmc.rjmx.common.internal.SyntheticAttributeMBeanEntry;
 import org.openjdk.jmc.rjmx.RJMXPlugin;
 import org.openjdk.jmc.rjmx.common.subscription.MRI;
 import org.openjdk.jmc.rjmx.common.subscription.internal.AttributeValueToolkit;

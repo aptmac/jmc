@@ -37,7 +37,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 import org.openjdk.jmc.rjmx.common.IConnectionHandle;
-import org.openjdk.jmc.rjmx.services.IDiagnosticCommandService;
+import org.openjdk.jmc.rjmx.common.services.IDiagnosticCommandService;
 import org.openjdk.jmc.rjmx.triggers.TriggerAction;
 import org.openjdk.jmc.rjmx.triggers.TriggerEvent;
 import org.openjdk.jmc.ui.common.idesupport.IDESupportToolkit;

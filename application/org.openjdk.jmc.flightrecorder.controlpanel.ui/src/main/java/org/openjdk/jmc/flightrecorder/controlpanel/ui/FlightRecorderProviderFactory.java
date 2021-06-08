@@ -39,7 +39,7 @@ import org.openjdk.jmc.common.action.IActionProvider;
 import org.openjdk.jmc.common.action.IUserAction;
 import org.openjdk.jmc.flightrecorder.controlpanel.ui.actions.StartRecordingAction;
 import org.openjdk.jmc.rjmx.common.IServerHandle;
-import org.openjdk.jmc.rjmx.actionprovider.IActionProviderFactory;
+import org.openjdk.jmc.rjmx.common.actionprovider.IActionProviderFactory;
 
 public class FlightRecorderProviderFactory implements IActionProviderFactory {
 
