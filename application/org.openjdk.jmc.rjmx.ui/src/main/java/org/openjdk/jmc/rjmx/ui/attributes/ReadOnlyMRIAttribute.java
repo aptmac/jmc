@@ -73,7 +73,7 @@ import org.openjdk.jmc.rjmx.common.subscription.internal.UpdatePolicyToolkit;
 import org.openjdk.jmc.rjmx.ui.RJMXUIPlugin;
 import org.openjdk.jmc.rjmx.util.internal.AbstractReadOnlyAttribute;
 import org.openjdk.jmc.rjmx.util.internal.PartitionedList;
-import org.openjdk.jmc.rjmx.util.internal.SimpleAttributeInfo;
+import org.openjdk.jmc.rjmx.common.util.internal.SimpleAttributeInfo;
 
 public class ReadOnlyMRIAttribute extends AbstractReadOnlyAttribute implements IUpdateInterval, IAdaptable {
 

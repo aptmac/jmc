@@ -30,71 +30,57 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.rjmx.util.internal;
+package org.openjdk.jmc.rjmx.common.descriptorprovider;
 
-import org.openjdk.jmc.rjmx.common.services.IAttributeInfo;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class SimpleAttributeInfo implements IAttributeInfo {
+import javax.management.remote.JMXServiceURL;
 
-	private final String name;
-	private final String type;
-	private final String description;
+import org.openjdk.jmc.rjmx.common.IConnectionDescriptor;
+import org.openjdk.jmc.rjmx.common.IServerDescriptor;
 
-	public SimpleAttributeInfo(String name, String type) {
-		this(name, type, null);
-	}
+/**
+ * Abstract superclass that can be used for implementations of the {@link IDescriptorProvider}
+ * interface.
+ */
+public abstract class AbstractDescriptorProvider implements IDescriptorProvider {
+	/**
+	 * List of descriptor listeners.
+	 */
+	protected List<IDescriptorListener> m_descriptorListeners = Collections
+			.synchronizedList(new ArrayList<IDescriptorListener>(1));
 
-	public SimpleAttributeInfo(String name, String type, String description) {
-		this.name = name;
-		this.type = type;
-		this.description = description;
+	@Override
+	public void addDescriptorListener(IDescriptorListener l) {
+		m_descriptorListeners.add(l);
 	}
 
 	@Override
-	public String getName() {
-		return name;
+	public void removeDescriptorListener(IDescriptorListener l) {
+		m_descriptorListeners.remove(l);
 	}
 
-	@Override
-	public String getDescription() {
-		return description;
-	}
-
-	@Override
-	public String getType() {
-		return type;
-	}
-
-	// FIXME: add description to equals and hashcode?
-	@Override
-	public boolean equals(Object obj) {
-		if (!(obj instanceof SimpleAttributeInfo)) {
-			return super.equals(obj);
-		}
-		SimpleAttributeInfo that = (SimpleAttributeInfo) obj;
-		if (getName() == null) {
-			if (getType() == null) {
-				return that.getName() == null && that.getType() == null;
+	protected void onDescriptorDetected(
+		IServerDescriptor serverDescriptor, String path, JMXServiceURL url,
+		IConnectionDescriptor connectionDescriptor) {
+		synchronized (m_descriptorListeners) {
+			for (IDescriptorListener listener : m_descriptorListeners) {
+				if (listener != null) {
+					listener.onDescriptorDetected(serverDescriptor, path, url, connectionDescriptor, this);
+				}
 			}
-			return getType().equals(that.getType());
 		}
-		if (getType() == null) {
-			return that.getType() == null && getName().equals(that.getName());
-		}
-		return getName().equals(that.getName()) && getType().equals(that.getType());
 	}
 
-	@Override
-	public int hashCode() {
-		if (getName() == null && getType() == null) {
-			return 4711;
+	protected void onDescriptorRemoved(String descriptorId) {
+		synchronized (m_descriptorListeners) {
+			for (IDescriptorListener listener : m_descriptorListeners) {
+				if (listener != null) {
+					listener.onDescriptorRemoved(descriptorId);
+				}
+			}
 		}
-		if (getType() == null) {
-			return getName().hashCode();
-		}
-		if (getName() == null) {
-			return getType().hashCode();
-		}
-		return getName().hashCode() ^ getType().hashCode();
 	}
 }

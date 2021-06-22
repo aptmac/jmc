@@ -34,6 +34,7 @@ package org.openjdk.jmc.rjmx.util.internal;
 
 import org.openjdk.jmc.rjmx.services.IAttribute;
 import org.openjdk.jmc.rjmx.common.services.IAttributeInfo;
+import org.openjdk.jmc.rjmx.common.util.internal.SimpleAttributeInfo;
 
 public class DefaultAttribute extends AbstractReadOnlyAttribute implements IAttribute {
 
