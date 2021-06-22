@@ -39,7 +39,7 @@ import java.util.Map.Entry;
 
 import org.openjdk.jmc.attach.AttachToolkit;
 import org.openjdk.jmc.browser.attach.LocalJVMToolkit.DiscoveryEntry;
-import org.openjdk.jmc.rjmx.descriptorprovider.AbstractDescriptorProvider;
+import org.openjdk.jmc.rjmx.common.descriptorprovider.AbstractDescriptorProvider;
 import org.openjdk.jmc.rjmx.common.descriptorprovider.IDescriptorListener;
 
 /**

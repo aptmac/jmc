@@ -47,6 +47,7 @@ import org.openjdk.jmc.common.tree.IParent;
 import org.openjdk.jmc.rjmx.services.IAttribute;
 import org.openjdk.jmc.rjmx.services.IAttributeChild;
 import org.openjdk.jmc.rjmx.common.services.IAttributeInfo;
+import org.openjdk.jmc.rjmx.common.util.internal.SimpleAttributeInfo;
 import org.openjdk.jmc.rjmx.services.IIndexedAttributeChild;
 import org.openjdk.jmc.rjmx.services.IKeyedAttributeChild;
 import org.openjdk.jmc.rjmx.services.IReadOnlyAttribute;
