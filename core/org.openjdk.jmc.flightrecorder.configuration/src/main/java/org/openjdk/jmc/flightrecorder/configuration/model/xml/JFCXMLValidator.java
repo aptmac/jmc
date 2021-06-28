@@ -57,7 +57,7 @@ import java.util.logging.Logger;
 public final class JFCXMLValidator implements IXMLValidator {
 	private static final JFCXMLValidator SHARED = new JFCXMLValidator();
 
-	private static final Logger LOGGER = Logger.getLogger("org.openjdk.jmc.ui");
+	private static final Logger LOGGER = Logger.getLogger("org.openjdk.jmc.flightrecorder.configuration");
 
 	interface IXMLNodeValidator {
 		XMLValidationResult validate(Object parentNode, Object node);
@@ -263,5 +263,4 @@ public final class JFCXMLValidator implements IXMLValidator {
 		}
 		return URI.create(uri + '/');
 	}
-
 }
