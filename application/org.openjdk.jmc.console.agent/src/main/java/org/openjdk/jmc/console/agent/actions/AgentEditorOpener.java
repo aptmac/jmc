@@ -60,7 +60,7 @@ import org.openjdk.jmc.rjmx.IConnectionListener;
 import org.openjdk.jmc.rjmx.IServerHandle;
 import org.openjdk.jmc.rjmx.JVMSupportToolkit;
 import org.openjdk.jmc.rjmx.actionprovider.IActionFactory;
-import org.openjdk.jmc.ui.common.action.Executable;
+import org.openjdk.jmc.common.action.Executable;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 import org.openjdk.jmc.ui.misc.DisplayToolkit;
 
