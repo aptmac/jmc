@@ -41,7 +41,7 @@ import org.openjdk.jmc.rjmx.ui.triggers.internal.NotificationRegistry;
 import org.openjdk.jmc.ui.MCAbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.prefs.Preferences;
-p
+
 /**
  * <p>
  * There is one instance of the RJMX UI plugin available from {@link #getDefault()}.
