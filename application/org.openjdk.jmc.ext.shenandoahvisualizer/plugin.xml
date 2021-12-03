@@ -5,7 +5,7 @@
         <consolePage
             hostEditorId="org.openjdk.jmc.console.ui.editor"
             class="org.openjdk.jmc.ext.shenandoahvisualizer.ShenandoahVisualizer"
-            name="ShenandoahVisualizer"
+            name="Shenandoah GC Visualizer"
             id="org.openjdk.jmc.ext.shenandoahvisualizer.ShenandoahVisualizer"
             placement="/#8.0">
       </consolePage>
