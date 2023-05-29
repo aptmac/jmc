@@ -6,7 +6,25 @@ import org.eclipse.swt.graphics.Color;
 
 import java.util.BitSet;
 
-import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.*;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.DEFAULT;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.GCLAB_ALLOC;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.GCLAB_ALLOC_BORDER;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_BORDER;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_CSET;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_COMMITTED;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_EMPTY;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_HUMONGOUS;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_PINNED;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_PINNED_CSET;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_PINNED_HUMONGOUS;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_REGULAR;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.LIVE_TRASH;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.TLAB_ALLOC;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.SHARED_ALLOC;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.SHARED_ALLOC_BORDER;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.TLAB_ALLOC_BORDER;
+import static org.openjdk.jmc.ext.shenandoahvisualizer.Colors.USED;
+
 
 public class RegionStat {
 
