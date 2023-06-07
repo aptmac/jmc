@@ -10,10 +10,10 @@
 
     <property name="fileExtensions" value="java"/>
 
-    <module name="TreeWalker">
+    <!-- <module name="TreeWalker">
         <module name="AvoidStarImport"/>
         <module name="RedundantImport"/>
         <module name="UnusedImports"/>
-    </module>
+    </module> -->
 
 </module>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2018, 2023, Oracle and/or its affiliates. All rights reserved.
  * 
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -46,6 +46,9 @@ public class JVMBrowserPlugin extends MCAbstractUIPlugin {
 
 	public static final String ICON_NEW_FOLDER = "newfolder.gif"; //$NON-NLS-1$
 	public static final String ICON_NEW_CONNECTION = "newconnection.gif"; //$NON-NLS-1$
+	public static final String ICON_CRYOSTAT_CONNECTION = "cryostat.png"; //$NON-NLS-1$
+	public static final String ICON_CRYOSTAT_CONNECTED = "cryostat_connected.png"; //$NON-NLS-1$
+	public static final String ICON_CRYOSTAT_DISCONNECTED = "cryostat_disconnected.png"; //$NON-NLS-1$
 	public static final String ICON_PROPERTIES = "properties.gif"; //$NON-NLS-1$
 	public static final String ICON_BANNER_CONNECTION_WIZARD = "bannerconwiz.gif"; //$NON-NLS-1$
 	public static final String ICON_OVERLAY_CONNECTED = "overlay_connected.png"; //$NON-NLS-1$
@@ -69,6 +72,9 @@ public class JVMBrowserPlugin extends MCAbstractUIPlugin {
 	protected final void initializeImageRegistry(final ImageRegistry registry) {
 		registerImage(registry, ICON_NEW_FOLDER, ICON_NEW_FOLDER);
 		registerImage(registry, ICON_NEW_CONNECTION, ICON_NEW_CONNECTION);
+		registerImage(registry, ICON_CRYOSTAT_CONNECTION, ICON_CRYOSTAT_CONNECTION);
+		registerImage(registry, ICON_CRYOSTAT_CONNECTION, ICON_CRYOSTAT_CONNECTED);
+		registerImage(registry, ICON_CRYOSTAT_CONNECTION, ICON_CRYOSTAT_DISCONNECTED);
 		registerImage(registry, ICON_PROPERTIES, ICON_PROPERTIES);
 		registerImage(registry, ICON_BANNER_CONNECTION_WIZARD, ICON_BANNER_CONNECTION_WIZARD);
 		registerImage(registry, ICON_OVERLAY_CONNECTED, ICON_OVERLAY_CONNECTED);

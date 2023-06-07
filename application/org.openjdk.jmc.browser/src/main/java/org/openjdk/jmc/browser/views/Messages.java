@@ -43,6 +43,8 @@ public class Messages extends NLS {
 	public static String JVMBrowserView_ACTION_EDIT_TEXT;
 	public static String JVMBrowserView_ACTION_NEW_CONNECTION_TEXT;
 	public static String JVMBrowserView_ACTION_NEW_CONNECTION_TOOLTIP;
+	public static String JVMBrowserView_ACTION_CRYOSTAT_CONNECTION_TEXT;
+	public static String JVMBrowserView_ACTION_CRYOSTAT_CONNECTION_TOOLTIP;
 	public static String JVMBrowserView_ACTION_NEW_FOLDER_DISABLED_TOOLTIP;
 	public static String JVMBrowserView_ACTION_NEW_FOLDER_TEXT;
 	public static String JVMBrowserView_ACTION_NEW_FOLDER_TOOLTIP;

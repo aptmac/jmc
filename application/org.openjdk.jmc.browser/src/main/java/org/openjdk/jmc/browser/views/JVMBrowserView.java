@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2018, 2023, Oracle and/or its affiliates. All rights reserved.
  * 
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -175,6 +175,41 @@ public class JVMBrowserView extends ViewPart implements Observer {
 		@Override
 		public void run() {
 			ConnectionWizard.opeNewServerWizard(serverPath);
+		}
+	}
+
+	private static class CryostatConnectionAction extends Action {
+		private final int PORT = 8029;
+		private WebsocketServer server;
+		
+		CryostatConnectionAction() {
+			setId("cryostat"); //$NON-NLS-1$
+			setText(Messages.JVMBrowserView_ACTION_CRYOSTAT_CONNECTION_TEXT);
+			setToolTipText(Messages.JVMBrowserView_ACTION_CRYOSTAT_CONNECTION_TOOLTIP);
+			setImageDescriptor(
+					JVMBrowserPlugin.getDefault().getMCImageDescriptor(JVMBrowserPlugin.ICON_CRYOSTAT_CONNECTION));
+		}
+
+		@Override
+		public void run() {
+			if (server == null) {
+				server = new WebsocketServer(PORT);
+			} else if (server.isConnected()) {
+				server.shutdown();
+			} else if (server.isConnected()) {
+				server.startServer();
+			}
+			updateIcon(server.isConnected());
+		}
+
+		private void updateIcon(boolean isConnected) {
+			if (isConnected) {
+				setImageDescriptor(
+					JVMBrowserPlugin.getDefault().getMCImageDescriptor(JVMBrowserPlugin.ICON_CRYOSTAT_CONNECTED));
+			} else {
+				setImageDescriptor(
+						JVMBrowserPlugin.getDefault().getMCImageDescriptor(JVMBrowserPlugin.ICON_CRYOSTAT_DISCONNECTED));
+			}
 		}
 	}
 
@@ -424,6 +459,7 @@ public class JVMBrowserView extends ViewPart implements Observer {
 			}
 		});
 		manager.add(new NewConnectionAction());
+		manager.add(new CryostatConnectionAction());
 		manager.add(newFolderAction);
 	}
 
@@ -431,6 +467,7 @@ public class JVMBrowserView extends ViewPart implements Observer {
 		IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
 		if (selection.size() == 0) {
 			manager.add(new NewConnectionAction());
+			manager.add(new CryostatConnectionAction());
 			manager.add(newFolderAction);
 		} else {
 			addActions(manager, selection);

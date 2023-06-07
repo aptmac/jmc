@@ -90,7 +90,6 @@ public class WebsocketServer {
 		connector.setHost("127.0.0.1");
 		connector.setPort(port);
 		server.addConnector(connector);
-
 		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		context.setContextPath("/");
 		server.setHandler(context);

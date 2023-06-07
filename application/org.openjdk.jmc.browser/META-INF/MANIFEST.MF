@@ -9,7 +9,16 @@ Require-Bundle: org.openjdk.jmc.ui,
  org.openjdk.jmc.rjmx,
  org.openjdk.jmc.browser.attach,
  org.openjdk.jmc.attach,
- org.eclipse.help
+ org.eclipse.help,
+ org.apache.commons.commons-io,
+ org.eclipse.jetty.io,
+ org.eclipse.jetty.server,
+ org.eclipse.jetty.servlet,
+ jakarta.servlet-api,
+ org.eclipse.jetty.websocket.api,
+ org.eclipse.jetty.websocket.server,
+ org.eclipse.jetty.websocket.servlet,
+ org.eclipse.jetty.util
 Eclipse-BuddyPolicy: app
 Bundle-Vendor: Oracle Corporation
 Bundle-ManifestVersion: 2
