@@ -51,16 +51,16 @@ import org.openjdk.jmc.ui.WorkbenchToolkit;
 import org.openjdk.jmc.ui.misc.DisplayToolkit;
 
 public class CryostatEndpoint extends WebSocketAdapter {
-	
+
 	private static final Logger logger = Logger.getLogger("CRYOSTAT");
 	private final CountDownLatch closureLatch = new CountDownLatch(1);
-	
+
 	@Override
 	public void onWebSocketConnect(Session sess) {
 		super.onWebSocketConnect(sess);
 		logger.log(Level.WARNING, "Endpoint connected: " + sess);
 	}
-	
+
 	private static class FileOpener implements Runnable {
 		File file;
 
@@ -69,17 +69,17 @@ public class CryostatEndpoint extends WebSocketAdapter {
 			WorkbenchToolkit.openEditor(new MCPathEditorInput(file, false));
 		}
 	}
-	
+
 	private File file;
-	
+
 	private void setFile(File file) {
 		this.file = file;
 	}
-	
+
 	private File getFile() {
 		return file;
 	}
-	
+
 	@Override
 	public void onWebSocketText(String message) {
 		super.onWebSocketText(message);
@@ -116,14 +116,13 @@ public class CryostatEndpoint extends WebSocketAdapter {
 
 	}
 
-    @Override
-    public void onWebSocketClose(int statusCode, String reason)
-    {
-        super.onWebSocketClose(statusCode, reason);
-        logger.log(Level.WARNING, "Socket Closed: [" + statusCode + "] :" + reason);
-        closureLatch.countDown();
-    }
-	
+	@Override
+	public void onWebSocketClose(int statusCode, String reason) {
+		super.onWebSocketClose(statusCode, reason);
+		logger.log(Level.WARNING, "Socket Closed: [" + statusCode + "] :" + reason);
+		closureLatch.countDown();
+	}
+
 	@Override
 	public void onWebSocketError(Throwable cause) {
 		super.onWebSocketError(cause);

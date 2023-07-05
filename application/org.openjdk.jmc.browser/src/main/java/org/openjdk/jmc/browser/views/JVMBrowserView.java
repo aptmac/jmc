@@ -181,7 +181,7 @@ public class JVMBrowserView extends ViewPart implements Observer {
 	private static class CryostatConnectionAction extends Action {
 		private final int PORT = 8029;
 		private WebsocketServer server;
-		
+
 		CryostatConnectionAction() {
 			setId("cryostat"); //$NON-NLS-1$
 			setText(Messages.JVMBrowserView_ACTION_CRYOSTAT_CONNECTION_TEXT);
@@ -205,10 +205,10 @@ public class JVMBrowserView extends ViewPart implements Observer {
 		private void updateIcon(boolean isConnected) {
 			if (isConnected) {
 				setImageDescriptor(
-					JVMBrowserPlugin.getDefault().getMCImageDescriptor(JVMBrowserPlugin.ICON_CRYOSTAT_CONNECTED));
+						JVMBrowserPlugin.getDefault().getMCImageDescriptor(JVMBrowserPlugin.ICON_CRYOSTAT_CONNECTED));
 			} else {
 				setImageDescriptor(
-						JVMBrowserPlugin.getDefault().getMCImageDescriptor(JVMBrowserPlugin.ICON_CRYOSTAT_DISCONNECTED));
+						JVMBrowserPlugin.getDefault().getMCImageDescriptor(JVMBrowserPlugin.ICON_CRYOSTAT_CONNECTED));
 			}
 		}
 	}

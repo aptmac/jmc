@@ -50,13 +50,13 @@ import org.eclipse.jetty.websocket.servlet.WebSocketUpgradeFilter;
 
 public class WebsocketServer {
 
-	public class CryostatEndpointCreator implements JettyWebSocketCreator
-	{
-	    @Override
-	    public Object createWebSocket(JettyServerUpgradeRequest jettyServerUpgradeRequest, JettyServerUpgradeResponse jettyServerUpgradeResponse)
-	    {
-	        return new CryostatEndpoint();
-	    }
+	public class CryostatEndpointCreator implements JettyWebSocketCreator {
+		@Override
+		public Object createWebSocket(
+			JettyServerUpgradeRequest jettyServerUpgradeRequest,
+			JettyServerUpgradeResponse jettyServerUpgradeResponse) {
+			return new CryostatEndpoint();
+		}
 	}
 
 	private static int MAX_MESSAGE_SIZE = 1024 * 1024 * 1024;
@@ -103,8 +103,7 @@ public class WebsocketServer {
 
 		try {
 			WebSocketUpgradeFilter.ensureFilter(context.getServletContext());
-			Logger.getLogger("demo").log(Level.INFO,
-					"Starting websocket server listening on port " + port);
+			Logger.getLogger("demo").log(Level.INFO, "Starting websocket server listening on port " + port);
 			server.start();
 			server.join();
 			setIsConnected(true);
@@ -116,8 +115,7 @@ public class WebsocketServer {
 
 	protected void shutdown() {
 		try {
-			Logger.getLogger("demo").log(Level.INFO,
-					"Stopping websocket server listening on port " + port);
+			Logger.getLogger("demo").log(Level.INFO, "Stopping websocket server listening on port " + port);
 			server.stop();
 			// TODO: see if we need to cleanup executor service and thread
 			setIsConnected(false);
