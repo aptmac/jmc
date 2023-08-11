@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-Name: Cryostat Plug-in
+Bundle-SymbolicName: org.openjdk.jmc.cryostat;singleton:=true
+Bundle-Version: 9.0.0.qualifier
+Bundle-Activator: org.openjdk.jmc.cryostat.CryostatPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.openjdk.jmc.ui,
+ org.eclipse.ui.forms,
+ org.openjdk.jmc.rjmx,
+ org.openjdk.jmc.browser.attach,
+ org.openjdk.jmc.attach,
+ org.eclipse.help
+Eclipse-BuddyPolicy: app
+Bundle-Vendor: Red Hat Inc.
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openjdk.jmc.cryostat.views;x-friends:="org.openjdk.jmc.test.jemmy",
+ org.openjdk.jmc.cryostat.wizards;x-friends:="org.openjdk.jmc.test.jemmy"
+Automatic-Module-Name: org.openjdk.jmc.cryostat

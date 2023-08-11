@@ -61,6 +61,7 @@
 		<module>org.openjdk.jmc.console.ui.mbeanbrowser</module>
 		<module>org.openjdk.jmc.console.ui.notification</module>
 		<module>org.openjdk.jmc.console.ui.subscriptions</module>
+		<module>org.openjdk.jmc.cryostat</module>
 		<module>org.openjdk.jmc.docs</module>
 		<module>org.openjdk.jmc.feature.console</module>
 		<module>org.openjdk.jmc.feature.console.ui.subscriptions</module>

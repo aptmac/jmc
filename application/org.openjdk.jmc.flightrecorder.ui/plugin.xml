@@ -82,6 +82,17 @@
                standalone="false"
                visible="true">
          </view>
+         <view
+            closeable="false"
+            id="org.eclipse.ui.views.ContentOutline"
+            minimized="false"
+            moveable="true"
+            relationship="stack"
+            relative="org.openjdk.jmc.cryostat.views.CryostatView"
+            showTitle="false"
+            standalone="false"
+            visible="true">
+      </view>
          <viewShortcut
                id="org.eclipse.ui.views.ContentOutline">
          </viewShortcut>
