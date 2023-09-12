@@ -319,7 +319,7 @@ public class ChartCanvas extends Canvas {
 	}
 
 	void setLaneHeight(int height) {
-		this.laneHeight = height;
+		laneHeight = Math.max(minLaneHeight, height);
 	}
 
 	void restoreLaneHeight() {
@@ -517,6 +517,9 @@ public class ChartCanvas extends Canvas {
 		}
 		if (isScrollableChart()) { // JFR Threads Page
 			((ScrolledComposite) getParent()).getVerticalBar().addListener(SWT.Selection, e -> vBarScroll());
+			((ScrolledComposite) getParent()).addListener(SWT.Resize, e -> {
+				setLaneHeight(getParent().getClientArea().height / getNumItems());
+			});
 		} else {
 			addMouseTrackListener(selector);
 			addListener(SWT.MouseVerticalWheel, new Zoomer());

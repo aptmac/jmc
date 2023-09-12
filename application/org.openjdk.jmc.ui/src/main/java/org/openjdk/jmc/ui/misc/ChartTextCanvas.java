@@ -260,7 +260,7 @@ public class ChartTextCanvas extends Canvas {
 	}
 
 	void setLaneHeight(int height) {
-		this.laneHeight = height;
+		laneHeight = Math.max(minLaneHeight, height);
 	}
 
 	void restoreLaneHeight() {
@@ -376,6 +376,9 @@ public class ChartTextCanvas extends Canvas {
 		UIPlugin.getDefault().getPreferenceStore().addPropertyChangeListener(aaListener);
 		addDisposeListener(e -> UIPlugin.getDefault().getPreferenceStore().removePropertyChangeListener(aaListener));
 		((ScrolledComposite) getParent()).getVerticalBar().addListener(SWT.Selection, e -> vBarScroll());
+		((ScrolledComposite) getParent()).addListener(SWT.Resize, e -> {
+			setLaneHeight(getParent().getClientArea().height / getNumItems());
+		});
 	}
 
 	private void vBarScroll() {
