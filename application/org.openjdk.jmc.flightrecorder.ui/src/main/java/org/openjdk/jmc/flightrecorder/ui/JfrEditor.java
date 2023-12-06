@@ -83,6 +83,7 @@ import org.openjdk.jmc.flightrecorder.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.ui.preferences.PreferenceKeys;
 import org.openjdk.jmc.flightrecorder.ui.selection.IFlavoredSelection;
 import org.openjdk.jmc.flightrecorder.ui.selection.SelectionStore;
+import org.openjdk.jmc.flightrecorder.ui.web.ServerMain;
 import org.openjdk.jmc.flightrecorder.ui.websocket.WebsocketServer;
 import org.openjdk.jmc.ui.MCPathEditorInput;
 import org.openjdk.jmc.ui.idesupport.IDESupportUIToolkit;
@@ -126,6 +127,7 @@ public class JfrEditor extends EditorPart implements INavigationLocationProvider
 				}
 			}
 		};
+		ServerMain server = new ServerMain(8190);
 		if (FlightRecorderUI.getDefault().isWebsocketServerEnabled()) {
 			int websocketServerPort = FlightRecorderUI.getDefault().getWebsocketPort();
 			websocketServer = new WebsocketServer(websocketServerPort);

@@ -260,7 +260,8 @@ public class ResultReportUi {
 		final Browser browser = new Browser(shell, SWT.NONE);
 		initializeBrowser(display, browser, shell);
 		shell.open();
-		browser.setUrl(url);
+//		browser.setUrl(url);
+		browser.setUrl("http://localhost:8190/hello");
 	}
 
 	private void initializeBrowser(final Display display, final Browser browser, final Shell shell) {
@@ -326,7 +327,8 @@ public class ResultReportUi {
 				String html = RulesHtmlToolkit.generateStructuredHtml(new PageContainerResultProvider(editor),
 						descriptors, resultExpandedStates, false);
 				String adjustedHtml = adjustAnchorFollowAction(html);
-				browser.setText(adjustedHtml);
+//				browser.setText(adjustedHtml);
+				browser.setUrl("http://localhost:8190/hello");
 			}
 		}
 	}
@@ -341,7 +343,8 @@ public class ResultReportUi {
 				String html = RulesHtmlToolkit.generateStructuredHtml(new PageContainerResultProvider(editor),
 						descriptors, resultExpandedStates, false);
 				String adjustedHtml = adjustAnchorFollowAction(html);
-				browser.setText(adjustedHtml);
+//				browser.setText(adjustedHtml);
+				browser.setUrl("http://localhost:8190/hello");
 			}
 		}
 	}
@@ -381,7 +384,8 @@ public class ResultReportUi {
 						: RulesHtmlToolkit.generateStructuredHtml(new PageContainerResultProvider(editor), descriptors,
 								resultExpandedStates, false);
 				String adjustedHtml = adjustAnchorFollowAction(html);
-				browser.setText(adjustedHtml);
+//				browser.setText(adjustedHtml);
+				browser.setUrl("http://localhost:8190/hello");
 			} catch (IOException e1) {
 				FlightRecorderUI.getDefault().getLogger().log(Level.WARNING, "Could not update Result Overview", //$NON-NLS-1$
 						e1);
@@ -451,7 +455,8 @@ public class ResultReportUi {
 					: RulesHtmlToolkit.generateStructuredHtml(new PageContainerResultProvider(editor), descriptors,
 							resultExpandedStates, false);
 			String adjustedHtml = adjustAnchorFollowAction(html);
-			browser.setText(adjustedHtml, true);
+//			browser.setText(adjustedHtml, true);
+			browser.setUrl("http://localhost:8190/hello");
 			browser.setJavascriptEnabled(true);
 			browser.addProgressListener(new ProgressAdapter() {
 				@Override
