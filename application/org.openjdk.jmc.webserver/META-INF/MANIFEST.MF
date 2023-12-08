@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Webserver
+Bundle-SymbolicName: org.openjdk.jmc.webserver;singleton:=true
+Bundle-Version: 9.0.0.qualifier
+Require-Bundle: org.openjdk.jmc.flightrecorder
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.openjdk.jmc.webserver
+Bundle-Vendor: Oracle Corporation
