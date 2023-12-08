@@ -3,7 +3,18 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Webserver
 Bundle-SymbolicName: org.openjdk.jmc.webserver;singleton:=true
 Bundle-Version: 9.0.0.qualifier
-Require-Bundle: org.openjdk.jmc.flightrecorder
+Require-Bundle: org.openjdk.jmc.flightrecorder,
+ org.eclipse.jetty.io,
+ org.eclipse.jetty.server,
+ org.eclipse.jetty.servlet,
+ jakarta.servlet-api,
+ org.eclipse.jetty.websocket.api,
+ org.eclipse.jetty.websocket.server,
+ org.eclipse.jetty.websocket.servlet,
+ org.eclipse.jetty.util,
+ org.openjdk.jmc.flightrecorder.graphview
+Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Automatic-Module-Name: org.openjdk.jmc.webserver
+Export-Package: org.openjdk.jmc.webserver
 Bundle-Vendor: Oracle Corporation
+Automatic-Module-Name: org.openjdk.jmc.webserver

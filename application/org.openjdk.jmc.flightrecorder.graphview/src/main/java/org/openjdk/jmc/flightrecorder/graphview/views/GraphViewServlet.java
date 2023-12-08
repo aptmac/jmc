@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2023, Oracle and/or its affiliates. All rights reserved.
  * Copyright (c) 2023, Red Hat Inc. All rights reserved.
- * 
+ *
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * The contents of this file are subject to the terms of either the Universal Permissive License
@@ -11,17 +11,17 @@
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted
  * provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice, this list of conditions
  * and the following disclaimer.
- * 
+ *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of
  * conditions and the following disclaimer in the documentation and/or other materials provided with
  * the distribution.
- * 
+ *
  * 3. Neither the name of the copyright holder nor the names of its contributors may be used to
  * endorse or promote products derived from this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
  * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
  * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
@@ -31,64 +31,30 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.openjdk.jmc.webserver;
+package org.openjdk.jmc.flightrecorder.graphview.views;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.IOException;
 
-import org.eclipse.jetty.server.Handler;
-import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.handler.ResourceHandler;
-import org.eclipse.jetty.server.handler.DefaultHandler;
-import org.eclipse.jetty.server.handler.HandlerList;
-import org.eclipse.jetty.servlet.ServletHandler;
-import org.openjdk.jmc.flightrecorder.graphview.views.GraphViewServlet;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class Webserver {
-	private static Logger LOGGER = Logger.getLogger(Webserver.class.getName());
-	private final int port;
-	private Server server;
-    private final ExecutorService executorService = Executors.newSingleThreadExecutor();
+@SuppressWarnings("serial")
+@WebServlet("/graphview")
+public class GraphViewServlet extends HttpServlet {
+	private static String html;
 
-    public Webserver(int port) {
-        this.port = port;
-        executorService.execute(() -> startServer());
-    }
+	public GraphViewServlet(String html) {
+		setHtml(html);
+	}
 
-    public Server getServer() {
-    	return server;
-    }
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.getWriter().print(html);
+	}
 
-    public int getPort() {
-        return port;
-    }
-
-    private void startServer() {
-        server = new Server(port);
-
-        ServletHandler servletHandler = new ServletHandler();
-        servletHandler.addServletWithMapping(GraphViewServlet.class, "/graphview");
-        server.setHandler(servletHandler);
-
-        try {
-			LOGGER.log(Level.INFO,
-					"Starting web server listening on port " + port);
-            server.start();
-            server.join();
-        } catch (Exception e) {
-        	LOGGER.log(Level.SEVERE, "Failed to start web server", e);
-        }
-    }
-
-    public void shutdown() {
-		try {
-			LOGGER.log(Level.INFO,
-					"Stopping web server listening on port " + port);
-			server.stop();
-		} catch (Exception e) {
-			LOGGER.log(Level.SEVERE, "Failed to stop web server", e);
-		}
-    }
+	public static void setHtml(String newHtml) {
+		html = newHtml;
+	}
 }

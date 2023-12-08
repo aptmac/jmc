@@ -309,7 +309,9 @@ public class GraphView extends ViewPart implements ISelectionListener {
 	}
 
 	private void setViewerInput(String model) {
-		browser.setText(HTML_PAGE);
+//		browser.setText(HTML_PAGE);
+		GraphViewServlet.setHtml(HTML_PAGE);
+		browser.setUrl("http://localhost:8181/graphview");
 
 		browser.addProgressListener(new ProgressAdapter() {
 			private boolean loaded = false;

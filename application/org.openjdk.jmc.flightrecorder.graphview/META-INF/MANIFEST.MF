@@ -5,7 +5,16 @@ Bundle-SymbolicName: org.openjdk.jmc.flightrecorder.graphview;singleton:=true
 Bundle-Version: 9.0.0.qualifier
 Require-Bundle: org.openjdk.jmc.flightrecorder,
  org.openjdk.jmc.flightrecorder.serializers,
- org.openjdk.jmc.ui
+ org.openjdk.jmc.ui,
+ org.eclipse.jetty.io,
+ org.eclipse.jetty.server,
+ org.eclipse.jetty.servlet,
+ jakarta.servlet-api,
+ org.eclipse.jetty.websocket.api,
+ org.eclipse.jetty.websocket.server,
+ org.eclipse.jetty.websocket.servlet,
+ org.eclipse.jetty.util
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.openjdk.jmc.flightrecorder.graphview
 Bundle-Vendor: Oracle Corporation
+Export-Package: org.openjdk.jmc.flightrecorder.graphview.views
