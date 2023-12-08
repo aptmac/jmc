@@ -67,7 +67,6 @@ import org.openjdk.jmc.common.item.IItemCollection;
 import org.openjdk.jmc.common.item.ItemCollectionToolkit;
 import org.openjdk.jmc.common.util.StringToolkit;
 import org.openjdk.jmc.flightrecorder.serializers.json.IItemCollectionJsonSerializer;
-import org.openjdk.jmc.flightrecorder.ui.FlightRecorderUI;
 import org.openjdk.jmc.ui.common.util.AdapterUtil;
 import org.openjdk.jmc.ui.misc.DisplayToolkit;
 
@@ -254,7 +253,7 @@ public class HeatmapView extends ViewPart implements ISelectionListener {
 		try {
 			return StringToolkit.readString(HeatmapView.class.getClassLoader().getResourceAsStream(fileName));
 		} catch (IOException e) {
-			FlightRecorderUI.getDefault().getLogger().log(Level.WARNING,
+			LOGGER.log(Level.WARNING,
 					MessageFormat.format("Could not load script \"{0}\",\"{1}\"", fileName, e.getMessage())); //$NON-NLS-1$
 			return "";
 		}

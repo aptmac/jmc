@@ -46,6 +46,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 import org.eclipse.jface.action.Action;
@@ -80,11 +81,11 @@ import org.openjdk.jmc.flightrecorder.stacktrace.FrameSeparator;
 import org.openjdk.jmc.flightrecorder.stacktrace.FrameSeparator.FrameCategorization;
 import org.openjdk.jmc.flightrecorder.stacktrace.graph.Pruning;
 import org.openjdk.jmc.flightrecorder.stacktrace.graph.StacktraceGraphModel;
-import org.openjdk.jmc.flightrecorder.ui.FlightRecorderUI;
 import org.openjdk.jmc.ui.common.util.AdapterUtil;
 import org.openjdk.jmc.ui.misc.DisplayToolkit;
 
 public class GraphView extends ViewPart implements ISelectionListener {
+	private static Logger LOGGER = Logger.getLogger(GraphView.class.getName());
 	private static final String HTML_PAGE;
 	static {
 		String jsD3 = "jslibs/d3.v7.min.js";
@@ -357,7 +358,7 @@ public class GraphView extends ViewPart implements ISelectionListener {
 		try {
 			return StringToolkit.readString(GraphView.class.getClassLoader().getResourceAsStream(fileName));
 		} catch (IOException e) {
-			FlightRecorderUI.getDefault().getLogger().log(Level.WARNING,
+			LOGGER.log(Level.WARNING,
 					MessageFormat.format("Could not load script \"{0}\",\"{1}\"", fileName, e.getMessage())); //$NON-NLS-1$
 			return "";
 		}
@@ -373,7 +374,7 @@ public class GraphView extends ViewPart implements ISelectionListener {
 			byte[] fileBytes = readBytes(GraphView.class.getClassLoader().getResourceAsStream(fileName));
 			return Base64.getEncoder().encodeToString(fileBytes);
 		} catch (IOException e) {
-			FlightRecorderUI.getDefault().getLogger().log(Level.WARNING,
+			LOGGER.log(Level.WARNING,
 					MessageFormat.format("Could not load resource \"{0}\",\"{1}\"", fileName, e.getMessage())); //$NON-NLS-1$
 			return "";
 		}

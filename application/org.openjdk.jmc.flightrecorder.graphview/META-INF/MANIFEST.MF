@@ -4,8 +4,8 @@ Bundle-Name: GraphView
 Bundle-SymbolicName: org.openjdk.jmc.flightrecorder.graphview;singleton:=true
 Bundle-Version: 9.0.0.qualifier
 Require-Bundle: org.openjdk.jmc.flightrecorder,
- org.openjdk.jmc.flightrecorder.ui,
- org.openjdk.jmc.flightrecorder.serializers
+ org.openjdk.jmc.flightrecorder.serializers,
+ org.openjdk.jmc.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.openjdk.jmc.flightrecorder.graphview
 Bundle-Vendor: Oracle Corporation
