@@ -56,7 +56,7 @@ import org.openjdk.jmc.agent.util.ModuleUtils;
  */
 public class Agent {
 	/**
-	 * This should be generated as part of the build later.
+	 * This should be generated as part of the build later.aaa
 	 */
 	public static final String VERSION = "1.0.0"; //$NON-NLS-1$
 	private static boolean loadedDynamically = false;
