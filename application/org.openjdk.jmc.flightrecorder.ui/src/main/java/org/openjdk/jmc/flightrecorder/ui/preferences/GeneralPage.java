@@ -186,7 +186,7 @@ public class GeneralPage extends PreferencePage implements IWorkbenchPreferenceP
 		loadItemListSizeFromPrefStore(false);
 		loadPropertiesArrayStringSizeFromPrefStore(false);
 		loadEditorRuleEvaluationThreadsFromPrefStore(false);
-		loadWebsocketPortFromPrefStore(false);
+//		loadWebsocketPortFromPrefStore(false);
 		timespanValue.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
@@ -339,11 +339,11 @@ public class GeneralPage extends PreferencePage implements IWorkbenchPreferenceP
 		editorRuleEvaluationThreadsValue.setText(FlightRecorderUI.parseItemListSize(size).interactiveFormat());
 	}
 
-	private void loadWebsocketPortFromPrefStore(boolean loadDefault) {
-		String port = loadDefault ? getPreferenceStore().getDefaultString(PreferenceKeys.PROPERTY_WEBSOCKET_SERVER_PORT)
-				: getPreferenceStore().getString(PreferenceKeys.PROPERTY_WEBSOCKET_SERVER_PORT);
-		websocketPortValue.setText(Integer.toString(FlightRecorderUI.parseWebsocketPort(port)));
-	}
+	// private void loadWebsocketPortFromPrefStore(boolean loadDefault) {
+	// 	String port = loadDefault ? getPreferenceStore().getDefaultString(PreferenceKeys.PROPERTY_WEBSOCKET_SERVER_PORT)
+	// 			: getPreferenceStore().getString(PreferenceKeys.PROPERTY_WEBSOCKET_SERVER_PORT);
+	// 	websocketPortValue.setText(Integer.toString(FlightRecorderUI.parseWebsocketPort(port)));
+	// }
 
 //	private Button createClearButton(Composite parent) {
 //		Button button = new Button(parent, SWT.NONE);
@@ -431,7 +431,7 @@ public class GeneralPage extends PreferencePage implements IWorkbenchPreferenceP
 		loadItemListSizeFromPrefStore(true);
 		loadPropertiesArrayStringSizeFromPrefStore(true);
 		loadEditorRuleEvaluationThreadsFromPrefStore(true);
-		loadWebsocketPortFromPrefStore(true);
+		// loadWebsocketPortFromPrefStore(true);
 		super.performDefaults();
 	}
 

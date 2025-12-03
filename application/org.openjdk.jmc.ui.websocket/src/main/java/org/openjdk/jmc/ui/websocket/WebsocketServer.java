@@ -83,17 +83,17 @@ public class WebsocketServer {
 		context.setContextPath("/");
 		server.setHandler(context);
 
-		 JettyWebSocketServletContainerInitializer.configure(context, (servletContext, container) -> {
-		 	container.setMaxBinaryMessageSize(Long.MAX_VALUE);
-		 	container.setIdleTimeout(Duration.ofHours(5));
-		 	container.addMapping("/events/*", (req, resp) -> {
+		JettyWebSocketServletContainerInitializer.configure(context, (servletContext, container) -> {
+			container.setMaxBinaryMessageSize(Long.MAX_VALUE);
+			container.setIdleTimeout(Duration.ofHours(5));
+			container.addMapping("/events/*", (req, resp) -> {
 				// try to send the current selection when the client connects
 				// for simplicity, we serialise for every new connection
 				String eventsJson = WebsocketServer.toEventsJsonString(currentSelection);
 				WebsocketConnectionHandler handler = new WebsocketConnectionHandler(eventsJson);
 				handlers.add(handler);
 				return handler;
-		 	});
+			});
 			container.addMapping("/tree/*", (req, resp) -> {
 				String treeJson = WebsocketServer.toTreeModelJsonString(currentSelection);
 				WebsocketConnectionHandler handler = new WebsocketConnectionHandler(treeJson);
@@ -107,7 +107,7 @@ public class WebsocketServer {
 				return handler;
 			});
 //		 	container.addMapping("/cryostat/*", new WebsocketEndpointCreator());
-		 });
+		});
 
 		try {
 			server.start();
@@ -161,22 +161,22 @@ public class WebsocketServer {
 	}
 
 	private List<WebsocketConnectionHandler> notifyAllHandlers(
-			IItemCollection events, List<WebsocketConnectionHandler> handlers,
-			Function<IItemCollection, String> jsonSerializer) {
-			handlers = handlers.stream().filter(h -> h.isConnected()).collect(Collectors.toList());
-			if (handlers.size() == 0 || events == null) {
-				// do nothing if no handlers are registered
-				return handlers;
-			}
-			String json = jsonSerializer.apply(events);
-			handlers.forEach(handler -> handler.sendMessage(json));
+		IItemCollection events, List<WebsocketConnectionHandler> handlers,
+		Function<IItemCollection, String> jsonSerializer) {
+		handlers = handlers.stream().filter(h -> h.isConnected()).collect(Collectors.toList());
+		if (handlers.size() == 0 || events == null) {
+			// do nothing if no handlers are registered
 			return handlers;
 		}
-	
+		String json = jsonSerializer.apply(events);
+		handlers.forEach(handler -> handler.sendMessage(json));
+		return handlers;
+	}
+
 	public void shutdown() throws Exception {
 		server.stop();
 	}
-	
+
 	private static class WebsocketConnectionHandler extends WebSocketAdapter {
 		private String firstMessage;
 
@@ -199,8 +199,7 @@ public class WebsocketServer {
 		@Override
 		public void onWebSocketConnect(Session sess) {
 			super.onWebSocketConnect(sess);
-			WebsocketPlugin.getLogger().log(Level.INFO,
-					"Socket connected to " + sess.getRemoteAddress().toString());
+			WebsocketPlugin.getLogger().log(Level.INFO, "Socket connected to " + sess.getRemoteAddress().toString());
 			try {
 				if (firstMessage != null) {
 					getSession().getRemote().sendString(firstMessage);
@@ -233,4 +232,3 @@ public class WebsocketServer {
 		}
 	}
 }
-

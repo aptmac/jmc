@@ -13,7 +13,6 @@ Require-Bundle: org.openjdk.jmc.rjmx,
  org.openjdk.jmc.flightrecorder;visibility:=reexport,
  org.openjdk.jmc.ui;visibility:=reexport,
  org.openjdk.jmc.ui.celleditors,
- org.openjdk.jmc.ui.websocket,
  org.openjdk.jmc.flightrecorder.rules,
  org.openjdk.jmc.flightrecorder.rules.jdk,
  org.openjdk.jmc.flightrecorder.configuration,
@@ -29,7 +28,9 @@ Require-Bundle: org.openjdk.jmc.rjmx,
  org.eclipse.jetty.ee9.server,
  org.eclipse.jetty.server,
  org.eclipse.jetty.ee9.websocket.server,
- org.eclipse.jetty.servlet-api
+ org.eclipse.jetty.servlet-api,
+ org.openjdk.jmc.ui.websocket,
+ org.openjdk.jmc.flightrecorder.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.openjdk.jmc.flightrecorder.ui.FlightRecorderUI
 Export-Package: org.openjdk.jmc.flightrecorder.ui,
@@ -38,3 +39,4 @@ Export-Package: org.openjdk.jmc.flightrecorder.ui,
  org.openjdk.jmc.flightrecorder.ui.preferences,
  org.openjdk.jmc.flightrecorder.ui.selection
 Automatic-Module-Name: org.openjdk.jmc.flightrecorder.ui
+Import-Package: org.openjdk.jmc.flightrecorder.ui

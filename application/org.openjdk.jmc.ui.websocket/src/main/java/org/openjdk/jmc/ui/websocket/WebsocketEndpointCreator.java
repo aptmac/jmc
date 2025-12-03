@@ -33,14 +33,15 @@
  */
 package org.openjdk.jmc.ui.websocket;
 
-import org.eclipse.jetty.ee9.websocket.server.JettyServerUpgradeRequest;
-import org.eclipse.jetty.ee9.websocket.server.JettyServerUpgradeResponse;
-import org.eclipse.jetty.ee9.websocket.server.JettyWebSocketCreator;
+//import org.eclipse.jetty.ee9.websocket.server.JettyServerUpgradeRequest;
+//import org.eclipse.jetty.ee9.websocket.server.JettyServerUpgradeResponse;
+//import org.eclipse.jetty.ee9.websocket.server.JettyWebSocketCreator;
 
-public class WebsocketEndpointCreator implements JettyWebSocketCreator {
-	@Override
-	public Object createWebSocket(
-		JettyServerUpgradeRequest jettyServerUpgradeRequest, JettyServerUpgradeResponse jettyServerUpgradeResponse) {
-		return new WebsocketEndpoint();
-	}
+public class WebsocketEndpointCreator {
+//implements JettyWebSocketCreator {
+//	@Override
+//	public Object createWebSocket(
+//		JettyServerUpgradeRequest jettyServerUpgradeRequest, JettyServerUpgradeResponse jettyServerUpgradeResponse) {
+//		return new WebsocketEndpoint();
+//	}
 }

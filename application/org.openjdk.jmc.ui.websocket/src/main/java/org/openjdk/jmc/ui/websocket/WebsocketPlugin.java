@@ -40,6 +40,7 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.ui.IStartup;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.openjdk.jmc.common.item.IItemCollection;
 import org.openjdk.jmc.ui.websocket.preferences.PreferenceConstants;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -74,6 +75,12 @@ public class WebsocketPlugin extends AbstractUIPlugin implements BundleActivator
 		server.shutdown();
 		plugin = null;
 		super.stop(bundleContext);
+	}
+
+	public void notifyAll(IItemCollection events) {
+		if (server != null) {
+			server.notifyAll(events);
+		}
 	}
 
 	private void startServer(int port) {
@@ -111,7 +118,7 @@ public class WebsocketPlugin extends AbstractUIPlugin implements BundleActivator
 		return this.getPreferenceStore().getInt(PreferenceConstants.P_SERVER_PORT);
 	}
 
-	private boolean getServerEnabled() {
+	public boolean getServerEnabled() {
 		return this.getPreferenceStore().getBoolean(PreferenceConstants.P_SERVER_ENABLED);
 	}
 

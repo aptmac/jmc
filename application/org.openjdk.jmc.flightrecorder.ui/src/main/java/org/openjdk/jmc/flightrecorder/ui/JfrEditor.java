@@ -83,13 +83,14 @@ import org.openjdk.jmc.flightrecorder.ui.messages.internal.Messages;
 import org.openjdk.jmc.flightrecorder.ui.preferences.PreferenceKeys;
 import org.openjdk.jmc.flightrecorder.ui.selection.IFlavoredSelection;
 import org.openjdk.jmc.flightrecorder.ui.selection.SelectionStore;
-import org.openjdk.jmc.flightrecorder.ui.websocket.WebsocketServer;
 import org.openjdk.jmc.ui.MCPathEditorInput;
 import org.openjdk.jmc.ui.idesupport.IDESupportUIToolkit;
 import org.openjdk.jmc.ui.misc.CompositeToolkit;
 import org.openjdk.jmc.ui.misc.DialogToolkit;
 import org.openjdk.jmc.ui.misc.DisplayToolkit;
 import org.openjdk.jmc.ui.misc.SelectionProvider;
+import org.openjdk.jmc.ui.websocket.WebsocketPlugin;
+// import org.openjdk.jmc.ui.websocket.WebsocketServer;
 
 public class JfrEditor extends EditorPart implements INavigationLocationProvider, IPageContainer {
 
@@ -114,7 +115,6 @@ public class JfrEditor extends EditorPart implements INavigationLocationProvider
 	private RuleManager ruleEngine;
 	private IPropertyChangeListener analysisEnabledListener;
 	private IPropertyChangeListener websocketServerEnabledListener;
-	private WebsocketServer websocketServer;
 
 	public JfrEditor() {
 		super();
@@ -126,27 +126,27 @@ public class JfrEditor extends EditorPart implements INavigationLocationProvider
 				}
 			}
 		};
-		if (FlightRecorderUI.getDefault().isWebsocketServerEnabled()) {
-			int websocketServerPort = FlightRecorderUI.getDefault().getWebsocketPort();
-			websocketServer = new WebsocketServer(websocketServerPort);
-		}
-		websocketServerEnabledListener = e -> {
-			if (e.getProperty().equals(PreferenceKeys.PROPERTY_WEBSOCKET_SERVER_PORT)) {
-				int newWebsocketServerPort = FlightRecorderUI.parseWebsocketPort((String) e.getNewValue());
-				if (newWebsocketServerPort > 0) {
-					if (websocketServer != null) {
-						websocketServer.shutdown();
-						websocketServer = null;
-					}
-					websocketServer = new WebsocketServer(newWebsocketServerPort);
-				} else {
-					if (websocketServer != null) {
-						websocketServer.shutdown();
-						websocketServer = null;
-					}
-				}
-			}
-		};
+//		if (FlightRecorderUI.getDefault().isWebsocketServerEnabled()) {
+//			int websocketServerPort = FlightRecorderUI.getDefault().getWebsocketPort();
+//			websocketServer = new WebsocketServer(websocketServerPort);
+//		}
+//		websocketServerEnabledListener = e -> {
+//			if (e.getProperty().equals(PreferenceKeys.PROPERTY_WEBSOCKET_SERVER_PORT)) {
+//				int newWebsocketServerPort = FlightRecorderUI.parseWebsocketPort((String) e.getNewValue());
+//				if (newWebsocketServerPort > 0) {
+//					if (websocketServer != null) {
+//						websocketServer.shutdown();
+//						websocketServer = null;
+//					}
+//					websocketServer = new WebsocketServer(newWebsocketServerPort);
+//				} else {
+//					if (websocketServer != null) {
+//						websocketServer.shutdown();
+//						websocketServer = null;
+//					}
+//				}
+//			}
+//		};
 		FlightRecorderUI.getDefault().getPreferenceStore().addPropertyChangeListener(analysisEnabledListener);
 		FlightRecorderUI.getDefault().getPreferenceStore().addPropertyChangeListener(websocketServerEnabledListener);
 	}
@@ -214,8 +214,8 @@ public class JfrEditor extends EditorPart implements INavigationLocationProvider
 		if (!items.hasItems() && currentPage != null) {
 			selectionItems = getModel().getItems().apply(getDisplayablePage(currentPage).getDefaultSelectionFilter());
 		}
-		if (websocketServer != null) {
-			websocketServer.notifyAll(selectionItems);
+		if (WebsocketPlugin.getDefault().getServerEnabled() == true) {
+			WebsocketPlugin.getDefault().notifyAll(selectionItems);
 		}
 		getSite().getSelectionProvider().setSelection(new StructuredSelection(selectionItems));
 	}
