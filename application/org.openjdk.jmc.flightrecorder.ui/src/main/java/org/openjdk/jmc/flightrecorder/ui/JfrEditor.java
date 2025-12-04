@@ -114,7 +114,7 @@ public class JfrEditor extends EditorPart implements INavigationLocationProvider
 	private Reference<ResultPage> resultPageRef = new WeakReference<>(null);
 	private RuleManager ruleEngine;
 	private IPropertyChangeListener analysisEnabledListener;
-	private IPropertyChangeListener websocketServerEnabledListener;
+//	private IPropertyChangeListener websocketServerEnabledListener;
 
 	public JfrEditor() {
 		super();
@@ -148,7 +148,7 @@ public class JfrEditor extends EditorPart implements INavigationLocationProvider
 //			}
 //		};
 		FlightRecorderUI.getDefault().getPreferenceStore().addPropertyChangeListener(analysisEnabledListener);
-		FlightRecorderUI.getDefault().getPreferenceStore().addPropertyChangeListener(websocketServerEnabledListener);
+//		FlightRecorderUI.getDefault().getPreferenceStore().addPropertyChangeListener(websocketServerEnabledListener);
 	}
 
 	@Override
@@ -429,7 +429,7 @@ public class JfrEditor extends EditorPart implements INavigationLocationProvider
 	public void dispose() {
 		ruleEngine.dispose();
 		FlightRecorderUI.getDefault().getPreferenceStore().removePropertyChangeListener(analysisEnabledListener);
-		FlightRecorderUI.getDefault().getPreferenceStore().removePropertyChangeListener(websocketServerEnabledListener);
+//		FlightRecorderUI.getDefault().getPreferenceStore().removePropertyChangeListener(websocketServerEnabledListener);
 		super.dispose();
 	}
 
