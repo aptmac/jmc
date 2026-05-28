@@ -64,7 +64,9 @@ public class MCWebsocketServer {
 	private List<WebsocketConnectionHandler> handlers = new CopyOnWriteArrayList<>();
 	private List<WebsocketConnectionHandler> treeHandlers = new CopyOnWriteArrayList<>();
 	private List<WebsocketConnectionHandler> graphHandlers = new CopyOnWriteArrayList<>();
+	private List<DownloadRecordingHandler> downloadHandlers = new CopyOnWriteArrayList<>();
 	private final ExecutorService executorService = Executors.newSingleThreadExecutor();
+	private final ExecutorService downloadExecutor = Executors.newSingleThreadExecutor();
 	private IItemCollection currentSelection = null;
 
 	public MCWebsocketServer(int port) {
@@ -97,6 +99,11 @@ public class MCWebsocketServer {
 				String dot = MCWebsocketServer.toGraphModelDotString(currentSelection);
 				WebsocketConnectionHandler handler = new WebsocketConnectionHandler(dot);
 				graphHandlers.add(handler);
+				return handler;
+			});
+			container.addMapping("/download/*", (req, resp, callback) -> {
+				DownloadRecordingHandler handler = new DownloadRecordingHandler(downloadExecutor);
+				downloadHandlers.add(handler);
 				return handler;
 			});
 		});
@@ -167,6 +174,7 @@ public class MCWebsocketServer {
 	}
 
 	public void shutdown() throws Exception {
+		downloadExecutor.shutdown();
 		server.stop();
 	}
 
