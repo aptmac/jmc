@@ -61,6 +61,8 @@
             <unit id="fireplace-swing-animation" version="0.0.1.rc9"/>
             <unit id="radiance-animation" version="8.5.0"/>
             <unit id="org.awaitility" version="4.0.0"/>
+            <unit id="com.fasterxml.jackson.core.jackson-core" version="2.21.4"/>
+            <unit id="com.fasterxml.jackson.core.jackson-databind" version="2.21.4"/>
             <repository location="http://localhost:8080/site"/>
         </location>
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">

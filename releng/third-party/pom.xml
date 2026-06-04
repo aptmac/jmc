@@ -67,6 +67,7 @@
 		<radiance.version>8.5.0</radiance.version>
 		<jakarta.inject.version>2.0.1</jakarta.inject.version>
 		<jakarta.annotation.version>3.0.0</jakarta.annotation.version>
+		<jackson.version>2.21.4</jackson.version>
 	</properties>
 
 	<build>
@@ -214,6 +215,12 @@
 										<Bundle-SymbolicName>radiance-animation</Bundle-SymbolicName>
 										<Export-Package>org.pushingpixels.radiance.animation.api.*</Export-Package>
 									</instructions>
+								</artifact>
+								<artifact>
+									<id>com.fasterxml.jackson.core:jackson-core:${jackson.version}</id>
+								</artifact>
+								<artifact>
+									<id>com.fasterxml.jackson.core:jackson-databind:${jackson.version}</id>
 								</artifact>
 							</artifacts>
 						</configuration>

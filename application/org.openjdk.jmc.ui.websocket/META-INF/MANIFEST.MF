@@ -16,7 +16,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jetty.websocket.server,
  org.openjdk.jmc.common,
  org.openjdk.jmc.flightrecorder.serializers,
- org.openjdk.jmc.flightrecorder
+ org.openjdk.jmc.flightrecorder,
+ com.fasterxml.jackson.core.jackson-core,
+ com.fasterxml.jackson.core.jackson-databind
 Export-Package:  org.openjdk.jmc.ui.websocket
 Bundle-Activator: org.openjdk.jmc.ui.websocket.WebsocketPlugin
 Bundle-ActivationPolicy: lazy
